@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 02</title>
+  </head>
+<body>
+
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+  </ul>
+
+<script type="text/javascript">
+	var aqiData = [
+	  ["北京", 90],
+	  ["上海", 50],
+	  ["福州", 10],
+	  ["广州", 50],
+	  ["成都", 90],
+	  ["西安", 100]
+	];
+
+	(function () {
+		/* 先将污染程度由高到低排序 */
+		aqiData.sort(function(a,b) {
+			return b[1]-a[1];
+		});
+		
+		var list = document.getElementById('aqi-list');
+		var len = aqiData.length;
+		var limit = 40;
+		
+		/* 遍历数组，遇到超过阈值的输出，且遇到第一个小于阈值的就结束程序 */
+		for(var i=0;i<len;i++) {
+			var cur = aqiData[i];
+			if( cur[1] > limit) {
+				var childs = document.createElement('li');
+				var node=document.createTextNode('第'+(i+1)+'名：'+cur[0]+'，'+cur[1]);
+				childs.appendChild(node);
+				list.appendChild(childs);
+			}
+			else {
+				break;
+			}
+		}
+	})();
+</script>
+</body>
+</html>
+<!-- 
+		可筛选出所有的符合条件的
+		var res = aqiData.filter(function(ele) {
+			return ele[1]>30;
+		})
+		 -->
