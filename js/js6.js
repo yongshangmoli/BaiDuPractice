@@ -74,7 +74,7 @@ function deleteClick() {
 	for(var i=0;i<divs.length;i++) {
 		divs[i].onclick = (function(index) {
 			return function() {
-				alert('将删除您选择的元素元素'+divs[index].innerHTML);
+				alert('将删除您选择的元素'+divs[index].innerHTML);
 				parent.removeChild(divs[index]);
 			}
 		}(i));
