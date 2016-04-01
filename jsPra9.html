@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 09</title>
+		<style type="text/css">
+			input {
+				width: 280px;
+				padding: 8px;
+				margin-bottom: 20px;
+			}
+			button {
+				padding: 8px;
+				margin-bottom: 14px;
+			}
+			textarea {
+				border: 1px solid #ddd;
+			}
+			.tag {
+				display: inline;
+				background-color: pink;
+				padding: 8px;
+				height:70px;
+				margin-right:20px;
+				border:1px #333 solid;
+				border-radius:10px;
+			}
+			#interests  div:hover,
+			#tags  div:hover {
+				background-color: lightblue;
+				cursor: pointer;
+			}
+			#interests  div:hover:before,
+			#tags div:hover:before {
+				content: "点击删除";
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input id='tagInput'  type='text'  placeholder='输入tag'/><br/>
+			<div id="tags"></div>
+		</div>
+		<br/>
+		<div>
+			<textarea id="interestInput" rows="10" cols="40"  placeholder='输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔'></textarea>
+			<br/>
+			<button id='assure'>确认兴趣爱好</button>
+			<br/>
+			<div id="interests"></div>
+		</div>
+		<script src="js/js9.js"></script>
+	</body>
+</html>
