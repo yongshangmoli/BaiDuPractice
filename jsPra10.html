@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 10</title>
+		<style type="text/css">
+			html,body {
+				height: 100%;
+				width: 100%;
+			}
+			.flex {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.outer {
+				-webkit-flex-flow: column  nowrap;
+				flex-flow:column nowrap;
+			}
+			.container{
+				-webkit-flex-flow: row  nowrap;
+				flex-flow:row nowrap;
+				/* 
+				flex-flow是flex-direction和flex-wrap两个属性的缩写默认值是row nowrap
+				flex是flex-grow,flex-shrink,flex-basis三个属性的缩写，后两个是可选值，默认值是0 1 auto
+				若flex取值为none，相当于取值为0 0 auto
+				*/
+			}
+			.inner-width {
+				width: 48%;
+				margin: 1%;
+				border: 1px solid black;
+			}
+			input {
+				padding:12px;
+				margin: 8px;
+			}
+			.div1 {
+				height: 20%;
+				padding: 12px;
+				background-color: white;
+			}
+			.div2 {
+				height: 90%;
+				padding: 6px 8px;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body class=" flex outer">
+		<div id="sortBtn" >
+			<input type="button" value="先序遍历">
+			<input type="button" value="中序遍历">
+			<input type="button" value="后序遍历">
+		</div>
+		<div class=" flex container inner-width div1"  id="tree">
+			<div class="flex container inner-width div2">
+				<div class="flex container inner-width div2">
+					<div class="flex container inner-width div2">
+					</div>
+					<div class="flex container inner-width div2">
+					</div>
+				</div>
+				<div class="flex container inner-width div2">
+					<div class="flex container inner-width div2">
+					</div>
+					<div class="flex container inner-width div2">
+					</div>
+				</div>
+			</div>
+			<div class="flex container  inner-width div2">
+				<div class="flex container inner-width div2">
+					<div class="flex container inner-width div2">
+					</div>
+					<div class="flex container inner-width div2">
+					</div>
+				</div>
+				<div class="flex container inner-width div2">
+					<div class="flex container inner-width div2">
+					</div>
+					<div class="flex container inner-width div2">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/js10.js"></script>
+	</body>
+</html>
