@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 11</title>
+		<style type="text/css">
+			html,body {
+				height: 98%;
+				width: 99%;
+				font-size: 70%;
+			}
+			.flex {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.outer {
+				-webkit-flex-flow: column  nowrap;
+				flex-flow:column nowrap;
+			}
+			.container{
+				-webkit-flex-flow: row  nowrap;
+				flex-flow:row nowrap;
+				/* 
+				flex-flow是flex-direction和flex-wrap两个属性的缩写默认值是row nowrap
+				flex是flex-grow,flex-shrink,flex-basis三个属性的缩写，后两个是可选值，默认值是0 1 auto
+				若flex取值为none，相当于取值为0 0 auto
+				*/
+			}
+			.outer-width {
+				width: 98%;
+				border: 1px solid black;
+			}
+			.inner-width {
+				width: 48%; 
+				margin: 1%;
+				border: 1px solid black;
+			}
+			.border {
+				border: 1px solid black;
+			}
+			input {
+				padding:12px;
+				margin: 8px;
+			}
+			.div1 {
+				height: 20%;
+				padding: 12px;
+				background-color: white;
+			}
+			.div2 {
+				height: 90%;
+				padding: 6px 8px;
+				background-color: white;
+			}
+			.input-width {
+				width: 70%;
+			}
+		</style>
+	</head>
+	<body class=" flex outer">
+		<div id="sortBtn" >
+			<input type="button" value="广度优先遍历">
+			<input type="text"  placeholder="输入你想查询的节点">
+			<input type="button" value="深度优先遍历">
+		</div>
+		<div class=" flex container outer-width div1"  id="tree">super
+			<div class="flex container inner-width div2" >things
+				<div class="flex container inner-width div2">apple
+					<div class="flex container inner-width div2">peer
+					</div>
+					<div class="flex container inner-width div2">pig
+					</div>
+					<div class="flex container inner-width div2">cola
+					</div>
+					<div class="flex container inner-width div2">soap
+					</div>
+				</div>
+				<div class="flex container inner-width div2">iphone
+				</div>
+				<div class="flex container inner-width div2">study
+					<div class="flex container inner-width div2">book
+					</div>
+					<div class="flex container inner-width div2">school
+					</div>
+				</div>
+			</div>
+			<div class="flex container  inner-width div2">notes
+				<div class="flex container inner-width div2">human
+					<div class="flex container inner-width div2">candy
+					</div>
+					<div class="flex container inner-width div2">bob
+					</div>
+					<div class="flex container inner-width div2">mary
+					</div>
+				</div>
+				<div class="flex container inner-width div2">program
+					<div class="flex container inner-width div2">bement
+						<div class="flex container inner-width div2">cat
+						</div>
+					</div>
+					<div class="flex container inner-width div2">cross
+					</div>
+				</div>
+			</div>
+			<div class="flex container border div2">fish
+			</div>
+		</div>
+		<script src="js/js11.js"></script>
+	</body>
+</html>
