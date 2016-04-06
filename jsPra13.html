@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 13</title>
+		<style type="text/css">
+			html,body {
+				height: 100%;
+				width: 100%;
+				border:0;
+				margin:0;
+			}
+			input {
+				padding:12px ;
+				margin: 8px;
+				float:left;
+			}
+			.container {
+				border: 1px solid #ccc;
+				box-shadow: 3px 3px 3px #ddd;
+				margin: 4px 16px ;
+				width:400px;
+				float:left;
+			}
+			#tree,#tree ul {
+				list-style-image:url(imgs/folderO.png);
+				margin-left: 25px;
+				padding-left:25px;
+				border-left:1px solid #ccc;
+			}
+			.close-style {
+				list-style-image:url(imgs/folderC.png);
+			}
+			.mouse-right-div {
+				height: 140px;
+				width: 120px;
+				border: 1px solid #ccc;
+				background-color: #eee;
+				opacity: 0.9;
+				position:absolute;
+			}
+			.mouse-right-div  ul{
+				padding:0;
+				text-align:center;
+				list-style: none;
+			}
+			.mouse-right-div  li{
+				padding:8px;
+			}
+			.mouse-right-div  li:hover {
+				cursor:pointer;
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul id="tree" >
+				<li>
+					<p>计算机书目</p>
+					<ul>
+						<li>
+							<p>办公类</p>
+						<ul>
+							<li>
+								<p>Windows应用</p>
+							</li>
+							<li >
+								<p>Office快速入门</p>
+								<ul>
+									<li >
+										<p>七天学会Office</p>
+									</li>
+									<li >
+										<p>高校Office</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>编程类</p>
+						<ul>
+							<li >
+								<p>C语言程序设计</p>
+							</li>
+							<li >
+								<p>java从入门到精通</p>
+							</li>
+							<li >
+								<p>Asp.net入门经典</p>
+							</li>
+							<li >
+								<p>js权威指南</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>网络类</p>
+						<ul>
+							<li>
+								<p>网络基础</p>
+							</li>
+							<li >
+								<p>TCP/IP协议</p>
+							</li>
+						</ul>
+					</li>
+					<li >
+						<p>动画类</p>
+					</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="search" >
+			<input type="text"  placeholder="输入你想查询的节点">
+			<input type="button" value="查询">
+		</div>
+		<div id="mouseRight" class="mouse-right-div"  style="display: none;">
+			<ul>
+				<li>删除</li>
+				<li>新建</li>
+				<li>重命名</li>
+			</ul>
+		</div>
+		<script src="js/js13.js"></script>
+	</body>
+</html>
