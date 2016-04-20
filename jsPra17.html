@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>IFE JavaScript Task 29</title>
+	</head>
+<body>
+	<div>
+		<label for="aqi-input">名称：</label><input id="clientInput"  type="text">
+  		<button id="button">验证</button>
+  		<p id="res"></p>
+	</div>
+  <div ></div>
+<script type="text/javascript">
+	(function() {
+		var btn = document.getElementById('button');
+		var inputEle = document.getElementById('clientInput');
+		var res = document.getElementById('res');
+		//var chineseReg = /[\u4E00-\uFA29]|[\uE7C7-\uE7F3]/g;
+		var chineseReg = /[\u4e00-\u9fa5]/g;
+		btn.onclick = function() {
+			var inputValue = (inputEle.value.trim()).replace(chineseReg,"--");
+			if(inputValue == "" || inputValue == null ) {
+				res.innerHTML = "错误：输入不能为空";
+			}
+			else if( inputValue.length < 4 || inputValue.length >16) {
+				res.innerHTML = "错误：字符数必须为4~16位";
+			}
+			else {
+				res.innerHTML = "格式正确";
+			}
+		}
+	})();
+</script>
+</body>
+</html>
