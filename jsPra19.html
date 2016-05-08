@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IFE JavaScript Task 31</title>
+        <link rel="stylesheet"  href="css/js19.css"></link>
+    </head>
+	<body>
+	    <div class="my-center">
+	    	<div>
+		    	<ul id="peopleType">
+		    		<li>
+		    			<input type="radio" name="stuType" value="schlStu" checked>
+		    			<lable for="apply">在校生</lable>
+		    		</li>
+		    		<li>
+		    			<input type="radio" name="stuType" value="worker">
+		    			<lable for="apply">非在校生</lable>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="inSchool" class="my-padding-top">
+		    	<span><label for="city">学校</label></span>
+		    	<select id="city">
+		    		<option>请选择</option>
+		    	</select>
+		    	<select id="school" style="width: 250px;">
+		    		<option>请选择</option>
+		    	</select>
+		    </div>
+		    <div id="notSchool" class="my-padding-top" style="display: none;">
+		    	<span><label for="jobPos">就业单位</label> </span>
+				<input type="text" id="jobPos">
+		    </div>
+	    </div>
+		<script src="js/js19.js"></script>
+	</body>
+</html>

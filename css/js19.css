@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+html,body {
+	width: 100%;
+	height: 100%;
+}
+html,body,ul,li {
+	padding: 0;
+	margin:0;
+}
+ul {
+	list-style: none;
+	margin-left: 100px;
+}
+ul li {
+	display: inline-block;
+	width: 200px;
+}
+ul>li>input {
+	width: 20px;
+	height: 20px;
+	vertical-align:bottom;
+}
+ul>li>input[type="radio"] :checked+a {
+	background-color: blue;
+}
+.my-center {
+	position: absolute;
+	top:20%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	-moz-transform:translate(-50%, -50%);
+	-o-transform:translate(-50%, -50%);
+	-ms-transform:translate(-50%, -50%);
+	-webkit-transform:translate(-50%, -50%);
+}
+.my-padding-top {
+	padding-top: 32px;
+}
+.my-padding-top span {
+	display:inline-block;
+	width:100px;
+	text-align: right;
+}
+.my-padding-top select,.my-padding-top input{
+ 	width: 150px;
+ 	height:40px;
+ 	font-size: 16px;
+ }
+ .my-padding-top input {
+ 	width: 400px;
+ }
