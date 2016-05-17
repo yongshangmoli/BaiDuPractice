@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+html,body {
+	width: 100%;
+	height: 100%;
+}
+html,body,ul,li {
+	padding: 0;
+	margin:0;
+}
+.my-center {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	-moz-transform:translate(-50%, -50%);
+	-o-transform:translate(-50%, -50%);
+	-ms-transform:translate(-50%, -50%);
+	-webkit-transform:translate(-50%, -50%);
+}
+.my-text-center {
+	text-align: center;
+}
+textarea {
+	border: 1px solid #333;
+	text-align: bottom;
+	width:40%;
+	margin:2px 8px;
+}
+.right {
+	color:  #0f0;
+}
+.right-border {
+	border-color: green;
+}
+.error {
+	color: #f00;
+}
+.error-border {
+	border-color: red;
+}
+.checking {
+	color: #999;
+}
+.checking-border {
+	border-color: blue;
+}
+.style1 textarea {
+	width: 80%;
+}
+.style1 span {
+	display: block;
+}
+.tag {
+	display: inline;
+	background-color: pink;
+	padding: 8px;
+	height:70px;
+	margin-right:20px;
+	border:1px #333 solid;
+	border-radius:10px;
+}
+#box_item_show  div:hover {
+	background-color: lightblue;
+	cursor: pointer;
+}
+#box_item_show div:hover:before {
+	content: "点击删除";
+}
