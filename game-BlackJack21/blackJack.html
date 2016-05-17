@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>决胜21点</title>
+		<link rel="alternate icon" type="image/png" href="imgs/logo.png">
+		<link rel="stylesheet"  href="css/blackjack.css"><link>
+	</head>
+	<body id="body">
+		<div class="dealer describe">
+			<div class=" poker role" id="dealer">
+				庄家
+			</div>
+			<div class="gap"><span id="dealerScore" class="socre"  style="display: none;"></span></div>
+		</div>
+		<div class="poker-remain poker" id="poker" title="点击发牌">
+		</div>
+		<div class="player describe">
+			<div class="poker role" id="player">
+				玩家
+			</div>
+			<div class="gap"><span id="playerScore"  class="socre"  style="display: none;"></span></div>
+		</div>
+		<div class="choice" >
+			<ul id="choice">
+				<li><img src="imgs/start.png" title="开始游戏" /></li>
+				<li><img src="imgs/moveon.png" title="再来一张" /></li>
+				<li><img src="imgs/nomore.png" title="停止要牌" /></li>
+				<li><img src="imgs/stand.png" title="重新开始"/></li>
+			</ul>
+		</div>
+		<div class="info"  style="display: none;">
+			<h1  id="info" ></h1> 
+		</div>
+		<script src="js/poker.js"></script>
+	</body>
+</html>
