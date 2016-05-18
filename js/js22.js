@@ -81,6 +81,7 @@ Box.prototype = {
     excuteAction : function(directive) {
         switch (directive) {
             case "go":
+                this.goCheck();
                 this.move(ele.boxHeadDir);
                 break;
             case "lef":
@@ -156,7 +157,7 @@ Box.prototype = {
             default:
                 break;
         }
-        /*console.log("deg: "+ele.rotateDeg);
+       /* console.log("deg: "+ele.rotateDeg);
         console.log("dir: "+ele.direction);
         console.log("boxhead: "+ele.boxHeadDir);*/
     },
@@ -204,6 +205,24 @@ Box.prototype = {
                 break;
             case 3:
                 ele.direction = 'left';
+                break;
+            default:
+                break;
+        }
+    },
+    goCheck : function() {
+        switch (ele.direction) {
+            case "top":
+                ele.boxHeadDir = 0;
+                break;
+            case "right":
+                ele.boxHeadDir = 1;
+                break;
+            case "bottom":
+                ele.boxHeadDir = 2;
+                break;
+            case "left":
+                ele.boxHeadDir = 3;
                 break;
             default:
                 break;
