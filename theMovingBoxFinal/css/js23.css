@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+html,body {
+	width: 100%;
+	height: 100%;
+}
+html,body,td,ul,li {
+	padding: 0;
+	margin:0;
+}
+.line-ele {
+	display: inline-block;
+}
+.text-center {
+	text-align: center;
+}
+table {
+	border-collapse:collapse;
+}
+td {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+}
+tr:nth-child(2) td {
+	border-top: 1px solid #333;
+}
+tr td:nth-child(2) {
+	border-left: 1px solid #333;
+}
+tr td:last-child {
+	border-right: 1px solid #333;
+}
+tr:last-child td {
+	border-bottom: 1px solid #333;
+}
+tr:first-child td,
+tr td:first-child {
+	border:none;
+}
+input {
+	margin-left:40px;
+	width: 328px;
+}
+input,button {
+	height: 30px;
+}
+.box {
+	width: 41px;
+	height: 31px;
+	position: absolute;
+	top:245px;
+	left:245px;
+	background-color: pink;
+	transition:all 1s ease;
+	border-top:10px red solid;
+}
+.to-left {
+	margin-left:40px;
+}
+textarea {
+	width: 390px;
+	height: 300px;
+	background: #333;
+	color: #eee;
+	line-height:20px;
+	overflow-y: auto;
+}
+ul {
+	background: #333;
+	color: #eee;
+	height: 306px;
+	width:20px;
+	float:left;
+	overflow: hidden;
+}
+ul > li {
+	height: 20px;
+	list-style: none;
+}
+.wrong {
+	background: red;
+}
+.wall {
+	background-color: #ddd;
+}
