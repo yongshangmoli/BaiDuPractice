@@ -125,9 +125,9 @@ addEvent(ele.excute,'click',function(e) {
         /*console.log(ele.wallsCoordinate);
         console.log(i);*/
     }
-    else if (tagt.id === 'getway') {
+   /* else if (tagt.id === 'getway') {
         way.init();
-    }
+    }*/
 });
 
 addEvent(ele.commend,'keyup',function(e) {
