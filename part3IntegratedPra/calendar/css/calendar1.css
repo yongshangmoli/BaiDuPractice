@@ -1,0 +1,61 @@
+ @charset "UTF-8";
+ html,body,tr,td {
+ 	padding: 0;
+ 	margin: 0;
+ 	font-family: "微软雅黑";
+ 	font-size: 14px;
+ }
+.wrapper {
+	width: 220px;
+	height: 240px;
+	border: 1px #ccc solid;
+	/*margin: 200px auto;*/
+}
+.wrapper .yearAndMonth {
+	line-height: 34px;
+	height: 34px;
+	text-align: center;
+}
+.wrapper .yearAndMonth select {
+	width: 70px;
+	height: 26px;
+	padding-top: 4px;
+}
+.wrapper .day {
+	height: 210px;
+	padding: 4px 11px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wrapper tbody td:hover {
+	cursor: pointer;
+}
+.wrapper td {
+ 	height: 26px;
+ 	width: 30px;
+ 	text-align: center;
+	color: #666;
+}
+.wrapper td:first-child,
+.wrapper td:last-child {
+ 	color: #c30;
+}
+.wrapper td.not-cur-mth {
+ 	color: #ccc;
+}
+.wrapper .yearAndMonth,
+.wrapper td.active {
+	background-color: #c61b01;
+	color: #fff;
+}
+.wrapper tbody td:hover,
+.wrapper td.mark {
+	background-color: #f16f6f;
+	color: #fff;
+}
+.wrapper .default {
+	background-color: #fff;
+	color: #666;
+}

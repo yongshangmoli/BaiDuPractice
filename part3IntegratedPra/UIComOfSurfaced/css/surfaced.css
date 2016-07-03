@@ -1,0 +1,89 @@
+html,body {
+	width: 100%;
+	min-height: 100%;
+}
+html {
+	height: 100%;
+}
+html,body,h1,p{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+header,footer {
+	height: 100px;
+	background-color: #337ab7;
+	color: #ffffff;
+	line-height: 100px;
+}
+.my-surfaced-title,
+header,
+footer,
+section {
+	text-align: center;
+}
+p {
+	padding: 20px;
+}
+button {
+	padding: 18px;
+	margin-left: 20px;
+	background-color: #337ab7;
+	color: #ffffff;
+	border: 0;
+	cursor: pointer;
+	transition:all 0.2s ease-in-out;
+}
+#display:hover {
+	background-color: #63B94D;
+	-webkit-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+.my-suefaced {
+	min-width: 300px;
+	min-height: 150px;
+	background-color: #eeeeee;
+	border: 1px solid #333333;
+	z-index: 100;
+}
+.my-surfaced-title {
+	height: 30px;
+	background-color: #337ab7;
+	color: #ffffff;
+	line-height: 30px;
+}
+.my-surfaced-title span{
+	display: inline-block;
+	padding: 0 12px;
+	background-color: grey;
+	float:right;
+	font-family: Arial;
+	cursor: pointer;
+}
+/* .my-surfaced-content {
+	height: 100%;
+	
+} */
+.my-center {
+	position: fixed;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.my-cover {
+	position: absolute;
+	top:0;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+}
+
+.my-surfaced-title-drag {
+	cursor :move;
+}

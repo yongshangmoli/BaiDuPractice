@@ -1,0 +1,34 @@
+ @charset "UTF-8";
+ html,body {
+ 	height: 100%;
+ 	width: 100%;
+ 	padding: 0;
+ 	margin: 0;
+ 	font-family: "微软雅黑";
+ 	font-size: 14px;
+}
+.img-wrp {
+	margin:0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.img-wrp img{
+	width:100%;
+	height: 100%;
+	margin-bottom: 8px;
+	object-fit: cover;
+}
+.img-wrp .column {
+	padding: 8px;
+	float: left;
+}
+.img-wrp .clear-fix:after {
+	content:"";
+	display: block;
+	height: 0;
+	visibility:hidden;
+	clear:both;
+}
+.img-wrp .clear-fix {
+	*zoom:1;
+}

@@ -1,0 +1,72 @@
+html,body {
+	width: 100%;
+	min-height: 100%;
+}
+html {
+	height: 100%;
+}
+html,body,h1{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+header {
+	height: 100px;
+	background-color: #337ab7;
+	color: #ffffff;
+	line-height: 100px;
+}
+header,
+section {
+	text-align: center;
+}
+table {
+	border-collapse: collapse;
+	margin: 40px auto;
+}
+thead {
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+}
+thead td {
+	position: relative;
+}
+tr,td {
+	border: 1px #ccc solid;
+	padding: 20px 30px;
+}
+.my-triangle-wrapper {
+	display: inline-block;
+	height: 24px;
+	width: 12px;
+	position: absolute;
+	top: 12px;
+	right: 8px;
+}
+.my-triangle {
+	display: inline-block;
+	border: 6px transparent solid;
+}
+.my-triangle-top {
+	border-bottom: 8px #fff solid;
+}
+.my-triangle-btm {
+	border-top: 8px #fff solid;
+}
+.my-triangle:hover {
+	cursor: pointer;
+}
+/*
+thead td:after {
+	position: absolute;
+    left: 50%;
+    bottom: 0;
+    content: "";
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border-color: transparent transparent #ededed;
+    border-style: none solid solid;
+    border-width: 0 8px 8px;
+} */
