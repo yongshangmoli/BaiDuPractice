@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>请填写基本资料</title>
+		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
+		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- patient form-->
+		<section class="patient-body body-minheight">
+			<div class="patient-banner">
+				<div class="patient-icon"></div>
+				<h1>获得医生更准确地服务 </h1>
+				<p>您的个人信息为保密状态，仅医患双方可见</p>
+			</div>
+			<form action="" class="patient-form" method="post" accept-charset="utf-8">
+				<div class="line">
+					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
+				</div>
+				<div class="line">
+					<!-- <label><span>出生年月</span>
+						<select id="year" name="year" style="margin-left: 0.32rem;">
+						</select>
+						<select id="month" name="month">
+							<option value="1">1月</option>
+							<option value="2">2月</option>
+							<option value="3">3月</option>
+							<option value="4">4月</option>
+							<option value="5">5月</option>
+							<option value="6">6月</option>
+							<option value="7">7月</option>
+							<option value="8">8月</option>
+							<option value="9">9月</option>
+							<option value="10">10月</option>
+							<option value="11">11月</option>
+							<option value="12">12月</option>
+						</select>
+					</label> -->
+					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
+				</div>
+				<div class="line">
+					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
+				</div>
+				<div class="line">
+					<label><span>性别</span><input type="radio" name="sex" value="male" checked="true">男<input type="radio" name="sex" value="female">女</label>
+				</div>
+				<div class="line">
+					<!-- <label><span>药物过敏</span><img id="allergy"></img><input type="radio" name="allergy" value="no" checked="true">无<input type="radio" name="allergy" value="yes">有</label><br>
+					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label> -->
+					<label>
+						<span>药物过敏</span>
+						<img id="allergy"></img><input type="radio" name="allergy" value="no" checked="true">无<input type="radio" name="allergy" value="yes">有
+					</label><br>
+
+				</div>
+			</form>
+		</section>
+
+		<div class="patient-btn no-handle">
+			<a id="sbmt_info" href="#">提交</a>
+		</div>
+
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			(function() {
+				var init = {
+					curSufferer : {},
+				};
+				var check = {
+					//检查名字是否为空
+					// _nameCheck : function(text,name) {
+					// 	if(text === "" || text === null) {
+					// 		$("#"+name).prev().addClass("error");
+					// 		$("#sbmt_info").parent().addClass("no-handle");
+					// 		return false;
+					// 	}
+					// 	$("#"+name).prev().removeClass("error");
+					// 	return true;
+					// },
+					_nullCheck : function(text,name) {
+						if(text === "" || text === null) {
+							$("#"+name).prev().addClass("error");
+							$("#sbmt_info").parent().addClass("no-handle");
+							return false;
+						}
+						$("#"+name).prev().removeClass("error");
+						return true;
+					},
+					//电话号码的匹配，包括虚拟运营号码比如170等
+					_phoneCheck : function(content,name) {
+						var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
+						if(!reg.test(content)) {
+							$("#"+name).prev().addClass("error");
+							$("#sbmt_info").parent().addClass("no-handle");
+							return false;
+						}
+						$("#"+name).prev().removeClass("error");
+						return true;
+						// return util._displayInfo(reg,chkWrp,"手机号码错误");
+					},
+					//检查过敏描述为空
+					// _allergyCheck :function(allergy,name) {
+					// 	// console.log(allergy);
+					// 	if(allergy === "" || allergy === null) {
+					// 		$("#"+name).prev().addClass("error");
+					// 		$("#sbmt_info").parent().addClass("no-handle");
+					// 		return false;
+					// 	}
+					// 	$("#"+name).prev().removeClass("error");
+					// 	return true;
+					// },
+				};
+				var fn = {
+					_getInfo : function(surferer) {
+						surferer.name = $("#name").val().trim();
+						surferer.yearMth = $("#yearMth").val();
+						surferer.phone = $("#phone").val().trim();
+						surferer.sex = $("input[name='sex']:checked").val();
+						surferer.allergy = $("input[name='allergy']:checked").val();
+					},
+					_checkInfo : function(surferer) {
+						if(check._nullCheck(surferer.name,"name")) {
+							if(check._nullCheck(surferer.yearMth,"yearMth")) {
+								if(check._phoneCheck(surferer.phone,"phone")) {
+									if(surferer.allergy === "yes") {
+										surferer.allergyDetl = $("#allergy_detail").val().trim();
+										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
+											return true;
+										}
+										else {
+											return false;
+										}
+									}
+									else {
+										delete surferer.allergyDetl;
+										return true;
+									}
+								}
+							}
+						}
+						return false;
+					},
+					//看之前是否有记录患者信息
+					_cmtJudge : function(record) {
+						if(!record) {
+							window.location.href = "disease-desc.html";
+						}
+						else {
+							window.location.href = "sufferer-choose.html";
+						}
+					},
+					//检查输入正确后进行的操作
+					_checkSucs : function(record) {
+						this._cmtJudge(record);
+					},
+
+				};
+				//判断是否有错误样式
+				var isValidate = function() {
+					if($(".error").length === 0) {
+						return true;
+					}
+					return false;
+				};
+
+				$("input[name='allergy']").on("change",function() {
+					if(this.value === "yes") {
+						$("#allergy_detail").parent().show().trigger("focus");
+						fn._getInfo(init.curSufferer);
+						fn._checkInfo(init.curSufferer);
+					}
+					else {
+						$("#allergy_detail").parent().hide();
+						$("#allergy").prev().removeClass("error");
+					}
+				});
+
+				$("input[type='text']").on("blur keyup",function() {
+					fn._getInfo(init.curSufferer);
+					fn._checkInfo(init.curSufferer);
+					if(isValidate()) {
+						$("#sbmt_info").parent().removeClass("no-handle");
+					}
+				});
+				//点击提交按键的操作
+				$("#sbmt_info").parent().on("click", function() {
+					if(this.className.indexOf("no-handle") === -1) {
+						fn._checkSucs(true);
+					}
+					else {
+						alert("信息填写有误");
+					}
+				});
+			})();
+		</script>
+	</body>
+</html>
