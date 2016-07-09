@@ -107,6 +107,11 @@ a {text-decoration: none;}
 .patient-form .line input {border: none;margin-left: 0.42rem;color: #999;font-size: 0.28rem;}
 .patient-form .line input[type="text"],.patient-form .line input[type="date"] {background-color:#fff;height: 0.52rem;width: 5rem;font-size: 0.28rem;line-height: 0.52rem;}
 /*.patient-form .line select {border: none;margin-left: 0.42rem;color: #999;height: 0.52rem;width: 1.5rem;font-size: 0.28rem;}*/
+.patient-form .selected {background: url(images/round-selected.png) no-repeat;}
+.patient-form .choose {background: url(images/round-choose.png) no-repeat;}
+.patient-form .selected,.patient-form .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;}
+.patient-form ul{display: inline-block;}
+.patient-form ul > li {list-style: none;float: left;}
 .patient-btn { width: 90%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*position:absolute; bottom: 0.26rem;left: 5%;*/
@@ -191,33 +196,29 @@ a {text-decoration: none;}
 					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
 				</div>
 				<div class="line">
-					<label><span>出生年月</span>
-						<select id="year" name="year" style="margin-left: 0.32rem;">
-						</select>
-						<select id="month" name="month">
-							<option value="1">1月</option>
-							<option value="2">2月</option>
-							<option value="3">3月</option>
-							<option value="4">4月</option>
-							<option value="5">5月</option>
-							<option value="6">6月</option>
-							<option value="7">7月</option>
-							<option value="8">8月</option>
-							<option value="9">9月</option>
-							<option value="10">10月</option>
-							<option value="11">11月</option>
-							<option value="12">12月</option>
-						</select>
-					</label>
+					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
 				</div>
 				<div class="line">
 					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
 				</div>
 				<div class="line">
-					<label><span>性别</span><input type="radio" name="sex" value="male" checked="true">男<input type="radio" name="sex" value="female">女</label>
+					<label>
+						<span>性别</span>
+						<ul id="sex">
+							<li value="0"><div class="selected"></div>男</li>
+							<li value="1"><div class="choose"></div>女</li>
+						</ul>
+					</label>
+					
 				</div>
 				<div class="line">
-					<label><span>药物过敏</span><img id="allergy"></img><input type="radio" name="allergy" value="no" checked="true">无<input type="radio" name="allergy" value="yes">有</label><br>
+					<label>
+						<span>药物过敏</span>
+						<ul id="allergy">
+							<li value="0"><div class="selected"></div>无</li>
+							<li value="1"><div class="choose"></div>有</li>
+						</ul>
+					</label><br>
 					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label>
 				</div>
 			</form>
@@ -233,18 +234,9 @@ a {text-decoration: none;}
 			(function() {
 				var init = {
 					curSufferer : {},
-					_yearMthSet : function(startYear,endYear) {
-						var option = "";
-						for (var i = startYear; i <= endYear; i++) {
-							option += "<option value='"+i+"''>"+i+"年</option>";
-						}
-						$("#year").html(option);
-					},
-
 				};
 				var check = {
-					//检查名字是否为空
-					_nameCheck : function(text,name) {
+					_nullCheck : function(text,name) {
 						if(text === "" || text === null) {
 							$("#"+name).prev().addClass("error");
 							$("#sbmt_info").parent().addClass("no-handle");
@@ -263,11 +255,9 @@ a {text-decoration: none;}
 						}
 						$("#"+name).prev().removeClass("error");
 						return true;
-						// return util._displayInfo(reg,chkWrp,"手机号码错误");
 					},
 					//检查过敏描述为空
 					_allergyCheck :function(allergy,name) {
-						// console.log(allergy);
 						if(allergy === "" || allergy === null) {
 							$("#"+name).prev().addClass("error");
 							$("#sbmt_info").parent().addClass("no-handle");
@@ -280,27 +270,30 @@ a {text-decoration: none;}
 				var fn = {
 					_getInfo : function(surferer) {
 						surferer.name = $("#name").val().trim();
-						surferer.year = $("#year").val().trim();
-						surferer.month = $("#month").val().trim();
+						surferer.yearMth = $("#yearMth").val();
 						surferer.phone = $("#phone").val().trim();
-						surferer.sex = $("input[name='sex']:checked").val();
-						surferer.allergy = $("input[name='allergy']:checked").val();
+						surferer.sex = $("#sex .selected").parent().val();
+						surferer.allergy = $("#allergy .selected").parent().val();
 					},
 					_checkInfo : function(surferer) {
-						if(check._nameCheck(surferer.name,"name") && check._phoneCheck(surferer.phone,"phone")) {
-							if(surferer.allergy === "yes") {
-								surferer.allergyDetl = $("#allergy_detail").val().trim();
-								if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
-									return true;
+						if(check._nullCheck(surferer.name,"name")) {
+							if(check._nullCheck(surferer.yearMth,"yearMth")) {
+								if(check._phoneCheck(surferer.phone,"phone")) {
+									if(surferer.allergy === 1) {
+										surferer.allergyDetl = $("#allergy_detail").val().trim();
+										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
+											return true;
+										}
+										else {
+											return false;
+										}
+									}
+									else {
+										$("#sbmt_info").parent().removeClass("no-handle");
+										delete surferer.allergyDetl;
+										return true;
+									}
 								}
-								else {
-									return false;
-								}
-							}
-							else {
-								delete surferer.allergyDetl;
-								$("#sbmt_info").parent().removeClass("no-handle");
-								return true;
 							}
 						}
 						return false;
@@ -328,19 +321,25 @@ a {text-decoration: none;}
 					return false;
 				};
 
-				$("input[name='allergy']").on("change",function() {
-					if(this.value === "yes") {
-						$("#allergy_detail").parent().show().trigger("focus");
+				//性别与过敏与否的选择
+				$("#sex,#allergy").on("click","li",function() {
+					var that = $(this);
+					that.children()[0].className = "selected";
+					that.siblings().children()[0].className = "choose";
+					if(that.parent().attr("id") === "allergy") {
+						if(that.val() === 1) {
+							$("#allergy_detail").parent().show().trigger("focus");
+							fn._getInfo(init.curSufferer);
+							fn._checkInfo(init.curSufferer);
+						}
+						else {
+							$("#allergy_detail").parent().hide();
+							$("#allergy").prev().removeClass("error");
+						}
 					}
-					else {
-						$("#allergy_detail").parent().hide();
-						$("#allergy").prev().removeClass("error");
-					}
-					fn._getInfo(init.curSufferer);
-					fn._checkInfo(init.curSufferer)
 				});
 
-				$("input[type='text']").on("blur keyup",function() {
+				$("input").on("blur keyup",function() {
 					fn._getInfo(init.curSufferer);
 					fn._checkInfo(init.curSufferer);
 					if(isValidate()) {
@@ -356,7 +355,6 @@ a {text-decoration: none;}
 						alert("信息填写有误");
 					}
 				});
-				init._yearMthSet(1866,2016);
 			})();
 		</script>
 	</body>
