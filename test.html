@@ -179,202 +179,195 @@ a {text-decoration: none;}
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<!-- patient form-->
-		<section class="patient-body body-minheight">
-			<div class="patient-banner">
-				<div class="patient-icon"></div>
-				<h1>获得医生更准确地服务 </h1>
-				<p>您的个人信息为保密状态，仅医患双方可见</p>
+		<!-- banner -->
+		<section id="team_banner" class="team-banner">
+			<div class="head-icon">
+				<img src="images/team-icon.png" alt="集团图标">
 			</div>
-			<form action="" class="patient-form" method="post" accept-charset="utf-8">
-				<div class="line">
-					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
-				</div>
-				<div class="line">
-					<!-- <label><span>出生年月</span>
-						<select id="year" name="year" style="margin-left: 0.32rem;">
-						</select>
-						<select id="month" name="month">
-							<option value="1">1月</option>
-							<option value="2">2月</option>
-							<option value="3">3月</option>
-							<option value="4">4月</option>
-							<option value="5">5月</option>
-							<option value="6">6月</option>
-							<option value="7">7月</option>
-							<option value="8">8月</option>
-							<option value="9">9月</option>
-							<option value="10">10月</option>
-							<option value="11">11月</option>
-							<option value="12">12月</option>
-						</select>
-					</label> -->
-					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label><span>性别</span><input type="radio" name="sex" value="male" checked="true">男<input type="radio" name="sex" value="female">女</label>
-				</div>
-				<div class="line">
-					<!-- <label><span>药物过敏</span><img id="allergy"></img><input type="radio" name="allergy" value="no" checked="true">无<input type="radio" name="allergy" value="yes">有</label><br>
-					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label> -->
-					<label>
-						<span>药物过敏</span>
-						<img id="allergy"></img><input type="radio" name="allergy" value="no" checked="true">无<input type="radio" name="allergy" value="yes">有
-					</label><br>
-
-				</div>
-			</form>
+			<h1>乳腺肿瘤医学集团</h1>
+			<p id="intro">中山大学孙逸仙纪念医院由广东中山大学属医院林峰谢汝石第六医胃肠道肿瘤的深医院林峰、谢汝石第六医胃,中山大学孙逸仙纪念医院由广东中山大学属医院林峰谢汝石第六医胃肠道肿瘤的深医院林峰、谢汝石第六医胃肠道肿瘤的深道肿的深医院林.肠道肿瘤的深道肿的深</p>
+			<span class="angle-top angle-btm"><a id="intro_btn" href="#">展开</a></span>
 		</section>
-
-		<div class="patient-btn no-handle">
-			<a id="sbmt_info" href="#">提交</a>
-		</div>
-
+		<!-- team introduce -->
+		<section class="team-intrdc">
+			<p class="team-intrdc-left">擅长：</p>
+			<p class="team-intrdc-detl">心脑血管、神经外科、神经内科、心外科、心内 科、疝气、妇产科 .</p>
+		</section>
+		<!-- team doctors list -->
+		<section class="team-section">
+			<h3>
+				<span class="t-left"></span>
+				<span>医生</span>
+				<a href="#" id="all_doctor" class="alink"><span class="t-more">查看更多</span><span class="t-num">4</span></a>
+			</h3>
+			<ul>
+				<li class="team-clear">
+					<a href="#">
+						<div class="list-icon">
+							<img src="images/doctor-icon.png" alt="医生头像">
+						</div>
+						<div class="list-detil">
+							<h4 class="name">苏逢锡</h4>
+							<p class="title">原深圳市儿童医院副主任</p>
+							<p class="edu-bgd">儿科硕士</p>
+							<div class="tag">
+								<ul class="team-clear">
+									<li>心脑血管</li>
+									<li>神经外科</li>
+									<li>神经内科</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="team-clear">
+					<a href="#">
+						<div class="list-icon">
+							<img src="images/doctor-icon.png" alt="医生头像">
+						</div>
+						<div class="list-detil">
+							<h4 class="name">苏逢锡</h4>
+							<p class="title">原深圳市儿童医院副主任</p>
+							<p class="edu-bgd">儿科硕士</p>
+							<div class="tag">
+								<ul class="tag team-clear">
+									<li>心脑血管</li>
+									<li>神经外科</li>
+									<li>神经内科</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- team articles -->
+		<section class="team-section">
+			<h3>
+				<span class="t-left"></span>
+				<span>文字</span>
+				<a href="#" id="all_essay" class="alink"><span class="t-more">查看更多</span><span class="t-num">13</span></a>
+			</h3>
+			<ul id="essay_list">
+				<li class="team-clear">
+					<a href="#">
+						<div class="list-icon">
+							<img src="images/artcl-icon.png" alt="文章缩略图">
+						</div>
+						<div class="list-detil">
+							<h4 class="name title">博德嘉联医生集团获松禾资本...</h4>
+							<p class="artcl">5月28日在松禾资本多功能室，深圳博德 嘉联医生集团医疗有限公司（以下....</p>
+						</div>
+					</a>
+				</li>
+				<li class="team-clear">
+					<a href="#">
+						<div class="list-icon">
+							<img src="images/artcl-icon.png" alt="文章缩略图">
+						</div>
+						<div class="list-detil">
+							<h4 class="name title">博德嘉联医生集团获松禾资本...</h4>
+							<p class="artcl">5月28日在松禾资本多功能室，深圳博德 嘉联医生集团医疗有限公司（以下....</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- team partners -->
+		<section class="team-section">
+			<h3>
+				<span class="t-left"></span>
+				<span>合作机构</span>
+			</h3>
+			<div class="partner">
+				<ul class="team-clear">
+					<li>
+						<div class="hospital-icon">
+							<img src="images/hospital.png" alt="合作机构图标">
+						</div>
+						<p class="hospital">深圳罗湖区人民医院</p>
+					</li>
+					<li>
+						<div class="hospital-icon">
+							<img src="images/hospital1.png" alt="合作机构图标">
+						</div>
+						<p class="hospital">深圳罗湖区人民医院</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- team footer -->
+		<footer class="team-section">
+			<h3>
+				<span class="t-left"></span>
+				<span>联系方式</span>
+			</h3>
+			<div class="team-footer">
+				<div class="scan-code">
+					<img src="images/barc-code.png" alt="医疗团队二维码">
+				</div>
+				<p>扫码关注博德嘉联</p>
+				<div  class="adrs-phe">
+					<p>地址：广东省深圳市罗湖区田贝路23号</p>
+					<p>电话：0755-8364523</p>
+				</div>
+			</div>
+		</footer>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
-			(function() {
-				var init = {
-					curSufferer : {},
-				};
-				var check = {
-					//检查名字是否为空
-					// _nameCheck : function(text,name) {
-					// 	if(text === "" || text === null) {
-					// 		$("#"+name).prev().addClass("error");
-					// 		$("#sbmt_info").parent().addClass("no-handle");
-					// 		return false;
-					// 	}
-					// 	$("#"+name).prev().removeClass("error");
-					// 	return true;
-					// },
-					_nullCheck : function(text,name) {
-						if(text === "" || text === null) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
+			
+			var util = {
+				atr : 0,
+				banner : $("#intro"),
+				eassyList : $("#essay_list li p"),
+				titleList : $("#essay_list li h4"),
+				//文字截断
+				_truncate : function(wrapper, count) {
+					var sumry = "",all = wrapper.html();
+					if(all.length > count) {
+						sumry = all.substring(0,count)+"...";
+						wrapper.html(sumry);
+					}
+					return [all,sumry];
+				},
+				//加载完整介绍与简介的切换
+				_switchHdlr : function(wrapper,state) {
+					if(state[1]) {
+						if(this.atr === 1){
+							wrapper.html(state[1]);
+							this.atr = 0;
+						} else{
+							wrapper.html(state[0]); //测试信息simonsmchen
+							this.atr = 1;
 						}
-						$("#"+name).prev().removeClass("error");
-						return true;
-					},
-					//电话号码的匹配，包括虚拟运营号码比如170等
-					_phoneCheck : function(content,name) {
-						var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
-						if(!reg.test(content)) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
-						// return util._displayInfo(reg,chkWrp,"手机号码错误");
-					},
-					//检查过敏描述为空
-					// _allergyCheck :function(allergy,name) {
-					// 	// console.log(allergy);
-					// 	if(allergy === "" || allergy === null) {
-					// 		$("#"+name).prev().addClass("error");
-					// 		$("#sbmt_info").parent().addClass("no-handle");
-					// 		return false;
-					// 	}
-					// 	$("#"+name).prev().removeClass("error");
-					// 	return true;
-					// },
-				};
-				var fn = {
-					_getInfo : function(surferer) {
-						surferer.name = $("#name").val().trim();
-						surferer.yearMth = $("#yearMth").val();
-						surferer.phone = $("#phone").val().trim();
-						surferer.sex = $("input[name='sex']:checked").val();
-						surferer.allergy = $("input[name='allergy']:checked").val();
-					},
-					_checkInfo : function(surferer) {
-						if(check._nullCheck(surferer.name,"name")) {
-							if(check._nullCheck(surferer.yearMth,"yearMth")) {
-								if(check._phoneCheck(surferer.phone,"phone")) {
-									if(surferer.allergy === "yes") {
-										surferer.allergyDetl = $("#allergy_detail").val().trim();
-										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
-											return true;
-										}
-										else {
-											return false;
-										}
-									}
-									else {
-										delete surferer.allergyDetl;
-										return true;
-									}
-								}
-							}
-						}
-						return false;
-					},
-					//看之前是否有记录患者信息
-					_cmtJudge : function(record) {
-						if(!record) {
-							window.location.href = "disease-desc.html";
-						}
-						else {
-							window.location.href = "sufferer-choose.html";
-						}
-					},
-					//检查输入正确后进行的操作
-					_checkSucs : function(record) {
-						this._cmtJudge(record);
-					},
-
-				};
-				//判断是否有错误样式
-				var isValidate = function() {
-					if($(".error").length === 0) {
-						return true;
 					}
-					return false;
-				};
-
-				$("input[name='allergy']").on("change",function() {
-					if(this.value === "yes") {
-						$("#allergy_detail").parent().show().trigger("focus");
-						fn._getInfo(init.curSufferer);
-						fn._checkInfo(init.curSufferer);
-					}
-					else {
-						$("#allergy_detail").parent().hide();
-						$("#allergy").prev().removeClass("error");
-					}
-				});
-
-				$("input[type='text']").on("blur keyup",function() {
-					fn._getInfo(init.curSufferer);
-					fn._checkInfo(init.curSufferer);
-					if(isValidate()) {
-						$("#sbmt_info").parent().removeClass("no-handle");
-					}
-				});
-				//点击提交按键的操作
-				$("#sbmt_info").parent().on("click", function() {
-					if(this.className.indexOf("no-handle") === -1) {
-						fn._checkSucs(true);
-					}
-					else {
-						alert("信息填写有误");
-					}
-				});
-			})();
+				},
+			};
+			//banner团队介绍
+			var _bannerInfo = util._truncate(util.banner,66);
+			$("#intro_btn").on("click", function(){
+				var me = $(this), banner=$("#team_banner");
+				me.parent().toggleClass("angle-btm");
+				$("#intro").add($("#team_banner")).toggleClass("hgt-clear");
+				util._switchHdlr($("#intro"),_bannerInfo);
+			});
+			//文章列表的截断
+			util.eassyList.each(function(index,ele) {
+				util._truncate($(ele),35);
+			});
+			//文章标题的截断
+			util.titleList.each(function(index,ele) {
+				util._truncate($(ele),16);
+			});
+			//跳转到医生列表页
+			$("#all_doctor").on("click",function(e) {
+				window.location.href = "doctor-list.html";
+			});
+			//跳转到文章列表页
+			$("#all_essay").on("click",function(e) {
+				window.location.href = "essay-list.html";
+			});
 		</script>
 	</body>
 </html>
