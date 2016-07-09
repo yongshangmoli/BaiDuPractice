@@ -178,35 +178,161 @@ a {text-decoration: none;}
 		</style>
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
-	<body class="dctlist-greybg">
-		<!-- team doctors list -->
-		<section class="team-section">
-			<ul class="dctlist-whitebg">
+	<body>
+		<!-- banner -->
+		<section class="doctor-banner">
+			<img src="images/doctor-banner.jpg" alt="医生个人的照片">
+			<div class="intro">
+				<h2>苏逢锡<span class="dctlist-authen"></span></h2>
+				<p>中山大学孙逸仙纪念医院 主治医师</p>
+				<p>从医年份 ：10年</p>
+			</div>
+		</section>
+		<!-- doctor tag introduce -->
+		<section class="team-section doctor-section">
+			<div class="tag doctor-heightclr">
+				<ul class="team-clear">
+					<li>心脑血管</li>
+					<li>神经外科</li>
+					<li>神经内科</li>
+					<li>妇科</li>
+				</ul>
+			</div>
+		</section>
+		<!-- doctors ask interface-->
+		<section class="doctor-section">
+			<a id="ask_disease" href="#" class="alink-full">
+				<h3>
+					<span class="t-pic"></span>
+					<span class="title">图文咨询</span>
+					<span id="get_more" class="t-more">查看更多</span><span class="t-num">¥ 10/次</span>
+					<!-- <a href="#" style="float: right;"><span id="get_more" class="t-more">查看更多</span><span class="t-num">¥ 10/次</span></a> -->
+				</h3>
+			</a>
+		</section>
+		<!-- doctor skill -->
+		<section class="doctor-section doctor-skill">
+			<h3>
+				<span class="t-skill"></span>
+				<span class="title">擅长</span>
+			</h3>
+			<p>早、晚期乳癌诊断及手术治疗，保乳手术达国内先 进水平；乳癌化疗、内分泌治疗及肝、骨、肺转移 的合治疗。</p>
+		</section>
+		<!-- doctor detail-->
+		<section class="doctor-section doctor-detail">
+			<h3>
+				<span class="t-intro"></span>
+				<span class="title">简介</span>
+			</h3>
+			<h4>教学职称：教授</h4>
+			<h4>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：博士</h4>
+			<p><span style="color: #333;">介&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绍：</span>1982年毕业于中山大学医学院，从事 胃肠外科临床工作30余年，并主要专注于胃肠道肿 瘤的研究.</p>
+		</section>
+		<!--  doctor experience-->
+		<section class="doctor-section">
+			<h3>
+				<span class="t-career"></span>
+				<span class="title">执业点</span>
+			</h3>
+			<ul class="career">
 				<li>
-					<a href="#" class="alink-full team-clear">
-						<div class="list-icon">
-							<img src="images/artcl-icon.png" alt="文章缩略图">
-						</div>
-						<div class="list-detil">
-							<h4 class="name title">博德嘉联医生集团获松禾资本...</h4>
-							<p class="artcl">5月28日在松禾资本多功能室，深圳博德 嘉联医生集团医疗有限公司（以下....</p>
-						</div>
-					</a>
+					<p>2015.07-2016.08</p>
+					<p>广东中山医院深圳博德 / 主治医生</p>
 				</li>
 				<li>
-					<a href="#" class="alink-full team-clear">
-						<div class="list-icon">
-							<img src="images/artcl-icon.png" alt="文章缩略图">
-						</div>
-						<div class="list-detil">
-							<h4 class="name title">博德嘉联医生集团获松禾资本...</h4>
-							<p class="artcl">5月28日在松禾资本多功能室，深圳博德 嘉联医生集团医疗有限公司（以下....</p>
-						</div>
-					</a>
+					<p>2015.07-2016.08</p>
+					<p>广东中山医院深圳博德 / 主治医生</p>
+				</li>
+				<li>
+					<p>2015.07-2016.08</p>
+					<p>广东中山医院深圳博德 / 主治医生</p>
 				</li>
 			</ul>
 		</section>
+		<!-- doctor code to scan -->
+		<footer class="doctor-section">
+			<div class="footer">
+				<img src="images/barc-code.png" alt="二维码">
+				<p>扫码关注我</p>
+			</div>
+		</footer>
+		<!-- 点击咨询后的遮蔽层和弹出层 -->
+		<div id="doctor_cover" class="doctor-cover" style="display:none;"></div>
+		<section id="ask_surface" class="doctor-surface" style="display:none;">
+			<div class="surface">
+				<div class="surface-title">
+					<h1>咨询须知</h1>
+					<span class="close"><a href="#" class="aclose">关闭</a></span>
+				</div>
+				<div class="surface-ctnt">
+					<ul>
+						<li><p>儿童家庭健康服务仅提供线上咨询，当 前服务属于医生业余时间的额外服务， 会收取一定的咨询费用。</p></li>
+						<li><p>线上咨询只能提供健康相关的参考意见 不能保证您咨询疾病的好转和治愈，急 症及疑难健康问题，请及时于当地医院 就医。</p></li>
+					</ul>
+				</div>
+				<div class="surface-asr">
+					<a id="asr_ask" href="#">我同意</a>
+				</div>
+			</div>
+		</section>
+		<section id="refuse_surface" class="doctor-surface" style="display:none;">
+			<div class="surface">
+				<div class="surface-title">
+					<h1>温馨提示</h1>
+					<span class="close"><a href="#" class="aclose">关闭</a></span>
+				</div>
+				<div class="surface-ctnt">
+					<ul>
+						<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
+					</ul>
+				</div>
+				<div class="surface-asr">
+					<a id="refuse_asr" href="#">确定</a>
+				</div>
+			</div>
+		</section>
+
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
+		<script>
+			(function() {
+				var util = {
+					_cover : $("#doctor_cover"),
+					_surface : $("#ask_surface"),
+					_refuse : $("#refuse_surface"),
+				};
+				var askHandler = function(curDoctor,preDoctor) {
+					if(curDoctor === preDoctor || preDoctor === null || preDoctor === "") {//可以再次咨询其他人
+						util._surface.show();
+					}
+					else {
+						util._refuse.show();
+					}
+				};
+				//是不是第一次咨询
+				var assureHandler = function(first) {
+					if(first) {
+						window.location.href = "ill-info.html";
+					}
+					else {
+						window.location.href = "sufferer-choose.html";
+					}
+				};
+				//点击图文咨询的弹出层
+				$("#ask_disease").on("click",function() {
+					util._cover.show();
+					askHandler("Pei","Pei");
+				});
+				//点击覆盖层或关闭按钮以及目前在咨询其他医生时关闭覆盖层
+				util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
+					util._surface.hide();
+					util._refuse.hide();
+					util._cover.hide();
+				});
+				$("#asr_ask").on("click",function() {
+					assureHandler(true);
+				})
+			})();
+		</script>
 	</body>
 </html>
