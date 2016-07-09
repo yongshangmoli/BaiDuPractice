@@ -100,7 +100,7 @@ a {text-decoration: none;}
 .patient-form .selected,.patient-form .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;}
 .patient-form ul{display: inline-block;}
 .patient-form ul > li {list-style: none;float: left;}
-.patient-btn {  z-index:900;width: 90%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
+.patient-btn {  position:relative;width: 90%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*position:absolute; bottom: 0.26rem;left: 5%;*/
 /*疾病描述详情页*/
