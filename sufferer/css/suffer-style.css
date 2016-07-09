@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+html,body {font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";height: 100%;min-height: 100%;color: #333;}
+html,body,span,div,h1,h2,h3,h4,p,ul,li,a {padding: 0;margin: 0;font-weight: normal;}
+a {text-decoration: none;}
+
+/*医生团队主页*/
+.team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
+.team-clear {*zoom:1;}
+.team-banner {height: 4.01rem;height: 4.01rem;background: url(../images/team-banner.jpg) no-repeat;background-size: 100% 100%;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
+.team-banner .head-icon {height: 1.48rem;width: 1.48rem;margin: 0 auto;}
+.team-banner h1 {font-size: 0.36rem;margin: 0.3rem 0 0.2rem 0;text-align: center;}
+.team-banner p {font-size: 0.28rem;text-align: left;height: 1.1rem;overflow: hidden;}
+.team-banner a {display:block;height: 100%;width: 100%;}
+.team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;}
+.team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
+.team-banner .angle-top,.team-banner .angle-btm {display:inline-block;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin-top: 0.2rem;}
+.hgt-clear,.team-banner .hgt-clear {height: auto;}
+.team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
+.team-intrdc-left,.team-section .list-icon {float: left;}
+.team-intrdc-detl {margin-left: 1rem;}
+.team-section .alink {float: right;}
+.team-section .alink-full {display: block;height: 100%;width: 100%;}
+.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.01rem #f1f1f1 solid;font-size: 0.32rem;}
+.team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
+.team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
+.team-section .t-num {padding-right: 0.34rem;}
+.team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
+.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.01rem #dddddd solid;}
+.team-section li:last-child,.team-section .partner li {border:none;}
+.team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
+.team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
+.team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
+.team-section .list-detil .name {color:#1d75f0;padding-bottom: 0.18rem;margin-top: -0.06rem;}
+.team-section .list-detil .title {color:#333;font-size: 0.32rem;}
+.team-section .list-detil .artcl {font-size: 0.28rem;color: #666;}
+.team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
+.team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
+.team-section .tag {height: 0.66rem;overflow: hidden;}
+.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 0.04rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 0.01rem #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-section .partner li{text-align: center;width: 40%;float: left;}
+.team-footer {text-align: center;}
+.team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.18rem;}
+.team-section .team-footer .adrs-phe {color:#666;padding: 0.32rem 0 1.54rem 0}
+.team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.32rem 0;margin: 0 auto;}
+/*（有用到医生团队主页的样式），医生列表新增样式*/
+.dctlist-greybg {background-color: #f4f4f4;}
+.dctlist-whitebg {background-color: #fff;}
+.dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+/*文章列表的样式有用到上面的样式*/
+
+/*医生个人主页的样式*/
+.doctor-banner {height: 3.64rem;position: relative;}
+.doctor-section h3{font-size: 0.28rem;}
+.doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
+.doctor-banner .intro {position: absolute;bottom: 0.12rem;left: 0.32rem;font-size: 0.28rem;color: #e2e1de;}
+.doctor-banner .intro h2 {color: #fff;}
+.doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;}
+.doctor-section p {margin-left: 0.7rem;color: #666;}
+.doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
+.doctor-section li {list-style: none;margin-bottom: 0.2rem;}
+.doctor-section li p {padding: 0.04rem 0;}
+.doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
+.doctor-section .title {font-size: 0.32rem;}
+.doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
+.doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
+.doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
+.doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
+.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.4rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
+.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
+.doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
+.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}
+.doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
+.doctor-section .footer p {margin-left: 0;}
+.doctor-section .doctor-heightclr {height:auto;}
+.doctor-section .alink-full {display: block;height: 100%;width: 100%;}
+.doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
+
+/*患者咨询的提示弹出层*/
+.doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
+.doctor-surface .surface {position: fixed;top: 2.2rem;left: 6%;width: 80%;width: 80%;margin: 0 auto;background-color: #fff;padding: 0.26rem 0.3rem;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
+.doctor-surface .surface-title {text-align: center;font-size: 0.36rem;padding-bottom: 0.36rem;}
+.doctor-surface .surface-ctnt {overflow-y:auto;font-size: 0.28rem;color: #666;padding: 0.44rem 0.34rem 0;border-top:1px #e8e9e9 solid;}
+.doctor-surface .surface-asr {position:absolute;left:0;height: 1rem;width: 100%;line-height: 1rem;background-color: #307fee;text-align: center;font-size: 0.38rem;-webkit-border-bottom-left-radius: 0.1rem;-moz-border-bottom-left-radius: 0.1rem;-ms-border-bottom-left-radius: 0.1rem;-o-border-bottom-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;-webkit-border-bottom-right-radius: 0.1rem;-moz-border-bottom-right-radius: 0.1rem;-ms-border-bottom-right-radius: 0.1rem;-o-border-bottom-right-radius: 0.1rem;border-bottom-right-radius: 0.1rem;}
+.surface-title .close {float:right;position: relative;top: -0.52rem; right: 0.3rem;display:inline-block;width: 0.3rem;height: 0.3rem;background: url(../images/ask-close.png) no-repeat;background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
+.surface-ctnt li {margin-bottom: 0.4rem;}
+.surface .surface-asr a {display:inline-block;height: 100%;width: 100%;color: #fff;}
+
+/*患者咨询资料填写页（无复用样式，除header外）*/
+/*.patient-body {padding-bottom: 0.2rem;}*/
+.patient-banner {padding: 0.36rem;text-align: center;height: auto;min-height: 92%;}
+.patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.2rem;}
+.patient-banner p {font-size: 0.28rem; color: #999;}
+.patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
+.patient-form {padding: 0.3rem;font-size: 0.32rem;}
+.patient-form .line {padding: 0.27rem 0;border-bottom: 1px #f1f1f1 solid;}
+.patient-form .line span {display: inline-block;width: 1.28rem;color: #333;}
+.patient-form .line .error {color: #eb3030;}
+.patient-form .line input {border: none;margin-left: 0.42rem;color: #999;font-size: 0.28rem;}
+.patient-form .line input[type="text"],.patient-form .line input[type="date"] {height: 0.52rem;width: 5rem;font-size: 0.28rem;}
+/*.patient-form .line select {border: none;margin-left: 0.42rem;color: #999;height: 0.52rem;width: 1.5rem;font-size: 0.28rem;}*/
+.patient-btn { width: 90%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-bottom: 0.2rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
+.patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
+/*position:absolute; bottom: 0.26rem;left: 5%;*/
+/*疾病描述详情页*/
+.disease-part {padding: 0.3rem;font-size: 0.32rem;}
+.disease-gap {border-top: 0.1rem #f1f1f1 solid;position: relative;}
+.disease-part label {height: 0.3rem;}
+.disease-part span,.disease-part h3 {font-size: 0.32rem;}
+.disease-part .angle-btm {float: right;display:inline-block;background: url(../images/angle-btmgy.png) no-repeat;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin: 0.16rem 0 0 0.2rem;}
+.disease-part .disease-slt {float: right;color: #999;}
+.disease-part .detail {height: 4.1rem;width: 98%;border: none;margin-top: 0.1rem;color: #999;font-size: 0.32rem;line-height: 0.5rem;}
+.disease-part .limit {position: absolute;bottom: 0.38rem;right: 0.6rem;font-size: 0.24rem;color: #999;}
+.disease-part .img-wrapper {margin-top: 0.3rem;}
+.disease-part .img-wrapper span {display: inline-block;margin-right: 0.20rem;padding: 0.4rem;width: 0.30rem;height: 0.30rem;border: 0.01rem dashed #b8b8b8;color: #999;font-size: 0.44rem;cursor: pointer;line-height: 0.24rem;vertical-align: top;}
+.disease-part .img-wrapper a {display:inline-block;height: 1.16rem;width: 1.16rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
+.disease-part .img-wrapper .file {position:absolute;top:0;height: 100%;width: 100%;opacity: 0;}
+.disease-part .img-wrapper img {height: 100%;width: 100%;}
+.disease-part .delete {position:absolute;top:-0.1rem;right:-0.1rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.2rem;text-align: center;}
+.disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
+/*.disease-surface {position:absolute; top: 100%;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}*/
+.disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}
+.disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 0.01rem #f1f1f1 solid;}
+.disease-surface li:last-child {border: none;}
+.disease-surface .active {color: #307fee;background-color: #f4f4f4;margin: 0;padding-left: 0.34rem;}
+.disease-surface li.active::after {display:inline-block;background: url(../images/chs-conrect.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;content: "";width: 0.32rem;height: 0.26rem;margin-left: 0.4rem;position:absolute;right: 0.34rem;margin-top: 0.1rem;}
+.disease-part .error {color: #eb3030;}
+/*支付成功*/
+.pay-succs {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
+.pay-succs h1 {font-size: 0.44rem;padding: 0.16rem 0;}
+.pay-succs .icon {background: url(../images/pay-succs-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
+.pay-content {transform: translateY(-50%);top:40%;position: relative;}
+/*退款成功*/
+.money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
+
+/*病情查看详情页*/
+.ask-process {height: 0.8rem;line-height: 0.8rem;background-color: #307fee;color: #fff;font-size: 0.24rem;}
+.ask-process .icon {background: url(../images/inask-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 0.3rem;width: 0.36rem;margin: 0 auto;margin: 0.26rem 0.32rem;}
+.ask-process h3 {font-size: 0.32rem;float:left;}
+.ask-process .inline {margin-left: 0.14rem;}
+.ask-process span, .ask-process .inline {float:left;}
+.ask-detail,.sufferer-list {padding:0 0.32rem;font-size: 0.28rem;}
+.ask-detail li,.sufferer-list li {list-style: none;padding: 0.48rem 0;border-bottom:1px #e8e9e9 solid;}
+.ask-detail li:last-child {border: none;}
+.ask-detail li p {display: inline-block;vertical-align: top;}
+.ask-detail li p:first-child {width: 1.2rem;color: #999;}
+.ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;}
+.ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
+.ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
+
+/*第二次及以上咨询时患者选择*/
+.sufferer-list li {font-size: 0.32rem;}
+.sufferer-list img {width: 100%;height: 100%;}
+.sufferer-list div {display: inline-block;vertical-align: middle;}
+.sufferer-list .girl {background: url(../images/girl-icon.png) no-repeat;}
+.sufferer-list .boy {background: url(../images/boy-icon.png) no-repeat;}
+.sufferer-list .girl,.sufferer-list .boy,.sufferer-list .add {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-left: 0.4rem;}
+.sufferer-list .selected {background: url(../images/round-selected.png) no-repeat;}
+.sufferer-list .choose {background: url(../images/round-choose.png) no-repeat;}
+.sufferer-list .selected,.sufferer-list .choose {vertical-align: middle;margin-left: 3.84rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;    display: inline-block}
+.sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.14rem;text-align: center;}
+.sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
+.sufferer-list .add {display:inline-block;vertical-align: middle;background: url(../images/add-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-right: 0.2rem;}
+.no-handle {background-color: #999;}
+
+.check-error {color: red;}
+.body-minheight {height: auto;min-height: 92%;}
+.appear-position {position:absolute;display: block;bottom: -50%;}
+.appear-hide {display: none;}
