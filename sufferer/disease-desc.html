@@ -82,19 +82,20 @@
 					util.diseaseKind = this.value;
 				});
 				util._cover.on("click",function() {
-					util._disease.animate({bottom:-util.diseaseHeight},500); 
+					util._disease.animate({bottom:-util.diseaseHeight},300); 
 					setTimeout(function() {
 						util._disease.addClass("appear-hide");
 						util._cover.hide();
-					},500);
+					},300);
 				});
 				$("#pay_ask").on("click", function() {
 					var describe = util._diseaseDesc.val().trim();
 					var _checkSucs = function() {
 						util.diseaseDesc = describe;
+						console.log(11);
 						window.location.href = "pay-succs.html";
 					};
-
+					console.log(this.parentNode.className);
 					if(this.parentNode.className === "patient-btn") {
 						_checkSucs();
 					}
