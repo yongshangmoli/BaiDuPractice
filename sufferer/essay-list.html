@@ -38,5 +38,23 @@
 		</section>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
+		<script>
+			var _truncate = function(wrapper, count) {
+				var sumry = "",all = wrapper.html();
+				if(all.length > count) {
+					sumry = all.substring(0,count)+"...";
+					wrapper.html(sumry);
+				}
+				return [all,sumry];
+			};
+			//文章列表的截断
+			$("#essay_list li p").each(function(index,ele) {
+				_truncate($(ele),35);
+			});
+			//文章标题的截断
+			$("#essay_list li h4").each(function(index,ele) {
+				_truncate($(ele),16);
+			});
+		</script>
 	</body>
 </html>
