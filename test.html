@@ -1,361 +1,407 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<meta name="format-detection" content="telephone=no">
-		<title>请填写基本资料</title>
-		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
-		<style>
-		  @CHARSET "UTF-8";
-html,body {font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";height: 100%;min-height: 100%;color: #333;}
-html,body,span,div,h1,h2,h3,h4,p,ul,li,a {padding: 0;margin: 0;font-weight: normal;}
-a {text-decoration: none;}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>家庭医生</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="./css/common.css">
+        <link type="text/css" rel="stylesheet" href="./css/pay.css">
+        <link type="text/css" rel="stylesheet" href="./css/pay2.css">
+        <script src="./js/common.js"></script>
+        <script type="text/javascript" >
+            //if(typeof(pgvMain) == 'function') pgvMain({ repeatApplay: "true",virtualDomain:"tdf.qq.com"});
+            !function(){
+                function setRem(){
+                    var zoom = document.documentElement.clientWidth / 640;
+                    if(zoom > 1) zoom = 1;
+                    document.documentElement.style.fontSize = 100 * zoom + 'px';
+                }
+                window.onresize = setRem;
+                setRem();
+            }();
+            
+            setTimeout(showLoading);
 
-/*医生团队主页*/
-.team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
-.team-clear {*zoom:1;}
-.team-banner {height: 4.01rem;height: 4.01rem;background: url(../images/team-banner.jpg) no-repeat;background-size: 100% 100%;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
-.team-banner .head-icon {height: 1.48rem;width: 1.48rem;margin: 0 auto;}
-.team-banner h1 {font-size: 0.36rem;margin: 0.3rem 0 0.2rem 0;text-align: center;}
-.team-banner p {font-size: 0.28rem;text-align: left;height: 1.1rem;overflow: hidden;}
-.team-banner a {display:block;height: 100%;width: 100%;}
-.team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;}
-.team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
-.team-banner .angle-top,.team-banner .angle-btm {display:inline-block;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin-top: 0.2rem;}
-.hgt-clear,.team-banner .hgt-clear {height: auto;}
-.team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
-.team-intrdc-left,.team-section .list-icon {float: left;}
-.team-intrdc-detl {margin-left: 1rem;}
-.team-section .alink {float: right;}
-.team-section .alink-full {display: block;height: 100%;width: 100%;}
-.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f1f1f1 solid;font-size: 0.32rem;}
-.team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
-.team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
-.team-section .t-num {padding-right: 0.34rem;}
-.team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
-.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.03rem #dddddd solid;}
-.team-section li:last-child,.team-section .partner li {border:none;}
-.team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
-.team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
-.team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
-.team-section .list-detil .name {color:#1d75f0;padding-bottom: 0.18rem;margin-top: -0.06rem;}
-.team-section .list-detil .title {color:#333;font-size: 0.32rem;}
-.team-section .list-detil .artcl {font-size: 0.28rem;color: #666;}
-.team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
-.team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
-.team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 0.03rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 0.04rem #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
-.team-section .partner li{text-align: center;width: 40%;float: left;}
-.team-footer {text-align: center;}
-.team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.18rem;}
-.team-section .team-footer .adrs-phe {color:#666;padding: 0.32rem 0 1.54rem 0}
-.team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.32rem 0;margin: 0 auto;}
-/*（有用到医生团队主页的样式），医生列表新增样式*/
-.dctlist-greybg {background-color: #f4f4f4;}
-.dctlist-whitebg {background-color: #fff;}
-.dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
-/*文章列表的样式有用到上面的样式*/
-
-/*医生个人主页的样式*/
-.doctor-banner {height: 3.64rem;position: relative;}
-.doctor-section h3{font-size: 0.28rem;}
-.doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
-.doctor-banner .intro {position: absolute;bottom: 0.12rem;left: 0.32rem;font-size: 0.28rem;color: #e2e1de;}
-.doctor-banner .intro h2 {color: #fff;}
-.doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;}
-.doctor-section p {margin-left: 0.7rem;color: #666;}
-.doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
-.doctor-section li {list-style: none;margin-bottom: 0.2rem;}
-.doctor-section li p {padding: 0.04rem 0;}
-.doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
-.doctor-section .title {font-size: 0.32rem;}
-.doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
-.doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
-.doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
-.doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
-.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.4rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
-.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
-.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}
-.doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
-.doctor-section .footer p {margin-left: 0;}
-.doctor-section .doctor-heightclr {height:auto;}
-.doctor-section .alink-full {display: block;height: 100%;width: 100%;}
-.doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
-
-/*患者咨询的提示弹出层*/
-.doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.doctor-surface .surface {position: fixed;top: 2.2rem;left: 6%;width: 80%;width: 80%;margin: 0 auto;background-color: #fff;padding: 0.26rem 0.3rem;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
-.doctor-surface .surface-title {text-align: center;font-size: 0.36rem;padding-bottom: 0.36rem;}
-.doctor-surface .surface-ctnt {overflow-y:auto;font-size: 0.28rem;color: #666;padding: 0.44rem 0.34rem 0;border-top:1px #e8e9e9 solid;}
-.doctor-surface .surface-asr {position:absolute;left:0;height: 1rem;width: 100%;line-height: 1rem;background-color: #307fee;text-align: center;font-size: 0.38rem;-webkit-border-bottom-left-radius: 0.1rem;-moz-border-bottom-left-radius: 0.1rem;-ms-border-bottom-left-radius: 0.1rem;-o-border-bottom-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;-webkit-border-bottom-right-radius: 0.1rem;-moz-border-bottom-right-radius: 0.1rem;-ms-border-bottom-right-radius: 0.1rem;-o-border-bottom-right-radius: 0.1rem;border-bottom-right-radius: 0.1rem;}
-.surface-title .close {float:right;position: relative;top: -0.52rem; right: 0.3rem;display:inline-block;width: 0.3rem;height: 0.3rem;background: url(../images/ask-close.png) no-repeat;background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.surface-ctnt li {margin-bottom: 0.4rem;}
-.surface .surface-asr a {display:inline-block;height: 100%;width: 100%;color: #fff;}
-
-/*患者咨询资料填写页（无复用样式，除header外）*/
-/*.patient-body {padding-bottom: 0.2rem;}*/
-.patient-banner {padding: 0.36rem;text-align: center;height: auto;min-height: 92%;}
-.patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.2rem;}
-.patient-banner p {font-size: 0.28rem; color: #999;}
-.patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
-.patient-form {padding: 0.3rem 0.3rem 2rem;font-size: 0.32rem;}
-.patient-form .line {padding: 0.27rem 0;border-bottom: 1px #f1f1f1 solid;}
-.patient-form .line span {display: inline-block;min-width: 1.32rem;width:auto;color: #333;height: 0.56rem;line-height:0.56rem;}
-.patient-form .line .error {color: #eb3030;}
-.patient-form .line input {border: none;margin-left: 0.42rem;color: #999;font-size: 0.28rem;}
-.patient-form .line input[type="text"],.patient-form .line input[type="date"] {background-color:#fff;height: 0.52rem;width: 5rem;font-size: 0.28rem;line-height: 0.52rem;}
-/*.patient-form .line select {border: none;margin-left: 0.42rem;color: #999;height: 0.52rem;width: 1.5rem;font-size: 0.28rem;}*/
-.patient-form .selected {background: url(images/round-selected.png) no-repeat;}
-.patient-form .choose {background: url(images/round-choose.png) no-repeat;}
-.patient-form .selected,.patient-form .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;}
-.patient-form ul{display: inline-block;}
-.patient-form ul > li {list-style: none;float: left;}
-.patient-btn { width: 90%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
-.patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
-/*position:absolute; bottom: 0.26rem;left: 5%;*/
-/*疾病描述详情页*/
-.disease-part {padding: 0.3rem;font-size: 0.32rem;}
-.disease-gap {border-top: 0.1rem #f1f1f1 solid;position: relative;}
-.disease-part label {height: 0.3rem;}
-.disease-part span,.disease-part h3 {font-size: 0.32rem;}
-.disease-part .angle-btm {float: right;display:inline-block;background: url(../images/angle-btmgy.png) no-repeat;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin: 0.16rem 0 0 0.2rem;}
-.disease-part .disease-slt {float: right;color: #999;}
-.disease-part .detail {height: 4.1rem;width: 98%;border: none;margin-top: 0.1rem;color: #999;font-size: 0.32rem;line-height: 0.5rem;}
-.disease-part .limit {position: absolute;bottom: 0.38rem;right: 0.6rem;font-size: 0.24rem;color: #999;}
-.disease-part .img-wrapper {margin-top: 0.3rem;}
-.disease-part .img-wrapper span {display: inline-block;margin-right: 0.20rem;padding: 0.4rem;width: 0.30rem;height: 0.30rem;border: 0.03rem dashed #b8b8b8;color: #999;font-size: 0.44rem;cursor: pointer;line-height: 0.24rem;vertical-align: top;}
-.disease-part .img-wrapper a {display:inline-block;height: 1.16rem;width: 1.16rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
-.disease-part .img-wrapper .file {position:absolute;top:0;height: 100%;width: 100%;opacity: 0;}
-.disease-part .img-wrapper img {height: 100%;width: 100%;}
-.disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}
-.disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
-/*.disease-surface {position:absolute; top: 100%;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}*/
-.disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}
-.disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 0.03rem #f1f1f1 solid;}
-.disease-surface li:last-child {border: none;}
-.disease-surface .active {color: #307fee;background-color: #f4f4f4;margin: 0;padding-left: 0.34rem;}
-.disease-surface li.active::after {display:inline-block;background: url(../images/chs-conrect.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;content: "";width: 0.32rem;height: 0.26rem;margin-left: 0.4rem;position:absolute;right: 0.34rem;margin-top: 0.1rem;}
-.disease-part .error {color: #eb3030;}
-/*支付成功*/
-.pay-succs {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
-.pay-succs h1 {font-size: 0.44rem;padding: 0.16rem 0;}
-.pay-succs .icon {background: url(../images/pay-succs-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
-.pay-content {transform: translateY(-50%);top:40%;position: relative;padding-bottom:2rem;}
-/*退款成功*/
-.money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
-
-/*病情查看详情页*/
-.ask-process {height: 0.8rem;line-height: 0.8rem;background-color: #307fee;color: #fff;font-size: 0.24rem;}
-.ask-process .icon {background: url(../images/inask-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 0.3rem;width: 0.36rem;margin: 0 auto;margin: 0.26rem 0.32rem;}
-.ask-process h3 {font-size: 0.32rem;float:left;}
-.ask-process .inline {margin-left: 0.14rem;}
-.ask-process span, .ask-process .inline {float:left;}
-.ask-detail,.sufferer-list {padding:0 0.32rem;font-size: 0.28rem;}
-.ask-detail li,.sufferer-list li {list-style: none;padding: 0.48rem 0;border-bottom:1px #e8e9e9 solid;}
-.ask-detail li:last-child {border: none;}
-.ask-detail li p {display: inline-block;vertical-align: top;}
-.ask-detail li p:first-child {width: 1.2rem;color: #999;}
-.ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;}
-.ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
-.ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
-
-/*第二次及以上咨询时患者选择*/
-.sufferer-list li {font-size: 0.32rem;}
-.sufferer-list img {width: 100%;height: 100%;}
-.sufferer-list div {display: inline-block;vertical-align: middle;}
-.sufferer-list .girl {background: url(../images/girl-icon.png) no-repeat;}
-.sufferer-list .boy {background: url(../images/boy-icon.png) no-repeat;}
-.sufferer-list .girl,.sufferer-list .boy,.sufferer-list .add {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-left: 0.4rem;}
-.sufferer-list .selected {background: url(../images/round-selected.png) no-repeat;}
-.sufferer-list .choose {background: url(../images/round-choose.png) no-repeat;}
-.sufferer-list .selected,.sufferer-list .choose {vertical-align: middle;margin-left: 3.84rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;    display: inline-block}
-.sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.14rem;text-align: center;padding-bottom:2rem;}
-.sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
-.sufferer-list .add {display:inline-block;background: url(../images/add-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-right: 0.2rem;}
-.no-handle {background-color: #999;}
-
-.check-error {color: red;}
-.body-minheight {height: auto;min-height: 100%;}
-.appear-position {position:absolute;display: block;bottom: -50%;}
-.appear-hide {display: none;}
-		</style>
-		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<!-- patient form-->
-		<section class="patient-body body-minheight">
-			<div class="patient-banner">
-				<div class="patient-icon"></div>
-				<h1>获得医生更准确地服务 </h1>
-				<p>您的个人信息为保密状态，仅医患双方可见</p>
-			</div>
-			<form action="" class="patient-form" method="post" accept-charset="utf-8">
-				<div class="line">
-					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
-				</div>
-				<div class="line">
-					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label>
-						<span>性别</span>
-						<ul id="sex">
-							<li value="0"><div class="selected"></div>男</li>
-							<li value="1"><div class="choose"></div>女</li>
-						</ul>
-					</label>
-					
-				</div>
-				<div class="line">
-					<label>
-						<span>药物过敏</span>
-						<ul id="allergy">
-							<li value="0"><div class="selected"></div>无</li>
-							<li value="1"><div class="choose"></div>有</li>
-						</ul>
-					</label><br>
-					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label>
-				</div>
-			</form>
-		</section>
-
-		<div class="patient-btn no-handle">
-			<a id="sbmt_info" href="#">提交</a>
-		</div>
-
-		<script src="js/zepto.js"></script>
-		<script src="js/common.js"></script>
-		<script>
-			(function() {
-				var init = {
-					curSufferer : {},
-				};
-				var check = {
-					_nullCheck : function(text,name) {
-						if(text === "" || text === null) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
-					},
-					//电话号码的匹配，包括虚拟运营号码比如170等
-					_phoneCheck : function(content,name) {
-						var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
-						if(!reg.test(content)) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
-					},
-					//检查过敏描述为空
-					_allergyCheck :function(allergy,name) {
-						if(allergy === "" || allergy === null) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
-					},
-				};
-				var fn = {
-					_getInfo : function(surferer) {
-						surferer.name = $("#name").val().trim();
-						surferer.yearMth = $("#yearMth").val();
-						surferer.phone = $("#phone").val().trim();
-						surferer.sex = $("#sex .selected").parent().val();
-						surferer.allergy = $("#allergy .selected").parent().val();
-					},
-					_checkInfo : function(surferer) {
-						if(check._nullCheck(surferer.name,"name")) {
-							if(check._nullCheck(surferer.yearMth,"yearMth")) {
-								if(check._phoneCheck(surferer.phone,"phone")) {
-									if(surferer.allergy === 1) {
-										surferer.allergyDetl = $("#allergy_detail").val().trim();
-										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
-											return true;
-										}
-										else {
-											return false;
-										}
-									}
-									else {
-										$("#sbmt_info").parent().removeClass("no-handle");
-										delete surferer.allergyDetl;
-										return true;
-									}
-								}
-							}
-						}
-						return false;
-					},
-					//看之前是否有记录患者信息
-					_cmtJudge : function(record) {
-						if(!record) {
-							window.location.href = "disease-desc.html";
-						}
-						else {
-							window.location.href = "sufferer-choose.html";
-						}
-					},
-					//检查输入正确后进行的操作
-					_checkSucs : function(record) {
-						this._cmtJudge(record);
-					},
-
-				};
-				//判断是否有错误样式
-				var isValidate = function() {
-					if($(".error").length === 0) {
-						return true;
-					}
-					return false;
-				};
-
-				//性别与过敏与否的选择
-				$("#sex,#allergy").on("click","li",function() {
-					var that = $(this);
-					that.children()[0].className = "selected";
-					that.siblings().children()[0].className = "choose";
-					if(that.parent().attr("id") === "allergy") {
-						if(that.val() === 1) {
-							$("#allergy_detail").parent().show().trigger("focus");
-							fn._getInfo(init.curSufferer);
-							fn._checkInfo(init.curSufferer);
-						}
-						else {
-							$("#allergy_detail").parent().hide();
-							$("#allergy").prev().removeClass("error");
-						}
-					}
-				});
-
-				$("input").on("blur keyup",function() {
-					fn._getInfo(init.curSufferer);
-					fn._checkInfo(init.curSufferer);
-					if(isValidate()) {
-						$("#sbmt_info").parent().removeClass("no-handle");
-					}
-				});
-				//点击提交按键的操作
-				$("#sbmt_info").parent().on("click", function() {
-					if(this.className.indexOf("no-handle") === -1) {
-						fn._checkSucs(true);
-					}
-					else {
-						alert("信息填写有误");
-					}
-				});
-			})();
-		</script>
-	</body>
+            //Added by chadwang 2016/05/12
+            function getConfig(){
+                var gconfig = gconfig || {
+                    "authoriz": false,
+                    "create_order_uri": ""
+                };
+                var basepath = "/";
+                var k = getCookie('k');
+                ajax({
+                    url:basepath + "asapi/app/TencarePay/config?k="+k,
+                    success:function(ret){
+                        if(ret.code == 0) gconfig = ret.data;
+                        // 未授权
+                        if (gconfig.authoriz == false) {
+                            window.location.href = basepath + "asapi/app/tencare/pay/" + '?k=' + k;
+                            return;
+                        }
+                        if(gconfig.is_paid) {
+                            window.location.href = 'pay_privileges.html';
+                            return;
+                        }
+                        window.gconfig = gconfig;
+                        hideLoading();
+                    }
+                });
+            }
+            getConfig();
+        </script>
+    </head>
+    <body>
+        <div class="page">
+            <article class="wrap">
+                <div class="head bor_bottom_1px">
+                    <figure class="head_img"><img src="images/p2_icon.jpg" /></figure>
+                    <div><p class="absCenter">购买前，请填写孩子的基本信息，有助医生作出判断</p></div>
+                </div>
+                <section class="patient_profile">
+                    <p>基本资料</p>
+                    <ul id="form" class="profile_detail">
+                        <li class="bor_bottom_1px"><label>孩子姓名</label><p><input data-filed="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
+                        <li class="bor_bottom_1px"><label>出生年月</label>
+                            <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+                            <p><input id="bd_date" data-filed="birthdate" type="date"/></p></li>
+                        <li class="bor_bottom_1px"><label>手　　机</label><p><input data-filed="phone" type="tel" placeholder="手机号用于接收医生回答提醒" /></p></li>
+                        <li class="profile_sex bor_bottom_1px">
+                            <label>性　　别</label>
+                            <p id="sexBtns">
+                                <input type="radio" name="sex" value="1" id="male" />
+                                <label for="male"><span>男</span></label>
+                                <input type="radio" name="sex" value="0" id="female" />
+                                <label for="female"><span>女</span></label>
+                                <input id="sex" type="hidden" data-filed="sex" />
+                            </p>
+                        </li>
+                        <li class="profile_allergy bor_bottom_1px">
+                            <label>药物过敏</label>
+                            <p id="allergyBtns">
+                                <input type="radio" name="allergy" value="1" id="yes" />
+                                <label for="yes">有</label>
+                                <input type="radio" name="allergy" value="0" id="no" />
+                                <label for="no">无</label>
+                                <input id="allergy" type="hidden" data-filed="allergy" />
+                            </p>
+                        </li>
+                        <li class="bor_bottom_1px">
+                            <label></label>
+                            <p><input id="allergy_name" class="unactive" type="text" data-filed="allergy_name" placeholder="请输入小孩的过敏药物名称"></p>
+                        </li>
+                    </ul>
+                </section>
+                <p class="sub_tip">您的个人信息为保密状态，仅医患双方可见</p>
+                <p id="sp" class="p_selected"></p>
+                <p id="submit" class="fixedBtn"><span>开通服务</span></p>
+            </article>
+        </div>
+    </body>
 </html>
+<script id="pay_tpl" type="tpl-javascript">
+    <div class="mask"></div>
+    <dic class="container">
+        <span id="closeBtn" class="closeBtn"></span>
+        <p class="title">微信扫码支付</p>
+        <figure>
+            <img src="<%=data.src%>" />
+        </figure>
+        <p class="tip">长按图片，点击[识别图中二维码]付款</p>
+    </div>
+</script>
+<script>
+    var sp = G('sp');
+    function init(){
+        var buy_type = getCookie('buy_type') || '1个月';
+        var buy_money = getCookie('buy_money') || '160';
+        if(buy_type && buy_money){
+            sp.innerHTML = ["您已选择<span>&nbsp;",parseInt(buy_type),"&nbsp;</span>个月<span>&nbsp;￥&nbsp;",buy_money,"</span>&nbsp;的家庭服务"].join('');
+            G('submit').querySelector('span').innerText = '立即支付'+buy_money+'元';
+        }
+        if(window.localStorage && window.localStorage['user_info']){
+            var data = JSON.parse(window.localStorage['user_info']);
+            var inputs = document.querySelectorAll('input[data-filed]');
+            for(var i=0,l=inputs.length;i<l;i++){
+                var item = inputs[i];
+                var filed = item.getAttribute('data-filed');
+                if(data[filed]!==undefined && data[filed]!==''){
+                    if(filed==='sex'){
+                        var raEl = G('sexBtns').querySelector('input[value="'+data[filed]+'"]');
+                        raEl.setAttribute('checked','checked');
+                    }
+                    if(filed==='allergy'){
+                        var raxEl = G('allergyBtns').querySelector('input[value="'+data[filed]+'"]');
+                        raxEl.setAttribute('checked','checked');                       
+                    }
+                    if(filed==='allergy_name'){
+                        if(data.allergy==1){
+                            G('allergy_name').className = '';
+                        }
+                    }
+                    item.value = data[filed];
+                    if(filed==='phone') G('bd_placeholder').style.display='none';
+                }
+            }
+        }
+    }
+    init();
+
+    // Added by chadwang 2016/05/12 
+    var trade_no = '';
+    var pay_flag = true;   
+    var pay_config = pay_config || {
+        "appId": "",
+        "timeStamp": "",
+        "nonceStr": "",
+        "package": "",
+        "signType": "",
+        "paySign": ""
+    },
+    pay_callback = function(res){
+        if(res.err_msg == "get_brand_wcpay_request:ok" ) success(res);
+        else { pay_flag = true; alert("支付失败"); }
+    },
+    onBridgeReady = function(){
+        WeixinJSBridge.invoke('getBrandWCPayRequest', pay_config, pay_callback);
+    }
+    updateQueryStringParameter =  function (uri, key, value) {
+        var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return uri.replace(re, '$1' + key + "=" + value + '$2');
+        } else {
+            return uri + separator + key + "=" + value;
+        }
+    },
+    pay = function(mdata,successCallback,errorCallback){
+        if(!window.gconfig) return;
+        var k = getCookie('k');
+        ajax({
+            url: updateQueryStringParameter(gconfig.createOrderUri, "k", k)+'&otype=qrcode',
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: mdata,   // 这里需要带上产品信息,测试代码不需要
+            success: successCallback,
+            error: errorCallback
+        });
+    },
+    success = function (ret){
+        if(window.localStorage){
+            localStorage.user_info = JSON.stringify(getData());
+        }
+        window.location.href="pay_tips.html";     
+    },
+    error = function (){
+        alert('信息保存失败！');
+    }
+
+    var checkObj={
+        name:{
+            reg:/^.{1,10}$/,
+            emptyMsg:'请输入姓名',
+            errorMsg:'姓名格式不正确'
+        },
+        birthdate:{
+            emptyMsg:'未选择出生年月日'
+        },
+        phone:{
+            reg:/^1[0-9]{10}$/,
+            emptyMsg:'请输入接收医生的回复电话',
+            errorMsg:'请输入正确的电话号码'
+        },
+        sex:{
+            emptyMsg:'请选择性别',
+        },
+        allergy:{
+            emptyMsg:'请选择是否药物过敏',
+        },
+        allergy_name:{
+            emptyMsg:'请输入小孩的过敏药物名称',
+        }
+    }
+    var submitBtn = G('submit'),
+        sexBtns = G('sexBtns'),
+        allergyBtns = G('allergyBtns');
+        form = G('form');
+
+    //表单验证
+    function check(noTip){
+        var inputs = document.querySelectorAll('input[data-filed]');
+        for(var i=0,l=inputs.length;i<l;i++){
+            var item = inputs[i];
+            var filed = item.getAttribute('data-filed');
+            var checkInfo = checkObj[filed];
+            var value = item.value.trim();
+            if(filed==='allergy_name'){
+                if(G('allergy').value==='0') continue;
+            }
+            if(value===''){
+                if(!noTip) alert(checkInfo.emptyMsg);
+                return false;
+            }
+            if(!checkInfo.reg) continue;
+            if(!checkInfo.reg.test(value)){
+                if(!noTip) alert(checkInfo.errorMsg);
+                return false;
+            }
+        }
+        return true;
+    }
+    function getData(){
+        var obj = {};
+        var inputs = document.querySelectorAll('input[data-filed]');
+        for(var i=0,l=inputs.length;i<l;i++){
+            var item = inputs[i];
+            var filed = item.getAttribute('data-filed');
+            obj[filed] = item.value;
+        }
+        return obj;
+    }
+    function submitFun(){
+        if(!check()) return;
+        var data = getData();
+        if(!pay_flag) return;
+        pay_flag = false;
+        showLoading();
+        pay(data,function(ret){
+            // 创建订单成功
+            if(ret.code == 0 ) {
+                // 设置支付配置
+                //pay_config = ret.data;
+                //pay_config.timeStamp = ret.data.timeStamp.toString();
+                // 拉起支付
+                //onBridgeReady();
+                showPayDialog({src:ret.data.url});
+                trade_no = ret.data.tradeNo;
+                pay_flag = true;
+            } else if(ret.code == 255){
+                window.location.href = "full.html?phone="+data.phone;
+                return;
+            } else if(ret.code == 302){
+                alert('页面授权过期，请重新刷新再支付！');
+            } else {
+                alert(ret.msg);
+                pay_flag = true;
+            }
+            hideLoading();
+        },function(msg){
+            pay_flag = true;
+            hideLoading();
+            alert('创建订单失败！');
+        });
+    }
+    submitBtn.addEventListener('touchend',submitFun);
+    sexBtns.addEventListener('change',function(){
+        G('sex').value = this.querySelector('input:checked').value;
+        checkSubmit();
+    });
+    allergyBtns.addEventListener('change',function(){
+        var value = this.querySelector('input:checked').value;
+        G('allergy').value = value;
+        G('allergy_name').className = value === '0' && 'unactive' || '';
+        checkSubmit();
+    });
+    //如果输入正确，跳转按钮变可点击
+    form.addEventListener('input',checkSubmit);
+    function checkSubmit(){
+        submitBtn.className= check(true) ? 'fixedBtn active' : 'fixedBtn';
+    }
+    function addInputsBlur(){
+        var inputs = document.querySelectorAll('input[data-filed]');
+        form.addEventListener('',function(e){
+            var target = e.target;
+            if(target.tagName.toLowerCase()!=='input') return;
+            var index = indexOf(target,inputs);
+            if(index<inputs.length-1){
+                inputs[index+1].focus();
+            }
+        });        
+    }
+    //addInputsBlur();
+    function indexOf(item,array){
+        for(var i=0,l=array.length;i<l;i++){
+            if(item===array[i]) return i;
+        }
+        return -1;
+    }
+    var bd_date = G('bd_date'),
+        bd_placeholder = G('bd_placeholder');
+
+    bd_placeholder.addEventListener('touchstart',function(){
+        bd_date.focus();
+    });
+
+    bd_date.addEventListener('focus',ck_bd_placeholder);
+    bd_date.addEventListener('blur',ck_bd_placeholder);
+    bd_date.addEventListener('change',ck_bd_placeholder);
+    
+    function ck_bd_placeholder(){
+        bd_placeholder.style.display= bd_date.value ? 'none' : 'block'; 
+    }
+
+    function showPayDialog(data){
+        var pay_tpl = G('pay_tpl');
+        var pay_tpl_fun = template(pay_tpl.innerText);        
+        var container = G('pay_container');
+        if(container) {
+            container.className = 'pay_container active';
+            setTimeout(function(){
+                container.querySelector('.container').className = 'container active';
+            });
+            return;
+        }
+        var el = document.createElement('div');
+        el.className = 'pay_container active';
+        el.id = 'pay_container';
+        el.innerHTML = pay_tpl_fun(data);
+        document.body.appendChild(el);
+        setTimeout(function(){
+            el.querySelector('.container').className = 'container active';    
+        });
+        G('closeBtn').addEventListener('touchend',function(){
+            hidePayDialog(function(ret){
+                hideLoading();
+                if(ret.code==0){
+                    if(ret.data.paid==true) success();
+                    else {
+                        alert('支付失败');
+                    }
+                }
+            },function(ert){
+                hideLoading();
+                alert('支付失败');
+            });
+        });       
+    }
+
+    function hidePayDialog(successCallback,errorCallback){
+        var container = G('pay_container');
+        if(container){
+            container.querySelector('.container').className = 'container';
+            setTimeout(function(){
+                container.className = 'pay_container';
+            },500);
+            setTimeout(function(){
+                showLoading();
+                queryPayStatus(successCallback,errorCallback);
+            },1000);
+        }
+    }
+
+    function queryPayStatus(successCallback,errorCallback){
+        if(!trade_no){
+            alert('支付失败');
+            return;
+        }
+        ajax({
+            url:updateQueryStringParameter(gconfig.getTradeNoStatusUri,'trade_no',trade_no),
+            data:{},
+            success:successCallback,
+            error:errorCallback
+        });
+    }
+</script>
