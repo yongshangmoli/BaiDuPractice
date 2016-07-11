@@ -17,6 +17,15 @@
 			.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}
 			.patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
 			::-webkit-date-edit-fields-wrapper { background-color: transparent; }
+			/*.patient-detail .sex p input:checked+label{background-color: #e8f1fd;color: #1d75f0;}*/
+			.patient-detail .sex input,.patient-detail #sexAllergy input {display: none;}
+			.patient-detail #sexBtns label,.patient-detail #sexAllergy label {position: relative;display: inline-block;text-align: center;width: 1.46rem;height: 0.6rem;margin:0.1rem 0.2rem 0.2rem 0;line-height: 0.6rem;font-size: 0.24rem; color: #a5a5a5;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+			.patient-detail #sexBtns .first,.patient-detail #sexAllergy .first {margin-left: 1.1rem;}
+			.patient-detail #sexBtns span,.patient-detail #sexAllergy span {vertical-align: middle;}
+			.patient-detail .selected {background: url(images/round-selected.png) no-repeat;}
+			.patient-detail .choose {background: url(images/round-choose.png) no-repeat;}
+			.patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;}
+
 		</style>
 	</head>
 	<body>
@@ -60,12 +69,40 @@
 			</form> -->
 			<ul class="patient-detail">
 				 <li class="bor_bottom_1px"><label>孩子姓名</label><p><input data-filed="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
-				<li class="bor_bottom_1px"><label>出生年月</label>
+				<li class=""><label>出生年月</label>
 					<div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
 					<p><input id="bd_date" data-filed="birthdate" type="date"/></p>
 				</li>
-				<li class="bor_bottom_1px"><label>手　　机</label>
+				<li class=""><label>手　　机</label>
 					<p><input type="tel" placeholder="手机号用于接收医生回答提醒" /></p>
+				</li>
+				<li class="sex">
+					<label>性　　别</label>
+					<p id="sexBtns">
+						<input type="radio" name="sex" value="0" id="male" checked="checked"/>
+						<label for="male" class="first">
+							<span class="selected"></span><span>男</span>
+						</label>
+						<input type="radio" name="sex" value="1" id="female" />
+						<label for="female">
+							<span class="choose"></span><span>女</span>
+						</label>
+						<!-- <input id="sex" type="hidden" data-filed="sex" /> -->
+					</p>
+				</li>
+				<li class="allergy">
+					<label>药物过敏</label>
+					<p id="sexAllergy">
+						<input type="radio" name="no_allergy" value="0" id="no_allergy" checked="checked"/>
+						<label for="no_allergy" class="first">
+							<span class="selected"></span><span>无</span>
+						</label>
+						<input type="radio" name="yes_allergy" value="1" id="yes_allergy" />
+						<label for="yes_allergy">
+							<span class="choose"></span><span>有</span>
+						</label>
+						<!-- <input id="sex" type="hidden" data-filed="sex" /> -->
+					</p>
 				</li>
 			</ul>
 		</section>
@@ -78,6 +115,23 @@
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
+
+				 // var bd_date = G('bd_date'),
+			  //       bd_placeholder = G('bd_placeholder');
+				var bd_date = $('#bd_date'),
+			        bd_placeholder = $('#bd_placeholder');
+			    bd_placeholder.on('touchstart',function(){
+			        bd_date.focus();
+			    });
+
+			    bd_date.on('focus',ck_bd_placeholder);
+			    bd_date.on('blur',ck_bd_placeholder);
+			    bd_date.on('change',ck_bd_placeholder);
+
+			    function ck_bd_placeholder(){
+			        bd_placeholder[0].style.display= bd_date.val() ? 'none' : 'block'; 
+			    }
+
 				var init = {
 					curSufferer : {},
 				};
