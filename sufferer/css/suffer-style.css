@@ -77,7 +77,7 @@ a {text-decoration: none;}
 .doctor-section .footer p {margin-left: 0;}
 .doctor-section .doctor-heightclr {height:auto;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
-.doctor-noborder {border: none;}
+.doctor-padding {padding: 0.28rem;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
 /*患者咨询的提示弹出层*/
 .doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
