@@ -157,13 +157,13 @@
 					if(that.parent().attr("id") === "allergy") {
 						if(that.val() === 1) {
 							$("#allergy_detail").parent().show().trigger("focus");
-							fn._getInfo(init.curSufferer);
-							fn._checkInfo(init.curSufferer);
 						}
 						else {
 							$("#allergy_detail").parent().hide();
 							$("#allergy").prev().removeClass("error");
 						}
+						fn._getInfo(init.curSufferer);
+						fn._checkInfo(init.curSufferer);
 					}
 				});
 
