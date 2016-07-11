@@ -18,16 +18,17 @@ a {text-decoration: none;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
 .team-intrdc-detl {margin-left: 1rem;}
+.team-section {border: none;}
 .team-section .alink {float: right;}
 .team-section .alink-full {display: block;height: 100%;width: 100%;}
-.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f1f1f1 solid;font-size: 0.32rem;}
+.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f2f2f2 solid;font-size: 0.32rem;}
 .team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
 .team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
 .team-section .t-num {padding-right: 0.34rem;}
 .team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
-.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.03rem #dddddd solid;}
+.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.03rem #f2f2f2 solid;}
 .team-section li:last-child,.team-section .partner li {border:none;}
-.team-section .partner li::before {content: "";position: absolute;border-left: 0.03rem #f1f1f1 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
+.team-section .partner li::before {content: "";position: absolute;border-left: 0.03rem #f2f2f2 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
 .team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
 .team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
 .team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
