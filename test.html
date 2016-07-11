@@ -5,310 +5,204 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
 		<title>请填写基本资料</title>
-		<!-- <link href="css/suffer-style.css" rel="stylesheet" type="text/css" /> -->
-		<!-- <link type="text/css" rel="stylesheet" href="css/pay.css"> -->
-		<script>
-			!function(){
-				function setRem(){
-					var zoom = document.documentElement.clientWidth / 750;
-					if(zoom > 1) zoom = 1;
-					document.documentElement.style.fontSize = 100 * zoom + 'px';
-				}
-				window.onresize = setRem;
-				setRem();
-			}();
-		</script>
+		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
+		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css" media="screen">
-			/*==============page:pay_complete======================*/
-
-.wrap .head{
-	height: 1.1rem;
-	padding-bottom: 0.5rem;
-}
-
-.wrap .head figure{
-	position: absolute;
-	width: 1.1rem;
-	height: 1.1rem;
-}
-.wrap .head figure img{max-width: 100%;}
-.wrap .head div{height:1.1rem; margin-left: 1.45rem; position: relative;overflow: hidden; padding-right: 0.3rem;}
-.wrap .head div p{position: relative; line-height: 0.4rem;}
-.wrap .head div p span{color:#08d517;}
-
-/*==article==*/
-.wrap .patient_profile{
-	margin-top: 0.5rem;
-	font-size: 0.3rem;
-	position: relative;
-}
-
-.wrap .patient_profile ::-webkit-input-placeholder{
-	font-size: 0.24rem;
-	color: #c1c1c1;
-	margin: 0;
-	padding: 0;
-	text-indent: 0;
-}
-
-.wrap .patient_profile:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -0.3rem;
-    width: 0.06rem;
-    height: 0.26rem;
-    background-color: #1d75f0;
-}
-
-.wrap .patient_profile>p{height: 0.55rem;}
-.wrap .profile_detail{
-	list-style: none;
-}
-.wrap .profile_detail li{
-	height: 0.8rem; 
-	line-height: 0.8rem;
-}
-.wrap .profile_detail li>label{
-	font-size: 0.27rem;	
-	width: 1.3rem;
-	position: absolute;
-	display: inline-block;
-}
-
-.wrap .profile_detail li input{
-	outline:none;
-	font-size: 0.24rem;
-	border:1px solid rgba(0,0,0,0);
-	width: 4rem;
-	height: 0.5rem;
-	margin-left: 1.5rem;
-	padding-left: 0.1rem;
-	-webkit-transition: box-shadow 0.30s ease-in-out;
-	transition: box-shadow 0.30s ease-in-out;
-}
-.wrap .profile_detail li input:focus{
-	border:1px solid #87C6F9;
-	box-shadow: 0 0 8px rgba(103, 166, 217, 1);
-}
-.wrap .profile_detail .profile_allergy input,
-.wrap .profile_detail .profile_sex input{
-	display: none;
-}
-
-.wrap .profile_detail .profile_allergy p,
-.wrap .profile_detail .profile_sex p{
-	padding-left: 1.6rem;
-}
-
-.wrap .profile_detail .profile_allergy p label,
-.wrap .profile_detail .profile_sex p label{
-	position: relative;
-	display: inline-block;
-	text-align: center;
-	width: 1.46rem;
-	height: 0.6rem;
-	margin:0.1rem 0.2rem 0.2rem 0;
-	line-height: 0.6rem;
-	font-size: 0.24rem; 
-	color: #a5a5a5;
-	border: 1px solid currentColor;
-	border-radius: 0.06rem;
-	-webkit-tap-highlight-color:rgba(0,0,0,0);	
-}
-.wrap .profile_detail input{
-	-webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-.wrap .profile_detail input[type="date"]{
-	position: relative;
-	outline: none;
-	-webkit-appearance: none;
-	background-color: transparent;
-}
-
-::-webkit-date-edit-fields-wrapper { background-color: transparent; }
-
-.wrap .profile_detail .bd_placeholder{
-	position: absolute;
-	font-size: 0.24rem;
-	width: 4rem;
-	height: 100%;
-	color: #c1c1c1;
-	margin-left: 1.5rem;
-	padding-left: 0.1rem;
-	z-index: 0;
-	-webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-.wrap .profile_detail input.unactive{
-	display: none;
-}
-.wrap .profile_detail .profile_allergy p input:checked+label,
-.wrap .profile_detail .profile_sex p input:checked+label{
-	background-color: #e8f1fd;
-	color: #1d75f0;
-}
-.wrap .profile_detail .profile_allergy p input:checked+label:before,
-.wrap .profile_detail .profile_sex p input:checked+label:before{
-	content: '';
-    position: absolute;
-    color: #428bef;
-    background-color: currentColor;
-    border-left: 18px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 14px solid currentcolor;
-    background: transparent;
-    bottom: 0;
-    right: 0;
-}
-.wrap .profile_detail .profile_allergy p input:checked+label:after,
-.wrap .profile_detail .profile_sex p input:checked+label:after{
-	content: '';
-    position: absolute;
-    bottom: 4px;
-    right: 1px;
-    width: 6px;
-    height: 3px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
-.wrap .profile_detail .profile_allergy p label span,
-.wrap .profile_detail .profile_sex p label span{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-	-webkit-transform:translate(-50%,-50%);
-	margin: auto;
-}
-
-
-.wrap .profile_detail .profile_sex p label i{
-    position: relative;
-    display: inline-block;
-	width: 8px;
-	height: 8px;
-	border-radius: 8px;
-	border:2px solid currentColor;
-	transform:scale(0.7);
-	-webkit-transform:scale(0.7);
-}
-.wrap .profile_detail .profile_sex p label[for="male"] i:before{
-	content: '';
-	position: absolute;
-    width: 6px;
-    height: 2px;
-    background-color: currentColor;
-    top: 9px;
-    left: -5px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
-.wrap .profile_detail .profile_sex p label[for="male"] i:after{
-	content: '';
-	position: absolute;
-	width: 5px;
-	height: 5px;
-	top: 7px;
-	left: -6px;
-	border-left: 2px solid currentColor;
-	border-bottom: 2px solid currentColor;
-}
-.wrap .profile_detail .profile_sex p label[for="female"] i:before{
-	content: '';
-    position: absolute;
-    width: 8px;
-    height: 2px;
-    background-color: currentColor;
-	top: 9px;
-    left: -6px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);    
-	transform-origin: 50% 0; 
-	-webkit-transform-origin: 50% 0; 
-}
-.wrap .profile_detail .profile_sex p label[for="female"] i:after{
-	content: '';
-    position: absolute;
-    width: 8px;
-    height: 2px;
-    background-color: currentColor;
-    top: 9px;
-    left: -5px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);    
-	transform-origin: 50% 0; 
-	-webkit-transform-origin: 50% 0; 		  
-}
-
-.wrap .p_selected{
-	margin-top: 0.6rem;
-	font-size: 0.24rem;
-    color: #9c9c9c;
-    line-height: 0.5rem;	
-}
-.wrap .p_selected span{
-	color: #1d75f0;
-}
-.sub_tip{
-	margin-top: 0.3rem;
-	font-size: 0.24rem;
-	color: #9c9c9c;
-	line-height: 0.5rem;
-}
-
-.fixedBtn{
-	margin-top: 0.1rem;
-    padding-right: 0.3rem;
-    box-sizing: border-box;	
-}
+			.patient-detail {font-size: 0.32rem;padding: 0.6rem 0 0.5rem 0.3rem;}
+			.patient-detail li {list-style: none;height: 0.8rem; line-height: 0.8rem;position:relative;}
+			.patient-detail li>label {font-size: 0.27rem;width: 1.3rem;position: absolute;display: inline-block;}
+			.patient-detail li input {outline:none;font-size: 0.24rem;border:1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition:box-shadow 0.30s ease-in-out;-webkit-tap-highlight-color:rgba(0,0,0,0);
+			 }
+			.patient-detail .bd_placeholder {position: absolute;font-size: 0.24rem;width: 4rem;height: 100%;color: #c1c1c1;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+			.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}
+			.patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
+			::-webkit-date-edit-fields-wrapper { background-color: transparent; }
 		</style>
 	</head>
 	<body>
-		 <div class="page">
-            <article class="wrap">
-                <div class="head bor_bottom_1px">
-                    <figure class="head_img"><img src="images/p2_icon.jpg" /></figure>
-                    <div><p class="absCenter">购买前，请填写孩子的基本信息，有助医生作出判断</p></div>
-                </div>
-                <section class="patient_profile">
-                    <ul id="form" class="profile_detail">
-                        <li class="bor_bottom_1px"><label>孩子姓名</label><p><input data-filed="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
-                        <li class="bor_bottom_1px"><label>出生年月</label>
-                            <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
-                            <p><input id="bd_date" data-filed="birthdate" type="date"/></p></li>
-                        <li class="bor_bottom_1px"><label>手　　机</label><p><input data-filed="phone" type="tel" placeholder="手机号用于接收医生回答提醒" /></p></li>
-                        <li class="profile_sex bor_bottom_1px">
-                            <label>性　　别</label>
-                            <p id="sexBtns">
-                                <input type="radio" name="sex" value="1" id="male" />
-                                <label for="male"><span>男</span></label>
-                                <input type="radio" name="sex" value="0" id="female" />
-                                <label for="female"><span>女</span></label>
-                                <input id="sex" type="hidden" data-filed="sex" />
-                            </p>
-                        </li>
-                        <li class="profile_allergy bor_bottom_1px">
-                            <label>药物过敏</label>
-                            <p id="allergyBtns">
-                                <input type="radio" name="allergy" value="1" id="yes" />
-                                <label for="yes">有</label>
-                                <input type="radio" name="allergy" value="0" id="no" />
-                                <label for="no">无</label>
-                                <input id="allergy" type="hidden" data-filed="allergy" />
-                            </p>
-                        </li>
-                        <li class="bor_bottom_1px">
-                            <label></label>
-                            <p><input id="allergy_name" class="unactive" type="text" data-filed="allergy_name" placeholder="请输入小孩的过敏药物名称"></p>
-                        </li>
-                    </ul>
-                </section>
-                <p class="sub_tip">您的个人信息为保密状态，仅医患双方可见</p>
-                <p id="sp" class="p_selected"></p>
-                <p id="submit" class="fixedBtn"><span>开通服务</span></p>
-            </article>
-        </div>
+		<!-- patient form-->
+		<section class="patient-body body-minheight">
+			<div class="patient-banner">
+				<div class="patient-icon"></div>
+				<h1>获得医生更准确地服务 </h1>
+				<p>您的个人信息为保密状态，仅医患双方可见</p>
+			</div>
+			<!-- <form action="" class="patient-form" method="post" accept-charset="utf-8">
+				<div class="line">
+					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
+				</div>
+				<div class="line">
+					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
+				</div>
+				<div class="line">
+					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
+				</div>
+				<div class="line">
+					<label>
+						<span>性别</span>
+						<ul id="sex">
+							<li value="0"><div class="selected"></div>男</li>
+							<li value="1"><div class="choose"></div>女</li>
+						</ul>
+					</label>
+					
+				</div>
+				<div class="line">
+					<label>
+						<span>药物过敏</span>
+						<ul id="allergy">
+							<li value="0"><div class="selected"></div>无</li>
+							<li value="1"><div class="choose"></div>有</li>
+						</ul>
+					</label><br>
+					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label>
+				</div>
+			</form> -->
+			<ul class="patient-detail">
+				 <li class="bor_bottom_1px"><label>孩子姓名</label><p><input data-filed="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
+				<li class="bor_bottom_1px"><label>出生年月</label>
+					<div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+					<p><input id="bd_date" data-filed="birthdate" type="date"/></p>
+				</li>
+				<li class="bor_bottom_1px"><label>手　　机</label>
+					<p><input type="tel" placeholder="手机号用于接收医生回答提醒" /></p>
+				</li>
+			</ul>
+		</section>
+
+		<div class="patient-btn no-handle">
+			<a id="sbmt_info" href="#">提交</a>
+		</div>
+
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			(function() {
+				var init = {
+					curSufferer : {},
+				};
+				var check = {
+					_nullCheck : function(text,name) {
+						if(text === "" || text === null) {
+							$("#"+name).prev().addClass("error");
+							$("#sbmt_info").parent().addClass("no-handle");
+							return false;
+						}
+						$("#"+name).prev().removeClass("error");
+						return true;
+					},
+					//电话号码的匹配，包括虚拟运营号码比如170等
+					_phoneCheck : function(content,name) {
+						var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
+						if(!reg.test(content)) {
+							$("#"+name).prev().addClass("error");
+							$("#sbmt_info").parent().addClass("no-handle");
+							return false;
+						}
+						$("#"+name).prev().removeClass("error");
+						return true;
+					},
+					//检查过敏描述为空
+					_allergyCheck :function(allergy,name) {
+						if(allergy === "" || allergy === null) {
+							$("#"+name).prev().addClass("error");
+							$("#sbmt_info").parent().addClass("no-handle");
+							return false;
+						}
+						$("#"+name).prev().removeClass("error");
+						return true;
+					},
+				};
+				var fn = {
+					_getInfo : function(surferer) {
+						surferer.name = $("#name").val().trim();
+						surferer.yearMth = $("#yearMth").val();
+						surferer.phone = $("#phone").val().trim();
+						surferer.sex = $("#sex .selected").parent().val();
+						surferer.allergy = $("#allergy .selected").parent().val();
+					},
+					_checkInfo : function(surferer) {
+						if(check._nullCheck(surferer.name,"name")) {
+							if(check._nullCheck(surferer.yearMth,"yearMth")) {
+								if(check._phoneCheck(surferer.phone,"phone")) {
+									if(surferer.allergy === 1) {
+										surferer.allergyDetl = $("#allergy_detail").val().trim();
+										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
+											return true;
+										}
+										else {
+											return false;
+										}
+									}
+									else {
+										$("#sbmt_info").parent().removeClass("no-handle");
+										console.log(111);
+										delete surferer.allergyDetl;
+										return true;
+									}
+								}
+							}
+						}
+						return false;
+					},
+					//看之前是否有记录患者信息
+					_cmtJudge : function(record) {
+						if(!record) {
+							window.location.href = "disease-desc.html";
+						}
+						else {
+							window.location.href = "sufferer-choose.html";
+						}
+					},
+					//检查输入正确后进行的操作
+					_checkSucs : function(record) {
+						this._cmtJudge(record);
+					},
+
+				};
+				//判断是否有错误样式
+				var isValidate = function() {
+					if($(".error").length === 0) {
+						return true;
+					}
+					return false;
+				};
+
+				//性别与过敏与否的选择
+				$("#sex,#allergy").on("click","li",function() {
+					var that = $(this);
+					that.children()[0].className = "selected";
+					that.siblings().children()[0].className = "choose";
+					if(that.parent().attr("id") === "allergy") {
+						if(that.val() === 1) {
+							$("#allergy_detail").parent().show().trigger("focus");
+						}
+						else {
+							$("#allergy_detail").parent().hide();
+							$("#allergy").prev().removeClass("error");
+						}
+						fn._getInfo(init.curSufferer);
+						fn._checkInfo(init.curSufferer);
+					}
+				});
+
+				$("input").on("blur keyup",function() {
+					fn._getInfo(init.curSufferer);
+					fn._checkInfo(init.curSufferer);
+					if(isValidate()) {
+						$("#sbmt_info").parent().removeClass("no-handle");
+					}
+				});
+				//点击提交按键的操作
+				$("#sbmt_info").parent().on("click", function() {
+					if(this.className.indexOf("no-handle") === -1) {
+						fn._checkSucs(true);
+					}
+					else {
+						alert("信息填写有误");
+					}
+				});
+			})();
+		</script>
 	</body>
 </html>
