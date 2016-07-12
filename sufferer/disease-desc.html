@@ -62,10 +62,11 @@
 					diseaseKind : 1,//选择的是哪种疾病
 					diseaseDesc : "",//疾病的描述
 					diseaseHeight : 0,
+					isFilled : false,
 				};
 
 				$("#disease_choose").on("click", function() {
-					util._cover.show("slow");
+					util._cover.show();
 					util._disease.addClass("appear-position");
 					util._disease.removeClass("appear-hide");
 					console.log(util._disease[0].clientHeight);
@@ -73,7 +74,7 @@
 						util.diseaseHeight = util._disease[0].clientHeight;
 						util._disease.css("bottom",-util.diseaseHeight);
 					}
-					util._disease.animate({bottom:"0px"},500); 
+					util._disease.animate({bottom:"0px"},200); 
 				});
 				util._diseasesList.on("click", function() {
 					$(this).addClass("active").siblings().removeClass("active");
@@ -82,11 +83,11 @@
 					util.diseaseKind = this.value;
 				});
 				util._cover.on("click",function() {
-					util._disease.animate({bottom:-util.diseaseHeight},300); 
+					util._disease.animate({bottom:-util.diseaseHeight},200); 
 					setTimeout(function() {
 						util._disease.addClass("appear-hide");
 						util._cover.hide();
-					},300);
+					},200);
 				});
 				$("#pay_ask").on("click", function() {
 					var describe = util._diseaseDesc.val().trim();
@@ -94,31 +95,29 @@
 						util.diseaseDesc = describe;
 						window.location.href = "pay-succs.html";
 					};
-					if(this.parentNode.className === "patient-btn") {
+					if(util.isFilled && describe) {
 						_checkSucs();
 					}
 					else {
-						alert("信息填写有误");
+						alert("请填写病情描述");
 					}
+				});
+
+				util._diseaseDesc.one("focus",function() {
+					this.value = "";
+					$("#text_control").text("还能输入200字");
+					util.isFilled = true;
 				});
 
 				util._diseaseDesc.on("keyup",function() {
 					var value = $(this).val();
 					var textLen = value.length;
-					if(textLen === 0) {
-						$(this).prev().addClass("error");
-						$("#pay_ask").parent().addClass("no-handle");
+					if(textLen >= 200) {
+						$(this).val(value.slice(0,200));
+						$("#text_control").text("还能输入0字");
 					}
 					else {
-						$(this).prev().removeClass("error");
-						$("#pay_ask").parent().removeClass("no-handle");
-						if(textLen >= 200) {
-							$(this).val(value.slice(0,200));
-							$("#text_control").text("还能输入0字");
-						}
-						else {
-							$("#text_control").text("还能输入"+(200-textLen)+"字");
-						}
+						$("#text_control").text("还能输入"+(200-textLen)+"字");
 					}
 				});
 				util._diseaseDesc.trigger("keyup");
