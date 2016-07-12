@@ -11,28 +11,29 @@ a {text-decoration: none;}
 /*医生团队主页*/
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
-.team-banner {height: 4.01rem;height: 4.01rem;background:#317def url(../images/team-banner.jpg) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
+.team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.jpg) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
 .team-banner .head-icon {height: 1.48rem;width: 1.48rem;margin: 0 auto;}
 .team-banner h1 {font-size: 0.36rem;margin: 0.3rem 0 0.2rem 0;text-align: center;}
-.team-banner p {font-size: 0.28rem;text-align: left;height: 1.1rem;overflow: hidden;}
+.team-banner p {font-size: 0.28rem;text-align: left;overflow: hidden;}
 .team-banner a {display:block;height: 100%;width: 100%;}
 .team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;}
 .team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
-.team-banner .angle-top,.team-banner .angle-btm {display:inline-block;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin-top: 0.2rem;}
-.hgt-clear,.team-banner .hgt-clear {height: auto;}
+.team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;background: url(../images/gradualc.png) repeat-x;}
+.team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
+.hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.36rem;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
 .team-intrdc-detl {margin-left: 1rem;}
 .team-section .alink {float: right;}
 .team-section .alink-full {display: block;height: 100%;width: 100%;}
-.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 1px #f1f1f1 solid;font-size: 0.32rem;}
+.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f1f1f1 solid;font-size: 0.32rem;}
 .team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
 .team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
 .team-section .t-num {padding-right: 0.34rem;}
 .team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
-.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 1px #dddddd solid;}
+.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.03rem #dddddd solid;}
 .team-section li:last-child,.team-section .partner li {border:none;}
-.team-section .partner li::before {content: "";position: absolute;border-left: 1px #f1f1f1 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
+.team-section .partner li::before {content: "";position: absolute;border-left: 0.03rem #f1f1f1 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
 .team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
 .team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
 .team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
@@ -42,7 +43,7 @@ a {text-decoration: none;}
 .team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
 .team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
 .team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {height: 0.4rem;line-height: 0.4rem;float: left;color: #999;padding: 0.04rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 1px #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 0.03rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 0.04rem #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
 .team-section .partner li{text-align: center;width: 40%;float: left;}
 .team-footer {text-align: center;}
 .team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.18rem;}
