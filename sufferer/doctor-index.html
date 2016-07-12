@@ -119,13 +119,13 @@
 						window.location.href = "ask-know.html";
 					}
 					else {
+						util._cover.show();
 						util._refuse.show();
 					}
 				};
 				
 				//点击图文咨询的弹出层
 				$("#ask_disease").on("click",function() {
-					util._cover.show();
 					askHandler("Pei","Pei");
 				});
 				//点击覆盖层或关闭按钮以及目前在咨询其他医生时关闭覆盖层
