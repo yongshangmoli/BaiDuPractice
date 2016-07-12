@@ -55,7 +55,7 @@ a {text-decoration: none;}
 .dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
 /*文章列表的样式有用到上面的样式*/
 /*医生个人主页的样式*/
-.doctor-banner {height: 3.64rem;position: relative;}
+.doctor-banner {height: 3.64rem;position: relative;height: 4.71rem;}
 .doctor-section h3{font-size: 0.28rem;}
 .doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
 .doctor-banner .intro {position: absolute;bottom: 0.12rem;left: 0.32rem;font-size: 0.28rem;color: #e2e1de;}
@@ -66,16 +66,16 @@ a {text-decoration: none;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;}
 .doctor-section li p {padding: 0.04rem 0;}
 .doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
-.doctor-section .title {font-size: 0.32rem;}
+.doctor-section .title {font-size: 0.32rem;color:#333;}
 .doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
 .doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
 .doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
-.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}
+/*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
 /*.doctor-section ul::before {content: "";border: 0.02rem #f1f1f1 solid;height: 25%;margin-left: 0.78rem;margin-top: 0.18rem;position: absolute;}*/
 .doctor-section .career p {margin-left: 0.2rem;}
-.doctor-section .career p:nth-child(odd)::before {content: ".";position: absolute;left: 0.96rem;margin-top: -0.82rem;font-size: 1rem;color: #d2d2d2;}
-.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.4rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
+.doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;background-color: #d2d2d2;position: absolute;left: 1.02rem;margin-top: 0.14rem;color: #d2d2d2;}
+.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
 .doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
 .doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}
@@ -96,7 +96,7 @@ a {text-decoration: none;}
 /*患者咨询资料填写页（无复用样式，除header外）*/
 /*.patient-body {padding-bottom: 0.2rem;}*/
 .patient-banner {padding: 0.36rem;text-align: center;height: auto;min-height: 92%;}
-.patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.2rem;}
+.patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.24rem;}
 .patient-banner p {font-size: 0.28rem; color: #999;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;padding-bottom: 2rem;}
@@ -104,14 +104,14 @@ a {text-decoration: none;}
 }
 /*.patient-detail li p {}*/
 .patient-detail li>label {width: 1.3rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
-.patient-detail li input {outline:none;font-size: 0.28rem;border:1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition:box-shadow 0.30s ease-in-out;-webkit-tap-highlight-color:rgba(0,0,0,0);
+.patient-detail li input {outline:none;font-size: 0.28rem;border:1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition:box-shadow 0.30s ease-in-out;-webkit-tap-highlight-color:rgba(0,0,0,0);
  }
 .patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;width: 4rem;height: 100%;color: #c1c1c1;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 .patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}
 .patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
 ::-webkit-date-edit-fields-wrapper { background-color: transparent; }
 .patient-detail .sex input,.patient-detail #allergyBtns input {display: none;}
-.patient-detail #sexBtns label,.patient-detail #allergyBtns label {position: relative;display: inline-block;vertical-align: middle;text-align: center;color: #a5a5a5;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.patient-detail #sexBtns label,.patient-detail #allergyBtns label {position: relative;display: inline-block;text-align: center;color: #a5a5a5;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 .patient-detail #sexBtns .first,.patient-detail #allergyBtns .first {margin-left: 1.2rem;}
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.28rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
@@ -130,13 +130,12 @@ a {text-decoration: none;}
 .disease-part .detail {height: 4.1rem;width: 98%;border: none;margin-top: 0.1rem;color: #999;font-size: 0.32rem;line-height: 0.5rem;}
 .disease-part .limit {position: absolute;bottom: 0.38rem;right: 0.6rem;font-size: 0.24rem;color: #999;}
 .disease-part .img-wrapper {margin-top: 0.3rem;}
-.disease-part .img-wrapper span {display: inline-block;margin-right: 0.20rem;padding: 0.4rem;width: 0.30rem;height: 0.30rem;border: 0.03rem dashed #b8b8b8;color: #999;font-size: 0.44rem;cursor: pointer;line-height: 0.24rem;vertical-align: top;}
-.disease-part .img-wrapper a {display:inline-block;height: 1.16rem;width: 1.16rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
+.disease-part .img-wrapper span {display: inline-block;margin-right: 0.20rem;width: 100%;height: 100%;border: 0.03rem solid #f0f0f0;color: #fff;background-color: #ccc;font-size: 0.8rem;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;cursor: pointer;line-height: 1.4rem;text-align: center;}
+.disease-part .img-wrapper a {display:inline-block;height: 1.5rem;width: 1.5rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
 .disease-part .img-wrapper .file {position:absolute;top:0;height: 100%;width: 100%;opacity: 0;}
-.disease-part .img-wrapper img {height: 100%;width: 100%;}
+.disease-part .img-wrapper img {height: 100%;width: 100%;border: 0.03rem #f0f0f0 solid;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;}
 .disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}
 .disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
-/*.disease-surface {position:absolute; top: 100%;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}*/
 .disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;}
 .disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 0.03rem #f1f1f1 solid;}
 .disease-surface li:last-child {border: none;}
@@ -147,7 +146,9 @@ a {text-decoration: none;}
 .pay-succs {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
 .pay-succs h1 {font-size: 0.44rem;padding: 0.16rem 0;}
 .pay-succs .icon {background: url(../images/pay-succs-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
-.pay-content {transform: translateY(-50%);top:40%;position: relative;padding-bottom:2rem;}
+.pay-content {transform: translateY(-50%);top:50%;position: relative;padding-bottom:2rem;}
+.pay-content p {color: #999;}
+
 /*退款成功*/
 .money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
 /*病情查看详情页*/
@@ -161,7 +162,7 @@ a {text-decoration: none;}
 .ask-detail li:last-child {border: none;}
 .ask-detail li p {display: inline-block;vertical-align: top;}
 .ask-detail li p:first-child {width: 1.2rem;color: #999;}
-.ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;}
+.ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
 .ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
 /*第二次及以上咨询时患者选择*/
