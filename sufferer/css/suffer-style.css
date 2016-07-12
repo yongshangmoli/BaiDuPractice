@@ -42,7 +42,7 @@ a {text-decoration: none;}
 .team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
 .team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
 .team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 1px 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 0.04rem #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 1px 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 1px #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
 .team-section .partner li{text-align: center;width: 40%;float: left;}
 .team-footer {text-align: center;}
 .team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.18rem;}
@@ -72,7 +72,7 @@ a {text-decoration: none;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
 /*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
 /*.doctor-section ul::before {content: "";border: 0.02rem #f1f1f1 solid;height: 25%;margin-left: 0.78rem;margin-top: 0.18rem;position: absolute;}*/
-.doctor-section .career-wrpr {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 0.04rem;}
+.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 1px;}
 .doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.26rem;}
 .doctor-section .career p {margin-left: 0.2rem;}
 .doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 1.02rem;color: #d2d2d2;}
@@ -102,7 +102,7 @@ a {text-decoration: none;}
 .patient-banner p {font-size: 0.28rem; color: #666;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;padding-bottom: 2rem;}
-.patient-detail li {list-style: none;position:relative;border-bottom: 0.04rem #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
+.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
 .patient-detail li>label {width: 1.3rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
 .patient-detail li input {outline: none; font-size: 0.28rem;border: 1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
