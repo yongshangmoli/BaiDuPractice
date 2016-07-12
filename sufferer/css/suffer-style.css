@@ -67,7 +67,7 @@ a {text-decoration: none;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;}
 .doctor-section li p {padding: 0.04rem 0;}
 .doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
-.doctor-section .title {font-size: 0.32rem;color:#333;}
+.doctor-section .title {font-size: 0.32rem;color:#333; display: inline-block;vertical-align: middle;height: 0.42rem; margin: 0.2rem 0.2rem 0.2rem 0;}
 .doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
 .doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
 .doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
