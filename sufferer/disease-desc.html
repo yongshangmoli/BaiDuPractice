@@ -105,7 +105,6 @@
 
 				util._diseaseDesc.one("focus",function() {
 					this.value = "";
-					$("#text_control").text("还能输入200字");
 					util.isFilled = true;
 				});
 
@@ -120,7 +119,6 @@
 						$("#text_control").text("还能输入"+(200-textLen)+"字");
 					}
 				});
-				util._diseaseDesc.trigger("keyup");
 
 				//照片上传
 				var imgCount = 0;
