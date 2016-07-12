@@ -109,7 +109,7 @@
 					$("#text_control").text("还能输入200字");
 				});
 
-				util._diseaseDesc.on("onchange",function() {
+				util._diseaseDesc.on("input",function() {
 					var value = $(this).val();
 					var textLen = value.length;
 					if(textLen >= 200) {
