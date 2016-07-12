@@ -20,18 +20,18 @@ a {text-decoration: none;}
 .team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
 .team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;background: url(../images/gradualc.png) repeat-x;}
 .team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.36rem;}
+.hgt-clear,.team-banner .hgt-clear {height: auto;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
 .team-intrdc-detl {margin-left: 1rem;}
 .team-section .alink {float: right;}
 .team-section .alink-full {display: block;height: 100%;width: 100%;}
-.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f1f1f1 solid;font-size: 0.32rem;}
+.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f2f2f2 solid;font-size: 0.32rem;}
 .team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
 .team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
 .team-section .t-num {padding-right: 0.34rem;}
 .team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
-.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 0.03rem #dddddd solid;}
+.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 1px #f2f2f2 solid;}
 .team-section li:last-child,.team-section .partner li {border:none;}
 .team-section .partner li::before {content: "";position: absolute;border-left: 0.03rem #f1f1f1 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
 .team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
@@ -43,7 +43,7 @@ a {text-decoration: none;}
 .team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
 .team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
 .team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 0.03rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 0.04rem #dddddd solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-section .tag li {height: 0.4rem;line-height: 0.4rem;padding: 0;float: left;color: #999;padding: 0.03rem 0.12rem;margin:0.07rem 0.14rem 0.07rem 0;border: 1px #f2f2f2 solid;font-size: 0.22rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
 .team-section .partner li{text-align: center;width: 40%;float: left;}
 .team-footer {text-align: center;}
 .team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.18rem;}
@@ -51,6 +51,7 @@ a {text-decoration: none;}
 .team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.32rem 0;margin: 0 auto;}
 /*（有用到医生团队主页的样式），医生列表新增样式*/
 .dctlist-greybg {background-color: #f4f4f4;}
+.dctlist-state {float:right;font-size: 0.32rem;color:#ff9018;}
 .dctlist-whitebg {background-color: #fff;}
 .dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
 /*文章列表的样式有用到上面的样式*/
@@ -66,14 +67,14 @@ a {text-decoration: none;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;}
 .doctor-section li p {padding: 0.04rem 0;}
 .doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
-.doctor-section .title {font-size: 0.32rem;color:#333;}
+.doctor-section .title {font-size: 0.32rem;color:#333; display: inline-block;vertical-align: middle;height: 0.42rem; margin: 0.2rem 0.2rem 0.2rem 0;}
 .doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
 .doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
 .doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
 /*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
 /*.doctor-section ul::before {content: "";border: 0.02rem #f1f1f1 solid;height: 25%;margin-left: 0.78rem;margin-top: 0.18rem;position: absolute;}*/
-.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 1px;}
+.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.3rem;margin-top:0.3rem;padding-top: 1px;}
 .doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.26rem;}
 .doctor-section .career p {margin-left: 0.2rem;}
 .doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 1.02rem;color: #d2d2d2;}
@@ -84,7 +85,7 @@ a {text-decoration: none;}
 .doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
-.doctor-section .doctor-heightclr {height:auto;}
+.doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
 .doctor-surface {height: 100%;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
