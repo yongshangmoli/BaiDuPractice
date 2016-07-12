@@ -108,7 +108,7 @@
 					util.isFilled = true;
 				});
 
-				util._diseaseDesc.on("onchange",function() {
+				util._diseaseDesc.on("touchend",function() {
 					var value = $(this).val();
 					var textLen = value.length;
 					if(textLen >= 200) {
