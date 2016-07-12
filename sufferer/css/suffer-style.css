@@ -20,7 +20,7 @@ a {text-decoration: none;}
 .team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
 .team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;background: url(../images/gradualc.png) repeat-x;}
 .team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.26rem;}
+.hgt-clear,.team-banner .hgt-clear {height: auto;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
 .team-intrdc-detl {margin-left: 1rem;}
@@ -85,7 +85,7 @@ a {text-decoration: none;}
 .doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
-.doctor-section .doctor-heightclr {height:auto;padding: 0.26rem 0;}
+.doctor-section .doctor-heightclr {height:auto;padding: 0.26rem 0;border-top:none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
 .doctor-surface {height: 100%;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
