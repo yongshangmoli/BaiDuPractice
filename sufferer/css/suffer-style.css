@@ -73,36 +73,38 @@ a {text-decoration: none;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
 /*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
 /*.doctor-section ul::before {content: "";border: 0.02rem #f1f1f1 solid;height: 25%;margin-left: 0.78rem;margin-top: 0.18rem;position: absolute;}*/
+.doctor-section .career-wrpr {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 0.04rem;}
+.doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.3rem;}
 .doctor-section .career p {margin-left: 0.2rem;}
 .doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;background-color: #d2d2d2;position: absolute;left: 1.02rem;margin-top: 0.14rem;color: #d2d2d2;}
 .doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
-.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
+/*.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
-.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}
+.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}*/
+.doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
 .doctor-section .doctor-heightclr {height:auto;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
+.doctor-surface {height: 100%;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
 /*患者咨询的提示弹出层*/
 .doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.doctor-surface .surface {position: fixed;top: 2.2rem;left: 6%;width: 80%;width: 80%;margin: 0 auto;background-color: #fff;padding: 0.26rem 0.3rem;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
-.doctor-surface .surface-title {text-align: center;font-size: 0.36rem;padding-bottom: 0.36rem;}
-.doctor-surface .surface-ctnt {overflow-y:auto;font-size: 0.28rem;color: #666;padding: 0.44rem 0.34rem 0;border-top:1px #e8e9e9 solid;}
+.doctor-surface .surface {position: fixed;top: 2.2rem;left: 10%;width: 80%;margin: 0 auto;background-color: #fff;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
+.doctor-surface .surface-title {text-align: center;padding: 0.36rem;border-bottom:1px #e8e9e9 solid;}
+.surface-title h1 {font-size: 0.32rem;color:#404040;}
+.doctor-surface .surface-ctnt {overflow-y:auto;font-size: 0.28rem;color: #666;margin-left: 0.34rem;padding: 0.44rem 0.34rem 0;}
 .doctor-surface .surface-asr {position:absolute;left:0;height: 1rem;width: 100%;line-height: 1rem;background-color: #307fee;text-align: center;font-size: 0.38rem;-webkit-border-bottom-left-radius: 0.1rem;-moz-border-bottom-left-radius: 0.1rem;-ms-border-bottom-left-radius: 0.1rem;-o-border-bottom-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;-webkit-border-bottom-right-radius: 0.1rem;-moz-border-bottom-right-radius: 0.1rem;-ms-border-bottom-right-radius: 0.1rem;-o-border-bottom-right-radius: 0.1rem;border-bottom-right-radius: 0.1rem;}
-.surface-title .close {float:right;position: relative;top: -0.52rem; right: 0.3rem;display:inline-block;width: 0.3rem;height: 0.3rem;background: url(../images/ask-close.png) no-repeat;background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
+.surface-title .close {float:right;position: relative;top: -0.37rem; right: 0.3rem;display:inline-block;width: 0.3rem;height: 0.3rem;background: url(../images/ask-close.png) no-repeat;background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .surface-ctnt li {margin-bottom: 0.4rem;}
 .surface .surface-asr a {display:inline-block;height: 100%;width: 100%;color: #fff;}
-/*患者咨询资料填写页（无复用样式，除header外）*/
-/*.patient-body {padding-bottom: 0.2rem;}*/
 .patient-banner {padding: 0.36rem;text-align: center;height: auto;min-height: 92%;}
 .patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.24rem;}
-.patient-banner p {font-size: 0.28rem; color: #999;}
+.patient-banner p {font-size: 0.28rem; color: #666;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;padding-bottom: 2rem;}
 .patient-detail li {list-style: none;position:relative;border-bottom: 0.04rem #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
-/*.patient-detail li p {}*/
 .patient-detail li>label {width: 1.3rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
 .patient-detail li input {outline: none; font-size: 0.28rem;border: 1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
  }
