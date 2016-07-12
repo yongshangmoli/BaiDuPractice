@@ -114,7 +114,7 @@ a {text-decoration: none;}
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.28rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
-.patient-algydesc {border-bottom:0.04rem #f1f1f1 solid;margin-top: 0.2rem;padding:0.24rem 0;display:none;}
+.patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
 .patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;}
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
