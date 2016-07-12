@@ -85,7 +85,7 @@ a {text-decoration: none;}
 .doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
-.doctor-tag .doctor-heightclr {height:auto;padding: 0.28rem;border-top:none;}
+.doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
 .doctor-surface {height: 100%;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
