@@ -2,7 +2,7 @@
 html,body {font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";height: 100%;min-height: 100%;color: #333;}
 html,body,span,div,h1,h2,h3,h4,p,ul,li,a {padding: 0;margin: 0;font-weight: normal;}
 a {text-decoration: none;}
-a:hover,a:active,a:focus,a:click {background:transparent;}
+::{-webkit-tap-highlight-color:transparent;}
 .alert_tip {position: fixed;text-align: center;top: 50%;left: 50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);max-width: 75%;min-width: 50%;border-radius: 10px;font-size: 0.32rem;line-height: 0.3rem;padding:0.5rem;/* background-color: #6B6B6B; */background-color: rgba(107,107,107,0.95);color: #fff;z-index: 99;box-shadow: 0 0 8px 3px #fff;}
 .alert_tip.alert_tip_qrcode {position: absolute;padding: 0;max-width: none;max-height: none;}
 .alert_tip.active {display: block;}
