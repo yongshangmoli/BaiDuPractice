@@ -89,7 +89,7 @@
 						util._cover.hide();
 					},200);
 				});
-				$("#pay_ask").on("onchange", function() {
+				$("#pay_ask").on("click", function() {
 					var describe = util._diseaseDesc.val().trim();
 					var _checkSucs = function() {
 						util.diseaseDesc = describe;
@@ -109,7 +109,7 @@
 					$("#text_control").text("还能输入200字");
 				});
 
-				util._diseaseDesc.on("oninput",function() {
+				util._diseaseDesc.on("onchange",function() {
 					var value = $(this).val();
 					var textLen = value.length;
 					if(textLen >= 200) {
