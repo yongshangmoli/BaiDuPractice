@@ -12,7 +12,7 @@ a {text-decoration: none;}
 /*医生团队主页*/
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
-.team-banner {height: 4.01rem;height: 4.01rem;background: url(../images/team-banner.jpg) no-repeat;background-size: 100% 100%;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
+.team-banner {height: 4.01rem;height: 4.01rem;background:#317def url(../images/team-banner.jpg) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
 .team-banner .head-icon {height: 1.48rem;width: 1.48rem;margin: 0 auto;}
 .team-banner h1 {font-size: 0.36rem;margin: 0.3rem 0 0.2rem 0;text-align: center;}
 .team-banner p {font-size: 0.28rem;text-align: left;height: 1.1rem;overflow: hidden;}
