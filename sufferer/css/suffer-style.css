@@ -76,7 +76,7 @@ a {text-decoration: none;}
 .doctor-section .career-wrpr {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 0.04rem;}
 .doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.3rem;}
 .doctor-section .career p {margin-left: 0.2rem;}
-.doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;left: 1.02rem;margin-top: 0.1rem;color: #d2d2d2;}
+.doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.06rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;left: 1.02rem;color: #d2d2d2;}
 .doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
 /*.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
