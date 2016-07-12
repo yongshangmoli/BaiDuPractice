@@ -36,7 +36,7 @@
 				<h3>
 					<span class="t-pic"></span>
 					<span class="title">图文咨询</span>
-					<div style="float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;">¥ 10/次</div>
+					<div class="t-more">¥ 10/次</div>
 				</h3>
 			</a>
 		</section>
@@ -64,8 +64,8 @@
 				<span class="t-career"></span>
 				<span class="title">执业点</span>
 			</h3>
-			<div style="border-left: 0.04rem #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.37rem;margin-top:0.3rem;padding-top: 0.04rem;">
-				<ul class="career" style="padding-bottom: 0.4rem;margin-top: -0.3rem;">
+			<div class="career-wrpr">
+				<ul class="career">
 					<li>
 						<p>2015.07-2016.08</p>
 						<p>广东中山医院深圳博德 / 主治医生</p>
@@ -80,20 +80,6 @@
 					</li>
 				</ul>
 			</div>
-		<!-- 	<ul class="career">
-			<li>
-				<p>2015.07-2016.08</p>
-				<p>广东中山医院深圳博德 / 主治医生</p>
-			</li>
-			<li>
-				<p>2015.07-2016.08</p>
-				<p>广东中山医院深圳博德 / 主治医生</p>
-			</li>
-			<li>
-				<p>2015.07-2016.08</p>
-				<p>广东中山医院深圳博德 / 主治医生</p>
-			</li>
-		</ul> -->
 		</section>
 		<!-- doctor code to scan -->
 		<footer class="doctor-section">
@@ -102,68 +88,41 @@
 				<p>扫码关注我</p>
 			</div>
 		</footer>
-		<!-- 点击咨询后的遮蔽层和弹出层 -->
+		<!-- 点击咨询后被拒绝的遮蔽层和弹出层 -->
 		<div id="doctor_cover" class="doctor-cover" style="display:none;"></div>
-		<section id="ask_surface" class="doctor-surface" style="display:none;">
-			<div class="surface">
-				<div class="surface-title">
-					<h1>咨询须知</h1>
-					<span class="close"><a href="#" class="aclose">关闭</a></span>
-				</div>
-				<div class="surface-ctnt">
-					<ul>
-						<li><p>儿童家庭健康服务仅提供线上咨询，当 前服务属于医生业余时间的额外服务， 会收取一定的咨询费用。</p></li>
-						<li><p>线上咨询只能提供健康相关的参考意见 不能保证您咨询疾病的好转和治愈，急 症及疑难健康问题，请及时于当地医院 就医。</p></li>
-					</ul>
-				</div>
-				<div class="surface-asr">
-					<a id="asr_ask" href="#">我同意</a>
-				</div>
-			</div>
-		</section>
 		<section id="refuse_surface" class="doctor-surface" style="display:none;">
-			<div class="surface">
-				<div class="surface-title">
-					<h1>温馨提示</h1>
-					<span class="close"><a href="#" class="aclose">关闭</a></span>
-				</div>
-				<div class="surface-ctnt">
-					<ul>
-						<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
-					</ul>
-				</div>
-				<div class="surface-asr">
-					<a id="refuse_asr" href="#">确定</a>
-				</div>
+		<div class="surface">
+			<div class="surface-title">
+				<h1>温馨提示</h1>
+				<span class="close"><a href="#" class="aclose">关闭</a></span>
 			</div>
-		</section>
-
+			<div class="surface-ctnt">
+				<ul>
+					<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
+				</ul>
+			</div>
+			<div class="surface-asr">
+				<a id="refuse_asr" href="#">确定</a>
+			</div>
+		</div>
+	</section>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
 				var util = {
 					_cover : $("#doctor_cover"),
-					_surface : $("#ask_surface"),
 					_refuse : $("#refuse_surface"),
 				};
 				var askHandler = function(curDoctor,preDoctor) {
 					if(curDoctor === preDoctor || preDoctor === null || preDoctor === "") {//可以再次咨询其他人
-						util._surface.show();
+						window.location.href = "ask-know.html";
 					}
 					else {
 						util._refuse.show();
 					}
 				};
-				//是不是第一次咨询
-				var assureHandler = function(first) {
-					if(first) {
-						window.location.href = "ill-info.html";
-					}
-					else {
-						window.location.href = "sufferer-choose.html";
-					}
-				};
+				
 				//点击图文咨询的弹出层
 				$("#ask_disease").on("click",function() {
 					util._cover.show();
@@ -171,7 +130,6 @@
 				});
 				//点击覆盖层或关闭按钮以及目前在咨询其他医生时关闭覆盖层
 				util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
-					util._surface.hide();
 					util._refuse.hide();
 					util._cover.hide();
 				});
