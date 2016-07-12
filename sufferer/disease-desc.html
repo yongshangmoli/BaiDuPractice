@@ -108,7 +108,7 @@
 					util.isFilled = true;
 				});
 
-				util._diseaseDesc.on("keyup",function() {
+				util._diseaseDesc.on("change",function() {
 					var value = $(this).val();
 					var textLen = value.length;
 					if(textLen >= 200) {
