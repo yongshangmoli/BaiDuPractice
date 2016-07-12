@@ -7,9 +7,6 @@
 		<title>请填写基本资料</title>
 		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
-		<style type="text/css" media="screen">
-			
-		</style>
 	</head>
 	<body>
 		<!-- patient form-->
@@ -19,40 +16,46 @@
 				<h1>获得医生更准确地服务 </h1>
 				<p>您的个人信息为保密状态，仅医患双方可见</p>
 			</div>
-			<form action="" class="patient-form" method="post" accept-charset="utf-8">
-				<div class="line">
-					<label><span>患者姓名</span><input type="text" id="name" placeholder="请填写患者名字"></label>
-				</div>
-				<div class="line">
-					<label><span>出生年月</span><input type="date" id="yearMth" placeholder="请选择出生年月"></label>
-				</div>
-				<div class="line">
-					<label><span>手机号码</span><input type="text" id="phone" placeholder="手机号用于接收医生回答提醒"></label>
-				</div>
-				<div class="line">
-					<label>
-						<span>性别</span>
-						<ul id="sex">
-							<li value="0"><div class="selected"></div>男</li>
-							<li value="1"><div class="choose"></div>女</li>
-						</ul>
-					</label>
-					
-				</div>
-				<div class="line">
-					<label>
-						<span>药物过敏</span>
-						<ul id="allergy">
-							<li value="0"><div class="selected"></div>无</li>
-							<li value="1"><div class="choose"></div>有</li>
-						</ul>
-					</label><br>
-					<label style="display: none;"><span>&nbsp;</span><input type="text" id="allergy_detail" style="margin-top: 0.2rem;"placeholder="请输入过敏药物名称"></label>
-				</div>
-			</form>
+			<ul class="patient-detail">
+				<li><label>患者姓名</label><p><input id="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
+				<li><label>出生年月</label>
+					<div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+					<p><input id="yearMth" data-filed="birthdate" type="date"/></p>
+				</li>
+				<li><label>手机</label>
+					<p><input id="phone" type="tel" placeholder="手机号用于接收医生回答提醒" /></p>
+				</li>
+				<li class="sex">
+					<label>性别</label>
+					<p id="sexBtns">
+						<input type="radio" name="sex" value="0" id="male" checked="checked"/>
+						<label for="male" class="first">
+							<span class="selected"></span><span>男</span>
+						</label>
+						<input type="radio" name="sex" value="1" id="female" />
+						<label for="female">
+							<span class="choose"></span><span>女</span>
+						</label>
+					</p>
+				</li>
+				<li class="allergy">
+					<label>药物过敏</label>
+					<p id="allergyBtns">
+						<input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
+						<label for="no_allergy" class="first">
+							<span class="selected"></span><span>无</span>
+						</label>
+						<input type="radio" name="allergy" value="1" id="yes_allergy" />
+						<label for="yes_allergy">
+							<span class="choose"></span><span>有</span>
+						</label>
+					</p>
+					<p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+				</li>
+			</ul>
 		</section>
 
-		<div class="patient-btn no-handle">
+		<div class="patient-btn">
 			<a id="sbmt_info" href="#">提交</a>
 		</div>
 
@@ -60,72 +63,94 @@
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
-				var init = {
-					curSufferer : {},
+				//出生年月是否显示placeholder文字
+				var bd_date = $('#yearMth'),bd_placeholder = $('#bd_placeholder');
+				var ck_bd_placeholder = function() {
+					bd_placeholder[0].style.display= bd_date.val() ? 'none' : 'block'; 
 				};
-				var check = {
-					_nullCheck : function(text,name) {
-						if(text === "" || text === null) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
+				bd_placeholder.on('touchstart',function(){
+					bd_date.focus();
+				});
+				bd_date.on('focus blur change',ck_bd_placeholder);
+				// 验证相关
+				var surferer = {};
+				var checkObj={
+					name:{
+						reg:/^.{1,10}$/,
+						emptyMsg:'请输入姓名',
+						errorMsg:'姓名格式不正确'
 					},
-					//电话号码的匹配，包括虚拟运营号码比如170等
-					_phoneCheck : function(content,name) {
-						var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
-						if(!reg.test(content)) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
+					yearMth:{
+						emptyMsg:'未选择出生年月日'
 					},
-					//检查过敏描述为空
-					_allergyCheck :function(allergy,name) {
-						if(allergy === "" || allergy === null) {
-							$("#"+name).prev().addClass("error");
-							$("#sbmt_info").parent().addClass("no-handle");
-							return false;
-						}
-						$("#"+name).prev().removeClass("error");
-						return true;
+					phone:{
+						reg:/^1[0-9]{10}$/,
+						emptyMsg:'请输入接收医生的回复电话',
+						errorMsg:'请输入正确的电话号码'
 					},
+					sex:{
+						emptyMsg:'请选择性别',
+					},
+					allergy:{
+						emptyMsg:'请选择是否药物过敏',
+					},
+					allergy_detail:{
+						emptyMsg:'请输入小孩的过敏药物名称',
+					}
 				};
+				
 				var fn = {
-					_getInfo : function(surferer) {
+					_getInfo : function(surferer,noTip) {
 						surferer.name = $("#name").val().trim();
 						surferer.yearMth = $("#yearMth").val();
 						surferer.phone = $("#phone").val().trim();
-						surferer.sex = $("#sex .selected").parent().val();
-						surferer.allergy = $("#allergy .selected").parent().val();
+						surferer.sex = $("#sexBtns input:checked").val();
+						surferer.allergy = $("#allergyBtns input:checked").val();
 					},
-					_checkInfo : function(surferer) {
-						if(check._nullCheck(surferer.name,"name")) {
-							if(check._nullCheck(surferer.yearMth,"yearMth")) {
-								if(check._phoneCheck(surferer.phone,"phone")) {
-									if(surferer.allergy === 1) {
-										surferer.allergyDetl = $("#allergy_detail").val().trim();
-										if(check._allergyCheck(surferer.allergyDetl,"allergy")) {
-											return true;
-										}
-										else {
-											return false;
-										}
-									}
-									else {
-										$("#sbmt_info").parent().removeClass("no-handle");
-										delete surferer.allergyDetl;
-										return true;
-									}
+					_checkInfo : function(surferer,noTip) {
+						for (var key in surferer) {
+							var checkInfo = checkObj[key],value = surferer[key];
+							if(key === "allergy_detail") {
+								continue;
+							}
+							if(value===""){
+								if(!noTip) {
+									alert(checkInfo.emptyMsg);
+
 								}
+								return false;
+							}
+							if(key === "allergy" && value === "1") {
+								 // var allergyDetail = $("#allergy_detail");
+								var allergyDetail = $("#allergy_detail").children()[0].value;
+
+								console.log(allergyDetail);
+								if(allergyDetail) {
+									allergyDetail = allergyDetail.trim();
+									if(allergyDetail === "") {
+										console.log(allergyDetail);
+										if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
+										return false;
+									}
+
+								console.log(allergyDetail);
+								}
+								else {
+									if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
+									return false;
+								}
+								surferer.allergyDetl = allergyDetail;
+								continue;
+							}
+							if(!checkInfo.reg) continue;
+							if(!checkInfo.reg.test(value)){
+								if(!noTip) alert(checkInfo.errorMsg);
+								return false;
 							}
 						}
-						return false;
+						return true;
 					},
+					
 					//看之前是否有记录患者信息
 					_cmtJudge : function(record) {
 						if(!record) {
@@ -141,47 +166,26 @@
 					},
 
 				};
-				//判断是否有错误样式
-				var isValidate = function() {
-					if($(".error").length === 0) {
-						return true;
-					}
-					return false;
-				};
-
-				//性别与过敏与否的选择
-				$("#sex,#allergy").on("click","li",function() {
+				//sex和allergy样式控制
+				$("#sexBtns,#allergyBtns").on("click","label",function() {
 					var that = $(this);
 					that.children()[0].className = "selected";
+					var prev = that.prev();
+					prev.attr("checked");
 					that.siblings().children()[0].className = "choose";
-					if(that.parent().attr("id") === "allergy") {
-						if(that.val() === 1) {
-							$("#allergy_detail").parent().show().trigger("focus");
-						}
-						else {
-							$("#allergy_detail").parent().hide();
-							$("#allergy").prev().removeClass("error");
-						}
-						fn._getInfo(init.curSufferer);
-						fn._checkInfo(init.curSufferer);
+					surferer[that.parent().parent().attr("class")] = prev.val();
+					if(prev.attr("id") === "yes_allergy") {
+						$("#allergy_detail").show();
 					}
-				});
-
-				$("input").on("blur keyup",function() {
-					fn._getInfo(init.curSufferer);
-					fn._checkInfo(init.curSufferer);
-					if(isValidate()) {
-						$("#sbmt_info").parent().removeClass("no-handle");
+					else {
+						$("#allergy_detail").hide();
 					}
 				});
 				//点击提交按键的操作
 				$("#sbmt_info").parent().on("click", function() {
-					if(this.className.indexOf("no-handle") === -1) {
-						fn._checkSucs(true);
-					}
-					else {
-						alert("信息填写有误");
-					}
+					fn._getInfo(surferer);
+					if(!fn._checkInfo(surferer)) return;
+					fn._checkSucs(true);
 				});
 			})();
 		</script>
