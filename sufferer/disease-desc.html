@@ -89,7 +89,7 @@
 						util._cover.hide();
 					},200);
 				});
-				$("#pay_ask").on("click", function() {
+				$("#pay_ask").on("oninput ", function() {
 					var describe = util._diseaseDesc.val().trim();
 					var _checkSucs = function() {
 						util.diseaseDesc = describe;
