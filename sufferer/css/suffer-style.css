@@ -127,7 +127,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.28rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
-.patient-tips {font-size: 0.28rem;padding: 0.2rem 0.3rem 2rem;color: #999;height: 0.4rem;line-height: 0.4rem;}
+.patient-tips {font-size: 0.28rem;padding: 0.2rem 0.3rem 0;color: #999;height: 0.4rem;line-height: 0.4rem;}
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
 .patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
 .patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}
