@@ -170,7 +170,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .ask-detail li,.sufferer-list li {list-style: none;padding: 0.48rem 0;border-bottom:1px #e8e9e9 solid;}
 .ask-detail li:last-child {border: none;}
 .ask-detail li p {display: inline-block;vertical-align: top;}
-.ask-detail li p:first-child {width: 1.2rem;color: #999;height: 0.42rem;}
+.ask-detail li p:first-child {width: 1.2rem;color: #999;}
 .ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
 .ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
