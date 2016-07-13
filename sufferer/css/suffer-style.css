@@ -94,7 +94,6 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
 /*.doctor-surface {height: 100%;}*/
-.ask-surface {height: 100%;}
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
 /*患者咨询的提示弹出层*/
 .doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
