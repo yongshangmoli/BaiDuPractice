@@ -125,7 +125,7 @@
 						util._cover.show();
 						util._refuse.show();
 						document.addEventListener('touchstart',lock);
-						document.addEventListener('click',function(e){
+						document.addEventListener('touchend',function(e){
 							var target = e.target;
 							if(target.id === 'doctor_cover' || target.className === "aclose" || target.id === "refuse_asr") {
 								util._cover.hide();
