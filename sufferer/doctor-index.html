@@ -121,8 +121,18 @@
 						window.location.href = "ask-know.html";
 					}
 					else {
+						function lock(e){e.preventDefault();}
 						util._cover.show();
 						util._refuse.show();
+						document.addEventListener('touchstart',lock);
+						document.addEventListener('touchend',function(e){
+							var target = e.target;
+							if(target.id === 'doctor_cover' || target.className === "aclose" || target.id === "refuse_asr") {
+								util._cover.hide();
+								util._refuse.hide();
+								document.removeEventListener('touchstart',lock);
+							}
+						});
 					}
 				};
 				
@@ -131,13 +141,13 @@
 					askHandler("Pei","Pei");
 				});
 				//点击覆盖层或关闭按钮以及目前在咨询其他医生时关闭覆盖层
-				util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
+			/*	util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
 					util._refuse.hide();
 					util._cover.hide();
 				});
 				$("#asr_ask").on("click",function() {
 					assureHandler(true);
-				});
+				});*/
 			})();
 		</script>
 	</body>
