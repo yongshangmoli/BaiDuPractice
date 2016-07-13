@@ -103,12 +103,8 @@
 				// });
 				util._cover.on("click",function() {
 					classie.removeClass(util._disease[0], 'bottom' );
-					// util._cover.hide();
-					// util._disease.hide();
-					setTimeout(function() {
-						util._disease.hide();
-						util._cover.hide();
-					},100);
+					util._cover.hide();
+					util._disease.hide();
 				});
 				$("#pay_ask").on("click", function() {
 					var describe = util._diseaseDesc.val().trim();
