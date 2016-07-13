@@ -51,7 +51,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .team-footer {text-align: center;}
 .team-section .team-footer p {font-size: 0.24rem;padding-bottom: 0.2rem;}
 .team-section .team-footer .adrs-phe {color:#666;padding: 0.3rem 0 1.54rem 0}
-.team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.34rem 0;margin: 0 auto;}
+.team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.3rem 0;margin: 0 auto;}
 /*（有用到医生团队主页的样式），医生列表新增样式*/
 .dctlist-greybg {background-color: #f4f4f4;}
 .dctlist-state {float:right;font-size: 0.32rem;color:#ff9018;}
