@@ -111,7 +111,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .patient-banner h1 {font-size: 0.44rem;color: #333;padding-bottom: 0.2rem;}
 .patient-banner p {font-size: 0.28rem; color: #666;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
-.patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;padding-bottom: 2rem;}
+.patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;}
 .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
 .patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
@@ -127,6 +127,8 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.28rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
+.patient-body .tips {font-size: 0.28rem;padding: 0.2rem 0.3rem 2rem;color: #999;}
+.patient-body .mark {display:inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
 .patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
 .patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
