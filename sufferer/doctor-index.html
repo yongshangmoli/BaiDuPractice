@@ -114,8 +114,10 @@
 			(function() {
 				var h = window.innerHeight;
 				console.log(h);
-				document.getElementById("page").style.height = h;
-				document.getElementById("page").style.overflow = "hidden";
+				var hhh = document.getElementById("page");
+				console.log(hhh);
+				hhh.style.height = h;
+				hhh.style.overflow = "hidden";
 				
 				var util = {
 					_cover : $("#doctor_cover"),
