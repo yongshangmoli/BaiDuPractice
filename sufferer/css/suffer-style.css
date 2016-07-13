@@ -77,7 +77,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
 /*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
-.doctor-section ul::before {content: "";border: 1px #f1f1f1 solid;height: 100%;margin-left: 0.78rem;margin-top: 0.18rem;position: absolute;}
+.doctor-section ul::before {content: "";border: 1px #f1f1f1 solid;height: 100%;margin-left: 0.78rem;margin-top: 0.24rem;position: absolute;}
 /*.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.3rem;margin-top:0.3rem;padding-top: 1px;}*/
 .doctor-section .career-wrpr {position: relative;}
 .doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.26rem;}
