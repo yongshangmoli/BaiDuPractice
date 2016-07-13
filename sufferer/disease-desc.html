@@ -64,47 +64,27 @@
 					_diseaseDesc : $("#disease_desc"),
 					diseaseKind : 1,//选择的是哪种疾病
 					diseaseDesc : "",//疾病的描述
-					// diseaseHeight : 0,
-					// diseaseHeight : $("#disease")[0].clientHeight,
+					diseaseHeight : 0,
 					isFilled : false,
 				};
 
-				// $("#disease_choose").on("click", function() {
-				// 	util._cover.show();
-				// 	util._disease.addClass("appear-position");
-				// 	util._disease.removeClass("appear-hide");
-				// 	console.log(util._disease[0].clientHeight);
-				// 	if(!util.diseaseHeight) {
-				// 		util.diseaseHeight = util._disease[0].clientHeight;
-				// 		util._disease.css("bottom",-util.diseaseHeight);
-				// 	}
-				// 	util._disease.animate({bottom:"0px"},200); 
-				// });
-				//
-				// console.log(util._disease[0].clientHeight);
-				util._disease.css("bottom",-util.diseaseHeight);
 				$("#disease_choose").on("click", function() {
 					util._cover.show();
-					util._disease.show();
-					classie.addClass( util._disease[0], 'bottom' );
+					util._disease.addClass("appear-position");
+					util._disease.removeClass("appear-hide");
+					console.log(util._disease[0].clientHeight);
+					if(!util.diseaseHeight) {
+						util.diseaseHeight = util._disease[0].clientHeight;
+						util._disease.css("bottom",-util.diseaseHeight);
+					}
+					util._disease.animate({bottom:"0px"},200); 
 				});
-				util._diseasesList.on("click", function() {
-					$(this).addClass("active").siblings().removeClass("active");
-					util._diseaseRecord.html($(this).html());
-					util._cover.trigger("click");
-					util.diseaseKind = this.value;
-				});
-				// util._cover.on("click",function() {
-				// 	util._disease.animate({bottom:-util.diseaseHeight},200); 
-				// 	setTimeout(function() {
-				// 		util._disease.addClass("appear-hide");
-				// 		util._cover.hide();
-				// 	},200);
-				// });
 				util._cover.on("click",function() {
-					classie.removeClass(util._disease[0], 'bottom' );
-					util._cover.hide();
-					util._disease.hide();
+					util._disease.animate({bottom:-util.diseaseHeight},200); 
+					setTimeout(function() {
+						util._disease.addClass("appear-hide");
+						util._cover.hide();
+					},200);
 				});
 				$("#pay_ask").on("click", function() {
 					var describe = util._diseaseDesc.val().trim();
