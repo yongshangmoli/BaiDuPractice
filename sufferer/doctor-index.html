@@ -110,6 +110,11 @@
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
+				var h = window.innerHeight;
+				console.log(h);
+				document.body.style.height = h;
+				document.body.style.overflow = "hidden";
+				
 				var util = {
 					_cover : $("#doctor_cover"),
 					_refuse : $("#refuse_surface"),
