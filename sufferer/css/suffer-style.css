@@ -113,7 +113,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
 .patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
-.patient-detail li input {outline: none; font-size: 0.28rem;border: 1px solid rgba(0,0,0,0);width: 4rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
+.patient-detail li input {outline: none; font-size: 0.28rem;border: 1px solid rgba(0,0,0,0);width: auto;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
  }
 .patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;width: 4rem;height: 100%;color: #c1c1c1;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /*.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}*/
