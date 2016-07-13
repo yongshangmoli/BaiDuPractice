@@ -79,6 +79,12 @@
 					}
 					util._disease.animate({bottom:"0px"},200); 
 				});
+				util._diseasesList.on("click", function() {
+					$(this).addClass("active").siblings().removeClass("active");
+					util._diseaseRecord.html($(this).html());
+					util._cover.trigger("click");
+					util.diseaseKind = this.value;
+				});
 				util._cover.on("click",function() {
 					util._disease.animate({bottom:-util.diseaseHeight},200); 
 					setTimeout(function() {
