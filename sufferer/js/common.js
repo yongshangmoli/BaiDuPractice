@@ -19,6 +19,33 @@ function alert_msg(msg,className){
   el.innerHTML = '<span></span>'+msg || '';
   el.className = className+' active';
 }
+function showLoading(){
+  var el = document.querySelector('.loading');
+  var cover = document.querySelector('.doctor-cover');
+  if(cover) {
+    cover.style.display = 'block';
+  }
+  else {
+    cover = document.createElement('div');
+    cover.className = 'doctor-cover';
+    cover.id = 'doctor_cover';
+    document.body.appendChild(cover);
+  }
+  if(el) { 
+    el.className = 'loading active'; 
+    return; 
+  }
+  el = document.createElement('div');
+  el.className = 'loading active';
+  document.body.appendChild(el);
+}
+
+function hideLoading() {
+    var el = document.querySelector('.loading');
+    var cover = document.querySelector('.doctor-cover');
+    if(el) el.className = 'loading';
+    if(cover) {cover.style.display = 'none';}
+}
 
 window.Alert = alert;
 window.alert = alert_msg;
