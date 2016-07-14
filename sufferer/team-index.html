@@ -149,8 +149,7 @@
 		<script src="js/common.js"></script>
 		<script>
 		
-		setTimeout(showLoading);
-             setTimeout(hideLoading,3000);
+		
 
 			
 			var util = {
@@ -169,7 +168,7 @@
 				},
 				//加载完整介绍与简介的切换
 				_switchHdlr : function(wrapper,state,gradual) {
-					if(state[1]) {
+				/*	if(state[1]) {
 						if(this.atr === 1){
 							wrapper.html(state[1]);
 							gradual.addClass("gradual-bg");
@@ -179,7 +178,9 @@
 							gradual.removeClass("gradual-bg");
 							this.atr = 1;
 						}
-					}
+					}*/
+					setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
 				},
 			};
 			//banner团队介绍
