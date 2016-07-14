@@ -112,6 +112,9 @@
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
+				setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
 				var util = {
 					_cover : $("#doctor_cover"),
 					_refuse : $("#refuse_surface"),
