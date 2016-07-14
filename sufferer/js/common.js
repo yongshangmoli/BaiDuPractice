@@ -19,6 +19,10 @@ function alert_msg(msg,className){
   el.innerHTML = '<span></span>'+msg || '';
   el.className = className+' active';
 }
+
+window.Alert = alert;
+window.alert = alert_msg;
+//loading
 function showLoading(){
   var el = document.querySelector('.loading');
   var cover = document.querySelector('.doctor-cover');
@@ -41,11 +45,21 @@ function showLoading(){
 }
 
 function hideLoading() {
-    var el = document.querySelector('.loading');
-    var cover = document.querySelector('.doctor-cover');
-    if(el) el.className = 'loading';
-    if(cover) {cover.style.display = 'none';}
+  var el = document.querySelector('.loading');
+  var cover = document.querySelector('.doctor-cover');
+  if(el) el.className = 'loading';
+  if(cover) {cover.style.display = 'none';}
 }
-
-window.Alert = alert;
-window.alert = alert_msg;
+//lockScreen
+var lockScreen = {
+  _windowH : window.innerHeight,
+	_page : document.getElementById("page")
+}
+function lockScreenHgt() {
+  lockScreen._page.style.height = util._windowH + "px";
+	lockScreen._page.style.overflow = "hidden";
+}
+function unlockScreenHgt() {
+  lockScreen._page.style.height = "auto";
+	lockScreen._page.style.overflow = "auto";
+}
