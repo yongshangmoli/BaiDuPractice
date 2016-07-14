@@ -66,7 +66,6 @@
                 };
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
-                    util._disease.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
                 util._diseasesList.on("click", function() {
@@ -76,7 +75,7 @@
                     util.diseaseKind = this.value;
                 });
                 util._cover.on("click",function() {
-                    util._disease.addClass("ac-down").removeClass("ac-up");
+                    util._disease.addClass("ac-down").removeClass("ac-up").hide();
                     setTimeout(function() {
                         util._cover.hide();
                     },400);
