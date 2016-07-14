@@ -31,17 +31,10 @@ var lockScreen = {
 function lockScreenHgt() {
   lockScreen._page.style.height = lockScreen._windowH + "px";
   lockScreen._page.style.overflow = "hidden";
- /* if(lockScreen._subBtn) {
-    lockScreen._subBtn.style.marginTop = "0";
-  }*/
 }
 function unlockScreenHgt() {
-  // lockScreen._page.style = "";
   lockScreen._page.style.height = "100%";
   lockScreen._page.style.overflow = "auto";
- /* if(lockScreen._subBtn) {
-    lockScreen._subBtn.style.marginTop = "-1rem";
-  }*/
 }
 
 //loading
