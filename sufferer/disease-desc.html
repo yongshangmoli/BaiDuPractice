@@ -59,7 +59,7 @@
                     _diseasesList : $("#disease_list li"),
                     _diseaseRecord : $("#disease_record"),
                     _diseaseDesc : $("#disease_desc"),
-                    diseaseKind : 1,//选择的是哪种疾病
+                    diseaseKind : $("#disease_list li.active").attr("value"),//选择的是哪种疾病
                     diseaseDesc : "",//疾病的描述
                     diseaseHeight : 0,
                     isFilled : false,
@@ -72,7 +72,7 @@
                     $(this).addClass("active").siblings().removeClass("active");
                     util._diseaseRecord.html($(this).html());
                     util._cover.trigger("click");
-                    util.diseaseKind = this.value;
+                    util.diseaseKind = $(this).attr("value");
                 });
                 util._cover.on("click",function() {
                     util._disease.addClass("ac-down").removeClass("ac-up");
