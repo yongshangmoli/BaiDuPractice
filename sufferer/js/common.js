@@ -32,14 +32,14 @@ function lockScreenHgt() {
   lockScreen._page.style.height = lockScreen._windowH + "px";
   lockScreen._page.style.overflow = "hidden";
   if(lockScreen._subBtn) {
-    lockScreen._page.style.position = "static";
+    lockScreen._subBtn.style.position = "static";
   }
 }
 function unlockScreenHgt() {
   lockScreen._page.style.height = "auto";
   lockScreen._page.style.overflow = "auto";
   if(lockScreen._subBtn) {
-    lockScreen._page.style.position = "relative";
+    lockScreen._subBtn.style.position = "relative";
   }
 }
 
