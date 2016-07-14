@@ -22,6 +22,20 @@ function alert_msg(msg,className){
 
 window.Alert = alert;
 window.alert = alert_msg;
+//lockScreen
+var lockScreen = {
+  _windowH : window.innerHeight,
+  _page : document.getElementById("page")
+}
+function lockScreenHgt() {
+  lockScreen._page.style.height = lockScreen._windowH + "px";
+  lockScreen._page.style.overflow = "hidden";
+}
+function unlockScreenHgt() {
+  lockScreen._page.style.height = "auto";
+  lockScreen._page.style.overflow = "auto";
+}
+
 //loading
 function showLoading(){
   var el = document.querySelector('.loading');
@@ -49,17 +63,4 @@ function hideLoading() {
   var cover = document.querySelector('.doctor-cover');
   if(el) el.className = 'loading';
   if(cover) {cover.style.display = 'none';}
-}
-//lockScreen
-var lockScreen = {
-  _windowH : window.innerHeight,
-  _page : document.getElementById("page")
-}
-function lockScreenHgt() {
-  lockScreen._page.style.height = lockScreen._windowH + "px";
-  lockScreen._page.style.overflow = "hidden";
-}
-function unlockScreenHgt() {
-  lockScreen._page.style.height = "auto";
-  lockScreen._page.style.overflow = "auto";
 }
