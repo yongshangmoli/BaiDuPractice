@@ -9,51 +9,54 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<!-- patient form-->
-			<section id="page" class="patient-body body-minheight">
-			<div class="patient-banner">
-				<div class="patient-icon"></div>
-				<h1>请填写资料，获得更准确地回答</h1>
-			</div>
-			<ul class="patient-detail">
-				<li><label>患者姓名</label><p><input id="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
-				<li><label>出生年月</label>
-					<div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
-					<p><input id="yearMth" data-filed="birthdate" type="date"/></p>
-				</li>
-				<li><label>手机</label>
-					<p><input id="phone" type="tel" placeholder="手机号用于接收医生回答提醒" /></p>
-				</li>
-				<li class="sex">
-					<label>性别</label>
-					<p id="sexBtns"  style="padding-top: 0.06rem;">
-						<input type="radio" name="sex" value="0" id="male" checked="checked"/>
-						<label for="male" class="first">
-							<span class="selected"></span><span>男</span>
-						</label>
-						<input type="radio" name="sex" value="1" id="female" />
-						<label for="female">
-							<span class="choose"></span><span>女</span>
-						</label>
-					</p>
-				</li>
-				<li class="allergy">
-					<label>药物过敏</label>
-					<p id="allergyBtns" style="padding-top: 0.1rem;">
-						<input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
-						<label for="no_allergy" class="first">
-							<span class="selected"></span><span>无</span>
-						</label>
-						<input type="radio" name="allergy" value="1" id="yes_allergy" />
-						<label for="yes_allergy">
-							<span class="choose"></span><span>有</span>
-						</label>
-					</p>
-					<p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
-				</li>
-			</ul>
-			<p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p>
-		</section>
+		<div  id="page" class="body-minheight">
+				<!-- patient form-->
+			<section class="patient-body body-minheight">
+				<div class="patient-banner">
+					<div class="patient-icon"></div>
+					<h1>请填写资料，获得更准确地回答</h1>
+				</div>
+				<ul class="patient-detail">
+					<li><label>患者姓名</label><p><input id="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1" /></p></li>
+					<li><label>出生年月</label>
+						<div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+						<p><input id="yearMth" data-filed="birthdate" type="date"/></p>
+					</li>
+					<li><label>手机</label>
+						<p><input id="phone" type="tel" placeholder="手机号用于接收医生回答提醒" /></p>
+					</li>
+					<li class="sex">
+						<label>性别</label>
+						<p id="sexBtns"  style="padding-top: 0.06rem;">
+							<input type="radio" name="sex" value="0" id="male" checked="checked"/>
+							<label for="male" class="first">
+								<span class="selected"></span><span>男</span>
+							</label>
+							<input type="radio" name="sex" value="1" id="female" />
+							<label for="female">
+								<span class="choose"></span><span>女</span>
+							</label>
+						</p>
+					</li>
+					<li class="allergy">
+						<label>药物过敏</label>
+						<p id="allergyBtns" style="padding-top: 0.1rem;">
+							<input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
+							<label for="no_allergy" class="first">
+								<span class="selected"></span><span>无</span>
+							</label>
+							<input type="radio" name="allergy" value="1" id="yes_allergy" />
+							<label for="yes_allergy">
+								<span class="choose"></span><span>有</span>
+							</label>
+						</p>
+						<p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+					</li>
+				</ul>
+				<p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p>
+			</section>
+		</div>
+	
 		
 
 		<div class="patient-btn">
