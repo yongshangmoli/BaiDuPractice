@@ -122,16 +122,16 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
 .patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;}
-.patient-detail li input {outline: none; font-size: 0.28rem;border: 1px solid rgba(0,0,0,0);width: 3.7rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
+.patient-detail li input {outline: none; font-size: 0.32rem;border: 1px solid rgba(0,0,0,0);width: 3.7rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
  }
-.patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;width: 4rem;height: 100%;color: #c1c1c1;font-size: 0.28rem;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;width: 4rem;height: 100%;color: #c1c1c1;font-size: 0.32rem;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /*.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}*/
 .patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
 ::-webkit-date-edit-fields-wrapper { background-color: transparent; }
 .patient-detail .sex input,.patient-detail #allergyBtns input {display: none;}
 .patient-detail #sexBtns label,.patient-detail #allergyBtns label {position: relative;display: inline-block;text-align: center;color: #a5a5a5;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 .patient-detail #sexBtns .first,.patient-detail #allergyBtns .first {margin-left: 1.2rem;}
-.patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.28rem;}
+.patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.32rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
 .patient-tips {font-size: 0.28rem;padding: 0.2rem 0.3rem 2rem;color: #999;height: 0.4rem;line-height: 0.4rem;}
