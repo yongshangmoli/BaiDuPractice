@@ -9,59 +9,61 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body class="dctlist-greybg">
-		<!-- team doctors list -->
-		<section id="page" class="team-section">
-			<ul id="dctlist" class="dctlist-whitebg">
-				<li>
-					<a href="#" class="alink-full team-clear">
-						<div class="list-icon">
-							<img src="images/doctor-icon.png" alt="医生头像">
-						</div>
-						<div class="list-detil">
-							<h4 class="name">苏逢锡<span class="dctlist-authen"></span><span class="dctlist-state">咨询中</span></h4>
-							<p class="title">原深圳市儿童医院副主任</p>
-							<p class="edu-bgd">儿科硕士</p>
-							<div class="tag">
-								<ul class="team-clear">
-									<li>心脑血管</li>
-									<li>神经外科</li>
-									<li>神经内科</li>
-									<li>妇科</li>
-								</ul>
+		<div id="page" class="page">
+			<!-- team doctors list -->
+			<section class="team-section">
+				<ul id="dctlist" class="dctlist-whitebg">
+					<li>
+						<a href="#" class="alink-full team-clear">
+							<div class="list-icon">
+								<img src="images/doctor-icon.png" alt="医生头像">
 							</div>
-						</div>
-					</a>
-				</li>
-				<li class="team-clear">
-					<a href="#" class="alink-full team-clear">
-						<div class="list-icon">
-							<img src="images/doctor-icon.png" alt="医生头像">
-						</div>
-						<div class="list-detil">
-							<h4 class="name">苏逢锡</h4>
-							<p class="title">原深圳市儿童医院副主任</p>
-							<p class="edu-bgd">儿科硕士</p>
-							<div class="tag">
-								<ul class="tag team-clear">
-									<li>心脑血管</li>
-									<li>神经外科</li>
-									<li>神经内科</li>
-									<li>妇科</li>
-								</ul>
+							<div class="list-detil">
+								<h4 class="name">苏逢锡<span class="dctlist-authen"></span><span class="dctlist-state">咨询中</span></h4>
+								<p class="title">原深圳市儿童医院副主任</p>
+								<p class="edu-bgd">儿科硕士</p>
+								<div class="tag">
+									<ul class="team-clear">
+										<li>心脑血管</li>
+										<li>神经外科</li>
+										<li>神经内科</li>
+										<li>妇科</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-			<script src="js/zepto.js"></script>
-			<script src="js/common.js"></script>
-			<script>
-
-			//点击医生列表的处理函数
-				$("#dctlist li").on("click", function(e) {
-					window.location.href = "doctor-index.html";
-				});
-			</script>
-		</section>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a href="#" class="alink-full team-clear">
+							<div class="list-icon">
+								<img src="images/doctor-icon.png" alt="医生头像">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">苏逢锡</h4>
+								<p class="title">原深圳市儿童医院副主任</p>
+								<p class="edu-bgd">儿科硕士</p>
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>心脑血管</li>
+										<li>神经外科</li>
+										<li>神经内科</li>
+										<li>妇科</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<script src="js/zepto.js"></script>
+				<script src="js/common.js"></script>
+				<script>
+	
+				//点击医生列表的处理函数
+					$("#dctlist li").on("click", function(e) {
+						window.location.href = "doctor-index.html";
+					});
+				</script>
+			</section>
+		</div>
 	</body>
 </html>
