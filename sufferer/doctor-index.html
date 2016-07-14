@@ -115,8 +115,6 @@
 				var util = {
 					_cover : $("#doctor_cover"),
 					_refuse : $("#refuse_surface"),
-					_windowH : window.innerHeight,
-					_page : document.getElementById("page")
 				};
 				var askHandler = function(curDoctor,preDoctor) {
 					if(curDoctor === preDoctor || preDoctor === null || preDoctor === "") {//可以再次咨询其他人
@@ -125,8 +123,7 @@
 					else {
 						util._cover.show();
 						util._refuse.show();
-						util._page.style.height = util._windowH + "px";
-						util._page.style.overflow = "hidden";
+						lockScreenHgt();
 					}
 				};
 				
@@ -138,7 +135,7 @@
 				util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
 					util._refuse.hide();
 					util._cover.hide();
-					util._page.style.height = "auto";
+					unlockScreenHgt();
 				});
 				$("#asr_ask").on("click",function() {
 					assureHandler(true);
