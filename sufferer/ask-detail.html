@@ -9,7 +9,7 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page">
+		<div id="page" class="page">
 			<!--ask process -->
 			<section class="ask-process">
 				<span class="icon"></span>
@@ -57,6 +57,9 @@
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
+		setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
 			var states = ["咨询中","咨询已结束","已退款","正在退款"];
 			var setState = function(state) {
 				$("#ask_state").text(states[state]);
