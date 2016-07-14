@@ -10,7 +10,7 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page">
+		<div id="page" class="page">
 			<!-- banner -->
 			<section class="doctor-banner">
 				<img src="images/doctor-banner.jpg" alt="医生个人的照片">
@@ -92,21 +92,21 @@
 			<!-- 点击咨询后被拒绝的遮蔽层和弹出层 -->
 			<div id="doctor_cover" class="doctor-cover" style="display:none;"></div>
 			<section id="refuse_surface" class="doctor-surface" style="display:none;">
-			<div class="surface">
-				<div class="surface-title">
-					<h1>温馨提示</h1>
-					<span class="close"><a href="#" class="aclose">关闭</a></span>
+				<div class="surface">
+					<div class="surface-title">
+						<h1>温馨提示</h1>
+						<span class="close"><a href="#" class="aclose">关闭</a></span>
+					</div>
+					<div class="surface-ctnt">
+						<ul>
+							<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
+						</ul>
+					</div>
+					<div class="surface-asr">
+						<a id="refuse_asr" href="#">确定</a>
+					</div>
 				</div>
-				<div class="surface-ctnt">
-					<ul>
-						<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
-					</ul>
-				</div>
-				<div class="surface-asr">
-					<a id="refuse_asr" href="#">确定</a>
-				</div>
-			</div>
-		</section>
+			</section>
 		</div>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
