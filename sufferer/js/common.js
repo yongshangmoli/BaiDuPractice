@@ -25,28 +25,36 @@ window.alert = alert_msg;
 //lockScreen
 var lockScreen = {
   _windowH : window.innerHeight,
-  _page : document.getElementById("page")
+  _page : document.getElementById("page"),
+  _subBtn : document.querySelector('.patient-btn'),
 }
 function lockScreenHgt() {
   lockScreen._page.style.height = lockScreen._windowH + "px";
   lockScreen._page.style.overflow = "hidden";
+  if(_subBtn) {
+    lockScreen._page.style.position = "static";
+  }
 }
 function unlockScreenHgt() {
   lockScreen._page.style.height = "auto";
   lockScreen._page.style.overflow = "auto";
+  if(_subBtn) {
+    lockScreen._page.style.position = "relative";
+  }
 }
 
 //loading
 function showLoading(){
+  lockScreenHgt();
   var el = document.querySelector('.loading');
-  var cover = document.querySelector('.doctor-cover');
+  var cover = document.querySelector('.tranparent-cover');
   if(cover) {
     cover.style.display = 'block';
   }
   else {
     cover = document.createElement('div');
-    cover.className = 'doctor-cover';
-    cover.id = 'doctor_cover';
+    cover.className = 'tranparent-cover';
+    cover.id = 'tranparent_cover';
     document.body.appendChild(cover);
   }
   if(el) { 
@@ -59,8 +67,9 @@ function showLoading(){
 }
 
 function hideLoading() {
-  var el = document.querySelector('.loading');
-  var cover = document.querySelector('.doctor-cover');
-  if(el) el.className = 'loading';
-  if(cover) {cover.style.display = 'none';}
+    unlockScreenHgt();
+    var el = document.querySelector('.loading');
+    var cover = document.getElementById('tranparent_cover');
+    if(el) el.className = 'loading';
+    if(cover) {cover.style.display = 'none';}
 }
