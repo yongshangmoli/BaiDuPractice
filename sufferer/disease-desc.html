@@ -39,7 +39,7 @@
                 <a id="pay_ask" href="#">立即支付10元</a>
             </div>
     
-            <div id="cover" class="doctor-cover" style="display:none;"></div>
+            <div id="cover" class="doctor-cover disease-cover" style="display:none;"></div>
             <div id="disease" class="disease-surface">
                 <ul id="disease_list">
                     <li class="active" value="1">心脑血管</li>
@@ -66,14 +66,8 @@
                 };
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
-                    util._disease.addClass("appear-position");
-                    util._disease.removeClass("appear-hide");
-                    console.log(util._disease[0].clientHeight);
-                    if(!util.diseaseHeight) {
-                        util.diseaseHeight = util._disease[0].clientHeight;
-                        util._disease.css("bottom",-util.diseaseHeight);
-                    }
-                    util._disease.animate({bottom:"0px"},200); 
+                    util._disease.show();
+                    util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
                 util._diseasesList.on("click", function() {
                     $(this).addClass("active").siblings().removeClass("active");
@@ -82,11 +76,10 @@
                     util.diseaseKind = this.value;
                 });
                 util._cover.on("click",function() {
-                    util._disease.animate({bottom:-util.diseaseHeight},200); 
+                    util._disease.addClass("ac-down").removeClass("ac-up");
                     setTimeout(function() {
-                        util._disease.addClass("appear-hide");
                         util._cover.hide();
-                    },200);
+                    },400);
                 });
                 $("#pay_ask").on("click", function() {
                     var describe = util._diseaseDesc.val().trim();
