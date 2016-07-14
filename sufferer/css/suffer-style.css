@@ -173,7 +173,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .pay-content p {color: #999;}
 
 /*退款成功*/
-.money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2rem;width: 2rem;margin: 0 auto;}
+.money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
 /*病情查看详情页*/
 .ask-process {height: 0.8rem;line-height: 0.8rem;background-color: #307fee;color: #fff;font-size: 0.24rem;}
 .ask-process .icon {background: url(../images/inask-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 0.3rem;width: 0.36rem;margin: 0 auto;margin: 0.26rem 0.32rem;}
