@@ -31,14 +31,14 @@ var lockScreen = {
 function lockScreenHgt() {
   lockScreen._page.style.height = lockScreen._windowH + "px";
   lockScreen._page.style.overflow = "hidden";
-  if(_subBtn) {
+  if(lockScreen._subBtn) {
     lockScreen._page.style.position = "static";
   }
 }
 function unlockScreenHgt() {
   lockScreen._page.style.height = "auto";
   lockScreen._page.style.overflow = "auto";
-  if(_subBtn) {
+  if(lockScreen._subBtn) {
     lockScreen._page.style.position = "relative";
   }
 }
