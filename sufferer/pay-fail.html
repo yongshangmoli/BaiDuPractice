@@ -9,21 +9,24 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<section class="pay-fail" style="height:100%;">
-			<div class="pay-content">
-				<div class="icon"></div>
-				<h1>支付失败</h1>
-				<p>嗯~系统开了个小差，请重新支付</p>
-			</div>
-		</section>
-		<section>
-			<div class="patient-btn">
-				<a id="pay_fail"　href="#">重新支付</a>
-			</div>
-		</section>
+		<div id="page" class="body-minheight">
+			<section class="pay-fail" style="height:100%;">
+				<div class="pay-content">
+					<div class="icon"></div>
+					<h1>支付失败</h1>
+					<p>嗯~系统开了个小差，请重新支付</p>
+				</div>
+			</section>
+		</div>
+		<div class="patient-btn">
+			<a id="pay_fail"　href="#">重新支付</a>
+		</div>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
+			setTimeout(showLoading);
+             		setTimeout(hideLoading,3000);
+
 			$("#pay_fail").on("click",function() {
 				//
 			});
