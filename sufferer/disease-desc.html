@@ -75,8 +75,9 @@
                     util.diseaseKind = this.value;
                 });
                 util._cover.on("click",function() {
-                    util._disease.addClass("ac-down").removeClass("ac-up").hide();
+                    util._disease.addClass("ac-down").removeClass("ac-up");
                     setTimeout(function() {
+                        util._disease.hide();
                         util._cover.hide();
                     },600);
                 });
