@@ -30,7 +30,7 @@
 						<p id="sexBtns"  style="padding-top: 0.06rem;">
 							<input type="radio" name="sex" value="0" id="male" checked="checked"/>
 							<label for="male" class="first">
-								<span class="selected"></span><span>男</span>
+								<span class="choose"></span><span>男</span>
 							</label>
 							<input type="radio" name="sex" value="1" id="female" />
 							<label for="female">
@@ -43,7 +43,7 @@
 						<p id="allergyBtns" style="padding-top: 0.1rem;">
 							<input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
 							<label for="no_allergy" class="first">
-								<span class="selected"></span><span>无</span>
+								<span class="choose"></span><span>无</span>
 							</label>
 							<input type="radio" name="allergy" value="1" id="yes_allergy" />
 							<label for="yes_allergy">
@@ -116,17 +116,40 @@
 					_checkInfo : function(surferer,noTip) {
 						for (var key in surferer) {
 							var checkInfo = checkObj[key],value = surferer[key];
-							if(key === "allergy_detail") {
-								continue;
-							}
 							if(value===""){
 								if(!noTip) {
 									alert(checkInfo.emptyMsg);
-
 								}
 								return false;
 							}
-							if(key === "allergy" && value === "1") {
+							if(key === "allergy_detail") {
+								continue;
+							}
+							else if(key === "yearMth") {
+								var date = new Date();
+								var year = date.getFullYear(),month = date.getMonth()+1,day = date.getDate(),isOK = true;
+								var putValue = value.split("-");
+								console.log(value,putValue);
+								if(year < putValue[0]) {
+									isOK = false;
+								}
+								else if(year === parseInt(putValue[0],10)) {
+									if(month < putValue[1]) {
+										isOK = false;
+									}
+									else if(month === parseInt(putValue[1],10)) {
+										if(day < putValue[2]) {
+											isOK = false;
+										}
+									}
+								}
+								if(!isOK) {
+									if(!noTip) alert(checkObj["yearMth"].errorMsg);
+									return false;
+								}
+								continue;
+							}
+							else if(key === "allergy" && value === "1") {
 								 // var allergyDetail = $("#allergy_detail");
 								var allergyDetail = $("#allergy_detail").children()[0].value;
 
@@ -138,8 +161,6 @@
 										if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
 										return false;
 									}
-
-								console.log(allergyDetail);
 								}
 								else {
 									if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
@@ -193,6 +214,22 @@
 					if(!fn._checkInfo(surferer)) return;
 					fn._checkSucs(true);
 				});
+				
+				var initChoose = function() {
+					var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val();
+					var choose = function(target) {
+						target.attr("checked","checked").next().children().first().attr("class","selected");
+					}
+					parseInt(sex,10) === 1 ? choose($("#female")) : choose($("#male"));
+					if(parseInt(allergy,10) === 1) {
+						choose($("#yes_allergy"));
+						$("#allergy_detail").show();
+					}
+					else  {
+						choose($("#no_allergy"));
+					}
+				}
+				initChoose();
 			})();
 		</script>
 	</body>
