@@ -9,7 +9,7 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page" class="body-minheight">
+		<div id="page" class="page">
 			<section class="pay-fail" style="height:100%;">
 				<div class="pay-content">
 					<div class="icon"></div>
@@ -17,16 +17,13 @@
 					<p>嗯~系统开了个小差，请重新支付</p>
 				</div>
 			</section>
-		</div>
-		<div class="patient-btn">
-			<a id="pay_fail"　href="#">重新支付</a>
+			<div class="patient-btn">
+				<a id="pay_fail"　href="#">重新支付</a>
+			</div>
 		</div>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
-			setTimeout(showLoading);
-             		setTimeout(hideLoading,3000);
-
 			$("#pay_fail").on("click",function() {
 				//
 			});
