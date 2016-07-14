@@ -9,7 +9,7 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page" class="body-minheight">
+		<div id="page" class="page">
 			<section id="ask_surface" class="ask-surface body-minheight">
 				<div style="padding-bottom: 2rem;">
 					<div class="surface-title">
@@ -30,6 +30,9 @@
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
+		setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
 			//是不是第一次咨询
 			var assureHandler = function(first) {
 				if(first) {
