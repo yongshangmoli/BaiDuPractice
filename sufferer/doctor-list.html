@@ -10,7 +10,7 @@
 	</head>
 	<body class="dctlist-greybg">
 		<!-- team doctors list -->
-		<section class="team-section">
+		<section id="page" class="team-section">
 			<ul id="dctlist" class="dctlist-whitebg">
 				<li>
 					<a href="#" class="alink-full team-clear">
@@ -56,6 +56,9 @@
 			<script src="js/zepto.js"></script>
 			<script src="js/common.js"></script>
 			<script>
+			setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
 			//点击医生列表的处理函数
 				$("#dctlist li").on("click", function(e) {
 					window.location.href = "doctor-index.html";
