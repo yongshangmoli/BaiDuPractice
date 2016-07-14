@@ -53,13 +53,13 @@ function hideLoading() {
 //lockScreen
 var lockScreen = {
   _windowH : window.innerHeight,
-	_page : document.getElementById("page")
+  _page : document.getElementById("page")
 }
 function lockScreenHgt() {
-  lockScreen._page.style.height = util._windowH + "px";
-	lockScreen._page.style.overflow = "hidden";
+  lockScreen._page.style.height = lockScreen._windowH + "px";
+  lockScreen._page.style.overflow = "hidden";
 }
 function unlockScreenHgt() {
   lockScreen._page.style.height = "auto";
-	lockScreen._page.style.overflow = "auto";
+  lockScreen._page.style.overflow = "auto";
 }
