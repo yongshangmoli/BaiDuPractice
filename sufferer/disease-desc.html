@@ -98,7 +98,7 @@
                 util._diseaseDesc.one("focus",function() {
                     this.value = "";
                     util.isFilled = true;
-                    $("#text_control").text("还能输入200字");
+                    $("#text_control").text("还能输入200字").css("color","#666");
                 });
                 util._diseaseDesc.on("input",function() {
                     var value = $(this).val();
