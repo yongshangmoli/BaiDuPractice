@@ -36,9 +36,9 @@ function lockScreenHgt() {
   }*/
 }
 function unlockScreenHgt() {
-  lockScreen._page.style = "";
+  // lockScreen._page.style = "";
   lockScreen._page.style.height = "100%";
-  // lockScreen._page.style.overflow = "auto";
+  lockScreen._page.style.overflow = "auto";
  /* if(lockScreen._subBtn) {
     lockScreen._subBtn.style.marginTop = "-1rem";
   }*/
