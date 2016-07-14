@@ -165,9 +165,11 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 .disease-part .error {color: #eb3030;}
 /*病情描述页的病种选择*/
 .ac-up { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-in 0.3s ease-out 0s 1 normal forwards;animation: share-in 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-in,@-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
+@-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
+@-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
 .ac-down { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-out 0.3s ease-out 0s 1 normal forwards;animation: share-out 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-out,@-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
+@-webkit-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
+@-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
 .disease-cover {z-index: 0;}
 
 /*支付成功、失败*/
