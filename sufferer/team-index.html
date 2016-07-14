@@ -11,7 +11,7 @@
 	<body>
 		<div id="page" class="page">
 			<!-- banner -->
-			<section id="team_banner" class="team-banner" style="padding-bottom:0.3rem;">
+			<section id="team_banner" class="team-banner">
 				<div class="head-icon">
 					<img src="images/team-icon.png" alt="集团图标">
 				</div>
@@ -182,7 +182,6 @@
 				var me = $(this), banner=$("#team_banner");
 				me.parent().toggleClass("angle-btm");
 				$("#intro").add($("#team_banner")).toggleClass("hgt-clear");
-				 //$("#intro").toggleClass("hgt-clear");
 				util._switchHdlr($("#intro"),_bannerInfo,$(this).parent().parent());
 			});
 			//文章列表的截断
