@@ -149,8 +149,6 @@
 		<script src="js/common.js"></script>
 		<script>
 			
-			lockScreenHgt();
-             		// setTimeout(hideLoading,3000);
 			
 			var util = {
 				atr : 0,
@@ -199,7 +197,8 @@
 			});
 			//跳转到医生列表页
 			$("#all_doctor").on("click",function(e) {
-				window.location.href = "doctor-list.html";
+				lockScreenHgt();
+				// window.location.href = "doctor-list.html";
 			});
 			//跳转到文章列表页
 			$("#all_essay").on("click",function(e) {
