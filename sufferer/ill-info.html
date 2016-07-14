@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<!-- patient form-->
-		<section class="patient-body body-minheight">
+		<section id="page" class="patient-body body-minheight">
 			<div class="patient-banner">
 				<div class="patient-icon"></div>
 				<h1>请填写资料，获得更准确地回答</h1>
@@ -63,6 +63,9 @@
 		<script src="js/common.js"></script>
 		<script>
 			(function() {
+				setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
 				//出生年月是否显示placeholder文字
 				var bd_date = $('#yearMth'),bd_placeholder = $('#bd_placeholder');
 				var ck_bd_placeholder = function() {
