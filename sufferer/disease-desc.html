@@ -9,7 +9,8 @@
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
-        <section class="body-minheight">
+        <div id="page">
+            <section class="body-minheight">
             <div class="disease-part">
                 <a href="#" id="disease_choose" class="alink">
                     <span>选择病种</span>
@@ -46,11 +47,15 @@
                 <li value="3">神经内科</li>
             </ul>
         </div>
+        </div>
         <script src="js/zepto.js"></script>
         <script src="js/common.js"></script>
         <script src="js/fx.js"></script>
         <script>
             (function() {
+                setTimeout(showLoading);
+             setTimeout(hideLoading,3000);
+
                 var util = {
                     _cover : $("#cover"),
                     _disease : $("#disease"),
