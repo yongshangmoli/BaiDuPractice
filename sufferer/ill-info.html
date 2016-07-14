@@ -216,7 +216,8 @@
 				});
 				
 				var initChoose = function() {
-					var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val();
+					var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val(),yearMth = $("#yearMth").val();
+					if(yearMth) {ck_bd_placeholder();}
 					var choose = function(target) {
 						target.attr("checked","checked").next().children().first().attr("class","selected");
 					}
