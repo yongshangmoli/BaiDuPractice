@@ -29,12 +29,12 @@ var lockScreen = {
   _subBtn : document.querySelector('.patient-btn'),
 }
 function lockScreenHgt() {
-  lockScreen._page.style.height = lockScreen._windowH + "px";
-  lockScreen._page.style.overflow = "hidden";
+  // lockScreen._page.style.height = lockScreen._windowH + "px";
+  lockScreen._page.className = "page hide-height";
 }
 function unlockScreenHgt() {
-  lockScreen._page.style.height = "100%";
-  lockScreen._page.style.overflow = "auto";
+  // lockScreen._page.style.height = "100%";
+  lockScreen._page.className = "page";
 }
 
 //loading
