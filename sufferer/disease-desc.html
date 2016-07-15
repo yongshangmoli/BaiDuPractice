@@ -63,7 +63,6 @@
                     diseaseKind : $("#disease_list li.active").attr("value"),//选择的是哪种疾病
                     diseaseDesc : "",//疾病的描述
                     diseaseHeight : 0,
-                    isFilled : false,
                 };
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
@@ -88,18 +87,12 @@
                         util.diseaseDesc = describe;
                         window.location.href = "pay-succs.html";
                     };
-                    if(util.isFilled && describe) {
+                    if(describe) {
                         _checkSucs();
                     }
                     else {
                         alert("请填写病情描述");
                     }
-                });
-                util._diseaseDesc.one("focus",function() {
-                    this.value = "";
-                    this.style.color = "#666";
-                    util.isFilled = true;
-                    $("#text_control").text("还能输入200字");
                 });
                 util._diseaseDesc.on("input",function() {
                     var value = $(this).val();
