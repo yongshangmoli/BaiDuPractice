@@ -70,7 +70,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-banner {height: 3.64rem;position: relative;height: 4.71rem;}
 .doctor-section h3{font-size: 0.28rem;}
 .doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
-.doctor-banner .intro {position: absolute;bottom: 0;padding: 0.1rem 0 0.12rem 0rem;width: 100%;font-size: 0.28rem;color: #fff;background: linear-gradient(0,rgba(0,0,0,0.5),rgba(255,255,255,0));}
+.doctor-banner .intro {position: absolute;bottom: 0;padding:0.58rem 0 0.12rem 0rem;width: 100%;font-size: 0.28rem;color: #fff;background: linear-gradient(0,rgba(0,0,0,0.5),rgba(255,255,255,0));}
 .doctor-banner .intro h2 {color: #fff;}
 .doctor-banner .intro h2,.doctor-banner .intro p {padding-left:0.32rem;}
 .doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;}
