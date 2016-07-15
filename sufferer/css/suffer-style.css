@@ -32,7 +32,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .team-banner .gradual-bg {background: url(../images/gradualc.png) repeat-x;}
 .team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.3rem;}
-.team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.28rem;}
+.team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.32rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
 .team-intrdc-detl {margin-left: 1rem;font-size: 0.32rem;}
 .team-section .alink {float: right;}
