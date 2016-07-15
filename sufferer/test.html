@@ -53,26 +53,6 @@
         <script src="js/fx.js"></script>
         <script>
             (function() {
-            	var lockScreen = {
-		  _windowH : window.innerHeight,
-		  _page : document.getElementById("page"),
-		  // _subBtn : document.querySelector('.patient-btn'),
-		}
-		function lockScreenHgt() {
-		  lockScreen._page.style.height = lockScreen._windowH + "px";
-		  lockScreen._page.style.overflow = "hidden";
-		 /* if(lockScreen._subBtn) {
-		    lockScreen._subBtn.style.marginTop = "0";
-		  }*/
-		}
-		function unlockScreenHgt() {
-		  // lockScreen._page.style = "";
-		  lockScreen._page.style.height = "auto";
-		  lockScreen._page.style.overflow = "auto";
-		 /* if(lockScreen._subBtn) {
-		    lockScreen._subBtn.style.marginTop = "-1rem";
-		  }*/
-		}
                
                 var util = {
                     _cover : $("#cover"),
@@ -90,7 +70,7 @@
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
-                     lockScreenHgt();
+                     //lockScreenHgt();
                 });
                 util._diseasesList.on("click", function() {
                     $(this).addClass("active").siblings().removeClass("active");
@@ -103,7 +83,7 @@
                     setTimeout(function() {
                         util._disease.hide();
                         util._cover.hide();
-                        unlockScreenHgt();
+                        // unlockScreenHgt();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
