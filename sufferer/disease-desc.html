@@ -79,7 +79,7 @@
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
-                    lockScreenHgt();
+                    //lockScreenHgt();
                 });
                 util._diseasesList.on("click", function() {
                     $(this).addClass("active").siblings().removeClass("active");
@@ -92,7 +92,7 @@
                     setTimeout(function() {
                         util._disease.hide();
                         util._cover.hide();
-                        unlockScreenHgt();
+                        // unlockScreenHgt();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
