@@ -148,7 +148,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*疾病描述详情页*/
-.disease-part {padding: 0.3rem;font-size: 0.32rem;}
+.disease-part {padding: 0.3rem;font-size: 0.32rem;background-color:#fff;}
 .disease-gap {border-top: 0.1rem #f1f1f1 solid;position: relative;}
 .disease-part label {height: 0.3rem;}
 .disease-part span,.disease-part h3 {font-size: 0.32rem;}
