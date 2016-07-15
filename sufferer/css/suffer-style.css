@@ -19,7 +19,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 @-webkit-keyframes spin{100% {-webkit-transform: rotate(360deg);}}
 @-keyframes spin{100% {transform: rotate(360deg);}}
 
-.hide-height {heigh:100%;overflow:hidden;}
+.hide-height {height:100%;overflow:hidden;}
 /*医生团队主页*/
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
