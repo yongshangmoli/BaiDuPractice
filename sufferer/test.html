@@ -53,7 +53,7 @@
         <script src="js/fx.js"></script>
         <script>
             (function() {
-                lockScreenHgt();
+               
                 var util = {
                     _cover : $("#cover"),
                     _disease : $("#disease"),
@@ -70,6 +70,7 @@
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
+                     lockScreenHgt();
                 });
                 util._diseasesList.on("click", function() {
                     $(this).addClass("active").siblings().removeClass("active");
@@ -82,6 +83,7 @@
                     setTimeout(function() {
                         util._disease.hide();
                         util._cover.hide();
+                        lockScreenHgt();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
