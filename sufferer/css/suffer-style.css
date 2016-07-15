@@ -76,7 +76,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-banner .intro {position: absolute;bottom: 0;padding:0.58rem 0 0.12rem 0rem;width: 100%;font-size: 0.28rem;color: #fff;background: linear-gradient(0,rgba(0,0,0,0.5),rgba(255,255,255,0));}
 .doctor-banner .intro h2 {color: #fff;}
 .doctor-banner .intro h2,.doctor-banner .intro p {padding-left:0.32rem;}
-.doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;}
+.doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;background-color:#fff;}
 .doctor-section p {margin-left: 0.7rem;color: #666;}
 .doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;margin-left: 1rem;margin-top: 0.2rem;}
