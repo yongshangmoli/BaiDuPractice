@@ -34,7 +34,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.3rem;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.32rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
-.team-intrdc-detl {margin-left: 1rem;font-size: 0.32rem;}
+.team-intrdc-detl {margin-left: 1rem;font-size: 0.32rem;color: #666;}
 .team-section .alink {float: right;}
 .team-section .alink-full {display: block;height: 100%;width: 100%;}
 .team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f2f2f2 solid;font-size: 0.32rem;}
