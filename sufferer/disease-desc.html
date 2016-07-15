@@ -64,6 +64,9 @@
                     diseaseDesc : "",//疾病的描述
                     diseaseHeight : 0,
                 };
+                $("#disease_choose").one("click",function() {
+					util._diseaseRecord.css("color","#666");
+				});
                 $("#disease_choose").on("click", function() {
                     util._cover.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
