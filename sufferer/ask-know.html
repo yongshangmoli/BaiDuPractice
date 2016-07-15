@@ -9,8 +9,8 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page" class="page">
-			<section id="ask_surface" class="ask-surface body-minheight">
+		<div id="page" class="page white-bg">
+			<section id="ask_surface" class="ask-surface">
 				<div style="padding-bottom: 2rem;">
 					<div class="surface-title">
 						<h1>咨询须知</h1>
@@ -41,7 +41,8 @@
 			};
 			$("#pay_sucs").on("click",function() {
 				assureHandler(false);
-			})
+			});
+			showLoading();
 		</script>
 	</body>
 </html>
