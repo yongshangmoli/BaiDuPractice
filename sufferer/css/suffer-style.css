@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-html,body {height:100%;font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";color: #333;background-color:#f4f4f4;}
+html,body {height:100%;font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";color: #333;}
 html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea {padding: 0;margin: 0;font-weight: normal;}
 a {text-decoration: none;}
 a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
@@ -20,7 +20,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 @-keyframes spin{100% {transform: rotate(360deg);}}
 
 .hide-height {height:100%;overflow:hidden;}
-.white-bg {background-color:#fff;}
 /*医生团队主页*/
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
