@@ -20,7 +20,7 @@ a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 /*医生团队主页*/
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
-.team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.jpg) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
+.team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.png) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
 .team-banner .head-icon {height: 2.06rem;width: 2.06rem;margin: 0 auto;}
 .team-banner h1 {font-size: 0.36rem;margin: 0.16rem 0 0.2rem 0;text-align: center;}
 .team-banner p {font-size: 0.28rem;text-align: left;overflow: hidden;padding-bottom: 0.2rem;}
