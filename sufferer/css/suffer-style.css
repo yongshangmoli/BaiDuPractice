@@ -51,7 +51,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
 .team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
 .team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
-.team-section .list-detil .name {color:#1d75f0;padding-bottom: 0.18rem;margin-top: -0.06rem;}
+.team-section .list-detil .name {color:#1d75f0;padding-bottom: 0.18rem;}
 .team-section .list-detil .title {color:#333;font-size: 0.32rem;}
 .team-section .list-detil .artcl {font-size: 0.28rem;color: #666;}
 .team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
