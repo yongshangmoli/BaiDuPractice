@@ -7,14 +7,6 @@
         <title>请填写基本资料</title>
         <link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
-        <style>
-            li>label {float:left;line-height: 0.6rem;}
-            p {margin-left:1.7rem;height: 0.6rem;}
-            input {height:100%;width:100%;border:none;font-size:0.32rem;line-height:0.6rem;}
-            .second {margin-right: 0.5rem; }
-            .patient-algydesc {margin-top: 0.2rem;padding:0;}
-            .patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
-        </style>
     </head>
     <body>
         <div  id="page" class="page">
@@ -65,44 +57,7 @@
                         </p>
                         <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
                     </li>
-                    <p class="patient-tips" style="padding-bottom:2rem;"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p>
-
-                    <!-- <li><label>患者姓名</label><p><input id="name" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/></p></li>
-                    <li><label>出生年月</label>
-                        <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
-                        <p><input id="yearMth" data-filed="birthdate" type="date"/></p>
-                    </li>
-                    <li><label>手机</label>
-                        <p><input id="phone" type="tel" placeholder="用于接收医生回答提醒" /></p>
-                    </li>
-                    <li class="sex">
-                        <label>性别</label>
-                        <p id="sexBtns">
-                            <input type="radio" name="sex" value="0" id="male" checked="checked"/>
-                            <label for="male" class="first">
-                                <span class="choose"></span><span>男</span>
-                            </label>
-                            <input type="radio" name="sex" value="1" id="female" />
-                            <label for="female">
-                                <span class="choose"></span><span>女</span>
-                            </label>
-                        </p>
-                    </li>
-                    style="padding-top: 0.1rem;"   style="padding-top: 0.06rem;"
-                    <li class="allergy">
-                        <label>药物过敏</label>
-                        <p id="allergyBtns" >
-                            <input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
-                            <label for="no_allergy" class="first">
-                                <span class="choose"></span><span>无</span>
-                            </label>
-                            <input type="radio" name="allergy" value="1" id="yes_allergy" />
-                            <label for="yes_allergy">
-                                <span class="choose"></span><span>有</span>
-                            </label>
-                        </p>
-                        <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
-                    </li> -->
+                    <p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p>
                 </ul>
             </section>
         </div>
@@ -255,13 +210,12 @@
                     fn._getInfo(surferer);
                     console.log(surferer);
                     if(!fn._checkInfo(surferer)) return;
-                    // fn._checkSucs(true);
+                    fn._checkSucs(true);
                 });
                 
                 var initChoose = function() {
                     var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val();
                     ck_bd_placeholder();
-                    // if(yearMth) {ck_bd_placeholder();},yearMth = $("#yearMth").val()
                     var choose = function(target) {
                         target.attr("checked","checked").next().children().first().attr("class","selected");
                     }
