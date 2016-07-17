@@ -167,7 +167,7 @@
                                 }
                                 return false;
                             }
-                            if(key === "allergy_detail") {
+                            if(key === "allergyDetl") {
                                 continue;
                             }
                             else if(key === "yearMth") {
@@ -197,18 +197,15 @@
                             else if(key === "allergy" && value === "1") {
                                  // var allergyDetail = $("#allergy_detail");
                                 var allergyDetail = $("#allergy_detail").children()[0].value;
-
-                                console.log(allergyDetail);
                                 if(allergyDetail) {
                                     allergyDetail = allergyDetail.trim();
                                     if(allergyDetail === "") {
-                                        console.log(allergyDetail);
-                                        if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
+                                        if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
                                         return false;
                                     }
                                 }
                                 else {
-                                    if(!noTip) alert(checkObj["allergy_detail"].emptyMsg);
+                                    if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
                                     return false;
                                 }
                                 surferer.allergyDetl = allergyDetail;
