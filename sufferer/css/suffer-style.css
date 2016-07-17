@@ -141,7 +141,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.32rem;display: inline-block;line-height:0.6rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
-.patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0;}
+.patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0; padding-bottom:2rem;}
 /*.patient-tips .info {display:inline-block;vertical-align:middle;padding-top:0.06rem;line-height:0.4rem;}*/
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
 .patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
