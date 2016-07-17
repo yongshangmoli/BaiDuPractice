@@ -80,10 +80,10 @@
                 });
                 util._cover.on("click",function() {
                     util._disease.addClass("ac-down").removeClass("ac-up");
+                    unlockScreenHgt();
                     setTimeout(function() {
                         util._disease.hide();
                         util._cover.hide();
-                        unlockScreenHgt();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
