@@ -127,10 +127,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;}
 .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
 }
+.patient-detail li>label {float:left;line-height: 0.6rem;}
 /*.patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;font-size:0.32rem;}*/
 /*.patient-detail li input {outline: none; color:#666;font-size: 0.32rem;border: 1px solid rgba(0,0,0,0);width: 3.7rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);*/
 /* }*/
-
+.patient-detail p {margin-left:1.7rem;height: 0.6rem;}
+.patient-detail li input {height:100%;width:100%;border:none;font-size:0.32rem;line-height:0.6rem;}
+.patient-detail .second {margin-right: 0.5rem; }
 .patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;height: 100%;color: #999;font-size: 0.32rem;margin-left: 1.7rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /*.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}*/
 .patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
@@ -144,8 +147,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0; padding-bottom:2rem;}
 /*.patient-tips .info {display:inline-block;vertical-align:middle;padding-top:0.06rem;line-height:0.4rem;}*/
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
-.patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
+/*.patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}*/
 /*.patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}*/
+.patient-algydesc {margin-top: 0.2rem;padding:0;}
+.patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*疾病描述详情页*/
