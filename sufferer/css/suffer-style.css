@@ -67,7 +67,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 /*（有用到医生团队主页的样式），医生列表新增样式*/
 .dctlist-greybg {background-color: #f4f4f4;}
 .dctlist-state {float:right;font-size: 0.28rem;color:#ff9018;}
-.dctlist-whitebg {background-color: #fff;}
+/*.dctlist-whitebg {background-color: #fff;}*/
 .dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
 /*文章列表的样式有用到上面的样式*/
 /*医生个人主页的样式*/
