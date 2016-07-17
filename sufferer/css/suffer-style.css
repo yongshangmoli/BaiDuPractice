@@ -18,12 +18,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .loading:after{content: '';position: absolute;top:0;left: 0;right: 0;bottom: 0;margin: auto;width: 50%;height: 50%;border-radius: 50%;-webkit-box-sizing: border-box;box-sizing: border-box;border: solid 0.1rem #b1b1b2;border-top-color: #eaeaec;-webkit-animation: spin 1s infinite linear;animation: spin 1s infinite linear;}
 @-webkit-keyframes spin{100% {-webkit-transform: rotate(360deg);}}
 @-keyframes spin{100% {transform: rotate(360deg);}}
-
 .hide-height {height:100%;overflow:hidden;}
 .more-margin {margin-bottom: 0.5rem;}
-/*医生团队主页*/
+
+.greybg {background-color: #f4f4f4;}
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
+.no-handle {background-color: #999;}
+.check-error {color: red;}
+/*医生团队主页*/
+
 .team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.png) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
 .team-banner .head-icon {height: 2.06rem;width: 2.06rem;margin: 0 auto;}
 .team-banner h1 {font-size: 0.36rem;margin: 0.16rem 0 0.1rem 0;text-align: center;}
@@ -64,12 +68,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .team-section .team-footer p {font-size: 0.28rem;}
 .team-section .team-footer .adrs-phe {color:#666;padding: 0.3rem 0 0.7rem 0}
 .team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.2rem 0;margin: 0 auto;}
-/*（有用到医生团队主页的样式），医生列表新增样式*/
-.dctlist-greybg {background-color: #f4f4f4;}
+/*医生列表新增样式*/
 .dctlist-state {float:right;font-size: 0.28rem;color:#ff9018;}
-/*.dctlist-whitebg {background-color: #fff;}*/
 .dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
-/*文章列表的样式有用到上面的样式*/
+
 /*医生个人主页的样式*/
 .doctor-banner {height: 3.64rem;position: relative;height: 4.71rem;}
 .doctor-section h3{font-size: 0.28rem;}
@@ -81,7 +83,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-section p {margin-left: 0.7rem;color: #666;}
 .doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;margin-left: 1rem;margin-top: 0.2rem;}
-/*.doctor-section li {list-style: none;margin-bottom: 0.2rem;}*/
 .doctor-section li p {padding: 0.04rem 0;}
 .doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
 .doctor-section .title {font-size: 0.32rem;color:#333; display: inline-block;vertical-align: middle;height: 0.42rem; line-height:0.42rem;margin: 0.2rem 0.2rem 0.2rem 0;}
@@ -89,24 +90,17 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
 .doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
 .doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
-/*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
 .doctor-section ul::before {content: "";border: 1px #f1f1f1 solid;height: 100%;margin-left: 0.78rem;margin-top: 0.24rem;position: absolute;}
-/*.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.3rem;margin-top:0.3rem;padding-top: 1px;}*/
 .doctor-section .career-wrpr {position: relative;}
 .doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.26rem;}
 .doctor-section .career p {margin-left: 0.2rem;}
 .doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.12rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 0.74rem;color: #d2d2d2;}
-/*.doctor-section .career p:nth-child(odd)::before {content: "●";color:#d2d2d2;position: absolute;left: 1.04rem;font-size: 0.24rem;margin-top:0.04rem;}*/
 .doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
-/*.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
-.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}*/
 .doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
 .doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
-/*.doctor-surface {height: 100%;}*/
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
 /*患者咨询的提示弹出层*/
 .doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
@@ -120,35 +114,26 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .surface-ctnt li {margin-bottom: 0.4rem;}
 .surface-ctnt li::before {content:"●";color:#999;position: absolute;left:0.28rem;font-size: 0.14rem;margin-top:0.1rem;}
 .surface .surface-asr a {display:inline-block;height: 100%;width: 100%;color: #fff;}
+/*患者信息填写*/
 .patient-banner {padding: 0.36rem 0.36rem 0;text-align: center;height: auto;min-height: 92%;}
 .patient-banner h1 {font-size: 0.4rem;color: #333;padding-bottom: 0.24rem;margin-top:-0.36rem;}
 .patient-banner p {font-size: 0.28rem; color: #666;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;}
-.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
-}
+.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;}
 .patient-detail li>label {float:left;line-height: 0.6rem;}
-/*.patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;font-size:0.32rem;}*/
-/*.patient-detail li input {outline: none; color:#666;font-size: 0.32rem;border: 1px solid rgba(0,0,0,0);width: 3.7rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);*/
-/* }*/
 .patient-detail p {margin-left:1.7rem;height: 0.6rem;}
 .patient-detail li input {height:100%;width:100%;border:none;font-size:0.32rem;line-height:0.6rem;}
 .patient-detail .second {margin-right: 0.5rem; }
 .patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;height: 100%;color: #999;font-size: 0.32rem;margin-left: 1.7rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
-/*.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}*/
 .patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
 ::-webkit-date-edit-fields-wrapper { background-color: transparent; }
 .patient-detail .sex input,.patient-detail #allergyBtns input {display: none;}
-/*.patient-detail #sexBtns label,.patient-detail #allergyBtns label {position: relative;display: inline-block;text-align: center;color: #999;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}*/
-/*.patient-detail #sexBtns .first,.patient-detail #allergyBtns .first {margin-left: 1.2rem;}*/
 .patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.32rem;display: inline-block;line-height:0.6rem;}
 .patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
 .patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
 .patient-detail .patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0; padding-bottom:2rem;}
-/*.patient-tips .info {display:inline-block;vertical-align:middle;padding-top:0.06rem;line-height:0.4rem;}*/
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
-/*.patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}*/
-/*.patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}*/
 .patient-algydesc {margin-top: 0.2rem;padding:0;display:none;}
 .patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;box-shadow: 0px 6px 6px #c3dafa;}
@@ -177,13 +162,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .disease-part .error {color: #eb3030;}
 /*病情描述页的病种选择*/
 .ac-up { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-in 0.3s ease-out 0s 1 normal forwards;animation: share-in 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
-@-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
+@-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);}} 
+@-keyframes share-in {0% {transform: translateY(0);} 100% {transform: translateY(-100%);}} 
 .ac-down { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-out 0.3s ease-out 0s 1 normal forwards;animation: share-out 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
-@-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
+@-webkit-keyframes share-out {0% { -webkit-transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);}} 
+@-keyframes share-out {0% { transform: translateY(-100%);} 100% { transform: translateY(0);}} 
 .disease-cover {z-index: 0;}
-
 /*支付成功、失败*/
 .pay-succs,.pay-fail {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
 .pay-succs h1,.pay-fail h1 {font-size: 0.4rem;padding: 0 0 0.1rem;margin-top: -0.36rem;}
@@ -192,7 +176,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .pay-succs .icon,.pay-fail .icon {-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
 .pay-content {transform: translateY(-50%);top:50%;position: relative;padding-bottom:2rem;}
 .pay-content p {color: #999;}
-
 /*退款成功*/
 .money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
 /*病情查看详情页*/
@@ -222,9 +205,5 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.14rem;text-align: center;padding-bottom:2rem;}
 .sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
 .sufferer-list .add {display:inline-block;background: url(../images/add-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-right: 0.2rem;}
-.no-handle {background-color: #999;}
-.check-error {color: red;}
+
 .tranparent-cover {background:rgba(255,255,255,0);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.body-minheight {height: auto;min-height: 100%;}
-.appear-position {position:absolute;display: block;bottom: -50%;}
-.appear-hide {display: none;}
