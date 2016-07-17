@@ -151,7 +151,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 /*.patient-detail .selected,.patient-detail .choose {vertical-align: middle;margin: 0 0.2rem 0 0.42rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}*/
 .patient-algydesc {margin-top: 0.2rem;padding:0;display:none;}
 .patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
-.patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
+.patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;box-shadow: 0px 6px 6px #c3dafa;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*疾病描述详情页*/
 .disease-part {padding: 0.3rem;font-size: 0.32rem;background-color:#fff;}
