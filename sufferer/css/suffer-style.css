@@ -97,7 +97,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.12rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 0.74rem;color: #d2d2d2;}
 .doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
 .doctor-section .t-price {float:right;color:#ff9018;line-height: 0.82rem;margin-right: 0.2rem;}
-.doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.2rem;line-height: 0.72rem;text-align: center;border-radius: 0.06rem;}
+.doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;width:1.2rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
 .doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
 .doctor-section .footer p {margin-left: 0;}
 .doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
