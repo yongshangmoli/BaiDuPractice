@@ -33,12 +33,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .team-banner h1 {font-size: 0.36rem;margin: 0.16rem 0 0.1rem 0;text-align: center;}
 .team-banner p {font-size: 0.28rem;text-align: left;overflow: hidden;padding-bottom: 0.2rem;}
 .team-banner a {display:block;height: 100%;width: 100%;}
-.team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;}
+.team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;-webkit-transition: all 0.5s;transition: all 1=0.5s;}
 .team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
 .team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;}
 .team-banner .gradual-bg {background: url(../images/gradualc.png) repeat-x;}
 .team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
 .hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.3rem;}
+.team-banner .rotate {-webkit-transform: rotate(180deg);transform: rotate(180deg);}
 .team-section {background-color:#fff;}
 .team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.32rem;}
 .team-intrdc-left,.team-section .list-icon {float: left;}
