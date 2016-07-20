@@ -14,7 +14,7 @@
 			<section class="team-section">
 				<ul id="dctlist">
 					<li>
-						<a href="doctor-index.html" class="alink-full team-clear">
+						<a href="javascript:void(0);" class="alink-full team-clear">
 							<div class="list-icon">
 								<img src="images/doctor1.png" alt="医生头像">
 							</div>
@@ -32,7 +32,7 @@
 						</a>
 					</li>
 					<li class="team-clear">
-						<a href="doctor-index2.html" class="alink-full team-clear">
+						<a href="javascript:void(0);" class="alink-full team-clear">
 							<div class="list-icon">
 								<img src="images/doctor2.png" alt="医生头像">
 							</div>
@@ -50,6 +50,44 @@
 							</div>
 						</a>
 					</li>
+					<li class="team-clear">
+						<a href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<img src="images/doctor3.png" alt="医生头像">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">潘宏光</h4>
+								<!-- <p class="title">澳大利亚澳洲妇女儿童医院</p> -->
+								<p class="edu-bgd">耳鼻喉科主任医师，医学博士</p>
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>喉软化</li>
+										<li>听力障碍</li>
+										<li>外耳疾病</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<img src="images/doctor4.png" alt="医生头像">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">宋宁</h4>
+								<p class="title">深圳市儿童医院口腔科 主治医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>错合畸形</li>
+										<li>儿童舒适化治疗</li>
+										<li>牙外伤</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
 				</ul>
 				<script src="js/zepto.js"></script>
 				<script src="js/common.js"></script>
@@ -57,7 +95,7 @@
 	
 				//点击医生列表的处理函数
 					$("#dctlist li").on("click", function(e) {
-						window.location.href = "doctor-index.html";
+						window.location.href = "doctor-index"+($(this).index()+1)+".html";
 					});
 				</script>
 			</section>
