@@ -250,7 +250,8 @@
                 //sex和allergy样式控制
                 $("#sexBtns").on("touchstart","label",function() {
                     var that = $(this),name = this.getAttribute("for");
-                    styleChoose(name,name+"c",that);
+                    var theOther = (name === "male")?"female":"male";
+                    styleChoose(theOther,name+"c",that);
                 });
                 $("#allergyBtns").on("touchstart","label",function() {
                     var that = $(this),prev = that.prev();
