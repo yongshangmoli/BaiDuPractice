@@ -246,7 +246,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 /* .sufferer-list .selected {background: url(../images/round-selected.png) no-repeat;}
 .sufferer-list .choose {background: url(../images/round-choose.png) no-repeat;}
 .sufferer-list .selected,.sufferer-list .choose {vertical-align: middle;margin-left: 3.84rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;    display: inline-block} */
-.sufferer-list .selected,.sufferer-list .choose {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.6rem;height: 0.6rem;position: absolute;right: 0;}
+.sufferer-list .selected,.sufferer-list .choose {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.6rem;height: 0.6rem;position: absolute;right: 0;top: 0.44rem;}
 .sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.44rem;text-align: center;padding-bottom:2rem;margin-top: -0.3rem;}
 .sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
 
