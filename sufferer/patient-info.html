@@ -76,11 +76,11 @@
                         <p id="sexBtns">
                             <input type="radio" name="sex" value="0" id="male" checked="checked"/>
                             <label for="male">
-                                <span class="malec"></span><span class="second">男</span>
+                                <span class="selected"></span><span class="second">男</span>
                             </label>
                             <input type="radio" name="sex" value="1" id="female"/>
                             <label for="female">
-                                <span class="female"></span><span class="second">女</span>
+                                <span class="choose"></span><span class="second">女</span>
                             </label>
                             <div class="line"></div>
                         </p>
@@ -241,9 +241,8 @@
                 };
                 //sex和allergy样式控制
                 $("#sexBtns").on("touchstart","label",function() {
-                    var that = $(this),name = this.getAttribute("for");
-                    var theOther = (name === "male")?"female":"male";
-                    styleChoose(theOther,name+"c",that);
+                    var that = $(this);
+                    styleChoose("choose","selected",that);
                 });
                 $("#allergyBtns").on("touchstart","label",function() {
                     var that = $(this),prev = that.prev();
