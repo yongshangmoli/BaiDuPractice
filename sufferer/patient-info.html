@@ -7,6 +7,14 @@
         <title>请填写基本资料</title>
         <link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+        <style type="text/css" media="screen">
+            .patient-detail li {
+                border:none;
+                position: relative;
+            }
+            .patient-detail .line {position:absolute;border:1px #f1f1f1 solid;margin: 0.4rem 0.3rem 0 1rem;width: 83%;}
+            /*.patient-detail p:after {position:absolute;content: "";width: 100%;border:1px #f1f1f1 solid;}*/
+        </style>
     </head>
     <body>
         <div id="page" class="page">
@@ -60,16 +68,16 @@
                     </li> -->
                     <li>
                         <label for="name"><i class="name">姓名</i></label>
-                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/></p>
+                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/><div class="line"></div></p>
                     </li>
                     <li>
                         <label for="yearMth"><i class="date">出生年月</i></label>
                         <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
-                        <p><input id="yearMth" type="date"/></p>
+                        <p><input id="yearMth" type="date"/><div class="line"></div></p>
                     </li>
                     <li>
                         <label for="phone"><i class="phone">手机号码</i></label>
-                        <p><input id="phone" type="tel" placeholder="请输入手机号码" /></p>
+                        <p><input id="phone" type="tel" placeholder="请输入手机号码" /><div class="line"></div></p>
                     </li>
                     <li class="sex">
                         <label for="sex"><i class="sexc">性别</i></label>
@@ -82,6 +90,7 @@
                             <label for="female">
                                 <span class="female"></span><span>女</span>
                             </label>
+                            <div class="line"></div>
                         </p>
                     </li>
                     <li class="allergy">
@@ -97,6 +106,7 @@
                             </label>
                         </p>
                         <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+                        <div class="line"></div>
                     </li>
                    <!--  <p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p> -->
                 </ul>
