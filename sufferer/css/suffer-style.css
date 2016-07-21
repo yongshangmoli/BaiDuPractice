@@ -138,7 +138,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-algydesc {margin-top: 0.2rem;padding:0;display:none;}
 .patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
  */
-.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;min-height: 1rem;padding: 0;}
+.patient-detail li {list-style: none;position:relative;min-height: 1rem;padding: 0;}
 .patient-detail li>label {float:left;line-height: 0.6rem;}
 .patient-detail p {margin-left: 1rem; line-height: 0.6rem;margin-top: 0.4rem;}
 .patient-detail li:first-child p {margin-top: 0;}
@@ -155,6 +155,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-detail .patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0; padding-bottom:2rem;}
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
 .patient-algydesc {margin-top: 0.2rem;padding:0;display:none;}
+.patient-detail .active {color: #1D75F0;}
+.patient-detail .line {position:absolute;border:1px #f1f1f1 solid;margin: 0.4rem 0.3rem 0 1rem;width: 83%;}
 
 /*.patient-detail p {margin-left: 1rem; line-height: 0.6rem;margin-top: 0.4rem;}*/
 /*.patient-detail li:first-child p {margin-top: 0;}*/
