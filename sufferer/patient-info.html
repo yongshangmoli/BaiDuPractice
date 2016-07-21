@@ -74,9 +74,9 @@
                     <li class="sex">
                         <label for="sex"><i class="sexc">性别</i></label>
                         <p id="sexBtns">
-                            <input type="radio" name="sex" value="0" id="male" checked="checked"/>
+                            <input type="radio" name="sex" value="0" id="male"/>
                             <label for="male">
-                                <span class="selected"></span><span class="second">男</span>
+                                <span class="choose"></span><span class="second">男</span>
                             </label>
                             <input type="radio" name="sex" value="1" id="female"/>
                             <label for="female">
@@ -88,9 +88,9 @@
                     <li class="allergy">
                         <label for="allergy"><i class="drug">药物过敏</i></label>
                         <p id="allergyBtns" >
-                            <input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
+                            <input type="radio" name="allergy" value="0" id="no_allergy"/>
                             <label for="no_allergy" class="first">
-                                <span class="selected"></span><span class="second active">无药物过敏</span>
+                                <span class="choose"></span><span class="second">无药物过敏</span>
                             </label>
                             <input type="radio" name="allergy" value="1" id="yes_allergy" />
                             <label for="yes_allergy">
@@ -159,7 +159,7 @@
                     _checkInfo : function(surferer,noTip) {
                         for (var key in surferer) {
                             var checkInfo = checkObj[key],value = surferer[key];
-                            if(value===""){
+                            if(value === "" || value === undefined){
                                 if(!noTip) {
                                     alert(checkInfo.emptyMsg);
                                 }
@@ -240,13 +240,14 @@
                     surferer[curEle.parent().parent().attr("class")] = prev.val(); 
                 };
                 //sex和allergy样式控制
-                $("#sexBtns").on("touchstart","label",function() {
+               /* $("#sexBtns").on("touchstart","label",function() {
                     var that = $(this);
                     styleChoose("choose","selected",that);
-                });
-                $("#allergyBtns").on("touchstart","label",function() {
+                });*/
+                $("#sexBtns,#allergyBtns").on("touchstart","label",function() {
                     var that = $(this),prev = that.prev();
                     styleChoose("choose","selected",that);
+                    console.log(2);
                     that.children().last().addClass("active");
                     that.siblings().children().last().removeClass("active");
                     if(prev.attr("id") === "yes_allergy") {
