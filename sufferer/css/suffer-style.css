@@ -21,11 +21,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .hide-height {height:100%;overflow:hidden;}
 .more-margin {margin-bottom: 0.5rem;}
 
+.whitebg {background-color: #fff;}
 .greybg {background-color: #f4f4f4;}
 .team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
 .team-clear {*zoom:1;}
-.no-handle {background-color: #999;}
-.check-error {color: red;}
 /*医生团队主页*/
 
 .team-banner {-webkit-transition: all 0.5s;transition: all 0.5s;position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.png) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
@@ -122,7 +121,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-banner p {font-size: 0.28rem; color: #666;}
 .patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
 .patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;padding-bottom: 2rem;}
-.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;}
+/* .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;}
 .patient-detail li>label {float:left;line-height: 0.6rem;}
 .patient-detail p {margin-left:1.7rem;height: 0.6rem;}
 .patient-detail li input {height:100%;width:100%;border:none;font-size:0.32rem;line-height:0.6rem;}
@@ -138,6 +137,45 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
 .patient-algydesc {margin-top: 0.2rem;padding:0;display:none;}
 .patient-detail .selected, .patient-detail .choose {vertical-align: middle;margin-right: 0.2rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.4rem;height: 0.4rem;display: inline-block;object-fit: cover;}
+ */
+.patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;min-height: 1rem;padding: 0;}
+.patient-detail li>label {float:left;line-height: 0.6rem;}
+.patient-detail p {margin-left: 1rem; line-height: 0.6rem;margin-top: 0.4rem;}
+.patient-detail li:first-child p {margin-top: 0;}
+.patient-detail li input {height: 0.6rem;width:100%;border:none;font-size:0.32rem;line-height:0.6rem;}
+.patient-detail li>label {height: 0.6rem;width: 0.6rem;}
+.patient-detail .second {margin-right: 0.5rem; }
+.patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;height: 100%;color: #999;font-size: 0.32rem;margin-left: 1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
+::-webkit-date-edit-fields-wrapper { background-color: transparent; }
+.patient-detail .sex input,.patient-detail #allergyBtns input {display: none;}
+.patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.32rem;display: inline-block;line-height:0.6rem;}
+.patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
+.patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
+.patient-detail .patient-tips {font-size: 0.28rem;padding-top: 0.2rem;color: #999;margin-left:0; padding-bottom:2rem;}
+.patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
+.patient-algydesc {margin-top: 0.2rem;padding:0;display:none;margin-bottom: 0.4rem;}
+
+/*.patient-detail p {margin-left: 1rem; line-height: 0.6rem;margin-top: 0.4rem;}*/
+/*.patient-detail li:first-child p {margin-top: 0;}*/
+/*.patient-detail li>label {height: 0.6rem;width: 0.6rem;}*/
+/*.patient-detail p>input:after {position:absolute;border: 1px #f1f1f1 solid;}*/
+/*.patient-detail .bd_placeholder {margin-left: 1rem;}*/
+
+.patient-detail .name {background: url(../images/p-name.png);}
+.patient-detail .date {background: url(../images/p-date.png);}
+.patient-detail .phone {background: url(../images/p-phone.png);}
+.patient-detail .sexc {background: url(../images/p-sex.png);}
+.patient-detail .drug {background: url(../images/p-drug.png);}
+.patient-detail .male {background: url(../images/p-boy.png);}
+.patient-detail .female {background: url(../images/p-girl.png);}
+.patient-detail .malec {background: url(../images/p-boyc.png);}
+.patient-detail .femalec {background: url(../images/p-girlc.png);}
+.patient-detail .selected {background: url(../images/p-allergy.png);}
+.patient-detail .choose {background: url(../images/p-noallergy.png);}
+.patient-detail .name,.patient-detail .date,.patient-detail .phone,.patient-detail .sexc,.patient-detail .drug,.patient-detail .male,.patient-detail .malec,.patient-detail .female,.patient-detail .femalec,.patient-detail .selected,.patient-detail .choose {display:inline-block;height: 100%;width: 100%;object-fit: cover;-webkit-background-size: 100% 100%;background-size: 100% 100%;text-indent: -99rem;overflow: hidden;}
+.patient-detail .male,.patient-detail .malec,.patient-detail .female,.patient-detail .femalec,.patient-detail .selected,.patient-detail .choose {height: 0.6rem;width: 0.6rem;margin-right: 0.1rem;}
+
 .patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;box-shadow: 0px 6px 6px #c3dafa;}
 .patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
 /*疾病描述详情页*/
@@ -186,7 +224,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .ask-process h3 {font-size: 0.32rem;float:left;}
 .ask-process .inline {margin-left: 0.14rem;}
 .ask-process span, .ask-process .inline {float:left;}
-.ask-detail,.sufferer-list {padding:0 0.32rem;font-size: 0.28rem;}
+.ask-detail {padding:0 0.32rem;font-size: 0.28rem;}
 .ask-detail li,.sufferer-list li {list-style: none;padding: 0.48rem 0;border-bottom:1px #e8e9e9 solid;}
 .ask-detail li:last-child {border: none;}
 .ask-detail li p {display: inline-block;vertical-align: top;}
@@ -195,6 +233,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
 /*第二次及以上咨询时患者选择*/
+.sufferer-list ul {padding:0 0.32rem;}
 .sufferer-list li {font-size: 0.32rem;position:relative;}
 .sufferer-list img {width: 100%;height: 100%;}
 .sufferer-list div {display: inline-block;vertical-align: middle;}
@@ -206,8 +245,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .sufferer-list .choose {background: url(../images/round-choose.png) no-repeat;}
 /*.sufferer-list .selected,.sufferer-list .choose {vertical-align: middle;margin-left: 3.84rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;    display: inline-block}*/
 .sufferer-list .selected,.sufferer-list .choose {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;position: absolute;right: 0;bottom: 0.5rem;}
-.sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.44rem;text-align: center;padding-bottom:2rem;}
+.sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.44rem;text-align: center;padding-bottom:2rem;margin-top: -0.3rem;}
 .sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
 
-
 .tranparent-cover {background:rgba(255,255,255,0);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
+.no-handle {background-color: #999;}
+.check-error {color: red;}

@@ -103,7 +103,7 @@
 					</div>
 					<div class="surface-ctnt">
 						<ul>
-							<li><p>您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医 生进行咨询</p></li>
+							<li><p id="refuse_info">您正在咨询<span id="preDoctor">裴红岗</span>医生，暂不能对其他医生进行咨询</p></li>
 						</ul>
 					</div>
 					<div class="surface-asr">
@@ -120,21 +120,38 @@
 				var util = {
 					_cover : $("#doctor_cover"),
 					_refuse : $("#refuse_surface"),
-				};
-				var askHandler = function(curDoctor,preDoctor) {
-					if(curDoctor === preDoctor || preDoctor === null || preDoctor === "") {//可以再次咨询其他人
-						window.location.href = "ask-know.html";
-					}
-					else {
+					_refuseWrp : $("#refuse_info"),
+					_refuseInfo : ["您咨询该医生的上一单尚未完成，暂无法继续咨询","您正在咨询<span id='preDoctor'>裴红岗</span>医生，暂不能对其他医生进行咨询","咨询该医生的人数已达上限，暂不能咨询"],
+					_rfsHdlr : function(info) {
+						util._refuseWrp.html(info);
 						util._cover.show();
 						util._refuse.show();
 						lockScreenHgt();
+					},
+					_acptHdlr : function() {
+						window.location.href = "ask-know.html";
+					},
+				};
+				var askHandler = function(curDoctor,preDoctor,isFull,lastOrder) {
+					if(!isFull) {
+						if(preDoctor === null || preDoctor === "") {//可以再次咨询其他人
+							util._acptHdlr();
+						}
+						else if(curDoctor === preDoctor) {
+							//上次咨询结束，假设0是已完成
+							lastOrder === 0 ? util._acptHdlr():util._rfsHdlr(util._refuseInfo[0]);
+						}
+						else {
+							util._rfsHdlr(util._refuseInfo[1]);
+						}
+					}
+					else {
+						util._rfsHdlr(util._refuseInfo[2]);
 					}
 				};
-				
 				//点击图文咨询的弹出层
 				$("#ask_disease").on("click",function() {
-					askHandler("Pei","Pei");
+					askHandler("Pei","Pei",false,0);
 				});
 				//点击覆盖层或关闭按钮以及目前在咨询其他医生时关闭覆盖层
 				util._cover.add($(".aclose,#refuse_asr")).on("click",function() {
