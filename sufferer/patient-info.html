@@ -12,6 +12,7 @@
                 border:none;
                 position: relative;
             }
+            .patient-detail .active {color: #1D75F0;}
             .patient-detail .line {position:absolute;border:1px #f1f1f1 solid;margin: 0.4rem 0.3rem 0 1rem;width: 83%;}
             /*.patient-detail p:after {position:absolute;content: "";width: 100%;border:1px #f1f1f1 solid;}*/
         </style>
@@ -88,7 +89,7 @@
                             </label>
                             <input type="radio" name="sex" value="1" id="female"/>
                             <label for="female">
-                                <span class="female"></span><span>女</span>
+                                <span class="female"></span><span class="second">女</span>
                             </label>
                             <div class="line"></div>
                         </p>
@@ -98,7 +99,7 @@
                         <p id="allergyBtns" >
                             <input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
                             <label for="no_allergy" class="first">
-                                <span class="selected"></span><span class="second">无药物过敏</span>
+                                <span class="selected"></span><span class="second active">无药物过敏</span>
                             </label>
                             <input type="radio" name="allergy" value="1" id="yes_allergy" />
                             <label for="yes_allergy">
@@ -256,6 +257,8 @@
                 $("#allergyBtns").on("touchstart","label",function() {
                     var that = $(this),prev = that.prev();
                     styleChoose("choose","selected",that);
+                    that.children().last().addClass("active");
+                    that.siblings().children().last().removeClass("active");
                     if(prev.attr("id") === "yes_allergy") {
                         $("#allergy_detail").show();
                     }
