@@ -7,6 +7,18 @@
         <title>向裴医生提问</title>
         <link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+        <style type="text/css" media="screen">
+            .disease-part .delete {    
+                position: absolute;
+                top: -0.4rem;
+                right: -0.4rem;
+                display: inline-block;
+                height: 0.9rem;
+                width: 0.9rem;
+                background: url(images/delete-icon.png);
+                -webkit-background-size: 100% 100%;
+                background-size: 100% 100%;}
+        </style>
     </head>
     <body>
         <div id="page" class="page">
@@ -121,7 +133,7 @@
                     img.alt = "病情图片" + imgCount;
                     var div = document.createElement("div");
                     div.className = "delete";
-                    div.innerHTML = "-";
+                    // div.innerHTML = "-";
                     $(div).on("click",function() {
                         $(this).parent().remove($(this));
                     });

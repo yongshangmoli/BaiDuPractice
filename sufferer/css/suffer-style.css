@@ -105,7 +105,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
 /*患者咨询的提示弹出层*/
 .doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.doctor-surface .surface {position: fixed;top: 2.2rem;left: 10%;width: 80%;margin: 0 auto;background-color: #fff;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
+.doctor-surface .surface {position: fixed;top: 2.2rem;left: 10%;width: 80%;margin: 0 auto;background-color: #fff;-webkit-border-top-left-radius: 0.1rem;-moz-border-top-left-radius: 0.1rem;-ms-border-top-left-radius: 0.1rem;-o-border-top-left-radius: 0.1rem;border-top-left-radius: 0.1rem;-webkit-border-top-left-radius: 0.1rem;-moz-border-top-right-radius: 0.1rem;-ms-border-top-right-radius: 0.1rem;-o-border-top-right-radius: 0.1rem;border-top-right-radius: 0.1rem;z-index: 1001;}
 .doctor-surface .surface-title,.ask-surface .surface-title {text-align: center;padding: 0.36rem;border-bottom:1px #e8e9e9 solid;}
 .surface-title h1 {font-size: 0.40rem;color:#404040;}
 .doctor-surface .surface-ctnt,.ask-surface .surface-ctnt {overflow-y:auto;font-size: 0.32rem;color: #666;margin-left: 0.34rem;padding: 0.4rem 0.34rem 0;}
@@ -194,7 +194,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .disease-part .img-wrapper a {display:inline-block;height: 1.5rem;width: 1.5rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
 .disease-part .img-wrapper .file {position:absolute;top:0;height: 100%;width: 100%;opacity: 0;}
 .disease-part .img-wrapper img {height: 100%;width: 100%;border: 1px #f0f0f0 dashed;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;object-fit: cover;}
-.disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}
+/*.disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}*/
 .disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
 .disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;top: 100%;position: fixed;}
 .disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 1px #f1f1f1 solid;}
