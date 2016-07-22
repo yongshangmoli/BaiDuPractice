@@ -37,6 +37,26 @@ function unlockScreenHgt() {
   lockScreen._page.className = "page";
 }
 
+function showTraptCover() {
+  lockScreenHgt();
+  var cover = document.querySelector('.tranparent-cover');
+  if(cover) {
+    cover.style.display = 'block';
+  }
+  else {
+    cover = document.createElement('div');
+    cover.className = 'tranparent-cover';
+    cover.id = 'tranparent_cover';
+    document.body.appendChild(cover);
+  }
+}
+
+function hideTraptCover() {
+  unlockScreenHgt();
+  var cover = document.getElementById('tranparent_cover');
+  if(cover) {cover.style.display = 'none';}
+}
+
 //loading
 function showLoading(){
   lockScreenHgt();
