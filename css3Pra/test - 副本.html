@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>load圈</title>
+		<style type="text/css" media="screen">
+		.load-outer {position: relative;height: 132px;width: 132px;}
+		.wrapper,.wrapper2 {height: 100px;width: 100px;-webkit-border-radius: 50%;-moz-border-radius: 50%;-o-border-radius: 50%;-ms-border-radius: 50%;border-radius: 50%;position: absolute;left: 0;top: 0;}
+		.wrapper { border: 16px #6EC84E solid;opacity: 1;animation: second-half-hide 1.6s steps(1, end) infinite;}
+		.wrapper2 {border: 16px #F0F0F0 solid; opacity: 0;animation: second-half-show 1.6s steps(1, end) infinite;}
+		.in-left {border: 16px #F0F0F0 solid;-webkit-transform-origin: right center;-moz-transform-origin: right center;-o-transform-origin: right center;transform-origin: right center;animation: spin 0.8s infinite linear;}
+		.in-left-fix {border: 16px #6EC84E solid;opacity: 0;animation: second-half-show 0.8s steps(1,end) infinite;}
+		.in-right-fix {border: 16px #F0F0F0 solid;border-left: 0;-webkit-border-top-right-radius: 100px;-moz-border-top-right-radius: 100px;-ms-border-top-right-radius: 100px;-o-border-top-right-radius: 100px;border-top-right-radius: 100px;-webkit-border-bottom-right-radius: 100px;-moz-border-bottom-right-radius: 100px;-ms-border-bottom-right-radius: 100px;-o-border-bottom-right-radius: 100px;border-bottom-right-radius: 100px;position: absolute;right: -16px;top: -16px;animation: second-half-hide 0.8s steps(1,end) infinite;}
+		.in-left,.in-left-fix,.in-right-fix {height: 100px;width: 50px;}
+		.in-left,.in-left-fix {border-right: 0;-webkit-border-top-left-radius: 100px;-moz-border-top-left-radius: 100px;-ms-border-top-left-radius: 100px;-o-border-top-left-radius: 100px;border-top-left-radius: 100px;-webkit-border-bottom-left-radius: 100px;-moz-border-bottom-left-radius: 100px;-ms-border-bottom-left-radius: 100px;-o-border-bottom-left-radius: 100px;border-bottom-left-radius: 100px;position: absolute;left: -16px;top: -16px;}
+		.wrapper2 .in-left,.wrapper2 .in-right-fix {border-color: #6EC84E;}
+		.wrapper2 .in-left-fix {border-color: #F0F0F0;}
+		@keyframes spin {0% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}100% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);}}
+		@keyframes second-half-hide {0% {opacity: 1;}50%,100% {opacity: 0;}}
+		@keyframes second-half-show {0% {opacity: 0;}50%,100% {opacity: 1;}}
+		</style>
+	</head>
+	<body>
+		<div class="load-outer">
+			<div class="wrapper">
+				<div class="in-left"></div>
+				<div class="in-left-fix"></div>
+				<div class="in-right-fix"></div>
+			</div>
+			<div class="wrapper2">
+				<div class="in-left"></div>
+				<div class="in-left-fix"></div>
+				<div class="in-right-fix"></div>
+			</div>
+		</div>
+		<!-- <div class="progress-ring">
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function($) {
+				// console.log(1);
+				$.fn.loadingRing = function(opt) {
+					var opts = {
+						ringColorL : opt && (opt.ringColorL || '#f0f0f0'),
+						ringColorD : opt && (opt.ringColorD || '#6EC84E'),
+						ringHeight : opt && (opt.ringHeight || '100px'),
+						inringWidth : parseInt(this.ringHeight)/2+"px",
+						ringSize : opt && (opt.ringSize || '16px'),
+						percent : opt && (opt.percent || 75),
+						duration : opt && (opt.duration || '0.8s'),
+					};
+					$(this).each(function() {
+						var target = $(this);
+						target.append('<div class="wrapper"><div class="in-left"></div><div class="in-left-fix"></div><div class="in-right-fix"></div></div><div class="wrapper2"><div class="in-left"></div><div class="in-left-fix"></div><div class="in-right-fix"></div></div>');
+						// console.log($(".wrapper,.wrapper2"));
+						$(".wrapper,.wrapper2").css({
+							"height" : opts.ringHeight,
+							"width" : opts.ringHeight,
+							"border-width" : opts.ringSize,
+							"top" : "-"+opts.ringSize
+						});
+						$(".in-left,.in-left-fix,.in-right-fix").css({
+							"height" : opts.ringHeight,
+							"width" : opts.inringWidth,
+							"border-width" : opts.ringSize,
+							"top" : "-"+opts.ringSize
+						});
+						$(".in-left,.in-right-fix").css({"border-color" : opts.ringColorL});
+						$(".in-left-fix").css({"border-color" : opts.ringColorD});
+						$(".in-left,.in-left-fix").css({
+							"-webkit-border-top-left-radius": opts.ringHeight,
+							"-moz-border-top-left-radius": opts.ringHeight,
+							"-ms-border-top-left-radius": opts.ringHeight,
+							"-o-border-top-left-radius" : opts.ringHeight,
+							"border-top-left-radius" : opts.ringHeight,
+							"-webkit-border-bottom-left-radius" : opts.ringHeight,
+							"-moz-border-bottom-left-radius" : opts.ringHeight,
+							"-ms-border-bottom-left-radius" : opts.ringHeight,
+							"-o-border-bottom-left-radius" : opts.ringHeight,
+							"border-bottom-left-radius" : opts.ringHeight,
+							"left" : "-"+opts.ringSize,
+						});
+						$(".in-right-fix").css({
+							"-webkit-border-top-right-radius": opts.ringHeight,
+							"-moz-border-top-rightright-radius": opts.ringHeight,
+							"-ms-border-top-right-radius": opts.ringHeight,
+							"-o-border-top-right-radius" : opts.ringHeight,
+							"border-top-right-radius" : opts.ringHeight,
+							"-webkit-border-bottom-right-radius" : opts.ringHeight,
+							"-moz-border-bottom-right-radius" : opts.ringHeight,
+							"-ms-border-bottom-right-radius" : opts.ringHeight,
+							"-o-border-bottom-right-radius" : opts.ringHeight,
+							"border-bottom-right-radius" : opts.ringHeight,
+							"right" : "-"+opts.ringSize,
+						});
+					});
+		
+				}
+			})(jQuery);
+		
+			$(".progress-ring").loadingRing({ringHeight:"50px"});
+		</script> -->
+	</body>
+</html>
