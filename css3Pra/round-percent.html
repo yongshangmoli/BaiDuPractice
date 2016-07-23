@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>load圈</title>
+		<style type="text/css" media="screen">
+			.load-outer {position: relative;height: 132px;width: 132px;}
+			.wrapper {height: 100px;width: 100px;border: 16px #F0F0F0 solid;-webkit-border-radius: 50%;-moz-border-radius: 50%;-o-border-radius: 50%;-ms-border-radius: 50%;border-radius: 50%;position: absolute;left: 0;top: 0;}
+			.in-left {border: 16px #6EC84E solid;-webkit-transform-origin: right center;-moz-transform-origin: right center;} 
+			.in-left-fix {border: 16px #F0F0F0 solid;}
+			.in-right-fix {border: 16px #6EC84E solid;border-left: 0;-webkit-border-top-right-radius: 100px;-moz-border-top-right-radius: 100px;-ms-border-top-right-radius: 100px;-o-border-top-right-radius: 100px;border-top-right-radius: 100px;-webkit-border-bottom-right-radius: 100px;-moz-border-bottom-right-radius: 100px;-ms-border-bottom-right-radius: 100px;-o-border-bottom-right-radius: 100px;border-bottom-right-radius: 100px;position: absolute;right: -16px;top: -16px;}
+			.in-left,.in-left-fix,.in-right-fix {height: 100px;width: 50px;}
+			.in-left, .in-left-fix {border-right: 0;-webkit-border-top-left-radius: 100px;-moz-border-top-left-radius: 100px;-ms-border-top-left-radius: 100px;-o-border-top-left-radius: 100px;border-top-left-radius: 100px;-webkit-border-bottom-left-radius: 100px;-moz-border-bottom-left-radius: 100px;-ms-border-bottom-left-radius: 100px;-o-border-bottom-left-radius: 100px;border-bottom-left-radius: 100px;position: absolute;left: -16px;top: -16px;}
+			.in-right-fix {opacity: 0;}
+			@keyframes hideToShow {0% {opacity: 0;} 100% {opacity: 1;}}
+			@keyframes showToHide {0% {opacity: 1;}100% {opacity: 0;}}
+		</style>
+	</head>
+	<body>
+		<div class="load-outer">
+			<div class="wrapper">
+				<div class="in-left"></div>
+				<div class="in-left-fix"></div>
+				<div class="in-right-fix"></div>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		var percent = 60,duration = 1000,changeTime = duration * 50 / percent;
+		$(".in-left").css({ 'transform': 'rotate(' + percent * 3.6 + 'deg)','transition':'all '+duration+'ms linear'});
+		if(percent>50) {
+			var animation = "hideToShow "+changeTime+"ms";
+			var animation2 = "showToHide "+changeTime+"ms";
+			$(".in-right-fix").css({"opacity":1,'animation': animation,'animation-timing-function': 'step-end'});
+			$(".in-left-fix").css({"opacity":0,'animation': animation,'animation-timing-function': 'step-start'});
+		}
+		</script>
+	</body>
+</html>

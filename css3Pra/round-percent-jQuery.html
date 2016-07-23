@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>load圈</title>
+		<!-- <link href="css/load.css" rel="stylesheet" type="text/css" /> -->
+		<style type="text/css" media="screen">
+			@-webkit-keyframes toggle {0% {opacity: 0;} 100% {opacity: 1;}}
+			@keyframes toggle {0% {opacity: 0} 100% {opacity: 1}}
+			.load-outer {position: relative;top:0; left:0;height: 130px;height: 130px;}
+			.load-outer div {position: absolute;top: 0;left: 0;height: 130px;width: 130px;border: 16.25px solid transparent;border-radius: 50%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+			.load-outer .progress-left,.load-outer .progress-right, .load-outer .progress-cover {clip: rect(0 65px 130px 0);}
+			.load-outer .progress-right { opacity: 0;-webkit-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);}
+		</style>
+	</head>
+	<body>
+		<div class="load-outer"></div>
+		<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			;
+			(function ($) {
+				$.fn.loadingRing = function (opt) {
+					var opts = {
+						"ringColorL" : '#f0f0f0',
+						"ringColorD" : '#6EC84E',
+						"percent" : 60,
+						"duration" : 1500
+					};
+
+					$(this).each(function () {
+						var $target = $(this);
+						$target.append('<div class="progress-track"></div><div class="progress-left"></div><div class="progress-right"></div><div class="progress-cover"></div><div class="progress-text">');
+						$target.find('.progress-cover').height();
+						$target.find('.progress-track, .progress-cover').css('border-color', opts.ringColorL);
+						$target.find('.progress-left, .progress-right').css('border-color', opts.ringColorD);
+						$target.find('.progress-left').css({
+							'transform': 'rotate(' + opts.percent * 3.6 + 'deg)',
+							'-o-transform': 'rotate(' + opts.percent * 3.6 + 'deg)',
+							'-ms-transform': 'rotate(' + opts.percent * 3.6 + 'deg)',
+							'-moz-transform': 'rotate(' + opts.percent * 3.6 + 'deg)',
+							'-webkit-transform': 'rotate(' + opts.percent * 3.6 + 'deg)',
+							'transition': 'transform ' + opts.duration + 'ms linear',
+							'-o-transition': '-o-transform ' + opts.duration + 'ms linear',
+							'-ms-transition': '-ms-transform ' + opts.duration + 'ms linear',
+							'-moz-transition': '-moz-transform ' + opts.duration + 'ms linear',
+							'-webkit-transition': '-webkit-transform ' + opts.duration + 'ms linear'
+						});
+						if (opts.percent > 50) {
+							var animation = 'toggle ' + (opts.duration * 50 / opts.percent) + 'ms'
+							$target.find('.progress-right').css({
+								'opacity': 1,
+								'animation': animation,
+								'animation-timing-function': 'step-end'
+							});
+							$target.find('.progress-cover').css({
+								'opacity': 0,
+								'animation': animation,
+								'animation-timing-function': 'step-start'
+							});
+						}
+					});
+				}
+			})(jQuery);
+			$(".load-outer").loadingRing();
+		</script>
+	</body>
+</html>
