@@ -4,459 +4,158 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="format-detection" content="telephone=no">
-        <title>请填写基本资料</title>
+        <title>向裴医生提问</title>
         <link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <div id="page" class="page">
-                <!-- patient form-->
-            <section class="patient-body">
-                <div class="patient-banner">
-                    <div class="patient-icon"></div>
-                    <h1>请填写资料，获得更准确地回答</h1>
+            <section>
+                <div class="disease-part">
+                    <a href="#" id="disease_choose" class="alink">
+                        <span>选择病种</span>
+                        <span class="angle-btm"></span>
+                        <span class="disease-slt" id="disease_record">心脑血管</span>
+                    </a>
                 </div>
-                <ul class="patient-detail">
-                    <li>
-                        <label for="name">患者姓名</label>
-                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/></p>
-                    </li>
-                    <li>
-                        <label for="yearMth">出生年月</label>
-                        <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
-                        <p><input id="yearMth" type="date"/></p>
-                    </li>
-                    <li>
-                        <label for="phone">手机号码</label>
-                        <p><input id="phone" type="tel" placeholder="手机用于接收医生回答提醒" /></p>
-                    </li>
-                    <li class="sex">
-                        <label for="sex">性别</label>
-                        <p id="sexBtns">
-                            <input type="radio" name="sex" value="0" id="male"/>
-                            <label for="male">
-                                <span class="choose"></span><span class="second">男</span>
-                            </label>
-                            <input type="radio" name="sex" value="1" id="female" />
-                            <label for="female">
-                                <span class="choose"></span><span>女</span>
-                            </label>
-                        </p>
-                    </li>
-                    <li class="allergy">
-                        <label for="allergy">药物过敏</label>
-                        <p id="allergyBtns" >
-                            <input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
-                            <label for="no_allergy" class="first">
-                                <span class="choose"></span><span class="second">无</span>
-                            </label>
-                            <input type="radio" name="allergy" value="1" id="yes_allergy" />
-                            <label for="yes_allergy">
-                                <span class="choose"></span><span>有</span>
-                            </label>
-                        </p>
-                        <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
-                    </li>
-                    <p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p>
-                </ul>
-            </section>
-        </div>
-        <div class="patient-btn" style="position:absolute;bottom:0;">
-            <a id="sbmt_info" href="#">提交</a>
-        </div>
+                <div class="disease-part disease-gap">
+                    <h3>病情描述</h3>
+                    <textarea id="disease_desc" class="detail" name="disease-desc" placeholder="请详细描述您的症状，疾病和身体状况，便于医生能准确为您作出判断 ."></textarea>
+                    <p id="text_control" class="limit">可输入200字</p>
+                </div>
+                <div class="disease-part disease-gap" style="padding-bottom: 2rem;">
+                    <h3>图片上传</h3>
+                    <div id="img_wrapper" class="img-wrapper">
+                        <!-- <a href=""><img src="" alt=""></a> -->
+                        <a id="upload_img" href="#">
+                            <span>+</span>
+                            <input type="file" id="btn_file" class="file">
+                        </a>
+                    </div>
+                </div>
+            	</section>
+     </div><!-- style="    margin-top: 1rem;" -->
+     <div class="patient-btn" >
+		<a id="pay_ask" href="#">立即支付10元</a>
+	</div>
+	<div id="cover" class="doctor-cover" style="display:none;"></div>
+	<div id="disease" class="disease-surface">
+		<ul id="disease_list">
+			<li class="active" value="sdsd">心脑血管</li>
+			<li value="2">神经外科</li>
+			<li value="3">神经内科</li>
+		</ul>
+	</div>
         
         <script src="js/zepto.js"></script>
         <script src="js/common.js"></script>
+        <script src="js/fx.js"></script>
         <script>
             (function() {
-                //出生年月是否显示placeholder文字
-                var bd_date = $('#yearMth'),bd_placeholder = $('#bd_placeholder');
-                var ck_bd_placeholder = function() {
-                    bd_placeholder[0].style.display= bd_date.val() ? 'none' : 'block'; 
-                };
-                bd_placeholder.on('touchstart',function(){
-                    bd_date.focus();
-                });
-                bd_date.on('focus blur change',ck_bd_placeholder);
-                // 验证相关
-                var surferer = {};
-                var checkObj={
-                    name:{
-                        reg:/^.{1,10}$/,
-                        emptyMsg:'请输入姓名',
-                        errorMsg:'姓名格式不正确'
-                    },
-                    yearMth:{
-                        emptyMsg:'未选择出生年月日'
-                    },
-                    phone:{
-                        reg:/^1[0-9]{10}$/,
-                        emptyMsg:'请输入接收医生的回复电话',
-                        errorMsg:'请输入正确的电话号码'
-                    },
-                    sex:{
-                        emptyMsg:'请选择性别',
-                    },
-                    allergy:{
-                        emptyMsg:'请选择是否药物过敏',
-                    },
-                    allergyDetl:{
-                        emptyMsg:'请输入小孩的过敏药物名称',
-                    }
-                };
                 
-                var fn = {
-                    _getInfo : function(surferer,noTip) {
-                        surferer.name = $("#name").val().trim();
-                        surferer.yearMth = $("#yearMth").val();
-                        surferer.phone = $("#phone").val().trim();
-                        surferer.sex = $("#sexBtns input:checked").val();
-                        surferer.allergy = $("#allergyBtns input:checked").val();
-                    },
-                    _checkInfo : function(surferer,noTip) {
-                        for (var key in surferer) {
-                            var checkInfo = checkObj[key],value = surferer[key];
-                            if(value===""){
-                                if(!noTip) {
-                                    alert(checkInfo.emptyMsg);
-                                }
-                                return false;
-                            }
-                            if(key === "allergyDetl") {
-                                continue;
-                            }
-                            else if(key === "yearMth") {
-                                var date = new Date();
-                                var year = date.getFullYear(),month = date.getMonth()+1,day = date.getDate(),isOK = true;
-                                var putValue = value.split("-");
-                                console.log(value,putValue);
-                                if(year < putValue[0]) {
-                                    isOK = false;
-                                }
-                                else if(year === parseInt(putValue[0],10)) {
-                                    if(month < putValue[1]) {
-                                        isOK = false;
-                                    }
-                                    else if(month === parseInt(putValue[1],10)) {
-                                        if(day < putValue[2]) {
-                                            isOK = false;
-                                        }
-                                    }
-                                }
-                                if(!isOK) {
-                                    if(!noTip) alert(checkObj["yearMth"].errorMsg);
-                                    return false;
-                                }
-                                continue;
-                            }
-                            else if(key === "allergy" && value === "1") {
-                                 // var allergyDetail = $("#allergy_detail");
-                                var allergyDetail = $("#allergy_detail").children()[0].value;
-                                if(allergyDetail) {
-                                    allergyDetail = allergyDetail.trim();
-                                    if(allergyDetail === "") {
-                                        if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
-                                        return false;
-                                    }
-                                }
-                                else {
-                                    if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
-                                    return false;
-                                }
-                                surferer.allergyDetl = allergyDetail;
-                                continue;
-                            }
-                            if(!checkInfo.reg) continue;
-                            if(!checkInfo.reg.test(value)){
-                                if(!noTip) alert(checkInfo.errorMsg);
-                                return false;
-                            }
-                        }
-                        return true;
-                    },
-                    
-                    //看之前是否有记录患者信息
-                    _cmtJudge : function(record) {
-                        if(!record) {
-                            window.location.href = "disease-desc.html";
+                var util = {
+                    _cover : $("#cover"),
+                    _disease : $("#disease"),
+                    _diseasesList : $("#disease_list li"),
+                    _diseaseRecord : $("#disease_record"),
+                    _diseaseDesc : $("#disease_desc"),
+                    diseaseKind : $("#disease_list li.active").attr("value"),//选择的是哪种疾病
+                    diseaseDesc : "",//疾病的描述
+                    diseaseHeight : 0,
+                };
+                $("#disease_choose").one("click",function() {
+        			util._diseaseRecord.css("color","#666");
+        		});
+                $("#disease_choose").on("click", function() {
+        		    lockScreenHgt();
+                    util._cover.show();
+                    var top = $("#pay_ask")[0].offset().top;
+                    console.log(top);
+                    $("#pay_ask").parent().css({"top":top+"px","left":"4%","position":"absolute"});
+                    // util._disease.show().addClass("ac-up").removeClass("ac-down");
+                });
+                util._diseasesList.on("click", function() {
+                    $(this).addClass("active").siblings().removeClass("active");
+                    util._diseaseRecord.html($(this).html());
+                    util._cover.trigger("click");
+                    util.diseaseKind = $(this).attr("value");
+                });
+                util._cover.on("click",function() {
+                    util._disease.addClass("ac-down").removeClass("ac-up");
+                    unlockScreenHgt();
+                    $("#pay_ask").parent().css({"top":"","left":"","position":"relative"});
+                    setTimeout(function() {
+                        util._disease.hide();
+                        util._cover.hide();
+                    },400);
+                });
+                $("#pay_ask").on("click", function() {
+                    var describe = util._diseaseDesc.val().trim();
+                    var _checkSucs = function() {
+                        util.diseaseDesc = describe;
+                        window.location.href = "pay-succs.html";
+                    };
+                    if(describe) {
+                        _checkSucs();
+                    }
+                    else {
+                        alert("请填写病情描述");
+                    }
+                });
+                util._diseaseDesc.on("input",function() {
+                    var value = $(this).val();
+                    var textLen = value.length;
+                    if(textLen >= 200) {
+                        $(this).val(value.slice(0,200));
+                        $("#text_control").text("还能输入0字");
+                    }
+                    else {
+                        $("#text_control").text("还能输入"+(200-textLen)+"字");
+                    }
+                });
+                //照片上传
+                var imgCount = 0;
+                // 创建图片
+                var createImgWrp = function() {
+                    var a = document.createElement("a");
+                    a.href = "#";
+                    var img = document.createElement("img");
+                    img.id = "previewImg" + (imgCount++);
+                    img.alt = "病情图片" + imgCount;
+                    var div = document.createElement("div");
+                    div.className = "delete";
+                    // div.innerHTML = "-";
+                    $(div).on("click",function() {
+                        $(this).parent().remove($(this));
+                    });
+                    a.appendChild(div);
+                    a.appendChild(img);
+                    return [a,img];
+                };
+                //添加照片预览
+                $("#btn_file").change(function() {
+                    var $file = $(this),fileObj = $file[0],windowURL = window.URL || window.webkitURL,dataURL;
+                    if(fileObj && fileObj.files && fileObj.files[0]){
+                        if(imgCount > 50) {
+                            alert("上传照片不可大于50张");
+                            return;
                         }
                         else {
-                            window.location.href = "sufferer-choose.html";
+                            var temp = createImgWrp(),$img=$(temp[1]);
+                            dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                            $img.attr('src',dataURL);
+                            $("#img_wrapper").children().first().before($(temp[0]));
                         }
-                    },
-                    //检查输入正确后进行的操作
-                    _checkSucs : function(record) {
-                        this._cmtJudge(record);
-                    },
-
-                };
-                //sex和allergy样式控制
-                $("#sexBtns,#allergyBtns").on("click","label",function() {
-                    var that = $(this);
-                    that.children()[0].className = "selected";
-                    var prev = that.prev();
-                    prev.attr("checked");
-                    that.siblings().children()[0].className = "choose";
-                    surferer[that.parent().parent().attr("class")] = prev.val();
-                    if(prev.attr("id") === "yes_allergy") {
-                        $("#allergy_detail").show();
-                    }
-                    else if (prev.attr("id") === "no_allergy") {
-                        $("#allergy_detail").hide();
+                    }else{
+                        dataURL = $file.val();
+                        if(dataURL.toString().indexOf("blob") > -1) {
+                            var imgObj = $("#preview");
+                            imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                            imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+                        }
                     }
                 });
-                //点击提交按键的操作
-                $("#sbmt_info").parent().on("click", function() {
-                    fn._getInfo(surferer);
-                    console.log(surferer);
-                    if(!fn._checkInfo(surferer)) return;
-                    fn._checkSucs(true);
-                });
-                
-                var initChoose = function() {
-                    var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val();
-                    ck_bd_placeholder();
-                    var choose = function(target) {
-                        target.attr("checked","checked").next().children().first().attr("class","selected");
-                    }
-                    parseInt(sex,10) === 1 ? choose($("#female")) : choose($("#male"));
-                    if(parseInt(allergy,10) === 1) {
-                        choose($("#yes_allergy"));
-                        $("#allergy_detail").show();
-                    }
-                    else  {
-                        choose($("#no_allergy"));
-                    }
-                }
-                initChoose();
             })();
         </script>
     </body>
 </html>
-<!--
-@CHARSET "UTF-8";
-html,body {font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";height: 100%;min-height: 100%;color: #333;overflow-x:hidden;}
-html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea,input {padding: 0;margin: 0;font-weight: normal;}
-a {text-decoration: none;}
-a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
-::-webkit-datetime-edit-fields-wrapper { background-color: transparent;}
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #999999;}  
-.alert_tip {position: fixed;text-align: center;top: 50%;left: 50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);max-width: 75%;min-width: 50%;border-radius: 10px;font-size: 0.32rem;line-height: 0.4rem;padding:0.5rem;/* background-color: #6B6B6B; */background-color: rgba(107,107,107,0.95);color: #fff;z-index: 99;box-shadow: 0 0 8px 3px #fff;}
-.alert_tip.alert_tip_qrcode {position: absolute;padding: 0;max-width: none;max-height: none;}
-.alert_tip.active {display: block;}
-.alert_tip span{position: absolute;width: 30px;height: 30px;top: 0px;right: 0;border-radius: 5px;opacity: 0.9;}
-.alert_tip span:before,.alert_tip span:after{position: absolute;top: 0;bottom: 0;right: 0; left: 0;margin: auto;content: '';width: 15px;height: 2px;background-color: #fff;transform:rotate(45deg);-webkit-transform:rotate(45deg);}
-.alert_tip span:after{transform:rotate(-45deg);-webkit-transform:rotate(-45deg);}
-/*正在加载*/
-.page {height:100%;overflow:auto;}
-.loading{ position: fixed;top: 50%;left: 50%;width: 1.5rem;height: 1.5rem;margin: auto;box-shadow: 0 0 8px #fff;border-radius: 0.1rem;background: rgba(0,0,0,0.4);transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);box-shadow: 0 0 8px #fff;z-index: 1050;box-shadow: 0 0 8px #fff;display: none;}
-.loading.active{display: block;}
-.loading:after{content: '';position: absolute;top:0;left: 0;right: 0;bottom: 0;margin: auto;width: 50%;height: 50%;border-radius: 50%;-webkit-box-sizing: border-box;box-sizing: border-box;border: solid 0.1rem #b1b1b2;border-top-color: #eaeaec;-webkit-animation: spin 1s infinite linear;animation: spin 1s infinite linear;}
-@-webkit-keyframes spin{100% {-webkit-transform: rotate(360deg);}}
-@-keyframes spin{100% {transform: rotate(360deg);}}
-/*医生团队主页*/
-.team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
-.team-clear {*zoom:1;}
-.team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background: #317def url(../images/team-banner.png) no-repeat;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
-.team-banner .head-icon {height: 2.06rem;width: 2.06rem;margin: 0 auto;}
-.team-banner h1 {font-size: 0.36rem;margin: 0.16rem 0 0.1rem 0;text-align: center;}
-.team-banner p {font-size: 0.28rem;text-align: left;overflow: hidden;padding-bottom: 0.2rem;}
-.team-banner a {display:block;height: 100%;width: 100%;}
-.team-banner .angle-top {background: url(../images/angle-top.png) no-repeat;}
-.team-banner .angle-btm {background: url(../images/angle-btm.png) no-repeat;}
-.team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;}
-.team-banner .gradual-bg {background: url(../images/gradualc.png) repeat-x;}
-.team-banner .angle-top,.team-banner .angle-btm {display:inline-block;margin-top: 0.6rem;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.hgt-clear,.team-banner .hgt-clear {height: auto;padding-bottom: 0.3rem;}
-.team-intrdc {padding: 0.4rem 0.34rem;font-size: 0.32rem;}
-.team-intrdc-left,.team-section .list-icon {float: left;}
-.team-intrdc-detl {margin-left: 1rem;font-size: 0.32rem;color: #666;}
-.team-section .alink {float: right;}
-.team-section .alink-full {display: block;height: 100%;width: 100%;}
-.team-section h3 {height: 1.16rem;line-height: 1.16rem;border-top: 0.1rem #f1f1f1 solid;border-bottom: 0.03rem #f2f2f2 solid;font-size: 0.32rem;}
-.team-section .t-left {display: inline-block;border-left: 0.06rem #307fee solid;padding-right: 0.26rem;height: 0.36rem;vertical-align: middle;margin-top: -0.05rem;}
-.team-section .t-more {margin-right: 0.4rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;margin-top: 0.4rem;overflow: hidden;vertical-align: middle;}
-.team-section .t-num {padding-right: 0.34rem;}
-.team-section .t-more,.team-section .t-num {color:#999;font-size: 0.28rem;float: right;}
-.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 1px #f2f2f2 solid;}
-.team-section li:last-child,.team-section .partner li {border:none;}
-.team-section .partner li::before {content: "";position: absolute;border-left: 0.03rem #f1f1f1 solid;height: 2rem;left: 50%;margin-top: 0.24rem;}
-.team-section .list-icon,.team-section .hospital-icon {height: 1.32rem;width: 1.32rem;}
-.team-section .hospital-icon {margin: 0 auto;padding: 0.38rem 0;}
-.team-section .list-detil {float: left;width: 5rem; padding-left: 0.34rem;font-size: 0.32rem;}
-.team-section .list-detil .name {color:#1d75f0;padding-bottom: 0.18rem;margin-top: -0.06rem;}
-.team-section .list-detil .title {color:#333;font-size: 0.32rem;}
-.team-section .list-detil .artcl {font-size: 0.28rem;color: #666;}
-.team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
-.team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
-.team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {padding: 0;float: left;color: #999;padding: 0.03rem 0.22rem;margin:0.1rem 0.14rem 0.1rem 0;border: 1px #f2f2f2 solid;font-size: 0.28rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
-.team-section .partner li{text-align: center;width: 40%;float: left;}
-.team-footer {text-align: center;}
-.team-section .team-footer p {font-size: 0.28rem;}
-.team-section .team-footer .adrs-phe {color:#666;padding: 0.3rem 0 0.7rem 0}
-.team-section .scan-code {height: 2.3rem;width: 2.3rem;padding: 0.42rem 0 0.2rem 0;margin: 0 auto;}
-/*（有用到医生团队主页的样式），医生列表新增样式*/
-.dctlist-greybg {background-color: #f4f4f4;}
-.dctlist-state {float:right;font-size: 0.28rem;color:#ff9018;}
-.dctlist-whitebg {background-color: #fff;}
-.dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(../images/authen-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
-/*文章列表的样式有用到上面的样式*/
-/*医生个人主页的样式*/
-.doctor-banner {height: 3.64rem;position: relative;height: 4.71rem;}
-.doctor-section h3{font-size: 0.28rem;}
-.doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
-.doctor-banner .intro {position: absolute;bottom: 0;padding: 0.1rem 0 0.12rem 0rem;width: 100%;font-size: 0.28rem;color: #fff;background: linear-gradient(0,rgba(0,0,0,0.4),rgba(255,255,255,0));}
-.doctor-banner .intro h2 {color: #fff;}
-.doctor-banner .intro h2,.doctor-banner .intro p {padding-left:0.32rem;}
-.doctor-section {border-top: 0.1rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;}
-.doctor-section p {margin-left: 0.7rem;color: #666;}
-.doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
-.doctor-section li {list-style: none;margin-bottom: 0.2rem;margin-left: 1rem;margin-top: 0.2rem;}
-/*.doctor-section li {list-style: none;margin-bottom: 0.2rem;}*/
-.doctor-section li p {padding: 0.04rem 0;}
-.doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
-.doctor-section .title {font-size: 0.32rem;color:#333; display: inline-block;vertical-align: middle;height: 0.42rem; margin: 0.2rem 0.2rem 0.2rem 0;}
-.doctor-section .t-pic {background: url(../images/ask-icon.png) no-repeat;}
-.doctor-section .t-skill {background: url(../images/skill-icon.png) no-repeat;}
-.doctor-section .t-intro {background: url(../images/intro-icon.png) no-repeat;}
-.doctor-section .t-career {background: url(../images/career-icon.png) no-repeat;}
-/*.doctor-section .career {border-left: 0.04rem #f1f1f1 solid;margin-left: 0.78rem;}*/
-.doctor-section ul::before {content: "";border: 1px #f1f1f1 solid;height: 100%;margin-left: 0.78rem;margin-top: 0.24rem;position: absolute;}
-/*.doctor-section .career-wrpr {border-left: 1px #f1f1f1 solid;margin-left: 0.8rem;margin-bottom: -0.3rem;margin-top:0.3rem;padding-top: 1px;}*/
-.doctor-section .career-wrpr {position: relative;}
-.doctor-section .career {padding-bottom: 0.4rem;margin-top: -0.26rem;}
-.doctor-section .career p {margin-left: 0.2rem;}
-.doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.12rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 0.74rem;color: #d2d2d2;}
-/*.doctor-section .career p:nth-child(odd)::before {content: "●";color:#d2d2d2;position: absolute;left: 1.04rem;font-size: 0.24rem;margin-top:0.04rem;}*/
-.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
-/*.doctor-section .t-more {margin-right: 0.04rem; display:inline-block;background: url(../images/angle-right.png) no-repeat;width: 0.16rem;height: 0.32rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.doctor-section .t-more,.doctor-section .t-num {color:#999;font-size: 0.28rem;float: right;margin-top: 0.2rem;}
-.doctor-section .t-num {padding-right: 0.34rem;color: #f99841;}*/
-.doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;height: 0.62rem;width:1.32rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
-.doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
-.doctor-section .footer p {margin-left: 0;}
-.doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
-.doctor-section .alink-full {display: block;height: 100%;width: 100%;}
-/*.doctor-surface {height: 100%;}*/
-.doctor-surface .aclose {float:right;display: block;height: 0.4rem;width: 0.4rem;}
-/*患者咨询的提示弹出层*/
-.doctor-cover {background: rgba(0,0,0,0.3);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.doctor-surface .surface {position: fixed;top: 2.2rem;left: 10%;width: 80%;margin: 0 auto;background-color: #fff;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;z-index: 1001;}
-.doctor-surface .surface-title,.ask-surface .surface-title {text-align: center;padding: 0.36rem;border-bottom:1px #e8e9e9 solid;}
-.surface-title h1 {font-size: 0.40rem;color:#404040;}
-.doctor-surface .surface-ctnt,.ask-surface .surface-ctnt {overflow-y:auto;font-size: 0.32rem;color: #666;margin-left: 0.34rem;padding: 0.4rem 0.34rem 0;}
-.doctor-surface .surface-asr {position:absolute;left:0;height: 1rem;width: 100%;line-height: 1rem;background-color: #307fee;text-align: center;font-size: 0.38rem;-webkit-border-bottom-left-radius: 0.1rem;-moz-border-bottom-left-radius: 0.1rem;-ms-border-bottom-left-radius: 0.1rem;-o-border-bottom-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;-webkit-border-bottom-right-radius: 0.1rem;-moz-border-bottom-right-radius: 0.1rem;-ms-border-bottom-right-radius: 0.1rem;-o-border-bottom-right-radius: 0.1rem;border-bottom-right-radius: 0.1rem;}
-.surface-title .close {float:right;position: relative;top: -0.37rem; right: 0.3rem;display:inline-block;width: 0.3rem;height: 0.3rem;background: url(../images/ask-close.png) no-repeat;background-size: 100% 100%;overflow: hidden;text-indent: -99rem;}
-.surface-ctnt ul {list-style: none;}
-.surface-ctnt li {margin-bottom: 0.4rem;}
-.surface-ctnt li::before {content:"●";color:#999;position: absolute;left:0.28rem;font-size: 0.14rem;margin-top:0.1rem;}
-.surface .surface-asr a {display:inline-block;height: 100%;width: 100%;color: #fff;}
-.patient-banner {padding: 0.36rem 0.36rem 0;text-align: center;height: auto;min-height: 92%;}
-.patient-banner h1 {font-size: 0.4rem;color: #333;padding-bottom: 0.24rem;margin-top:-0.36rem;}
-.patient-banner p {font-size: 0.28rem; color: #666;}
-.patient-icon {background: url(../images/patient-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
-.patient-detail {font-size: 0.32rem;padding: 0 0.3rem;color: #333;}
-.patient-detail li {list-style: none;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;}
-/* .patient-detail li {list-style: none;position:relative;border-bottom: 1px #f1f1f1 solid;padding: 0.3rem 0;min-height: 0.62rem;
-}
-
-.patient-detail li>label {width: auto;min-width: 1.7rem;margin-top: -0.3rem;line-height: 1.2rem;position: absolute;display: inline-block;font-size:0.32rem;}
-.patient-detail li input {outline: none; color:#666;font-size: 0.32rem;border: 1px solid rgba(0,0,0,0);width: 3.7rem;height: 0.5rem;line-height: 0.5rem;margin-left: 1.5rem;padding-left: 0.1rem;-webkit-transition: box-shadow 0.30s ease-in-out;transition: box-shadow 0.30s ease-in-out; -webkit-tap-highlight-color: rgba(0,0,0,0);
- } */
-/*.patient-detail .bd_placeholder {position: absolute;margin-top: -0.3rem;line-height: 1.22rem;width: 4rem;height: 100%;color: #999;font-size: 0.32rem;margin-left: 1.5rem;padding-left: 0.1rem;z-index: 0;-webkit-tap-highlight-color:rgba(0,0,0,0);}*/
-/*.patient-detail li input:focus{border:1px solid #87C6F9;box-shadow: 0 0 8px rgba(103, 166, 217, 1);}*/
-.patient-detail .bd_placeholder {position: absolute;line-height: 0.6rem;width: 100%;height: 0.6rem;color: #999;font-size: 0.32rem;margin-left: 1.7rem;z-index: 0;-webkit-tap-highlight-color: rgba(0,0,0,0);}
-.patient-detail li input[type="date"]{position: relative;outline: none;-webkit-appearance: none;background-color: transparent;}
-::-webkit-date-edit-fields-wrapper { background-color: transparent; }
-.patient-detail .sex input,.patient-detail #allergyBtns input {display: none;}
-/* .patient-detail #sexBtns label,.patient-detail #allergyBtns label {position: relative;display: inline-block;text-align: center;color: #a5a5a5;border-radius: 0.06rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
-.patient-detail #sexBtns .first,.patient-detail #allergyBtns .first {margin-left: 1.2rem;} */
-.patient-detail #sexBtns span,.patient-detail #allergyBtns span {vertical-align: middle;font-size: 0.32rem;}
-.patient-detail .selected {background: url(../images/round-selected.png) no-repeat;}
-.patient-detail .choose {background: url(../images/round-choose.png) no-repeat;}
-.patient-tips {font-size: 0.28rem;padding: 0.2rem 0 2rem 0;margin:0;color: #999;height: 0.4rem;line-height: 0.4rem;}
-/*.patient-tips .info {display:inline-block;vertical-align:middle;padding-top:0.06rem;line-height:0.4rem;}*/
-.patient-mark {font-weight: bold;vertical-align: middle;display:inline-block;height: 0.4rem;width: 0.4rem;line-height:0.4rem;border-radius: 0.4rem;background-color: #d6d6d6;color: #fff;text-align: center;margin-right: 0.14rem;}
-.patient-algydesc {margin-top: 0.2rem;padding:0.24rem 0;display:none;}
-.patient-detail .selected,.patient-detail .choose {vertical-align: middle; margin-right:0.2rem; -webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;display: inline-block;object-fit: cover;}
-.patient-btn { position:relative;width: 92%;height: 0.8rem;background-color: #307fee;margin: 0 auto;margin-top: -1rem;font-size: 0.38rem;line-height: 0.8rem;text-align: center;-webkit-border-radius: 0.1rem;-moz-border-radius: 0.1rem;-ms-border-radius: 0.1rem;-o-border-radius: 0.1rem;border-radius: 0.1rem;}
-.patient-btn a {display: inline-block;height: 100%;width: 100%;color: #fff;}
-/*疾病描述详情页*/
-.disease-part {padding: 0.3rem;font-size: 0.32rem;}
-.disease-gap {border-top: 0.1rem #f1f1f1 solid;position: relative;}
-.disease-part label {height: 0.3rem;}
-.disease-part span,.disease-part h3 {font-size: 0.32rem;}
-.disease-part .angle-btm {float: right;display:inline-block;background: url(../images/angle-btmgy.png) no-repeat;width: 0.32rem;height: 0.20rem; background-size: 100% 100%;overflow: hidden;text-indent: -99rem;margin: 0.16rem 0 0 0.2rem;}
-.disease-part .disease-slt {float: right;color: #999;}
-.disease-part .detail {height: 3.9rem;width: 98%;border: none;margin-top: 0.1rem;color: #999;font-size: 0.32rem;line-height: 0.5rem;}
-.disease-part .limit {font-size: 0.28rem;color: #999;text-align:right;margin-right: 0.1rem;}
-.disease-part .img-wrapper {margin-top: 0.3rem;}
-.disease-part .img-wrapper span {display: inline-block;margin-right: 0.20rem;width: 100%;height: 100%;border: 1px dashed #f0f0f0;color: #e5e5e5;font-size: 0.8rem;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;cursor: pointer;line-height: 1.4rem;text-align: center;}
-.disease-part .img-wrapper a {display:inline-block;height: 1.5rem;width: 1.5rem;vertical-align: top;position: relative;margin: 0.2rem 0.2rem 0 0;}
-.disease-part .img-wrapper .file {position:absolute;top:0;height: 100%;width: 100%;opacity: 0;}
-.disease-part .img-wrapper img {height: 100%;width: 100%;border: 1px #f0f0f0 dashed;-webkit-border-radius: 0.06rem;border-radius: 0.06rem;object-fit: cover;}
-.disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}
-.disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
-.disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;margin-top:0.2rem;}
-.disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 1px #f1f1f1 solid;}
-.disease-surface li:last-child {border: none;}
-.disease-surface .active {color: #307fee;background-color: #f4f4f4;margin: 0;padding-left: 0.34rem;}
-.disease-surface li.active::after {display:inline-block;background: url(../images/chs-conrect.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;content: "";width: 0.32rem;height: 0.26rem;margin-left: 0.4rem;position:absolute;right: 0.34rem;margin-top: 0.1rem;}
-.disease-part .error {color: #eb3030;}
-/*病情描述页的病种选择*/
-.ac-up { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-in 0.3s ease-out 0s 1 normal forwards;animation: share-in 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
-@-keyframes share-in {0% { -webkit-transform: translateY(0);transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);transform: translateY(-100%);}} 
-.ac-down { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-out 0.3s ease-out 0s 1 normal forwards;animation: share-out 0.3s ease-out 0s 1 normal forwards;}
-@-webkit-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
-@-keyframes share-out {0% { -webkit-transform: translateY(-100%);transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);transform: translateY(0);}} 
-.disease-cover {z-index: 0;}
-
-/*支付成功、失败*/
-.pay-succs,.pay-fail {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
-.pay-succs h1,.pay-fail h1 {font-size: 0.4rem;padding: 0 0 0.1rem;margin-top: -0.36rem;}
-.pay-succs .icon {background: url(../images/pay-succs-icon.png) no-repeat;}
-.pay-fail .icon {background: url(../images/pay-fail-icon.png) no-repeat;}
-.pay-succs .icon,.pay-fail .icon {-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
-.pay-content {transform: translateY(-50%);top:50%;position: relative;padding-bottom:2rem;}
-.pay-content p {color: #999;}
-
-/*退款成功*/
-.money-back .icon {background: url(../images/money-back-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 2.37rem;width: 2.37rem;margin: 0 auto;}
-/*病情查看详情页*/
-.ask-process {height: 0.8rem;line-height: 0.8rem;background-color: #307fee;color: #fff;font-size: 0.24rem;}
-.ask-process .icon {background: url(../images/inask-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;height: 0.3rem;width: 0.36rem;margin: 0 auto;margin: 0.26rem 0.32rem;}
-.ask-process h3 {font-size: 0.32rem;float:left;}
-.ask-process .inline {margin-left: 0.14rem;}
-.ask-process span, .ask-process .inline {float:left;}
-.ask-detail,.sufferer-list {padding:0 0.32rem;font-size: 0.28rem;}
-.ask-detail li,.sufferer-list li {list-style: none;padding: 0.48rem 0;border-bottom:1px #e8e9e9 solid;}
-.ask-detail li:last-child {border: none;}
-.ask-detail li p {display: inline-block;vertical-align: top;}
-.ask-detail li p:first-child {width: 1.2rem;color: #999;}
-.ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
-.ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
-.ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
-/*第二次及以上咨询时患者选择*/
-.sufferer-list li {font-size: 0.32rem;}
-.sufferer-list img {width: 100%;height: 100%;}
-.sufferer-list div {display: inline-block;vertical-align: middle;}
-.sufferer-list .girl {background: url(../images/girl-icon.png) no-repeat;}
-.sufferer-list .boy {background: url(../images/boy-icon.png) no-repeat;}
-.sufferer-list .girl,.sufferer-list .boy,.sufferer-list .add {-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-left: 0.4rem;}
-.sufferer-list .selected {background: url(../images/round-selected.png) no-repeat;}
-.sufferer-list .choose {background: url(../images/round-choose.png) no-repeat;}
-.sufferer-list .selected,.sufferer-list .choose {vertical-align: middle;margin-left: 3.84rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.36rem;height: 0.36rem;    display: inline-block}
-.sufferer-list .addwrapper {height: 1.44rem;width: 100%; line-height: 1.14rem;text-align: center;padding-bottom:2rem;}
-.sufferer-list a {display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;color: #307fee;}
-.sufferer-list .add {display:inline-block;background: url(../images/add-icon.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;width: 0.3rem;height: 0.3rem;margin-right: 0.2rem;}
-.no-handle {background-color: #999;}
-.check-error {color: red;}
-.tranparent-cover {background:rgba(255,255,255,0);height: 100%;width: 100%;position: fixed;top: 0;z-index: 1000;}
-.body-minheight {height: auto;min-height: 100%;}
-.appear-position {position:absolute;display: block;bottom: -50%;}
-.appear-hide {display: none;}
-
-
--->
