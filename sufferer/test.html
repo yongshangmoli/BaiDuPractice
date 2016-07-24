@@ -272,11 +272,13 @@
                     }
                 });*/
                 //点击提交按键的操作
-                $("#sbmt_info").parent().on("click", function() {
+               /* $("#sbmt_info").parent().on("click", function() {
                     fn._getInfo(surferer);
-                    console.log(surferer);
                     if(!fn._checkInfo(surferer)) return;
-                    // fn._checkSucs(true);
+                    fn._checkSucs(true);
+                });*/
+                 $("#sbmt_info").parent().on("touch", function(e) {
+                    console.log(e);
                 });
                 /*
                 var initChoose = function() {
