@@ -4,157 +4,297 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="format-detection" content="telephone=no">
-        <title>向裴医生提问</title>
+        <title>请填写基本资料</title>
         <link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
         <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <div id="page" class="page">
-            <section>
-                <div class="disease-part">
-                    <a href="#" id="disease_choose" class="alink">
-                        <span>选择病种</span>
-                        <span class="angle-btm"></span>
-                        <span class="disease-slt" id="disease_record">心脑血管</span>
-                    </a>
-                </div>
-                <div class="disease-part disease-gap">
-                    <h3>病情描述</h3>
-                    <textarea id="disease_desc" class="detail" name="disease-desc" placeholder="请详细描述您的症状，疾病和身体状况，便于医生能准确为您作出判断 ."></textarea>
-                    <p id="text_control" class="limit">可输入200字</p>
-                </div>
-                <div class="disease-part disease-gap" style="padding-bottom: 2rem;">
-                    <h3>图片上传</h3>
-                    <div id="img_wrapper" class="img-wrapper">
-                        <!-- <a href=""><img src="" alt=""></a> -->
-                        <a id="upload_img" href="#">
-                            <span>+</span>
-                            <input type="file" id="btn_file" class="file">
-                        </a>
-                    </div>
-                </div>
-            	</section>
-     </div><!-- style="    margin-top: 1rem;" -->
-     <div class="patient-btn" >
-		<a id="pay_ask" href="#">立即支付10元</a>
-	</div>
-	<div id="cover" class="doctor-cover" style="display:none;"></div>
-	<div id="disease" class="disease-surface">
-		<ul id="disease_list">
-			<li class="active" value="sdsd">心脑血管</li>
-			<li value="2">神经外科</li>
-			<li value="3">神经内科</li>
-		</ul>
-	</div>
+                <!-- patient form-->
+            <section class="patient-body">
+               <!--  <div class="patient-banner">
+                   <div class="patient-icon"></div>
+                   <h1>填写资料，获得精准回答</h1>
+               </div> -->
+                <div style="height:0.4rem;"></div>
+                <ul class="patient-detail">
+                    <!-- <li>
+                        <label for="name">患者姓名</label>
+                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/></p>
+                    </li>
+                    <li>
+                        <label for="yearMth">出生年月</label>
+                        <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+                        <p><input id="yearMth" type="date"/></p>
+                    </li>
+                    <li>
+                        <label for="phone">手机号码</label>
+                        <p><input id="phone" type="tel" placeholder="请输入手机号码" /></p>
+                    </li>
+                    <li class="sex">
+                        <label for="sex">性别</label>
+                        <p id="sexBtns">
+                            <input type="radio" name="sex" value="0" id="male"/>
+                            <label for="male">
+                                <span class="choose"></span><span class="second">男</span>
+                            </label>
+                            <input type="radio" name="sex" value="1" id="female" />
+                            <label for="female">
+                                <span class="choose"></span><span>女</span>
+                            </label>
+                        </p>
+                    </li>
+                    <li class="allergy">
+                        <label for="allergy">药物过敏</label>
+                        <p id="allergyBtns" >
+                            <input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
+                            <label for="no_allergy" class="first">
+                                <span class="choose"></span><span class="second">无</span>
+                            </label>
+                            <input type="radio" name="allergy" value="1" id="yes_allergy" />
+                            <label for="yes_allergy">
+                                <span class="choose"></span><span>有</span>
+                            </label>
+                        </p>
+                        <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+                    </li> -->
+                    <li>
+                        <label for="name"><i class="name">姓名</i></label>
+                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/><div class="line"></div></p>
+                    </li>
+                    <li>
+                        <label for="yearMth"><i class="date">出生年月</i></label>
+                        <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+                        <p><input id="yearMth" type="date"/><div class="line"></div></p>
+                    </li>
+                    <li>
+                        <label for="phone"><i class="phone">手机号码</i></label>
+                        <p><input id="phone" type="tel" placeholder="请输入手机号码" /><div class="line"></div></p>
+                    </li>
+                    <li class="sex">
+                        <label for="sex"><i class="sexc">性别</i></label>
+                        <p id="sexBtns">
+                            <input type="radio" name="sex" value="0" id="male"/>
+                            <label for="male">
+                                <span class="choose"></span><span class="second">男</span>
+                            </label>
+                            <input type="radio" name="sex" value="1" id="female"/>
+                            <label for="female">
+                                <span class="choose"></span><span class="second">女</span>
+                            </label>
+                            <div class="line"></div>
+                        </p>
+                    </li>
+                    <li class="allergy">
+                        <label for="allergy"><i class="drug">药物过敏</i></label>
+                        <p id="allergyBtns" >
+                            <input type="radio" name="allergy" value="0" id="no_allergy"/>
+                            <label for="no_allergy" class="first">
+                                <span class="choose"></span><span class="second">无药物过敏</span>
+                            </label>
+                            <input type="radio" name="allergy" value="1" id="yes_allergy" />
+                            <label for="yes_allergy">
+                                <span class="choose"></span><span>有药物过敏</span>
+                            </label>
+                        </p>
+                        <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+                        <div class="line"></div>
+                    </li>
+                   <!--  <p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p> -->
+                </ul>
+            </section>
+        </div>
+        <div class="patient-btn">
+            <a id="sbmt_info" href="javascript:void(0);">下一步</a>
+        </div>
         
         <script src="js/zepto.js"></script>
         <script src="js/common.js"></script>
-        <script src="js/fx.js"></script>
         <script>
             (function() {
+                //出生年月是否显示placeholder文字
+                var bd_date = $('#yearMth'),bd_placeholder = $('#bd_placeholder');
+                var ck_bd_placeholder = function() {
+                    bd_placeholder[0].style.display= bd_date.val() ? 'none' : 'block'; 
+                };
+                bd_placeholder.on('touchstart',function(){
+                    bd_date.focus();
+                });
+                bd_date.on('focus blur change',ck_bd_placeholder);
+                // 验证相关
+                var surferer = {};
+                var checkObj={
+                    name:{
+                        reg:/^.{1,10}$/,
+                        emptyMsg:'请输入姓名',
+                        errorMsg:'姓名格式不正确'
+                    },
+                    yearMth:{
+                        emptyMsg:'未选择出生年月日'
+                    },
+                    phone:{
+                        reg:/^1[0-9]{10}$/,
+                        emptyMsg:'请输入接收医生的回复电话',
+                        errorMsg:'请输入正确的电话号码'
+                    },
+                    sex:{
+                        emptyMsg:'请选择性别',
+                    },
+                    allergy:{
+                        emptyMsg:'请选择是否药物过敏',
+                    },
+                    allergyDetl:{
+                        emptyMsg:'请输入小孩的过敏药物名称',
+                    }
+                };
                 
-                var util = {
-                    _cover : $("#cover"),
-                    _disease : $("#disease"),
-                    _diseasesList : $("#disease_list li"),
-                    _diseaseRecord : $("#disease_record"),
-                    _diseaseDesc : $("#disease_desc"),
-                    diseaseKind : $("#disease_list li.active").attr("value"),//选择的是哪种疾病
-                    diseaseDesc : "",//疾病的描述
-                    diseaseHeight : 0,
-                };
-                $("#disease_choose").one("click",function() {
-        			util._diseaseRecord.css("color","#666");
-        		});
-                $("#disease_choose").on("click", function() {
-        		    lockScreenHgt();
-                    util._cover.show();
-                    var top = $("#pay_ask")[0].offset().top;
-                    console.log(top);
-                    $("#pay_ask").parent().css({"top":top+"px","left":"4%","position":"absolute"});
-                    // util._disease.show().addClass("ac-up").removeClass("ac-down");
-                });
-                util._diseasesList.on("click", function() {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    util._diseaseRecord.html($(this).html());
-                    util._cover.trigger("click");
-                    util.diseaseKind = $(this).attr("value");
-                });
-                util._cover.on("click",function() {
-                    util._disease.addClass("ac-down").removeClass("ac-up");
-                    unlockScreenHgt();
-                    $("#pay_ask").parent().css({"top":"","left":"","position":"relative"});
-                    setTimeout(function() {
-                        util._disease.hide();
-                        util._cover.hide();
-                    },400);
-                });
-                $("#pay_ask").on("click", function() {
-                    var describe = util._diseaseDesc.val().trim();
-                    var _checkSucs = function() {
-                        util.diseaseDesc = describe;
-                        window.location.href = "pay-succs.html";
-                    };
-                    if(describe) {
-                        _checkSucs();
-                    }
-                    else {
-                        alert("请填写病情描述");
-                    }
-                });
-                util._diseaseDesc.on("input",function() {
-                    var value = $(this).val();
-                    var textLen = value.length;
-                    if(textLen >= 200) {
-                        $(this).val(value.slice(0,200));
-                        $("#text_control").text("还能输入0字");
-                    }
-                    else {
-                        $("#text_control").text("还能输入"+(200-textLen)+"字");
-                    }
-                });
-                //照片上传
-                var imgCount = 0;
-                // 创建图片
-                var createImgWrp = function() {
-                    var a = document.createElement("a");
-                    a.href = "#";
-                    var img = document.createElement("img");
-                    img.id = "previewImg" + (imgCount++);
-                    img.alt = "病情图片" + imgCount;
-                    var div = document.createElement("div");
-                    div.className = "delete";
-                    // div.innerHTML = "-";
-                    $(div).on("click",function() {
-                        $(this).parent().remove($(this));
-                    });
-                    a.appendChild(div);
-                    a.appendChild(img);
-                    return [a,img];
-                };
-                //添加照片预览
-                $("#btn_file").change(function() {
-                    var $file = $(this),fileObj = $file[0],windowURL = window.URL || window.webkitURL,dataURL;
-                    if(fileObj && fileObj.files && fileObj.files[0]){
-                        if(imgCount > 50) {
-                            alert("上传照片不可大于50张");
-                            return;
+                var fn = {
+                    _getInfo : function(surferer,noTip) {
+                        surferer.name = $("#name").val().trim();
+                        surferer.yearMth = $("#yearMth").val();
+                        surferer.phone = $("#phone").val().trim();
+                        surferer.sex = $("#sexBtns input:checked").val();
+                        surferer.allergy = $("#allergyBtns input:checked").val();
+                    },
+                    _checkInfo : function(surferer,noTip) {
+                        for (var key in surferer) {
+                            var checkInfo = checkObj[key],value = surferer[key];
+                            if(value === "" || value === undefined){
+                                if(!noTip) {
+                                    alert(checkInfo.emptyMsg);
+                                }
+                                return false;
+                            }
+                            if(key === "allergyDetl") {
+                                continue;
+                            }
+                            else if(key === "yearMth") {
+                                var date = new Date();
+                                var year = date.getFullYear(),month = date.getMonth()+1,day = date.getDate(),isOK = true;
+                                var putValue = value.split("-");
+                                console.log(value,putValue);
+                                if(year < putValue[0]) {
+                                    isOK = false;
+                                }
+                                else if(year === parseInt(putValue[0],10)) {
+                                    if(month < putValue[1]) {
+                                        isOK = false;
+                                    }
+                                    else if(month === parseInt(putValue[1],10)) {
+                                        if(day < putValue[2]) {
+                                            isOK = false;
+                                        }
+                                    }
+                                }
+                                if(!isOK) {
+                                    if(!noTip) alert(checkObj["yearMth"].errorMsg);
+                                    return false;
+                                }
+                                continue;
+                            }
+                            else if(key === "allergy" && value === "1") {
+                                 // var allergyDetail = $("#allergy_detail");
+                                var allergyDetail = $("#allergy_detail").children()[0].value;
+                                if(allergyDetail) {
+                                    allergyDetail = allergyDetail.trim();
+                                    if(allergyDetail === "") {
+                                        if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
+                                        return false;
+                                    }
+                                }
+                                else {
+                                    if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
+                                    return false;
+                                }
+                                surferer.allergyDetl = allergyDetail;
+                                continue;
+                            }
+                            if(!checkInfo.reg) continue;
+                            if(!checkInfo.reg.test(value)){
+                                if(!noTip) alert(checkInfo.errorMsg);
+                                return false;
+                            }
+                        }
+                        return true;
+                    },
+                    
+                    //看之前是否有记录患者信息
+                    _cmtJudge : function(record) {
+                        if(!record) {
+                            window.location.href = "disease-desc.html";
                         }
                         else {
-                            var temp = createImgWrp(),$img=$(temp[1]);
-                            dataURL = windowURL.createObjectURL(fileObj.files[0]);
-                            $img.attr('src',dataURL);
-                            $("#img_wrapper").children().first().before($(temp[0]));
+                            window.location.href = "sufferer-choose.html";
                         }
-                    }else{
-                        dataURL = $file.val();
-                        if(dataURL.toString().indexOf("blob") > -1) {
-                            var imgObj = $("#preview");
-                            imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
-                            imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
-                        }
+                    },
+                    //检查输入正确后进行的操作
+                    _checkSucs : function(record) {
+                        this._cmtJudge(record);
+                    },
+                };
+                var styleChoose = function(chooseStyle,selectedStyle,curEle) {
+                    curEle.children()[0].className = selectedStyle;
+                    var prev = curEle.prev();
+                    prev.attr("checked");
+                    curEle.siblings().children()[0].className = chooseStyle;
+                    surferer[curEle.parent().parent().attr("class")] = prev.val(); 
+                };
+                //sex和allergy样式控制
+               /* $("#sexBtns").on("touchstart","label",function() {
+                    var that = $(this);
+                    styleChoose("choose","selected",that);
+                });*/
+                $("#sexBtns,#allergyBtns").on("touchstart","label",function() {
+                    var that = $(this),prev = that.prev();
+                    styleChoose("choose","selected",that);
+                    console.log(2);
+                    that.children().last().addClass("active");
+                    that.siblings().children().last().removeClass("active");
+                    if(prev.attr("id") === "yes_allergy") {
+                        $("#allergy_detail").show();
+                    }
+                    else if (prev.attr("id") === "no_allergy") {
+                        $("#allergy_detail").hide();
                     }
                 });
+                /*$("#sexBtns,#allergyBtns").on("click","label",function() {
+                    var that = $(this);
+                    that.children()[0].className = "selected";
+                    var prev = that.prev();
+                    prev.attr("checked");
+                    that.siblings().children()[0].className = "choose";
+                    surferer[that.parent().parent().attr("class")] = prev.val();
+                    if(prev.attr("id") === "yes_allergy") {
+                        $("#allergy_detail").show();
+                    }
+                    else if (prev.attr("id") === "no_allergy") {
+                        $("#allergy_detail").hide();
+                    }
+                });*/
+                //点击提交按键的操作
+                $("#sbmt_info").parent().on("click", function() {
+                    fn._getInfo(surferer);
+                    console.log(surferer);
+                    if(!fn._checkInfo(surferer)) return;
+                    // fn._checkSucs(true);
+                });
+                /*
+                var initChoose = function() {
+                    var sex = $("#sexBtns input:checked").val(),allergy = $("#allergyBtns input:checked").val();
+                    ck_bd_placeholder();
+                    var choose = function(target) {
+                        target.attr("checked","checked").next().children().first().attr("class","selected");
+                    }
+                    parseInt(sex,10) === 1 ? choose($("#female")) : choose($("#male"));
+                    if(parseInt(allergy,10) === 1) {
+                        choose($("#yes_allergy"));
+                        $("#allergy_detail").show();
+                    }
+                    else  {
+                        choose($("#no_allergy"));
+                    }
+                }
+                initChoose();*/
             })();
         </script>
     </body>
