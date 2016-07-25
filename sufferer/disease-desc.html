@@ -81,8 +81,10 @@
                 util._cover.on("click",function() {
                     //util._disease.addClass("ac-down").removeClass("ac-up");
                     //unlockScreenHgt();
+                    hideTraptCover();
+                    console.log(12);
                     setTimeout(function() {
-                        util._disease.hide();hideTraptCover();
+                        util._disease.hide();
                         // util._cover.hide();
                     },400);
                 });
