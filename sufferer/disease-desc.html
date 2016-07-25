@@ -67,10 +67,10 @@
         			util._diseaseRecord.css("color","#666");
         		});
                 $("#disease_choose").on("click", function() {
-                	showTraptCover();
-        	    //lockScreenHgt();
-                    //util._cover.show();
-                    //util._disease.show().addClass("ac-up").removeClass("ac-down");
+               	    showTraptCover();
+        	    lockScreenHgt();
+                    util._cover.show();
+                    util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
                 util._diseasesList.on("click", function() {
                     $(this).addClass("active").siblings().removeClass("active");
@@ -79,13 +79,11 @@
                     util.diseaseKind = $(this).attr("value");
                 });
                 util._cover.on("click",function() {
-                    //util._disease.addClass("ac-down").removeClass("ac-up");
-                    //unlockScreenHgt();
-                    hideTraptCover();
-                    console.log(12);
+                    util._disease.addClass("ac-down").removeClass("ac-up");
+                    unlockScreenHgt();
                     setTimeout(function() {
                         util._disease.hide();
-                        // util._cover.hide();
+                        util._cover.hide();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
