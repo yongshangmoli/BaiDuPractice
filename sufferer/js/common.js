@@ -54,6 +54,7 @@ function showTraptCover() {
 function hideTraptCover() {
   // unlockScreenHgt();
   var cover = document.getElementById('tranparent_cover');
+  console.log(12);
   if(cover) {cover.style.display = 'none';}
 }
 
