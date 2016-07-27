@@ -9,9 +9,12 @@
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 		<style>
 			.enlargeWrp {height: 100%;width: 100%; overflow: hidden; position: absolute;top:0;left:0;background-color: rgba(0,0,0,0.2);}
-			.enlargeWrp .inner {height: 100%;}/* 
-			.enlargeWrp ul,li {height: 100%;width: 100%;} */
-			.enlargeWrp img {height: 100%;object-fit:contain;float:left;}
+			/* .enlargeWrp .inner {height: 100%;} 
+			.enlargeWrp ul,li {height: 100%;width: 100%;}  */
+			.enlargeWrp .inner {height: 100%;float: left;z-index: 1;overflow: hidden;text-align: center;}
+			.scroller {height: 100%;z-index: 1;line-height: 640px;}
+			/*.enlargeWrp img {height: 100%;object-fit:contain;float:left;}*/
+			.enlargeWrp img {max-width: 100%;vertical-align: middle;}
 			.toggleZoomHalf {-webkit-transform: scale(0.5);transform: scale(0.5);}
 			.toggleZoom1 {-webkit-transform: scale(1);transform: scale(1);}
 			.toggleZoom2 {-webkit-transform: scale(2);transform: scale(2);}
@@ -64,11 +67,17 @@
 				</form>
 			</section>
 		</div>
-		<!-- 弹出层 --> <!-- style="width:200%;-webkit-transform: translate(0, 0);"   style="-webkit-transform: translate(-375px, 0);"-->
-		<div class="enlargeWrp" style="display: none;">
-			<div id="big_img" class="inner">
-				<!-- <img src="images/doctor-banner.jpg"></img>
-				<img src="images/doctor-banner2.jpg"></img> -->
+		<!-- 弹出层 --> <!-- style="width:200%;-webkit-transform: translate(0, 0);"   style="-webkit-transform: translate(-375px, 0);"  style="display: none;"-->
+		<div id="big_img" class="enlargeWrp">
+			<div class="inner">
+				<div class="scroller">
+					<img src="images/doctor-banner.jpg"></img>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="scroller">
+					<img src="images/doctor-banner2.jpg"></img>
+				</div>
 			</div>
 		</div>
 
@@ -108,13 +117,14 @@
 							util.imgStore[i].style.width = util.screenWid+"px";
 						})(i);
 					}
+					$(".scroller").css({"line-height":util.screenHgt});
 				}
 			};
 			//初始化设置
 			util.setState(util.states[1]);
 			util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"]);
-			util.initWrp();
-
+		/*	util.initWrp();
+*/
 			//点击病情描述中的照片
 			$("#disease-photo").find("img").on({
 				click : function(e) {
@@ -138,7 +148,7 @@
 						clearTimeout(timer); 
 						console.log("in dblclick");
 						// $(this).css({"-webkit-transform":"scale(2)","transform":"scale(2)"});
-						$(this).toggleClass("toggleZoom2","toggleZoom1");
+						$(this).parent().toggleClass("toggleZoom2","toggleZoom1");
 						clicks = 0; 
 					}
 					// var imgIndex = e.target.getAttribute("data-id").split("_")[1];
