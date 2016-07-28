@@ -49,7 +49,7 @@ function unlockScreenHgt() {
 }
 
 function showTraptCover() {
-  lockScreenHgt();
+  // lockScreenHgt();
   var cover = document.querySelector('.tranparent-cover');
   if(cover) {
     cover.style.display = 'block';
@@ -63,8 +63,9 @@ function showTraptCover() {
 }
 
 function hideTraptCover() {
-  unlockScreenHgt();
+  // unlockScreenHgt();
   var cover = document.getElementById('tranparent_cover');
+  console.log(12);
   if(cover) {cover.style.display = 'none';}
 }
 

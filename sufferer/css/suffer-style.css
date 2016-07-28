@@ -63,7 +63,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .team-section .list-detil .edu-bgd,.team-section .partner .hospital {color:#666;padding: 0.08rem 0;font-size: 0.24rem;}
 .team-section .list-icon img,.team-section .hospital-icon img,.team-section .scan-code img,.team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;}
 .team-section .tag {height: 0.66rem;overflow: hidden;}
-.team-section .tag li {padding: 0;float: left;color: #999;padding: 2px 0.22rem;margin:0.1rem 0.14rem 0.1rem 0;border: 1px #f2f2f2 solid;font-size: 0.28rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-section .tag li {padding: 0;float: left;color: #999;padding: 0 0.22rem;/*height: 0.5rem;line-height: 0.5rem;*/margin:0.1rem 0.14rem 0.1rem 0;border: 1px #f2f2f2 solid;font-size: 0.28rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
 .team-section .partner li{text-align: center;width: 40%;float: left;}
 .team-footer {text-align: center;}
 .team-section .team-footer p {font-size: 0.28rem;}

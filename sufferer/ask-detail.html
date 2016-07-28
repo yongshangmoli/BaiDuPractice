@@ -5,55 +5,60 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
 		<title>咨询详情</title>
-		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css" media="screen">
+			.ask-detail li p {float:left;}
+			.ask-detail li p:nth-child(2) {margin-left: 0.2rem;font-size: 0.32rem;}
+			.ill-describe li p:nth-child(2) {margin-left: 0.2rem;font-size: 0.32rem;margin-left: 1.4rem;margin-top: -0.38rem;}
+			.ask-detail li img {height: 1.2rem;width: 1.2rem;margin: 0.36rem 0.1rem 0 0}
+		</style>
 	</head>
 	<body>
-		<div id="page" class="page">
-			<!--ask process -->
-			<section class="ask-process">
-				<span class="icon"></span>
-				<h3 id="ask_state"></h3>
-				<!-- <p class="inline">等待医生的回复</p> -->
-			</section>
-			<!--ask detail-->
-			<section class="ask-detail">
-				<form action="" class="" method="post" accept-charset="utf-8">
-					<ul>
-						<li>
-							<p>患者姓名</p>
-							<p>大婴孩</p>
-						</li>
-						<li>
-							<p>年龄</p>
-							<p>31</p>
-						</li>
-						<li>
-							<p>手机号码</p>
-							<p>1356584865</p>
-						</li>
-						<li>
-							<p>性别</p>
-							<p>女</p>
-						</li>
-					</ul>
-					<div class="hr"></div>
-					<ul>
-						<li>
-							<p>药物过敏</p>
-							<p>肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子</p>
-						</li>
-						<li>
-							<p>病情描述</p>
-							<p>
-								肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .<br/>
-								<img src="images/artcl-icon.png" alt="疾病照片"><img src="images/artcl-icon.png" alt="疾病照片">
-							</p>
-						</li>
-					</ul>
-				</form>
-			</section>
-		</div>
+		<!--ask process -->
+		<section class="ask-process">
+			<span class="icon"></span>
+			<h3 id="ask_state"></h3>
+			<!-- <p class="inline">等待医生的回复</p> -->
+		</section>
+		<!--ask detail-->
+		<section class="ask-detail">
+			<form action="" class="" method="post" accept-charset="utf-8">
+				<ul class="d">
+					<li class="team-clear">
+						<p>患者姓名</p>
+						<p>大婴孩</p>
+					</li>
+					<li class="team-clear">
+						<p>年龄</p>
+						<p>31</p>
+					</li>
+					<li class="team-clear">
+						<p>手机号码</p>
+						<p>1356584865</p>
+					</li>
+					<li class="team-clear">
+						<p>性别</p>
+						<p>女</p>
+					</li>
+				</ul>
+				<div class="hr"></div>
+				<ul class="ill-describe">
+					<li class="team-clear">
+						<p>药物过敏</p>
+						<p>肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子
+						<br/><img src="images/artcl-icon.png" alt="疾病照片"><img src="images/artcl-icon.png" alt="疾病照片"><img src="images/artcl-icon.png" alt="疾病照片"><img src="images/artcl-icon.png" alt="疾病照片"></p>
+
+					</li>
+					<li class="team-clear">
+						<p>病情描述</p>
+						<p>
+							肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .<br/>
+						</p>
+					</li>
+				</ul>
+			</form>
+		</section>
 		<script src="js/zepto.js"></script>
 		<script src="js/common.js"></script>
 		<script>
