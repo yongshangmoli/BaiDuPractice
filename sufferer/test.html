@@ -16,7 +16,6 @@
 		<style>
 		figure {padding: 0;margin: 0;}
 		.my-gallery {float: left;margin-left: 1.4rem;padding-top: 0.2rem;}
-		.my-gallery img {width: 100%;height: auto;}
 		.my-gallery figure {display: block;float: left;margin: 0 0.1rem 0.1rem 0;}
 		.my-gallery figcaption {display: none;}
 			.enlargeWrp {height: 100%;width: 100%; overflow: hidden; position: absolute;top:0;left:0;background-color: rgba(0,0,0,0.2);}
@@ -70,12 +69,12 @@
 						</li>
 						<li class="team-clear">
 							<p>病情描述</p>
-							<p id="disease-photo">
+							<p>
 								肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .<!-- <br/><br/> -->
 							</p>
-							<div class="my-gallery">
+							<div id="disease-photo" class="my-gallery">
 								<!-- <img src="images/doctor-banner.jpg"></img><img src="images/doctor-banner.jpg"></img> -->
-								<figure>
+								<!-- <figure>
 							      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
 							          <img src="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" alt="Image description" />
 							      </a>
@@ -97,18 +96,7 @@
 							      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="1024x768">
 							          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" alt="Image description" />
 							      </a>
-							    </figure>
-							    <figure>
-							      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="1024x683">
-							          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" alt="Image description" />
-							      </a>
-							    </figure>
-
-							    <figure>
-							      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="1024x768">
-							          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" alt="Image description" />
-							      </a>
-							    </figure>
+							    </figure> -->
 							</div>
 						</li>
 					</ul>
@@ -171,11 +159,12 @@
 				bigImgCtnr : $("#big_img"),
 				imgCount : 2,
 				imgStore : [],
+				count : 0,
 				setState : function(state) {
 					$("#ask_state").text(state);
 				},
 				//在病情描述中添加照片
-				creatImg : function(imgArray) {
+				/*creatImg : function(imgArray) {
 					for (var i = 0,len=imgArray.length; i < len; i++) {
 						var img = document.createElement("img");
 						img.setAttribute('data-id', 'img_'+i);
@@ -185,24 +174,44 @@
 						var imgCopy = img.cloneNode(true);
 						util.imgStore.push(imgCopy);
 					}
-				},
-				initWrp : function() {
-					util.bigImgCtnr[0].style.width = (util.imgCount)*(util.screenWid)+"px";
-					for (var i = 0,len = util.imgCount; i <len; i++) {
-						(function(i) {
-							// console.log(util.imgStore[i].width,util.imgStore[i].height,util.screenWid);
-							var imgW = util.imgStore[i].width,imgH = util.imgStore[i].height;
-							util.bigImgCtnr.append($(util.imgStore[i]));
-							util.imgStore[i].style.width = util.screenWid+"px";
-						})(i);
+				},*/
+				creatSlider : function(imgArray) {
+					for (var i = 0,len=imgArray.length; i < len; i++) {
+						var figure = document.createElement("figure");
+						var a = document.createElement("a");
+						a.href = imgArray[i].src;
+						$(figure).append($(a));
+						$(a).append(imgArray[i]);
+						console.log(imgArray[i].width,imgArray[i].height);
+						a.setAttribute('data-size', imgArray[i].width+'x'+imgArray[i].height);
+						util.photoWrp.append($(figure));
 					}
-					$(".scroller").css({"line-height":util.screenHgt});
-				}
+				},
+				creatImg : function(imgArray,num) {
+					var img = document.createElement("img");
+					img.src = imgArray[util.count];
+					img.alt = "疾病照片";
+					util.count += 1;
+					img.onerror = function () {
+						if (num >= util.imgCount) {
+							return;
+						}
+						util.creatImg(imgArray, num);
+					}
+					img.onload = function () {
+						util.imgStore.push(img);
+						if (++num >= util.imgCount) {
+							util.creatSlider(util.imgStore);
+							return;
+						}
+						util.creatImg(imgArray, num);
+					};
+				},
 			};
 			//初始化设置
 			util.setState(util.states[1]);
-			// util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"]);
-
+			util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"],0);
+			util.creatSlider(util.imgStore);
 		/*	util.initWrp();
 */
 			//点击病情描述中的照片
