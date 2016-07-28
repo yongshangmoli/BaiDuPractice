@@ -62,10 +62,10 @@
                     diseaseDesc : "",//疾病的描述
                     diseaseHeight : 0,
                 };
-                $("#disease_choose").one("click",function() {
+                $("#disease_choose").one("tap",function() {
         			util._diseaseRecord.css("color","#666");
         		});
-                $("#disease_choose").on("click", function() {
+                $("#disease_choose").on("tap", function() {
                	    // showTraptCover();
         	        lockScreenHgt();
                     util._cover.show();
@@ -77,7 +77,7 @@
                     util._cover.trigger("click");
                     util.diseaseKind = $(this).attr("value");
                 });
-                util._cover.on("click",function() {
+                util._cover.on("tap",function() {
                     // util._disease.addClass("ac-down").removeClass("ac-up");
                     unlockScreenHgt();
                     setTimeout(function() {
