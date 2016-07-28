@@ -23,6 +23,17 @@ function alert_msg(msg,className){
 window.Alert = alert;
 window.alert = alert_msg;
 //lockScreen
+/*var lockScreen = {
+  _page : document.getElementsByTagName("html")[0]
+};
+function lockScreenHgt() {
+  // lockScreen._page.style.height = lockScreen._windowH + "px";
+  lockScreen._page.className = "hide-height";
+}
+function unlockScreenHgt() {
+  // lockScreen._page.style.height = "100%";
+  lockScreen._page.className = "";
+}*/
 var lockScreen = {
   _windowH : window.innerHeight,
   _page : document.getElementById("page"),
