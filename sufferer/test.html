@@ -67,8 +67,9 @@
         		});
                 $("#disease_choose").on("click", function() {
                	     
-        	        lockScreenHgt();
+        	       
         	        showTraptCover();
+        	         lockScreenHgt();
                     //util._cover.show();
                     // util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
@@ -87,7 +88,7 @@
                     	hideTraptCover();
                     	// unlockScreenHgt();
                         util._disease.hide();
-                        util._cover.hide();
+                        // util._cover.hide();
                     },400);
                 });
                 $("#pay_ask").on("click", function() {
