@@ -235,7 +235,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .ask-detail li p {display: inline-block;vertical-align: top;}
 .ask-detail li p:first-child {width: 1.2rem;color: #999;}
 .ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
-.ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
+.ask-detail li img {height: 1.16rem;width: 1.16rem;/*margin: 0.36rem 0.1rem 0.36rem 0;*/}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
 /*第二次及以上咨询时患者选择*/
 .sufferer-list ul {padding:0 0.32rem;}
