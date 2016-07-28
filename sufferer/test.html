@@ -66,9 +66,10 @@
         			util._diseaseRecord.css("color","#666");
         		});
                 $("#disease_choose").on("click", function() {
-               	    // showTraptCover();
+               	     
         	        lockScreenHgt();
-                    util._cover.show();
+        	        showTraptCover();
+                    //util._cover.show();
                     // util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
                 util._diseasesList.on("click", function() {
@@ -79,11 +80,12 @@
                 });
                 util._cover.on("click",function() {
                     // util._disease.addClass("ac-down").removeClass("ac-up");
-                    unlockScreenHgt();
+                    //unlockScreenHgt();
+                   	
+                        hideTraptCover();
                     setTimeout(function() {
                     	// unlockScreenHgt();
                         util._disease.hide();
-                        // hideTraptCover();
                         util._cover.hide();
                     },400);
                 });
