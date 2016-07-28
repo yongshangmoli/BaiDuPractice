@@ -1,464 +1,404 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#" debug="true">
+<html lang="zh-CN">
 	<head>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-	    <meta charset="utf-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>咨询详情</title>
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
+		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 
-	    <title>PhotoSwipe: Responsive JavaScript Image Gallery</title>
 		<link rel="stylesheet" href="photoswipe.css"> 
 		<link rel="stylesheet" href="default-skin.css"> 
 		<script src="photoswipe.min.js"></script> 
-		<script src="photoswipe-ui-default.min.js"></script> 
-		<style type="text/css" media="screen">
-			.my-gallery {
-  width: 100%;
-  float: left;
-}
-.my-gallery img {
-  width: 100%;
-  height: auto;
-}
-.my-gallery figure {
-  display: block;
-  float: left;
-  margin: 0 5px 5px 0;
-  width: 150px;
-}
-.my-gallery figcaption {
-  display: none;
-}
+		<script src="photoswipe-ui-default.min.js"></script>
+
+		<style>
+		figure {padding: 0;margin: 0;}
+		.my-gallery {float: left;margin-left: 1.4rem;padding-top: 0.2rem;}
+		.my-gallery img {width: 100%;height: auto;}
+		.my-gallery figure {display: block;float: left;margin: 0 0.1rem 0.1rem 0;}
+		.my-gallery figcaption {display: none;}
+			.enlargeWrp {height: 100%;width: 100%; overflow: hidden; position: absolute;top:0;left:0;background-color: rgba(0,0,0,0.2);}
+			/* .enlargeWrp .inner {height: 100%;} 
+			.enlargeWrp ul,li {height: 100%;width: 100%;}  */
+			.enlargeWrp .inner {height: 100%;float: left;z-index: 1;text-align: center;}
+			.scroller {height: 100%;z-index: 1;line-height: 640px;}
+			/*.enlargeWrp img {height: 100%;object-fit:contain;float:left;}*/
+			.enlargeWrp img {max-width: 100%;vertical-align: middle;}
+			.toggleZoomHalf {-webkit-transform: scale(0.5);transform: scale(0.5);}
+			.toggleZoom1 {-webkit-transform: scale(1);transform: scale(1);}
+			.toggleZoom2 {-webkit-transform: scale(2);transform: scale(2);}
 		</style>
 	</head>
-
 	<body>
-<!-- 
-		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="pswp__bg"></div>
-			<div class="pswp__scroll-wrap">
-		        <div class="pswp__container">
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-        		</div>
-        	</div>
+		<div class="page" id="page">
+			<!--ask process -->
+			<section class="ask-process">
+				<span class="icon"></span>
+				<h3 id="ask_state"></h3>
+				<!-- <p class="inline">等待医生的回复</p> -->
+			</section>
+			<!--ask detail-->
+			<section class="ask-detail">
+				<form action="" accept-charset="utf-8">
+					<ul>
+						<li class="team-clear">
+							<p>患者姓名</p>
+							<p>大婴孩</p>
+						</li>
+						<li class="team-clear">
+							<p>年龄</p>
+							<p>31</p>
+						</li>
+						<li class="team-clear">
+							<p>手机号码</p>
+							<p>1356584865</p>
+						</li>
+						<li class="team-clear">
+							<p>性别</p>
+							<p>女</p>
+						</li>
+					</ul>
+					<div class="hr"></div>
+					<ul class="ill-describe">
+						<li class="team-clear">
+							<p>药物过敏</p>
+							<p>肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子
+							</p>
+
+						</li>
+						<li class="team-clear">
+							<p>病情描述</p>
+							<p id="disease-photo">
+								肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .<!-- <br/><br/> -->
+							</p>
+							<div class="my-gallery">
+								<!-- <img src="images/doctor-banner.jpg"></img><img src="images/doctor-banner.jpg"></img> -->
+								<figure>
+							      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
+							          <img src="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" alt="Image description" />
+							      </a>
+							    </figure>
+
+							    <figure>
+							      <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" data-size="964x1024">
+							          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" alt="Image description" />
+							      </a>
+							    </figure>
+
+							    <figure>
+							      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="1024x683">
+							          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" alt="Image description" />
+							      </a>
+							    </figure>
+
+							    <figure>
+							      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="1024x768">
+							          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" alt="Image description" />
+							      </a>
+							    </figure>
+							</div>
+						</li>
+					</ul>
+				</form>
+			</section>
 		</div>
 
-		<div id="demo-test-gallery" class="demo-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-			    <a href="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="contentUrl" data-size="600x400">
-			        <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="thumbnail" alt="Image description" />
-			    </a>
-			    <figcaption itemprop="caption description">Image caption</figcaption>
-			</figure>
-
-			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-			    <a href="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="contentUrl" data-size="600x400">
-			        <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="thumbnail" alt="Image description" />
-			    </a>
-			    <figcaption itemprop="caption description">Image caption</figcaption>
-			</figure>
-		</div>
- -->
-		<!-- <button id="btn">Open PhotoSwipe</button>
-		
-		Root element of PhotoSwipe. Must have class pswp.
 		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-		
-		    Background of PhotoSwipe. 
-		         It's a separate element, as animating opacity is faster than rgba().
 		    <div class="pswp__bg"></div>
-		
-		    Slides wrapper with overflow:hidden.
 		    <div class="pswp__scroll-wrap">
-		
-		        Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
 		        <div class="pswp__container">
-		            don't modify these 3 pswp__item elements, data is added later on
 		            <div class="pswp__item"></div>
 		            <div class="pswp__item"></div>
 		            <div class="pswp__item"></div>
 		        </div>
-		
-		        Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
 		        <div class="pswp__ui pswp__ui--hidden">
-		
 		            <div class="pswp__top-bar">
-		
-		                Controls are self-explanatory. Order can be changed.
-		
-		                <div class="pswp__counter"></div>
-		
-		                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-		
-		                <button class="pswp__button pswp__button--share" title="Share"></button>
-		
-		                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-		
-		                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-		
-		                Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
-		                element will get class pswp__preloader--active when preloader is running
-		                <div class="pswp__preloader">
-		                    <div class="pswp__preloader__icn">
-		                      <div class="pswp__preloader__cut">
-		                        <div class="pswp__preloader__donut"></div>
-		                      </div>
-		                    </div>
+		               <div class="pswp__counter"></div>
+		                <div class="pswp__preloader__icn">
+		                  <div class="pswp__preloader__cut">
+		                    <div class="pswp__preloader__donut"></div>
+		                  </div>
 		                </div>
 		            </div>
-		
-		            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-		                <div class="pswp__share-tooltip"></div> 
-		            </div>
-		
-		            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-		            </button>
-		
-		            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-		            </button>
-		
-		            <div class="pswp__caption">
-		                <div class="pswp__caption__center"></div>
-		            </div>
-		
-		          </div>
-		
 		        </div>
-		
+		        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+		            <div class="pswp__share-tooltip"></div> 
+		        </div>
+		        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+		        </button>
+		        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+		        </button>
+		        <div class="pswp__caption">
+		            <div class="pswp__caption__center"></div>
+		        </div>
+		    </div>
+		</div>
+		<!-- 弹出层 --> <!-- style="width:200%;-webkit-transform: translate(0, 0);"   style="-webkit-transform: translate(-375px, 0);"  style="display: none;"-->
+		<!-- <div id="big_img" class="enlargeWrp">
+			<div class="inner">
+				<div class="scroller">
+					<img src="images/doctor-banner.jpg"></img>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="scroller">
+					<img src="images/doctor-banner2.jpg"></img>
+				</div>
+			</div>
 		</div> -->
-		<h2>First gallery:</h2>
 
-  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" itemprop="contentUrl" data-size="1024x768">
-          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-
-  </div>
-
-	
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element, as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-               <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-</div>
-
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
 		<script>
-			/*var openPhotoSwipe = function() {
-			    var pswpElement = document.querySelectorAll('.pswp')[0];
-
-			    // build items array
-			    var items = [
-			        {
-			            src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-			            w: 964,
-			            h: 1024
-			        },
-			        {
-			            src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-			            w: 1024,
-			            h: 683
-			        }
-			    ];
-			    
-			    // define options (if needed)
-			    var options = {
-			             // history & focus options are disabled on CodePen        
-			        history: false,
-			        focus: false,
-
-			        showAnimationDuration: 0,
-			        hideAnimationDuration: 0
-			        
-			    };
-			    
-			    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-			    gallery.init();
+			var util = {
+				screenHgt : document.body.clientHeight,
+				screenWid : document.body.clientWidth,
+				states : ["咨询中","咨询已结束","已退款","正在退款"],
+				photoWrp : $("#disease-photo"),
+				bigImgCtnr : $("#big_img"),
+				imgCount : 2,
+				imgStore : [],
+				setState : function(state) {
+					$("#ask_state").text(state);
+				},
+				//在病情描述中添加照片
+				creatImg : function(imgArray) {
+					for (var i = 0,len=imgArray.length; i < len; i++) {
+						var img = document.createElement("img");
+						img.setAttribute('data-id', 'img_'+i);
+						img.alt = "疾病照片";
+						img.src = imgArray[i];
+						util.photoWrp.append($(img));
+						var imgCopy = img.cloneNode(true);
+						util.imgStore.push(imgCopy);
+					}
+				},
+				initWrp : function() {
+					util.bigImgCtnr[0].style.width = (util.imgCount)*(util.screenWid)+"px";
+					for (var i = 0,len = util.imgCount; i <len; i++) {
+						(function(i) {
+							// console.log(util.imgStore[i].width,util.imgStore[i].height,util.screenWid);
+							var imgW = util.imgStore[i].width,imgH = util.imgStore[i].height;
+							util.bigImgCtnr.append($(util.imgStore[i]));
+							util.imgStore[i].style.width = util.screenWid+"px";
+						})(i);
+					}
+					$(".scroller").css({"line-height":util.screenHgt});
+				}
 			};
+			//初始化设置
+			util.setState(util.states[1]);
+			// util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"]);
 
-			// openPhotoSwipe();
-
-			document.getElementById('btn').onclick = openPhotoSwipe;*/
+		/*	util.initWrp();
+*/
+			//点击病情描述中的照片
+			/*$("#disease-photo").find("img").on({
+				click : function(e) {
+					var imgIndex = e.target.getAttribute("data-id").split("_")[1];
+					var offset = -imgIndex*util.screenWid+"px";
+					util.bigImgCtnr.css({"-webkit-transform":"translate("+offset+",0)","transform":"translate("+offset+",0)"}).parent().show();
+					// console.log(offset);
+				},
+			});
+			var DELAY = 300, clicks = 0, timer = null;
+			util.bigImgCtnr.find("img").on({
+				click : function(e) {
+					clicks ++;
+					if(clicks === 1) {
+						timer = setTimeout(function() {
+							console.log("in click");
+							util.bigImgCtnr.parent().hide();
+						},DELAY);
+					}
+					else {
+						clearTimeout(timer); 
+						console.log("in dblclick");
+						// $(this).css({"-webkit-transform":"scale(2)","transform":"scale(2)"});
+						$(this).parent().toggleClass("toggleZoom2","toggleZoom1");
+						clicks = 0; 
+					}
+					// var imgIndex = e.target.getAttribute("data-id").split("_")[1];
+					// var offset = -imgIndex*util.screenWid+"px";
+					// util.bigImgCtnr.css({"-webkit-transform":"translate("+offset+",0)","transform":"translate("+offset+",0)"}).parent().show();
+					// console.log(offset);
+				},
+				/*dblclick : function() {
+					console.log("in dblclick");
+					util.bigImgCtnr.toggleClass(toggleZoom2,toggleZoom1);
+				},
+			});*/
 			var initPhotoSwipeFromDOM = function(gallerySelector) {
+			    var parseThumbnailElements = function(el) {
+			        var thumbElements = el.childNodes,
+			            numNodes = thumbElements.length,
+			            items = [],
+			            figureEl,
+			            linkEl,
+			            size,
+			            item;
+			        for(var i = 0; i < numNodes; i++) {
+			            figureEl = thumbElements[i]; // <figure> element
+			            // include only element nodes 
+			            if(figureEl.nodeType !== 1) {
+			                continue;
+			            }
+			            linkEl = figureEl.children[0]; // <a> element
+			            size = linkEl.getAttribute('data-size').split('x');
+			            // create slide object
+			            item = {
+			                src: linkEl.getAttribute('href'),
+			                w: parseInt(size[0], 10),
+			                h: parseInt(size[1], 10)
+			            };
+			            if(figureEl.children.length > 1) {
+			                // <figcaption> content
+			                item.title = figureEl.children[1].innerHTML; 
+			            }
 
-    // parse slide data (url, title, size ...) from DOM elements 
-    // (children of gallerySelector)
-    var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
-            numNodes = thumbElements.length,
-            items = [],
-            figureEl,
-            linkEl,
-            size,
-            item;
+			            if(linkEl.children.length > 0) {
+			                // <img> thumbnail element, retrieving thumbnail url
+			                item.msrc = linkEl.children[0].getAttribute('src');
+			            } 
 
-        for(var i = 0; i < numNodes; i++) {
+			            item.el = figureEl; // save link to element for getThumbBoundsFn
+			            items.push(item);
+			        }
 
-            figureEl = thumbElements[i]; // <figure> element
+			        return items;
+			    };
+			    // find nearest parent element
+			    var closest = function closest(el, fn) {
+			        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+			    };
+			    // triggers when user clicks on thumbnail
+			    var onThumbnailsClick = function(e) {
+			        e = e || window.event;
+			        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+			        var eTarget = e.target || e.srcElement;
+			        // find root element of slide
+			        var clickedListItem = closest(eTarget, function(el) {
+			            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+			        });
+			        if(!clickedListItem) {
+			            return;
+			        }
+			        var clickedGallery = clickedListItem.parentNode,
+			            childNodes = clickedListItem.parentNode.childNodes,
+			            numChildNodes = childNodes.length,
+			            nodeIndex = 0,
+			            index;
+			        for (var i = 0; i < numChildNodes; i++) {
+			            if(childNodes[i].nodeType !== 1) { 
+			                continue; 
+			            }
 
-            // include only element nodes 
-            if(figureEl.nodeType !== 1) {
-                continue;
-            }
+			            if(childNodes[i] === clickedListItem) {
+			                index = nodeIndex;
+			                break;
+			            }
+			            nodeIndex++;
+			        }
+			        if(index >= 0) {
+			            // open PhotoSwipe if valid index found
+			            openPhotoSwipe( index, clickedGallery );
+			        }
+			        return false;
+			    };
+			    // parse picture index and gallery index from URL (#&pid=1&gid=2)
+			    var photoswipeParseHash = function() {
+			        var hash = window.location.hash.substring(1),
+			        params = {};
+			        if(hash.length < 5) {
+			            return params;
+			        }
+			        var vars = hash.split('&');
+			        for (var i = 0; i < vars.length; i++) {
+			            if(!vars[i]) {
+			                continue;
+			            }
+			            var pair = vars[i].split('=');  
+			            if(pair.length < 2) {
+			                continue;
+			            }           
+			            params[pair[0]] = pair[1];
+			        }
+			        if(params.gid) {
+			            params.gid = parseInt(params.gid, 10);
+			        }
+			        return params;
+			    };
 
-            linkEl = figureEl.children[0]; // <a> element
-
-            size = linkEl.getAttribute('data-size').split('x');
-
-            // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
-            };
-
-
-
-            if(figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
-            }
-
-            if(linkEl.children.length > 0) {
-                // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
-            } 
-
-            item.el = figureEl; // save link to element for getThumbBoundsFn
-            items.push(item);
-        }
-
-        return items;
-    };
-
-    // find nearest parent element
-    var closest = function closest(el, fn) {
-        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-    };
-
-    // triggers when user clicks on thumbnail
-    var onThumbnailsClick = function(e) {
-        e = e || window.event;
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-        var eTarget = e.target || e.srcElement;
-
-        // find root element of slide
-        var clickedListItem = closest(eTarget, function(el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-        });
-
-        if(!clickedListItem) {
-            return;
-        }
-
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data- attribute
-        var clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
-            numChildNodes = childNodes.length,
-            nodeIndex = 0,
-            index;
-
-        for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
-            }
-
-            if(childNodes[i] === clickedListItem) {
-                index = nodeIndex;
-                break;
-            }
-            nodeIndex++;
-        }
-
-
-
-        if(index >= 0) {
-            // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
-        }
-        return false;
-    };
-
-    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    var photoswipeParseHash = function() {
-        var hash = window.location.hash.substring(1),
-        params = {};
-
-        if(hash.length < 5) {
-            return params;
-        }
-
-        var vars = hash.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            if(!vars[i]) {
-                continue;
-            }
-            var pair = vars[i].split('=');  
-            if(pair.length < 2) {
-                continue;
-            }           
-            params[pair[0]] = pair[1];
-        }
-
-        if(params.gid) {
-            params.gid = parseInt(params.gid, 10);
-        }
-
-        return params;
-    };
-
-    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-        var pswpElement = document.querySelectorAll('.pswp')[0],
-            gallery,
-            options,
-            items;
-
-        items = parseThumbnailElements(galleryElement);
-
-        // define options (if needed)
-        options = {
-
-            // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-            getThumbBoundsFn: function(index) {
-                // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
-
-                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
-
-        };
-        options.mainClass = 'pswp--minimal--dark';
-        options.barsSize = {top:0,bottom:0};
-		options.captionEl = false;
-		options.fullscreenEl = false;
-		options.shareEl = false;
-		options.bgOpacity = 0.85;
-		options.tapToClose = true;
-		options.tapToToggleControls = false;
-
-        // PhotoSwipe opened from URL
-        if(fromURL) {
-            if(options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
-                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                for(var j = 0; j < items.length; j++) {
-                    if(items[j].pid == index) {
-                        options.index = j;
-                        break;
-                    }
-                }
-            } else {
-                // in URL indexes start from 1
-                options.index = parseInt(index, 10) - 1;
-            }
-        } else {
-            options.index = parseInt(index, 10);
-        }
-
-        // exit if index not found
-        if( isNaN(options.index) ) {
-            return;
-        }
-
-        if(disableAnimation) {
-            options.showAnimationDuration = 0;
-        }
-
-        // Pass data to PhotoSwipe and initialize it
-        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    };
-
-    // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
-
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-        galleryElements[i].onclick = onThumbnailsClick;
-    }
-
-    // Parse URL and open gallery if it contains #&pid=3&gid=1
-    var hashData = photoswipeParseHash();
-    if(hashData.pid && hashData.gid) {
-        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
-    }
-};
-
-// execute above function
-initPhotoSwipeFromDOM('.my-gallery');
+			    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+			        var pswpElement = document.querySelectorAll('.pswp')[0],
+			            gallery,
+			            options,
+			            items;
+			        items = parseThumbnailElements(galleryElement);
+			        // define options (if needed)
+			        options = {
+			            // define gallery index (for URL)
+			            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+			            getThumbBoundsFn: function(index) {
+			                // See Options -> getThumbBoundsFn section of documentation for more info
+			                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+			                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+			                    rect = thumbnail.getBoundingClientRect(); 
+			                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+			            }
+			        };
+			        options.mainClass = 'pswp--minimal--dark';
+			        options.barsSize = {top:0,bottom:0};
+					options.captionEl = false;
+					options.fullscreenEl = false;
+					options.shareEl = false;
+					options.bgOpacity = 0.85;
+					options.tapToClose = true;
+					options.tapToToggleControls = false;
+			        // PhotoSwipe opened from URL
+			        if(fromURL) {
+			            if(options.galleryPIDs) {
+			                // parse real index when custom PIDs are used 
+			                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+			                for(var j = 0; j < items.length; j++) {
+			                    if(items[j].pid == index) {
+			                        options.index = j;
+			                        break;
+			                    }
+			                }
+			            } else {
+			                // in URL indexes start from 1
+			                options.index = parseInt(index, 10) - 1;
+			            }
+			        } else {
+			            options.index = parseInt(index, 10);
+			        }
+			        // exit if index not found
+			        if( isNaN(options.index) ) {
+			            return;
+			        }
+			        if(disableAnimation) {
+			            options.showAnimationDuration = 0;
+			        }
+			        // Pass data to PhotoSwipe and initialize it
+			        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+			        gallery.init();
+			    };
+			    // loop through all gallery elements and bind events
+			    var galleryElements = document.querySelectorAll( gallerySelector );
+			    for(var i = 0, l = galleryElements.length; i < l; i++) {
+			        galleryElements[i].setAttribute('data-pswp-uid', i+1);
+			        galleryElements[i].onclick = onThumbnailsClick;
+			    }
+			    // Parse URL and open gallery if it contains #&pid=3&gid=1
+			    var hashData = photoswipeParseHash();
+			    if(hashData.pid && hashData.gid) {
+			        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+			    }
+			};
+			initPhotoSwipeFromDOM('.my-gallery');
 		</script>
 	</body>
 </html>
