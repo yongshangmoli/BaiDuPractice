@@ -66,8 +66,7 @@
         			util._diseaseRecord.css("color","#666");
         		});
                 $("#disease_choose").on("click", function() {
-               	    showTraptCover();
-        	    lockScreenHgt();
+        	        lockScreenHgt();
                     util._cover.show();
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
@@ -85,6 +84,7 @@
                         util._cover.hide();
                     },400);
                 });
+                
                 $("#pay_ask").on("click", function() {
                     var describe = util._diseaseDesc.val().trim();
                     var _checkSucs = function() {

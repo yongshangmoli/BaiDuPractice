@@ -1,4 +1,4 @@
-function alert_msg(msg,className){
+/*function alert_msg(msg,className){
   var className = className || 'alert_tip';
   function lock(e){e.preventDefault();}
   var el = document.querySelector('.'+className);
@@ -19,11 +19,10 @@ function alert_msg(msg,className){
   el.innerHTML = '<span></span>'+msg || '';
   el.className = className+' active';
 }
-
 window.Alert = alert;
-window.alert = alert_msg;
+window.alert = alert_msg;*/
 //lockScreen
-/*var lockScreen = {
+var lockScreen = {
   _page : document.getElementsByTagName("html")[0]
 };
 function lockScreenHgt() {
@@ -33,8 +32,8 @@ function lockScreenHgt() {
 function unlockScreenHgt() {
   // lockScreen._page.style.height = "100%";
   lockScreen._page.className = "";
-}*/
-var lockScreen = {
+}
+/*var lockScreen = {
   _windowH : window.innerHeight,
   _page : document.getElementById("page"),
   _subBtn : document.querySelector('.patient-btn'),
@@ -46,9 +45,9 @@ function lockScreenHgt() {
 function unlockScreenHgt() {
   // lockScreen._page.style.height = "100%";
   lockScreen._page.className = "page";
-}
-
-function showTraptCover() {
+}*/
+//传入参数表示是否添加点击隐藏的事件
+function showTraptCover(needEvt) {
   // lockScreenHgt();
   var cover = document.querySelector('.tranparent-cover');
   if(cover) {
@@ -59,13 +58,19 @@ function showTraptCover() {
     cover.className = 'tranparent-cover';
     cover.id = 'tranparent_cover';
     document.body.appendChild(cover);
+    if(needEvt) {
+      $(cover).on("click",function() {
+          this.style.display = 'none';
+          var el = document.querySelector('.alert_tip');
+          if(el) {el.style.display = 'none';}
+      });
+    }
   }
 }
 
 function hideTraptCover() {
   // unlockScreenHgt();
   var cover = document.getElementById('tranparent_cover');
-  console.log(12);
   if(cover) {cover.style.display = 'none';}
 }
 
@@ -99,3 +104,27 @@ function hideLoading() {
     if(el) el.className = 'loading';
     if(cover) {cover.style.display = 'none';}
 }
+
+function alert_msg(msg,className){
+  var className = className || 'alert_tip';
+  lockScreenHgt();
+  showTraptCover(true);
+  // function lock(e){e.preventDefault();}
+  var el = document.querySelector('.'+className);
+  if(!el) {
+    el = document.createElement('div');
+    document.body.appendChild(el);
+  }
+  else {
+    el.style.display = "block";
+  }
+  el.addEventListener('touchend',function(e){
+    var target = e.target;
+    if(target.tagName.toLowerCase() !== 'span') return;
+    el.style.display = "none";
+  });
+  el.innerHTML = '<span></span>'+msg || '';
+  el.className = className+' active';
+}
+window.Alert = alert;
+window.alert = alert_msg;
