@@ -237,6 +237,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
 .ask-detail li img {height: 1.16rem;width: 1.16rem;object-fit:cover;/*margin: 0.36rem 0.1rem 0.36rem 0;*/}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
+.my-gallery {float: left;margin-left: 1.4rem;padding-top: 0.2rem;}
+.my-gallery figure {display: block;float: left;margin: 0 0.1rem 0.1rem 0;}
+.my-gallery figcaption {display: none;}
 /*第二次及以上咨询时患者选择*/
 .sufferer-list ul {padding:0 0.32rem;}
 .sufferer-list li {font-size: 0.32rem;position:relative;}
