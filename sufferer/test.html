@@ -1,450 +1,308 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="format-detection" content="telephone=no">
-        <title>向医生提问</title>
-        <link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
-        <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
-        <script src="http://doctor.qq.com/mp/public/admin/scripts/jquery.uploadfile/js/jquery.uploadfile.min.js"></script>
-        <script>var urlId = 5;</script>
-        <style type="text/css">
-        .disease-gap { position: static; }
-        .uploadimg { width: 1.5rem; height: 1.5rem; display: inline-block;  margin-top: 0.21rem;  overflow: hidden; }
-        .ajax-file-upload, .ajax-file-upload:hover { cursor: pointer; text-decoration: none; vertical-align: middle; width: 1.5rem; height: 1.5rem; display: inline-block; font-size: 14px; text-align: center; background-color: #FFF; cursor: pointer;
-            overflow: hidden; position: relative; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANCSURBVHhe7Z3hbtpAEAb9/u8ZRVFkoQghFOUH7bp3dA3EARqV7HhG+tREJReuA+ezd2uGp6enw7V5fX09ZPb7/eH5+fniY5fiOMv5jnFuEht5f39vv+4wPYFLj7kmjrOcfx3Hd+zvEMcZ2s8KDMVCmcTm9VzqEkv2OI7Tn0Os57Emn67rUo/ZMTZ/I7XJLhULIrtULIjsUrEgskvFgsguFQsiu1QsiOxSsSCyS8WCyC4VCyK7VCyI7FKxILJLxYLoBZ2o8AxRsuulHqlPL8FaaIeiWCh2UIDY7XbTYTV8DvFFHHDtoKhP3gi7KwaRXSoWRHapWBDZpWJBZJczsR8fH+0hUpHsUrEgskvFgsguFQsiu1QsiOxSsSCyS8WCyC4VCyK7HF5eXo7fSG26y81m87eDIko+Uh87KOAoFsoqOije3t6m2+lE4msqsw6KmGgccOPAS6TPL2e73ba/ZdHnF90wx5uLRIinO5/d+IpInh/+PDbPL4dInp9iQeT5zS5QKLYu4a7PLZzOxBJ3x31up6ER7vrczjZPiq2LYltoKLaFhmJbaCi2hYZiW2gotoXGolgvUNQmV7DKdFBEReazC/r/KxWqQn3VLVFov1R6e1Sq1HNLiH30O/U0FSjRQaHY64hDxVkHxU9+wi7F19GfY6nTnfgHffQ79ydLDXf9eZYSey99bqehodgWGoptoaHYFhqKbaGh2BYaim2hodgWGoptoaHYFhqKbaGh2BYicS09Ete0h2iHiVIP9f+MflY4oNLbm/C3KrhU8qO+iDN4sUEv+fVlag2U6KCQ64gXbRxWYzku0UEhX5N3xSH3+PEsEd+5dVnd6c5aUCwUxUJRLJRFsX6GbF3CXfd4titWbF0UC0WxUBQLRbFQFAtlUaznsbXppcm47cSxg2ItdUo6q+mgWCuKhWIHBYhZB0UcaPvmqa/PUo9cBDjbFXu6UxfPY6EoFopioSgWimKhKBaKYqEoFopioSgWimKhKBaMHRRg7KCAo1gok1gL7AzicBqxgwJE3hWH3NnNRZYSG6xMfkHcEsdZzneME2PMTne+SiZ/aP+tyTjOeTL3jHOT2M1m037VH+59RTrOcr5jnHEcD78AUY0BRq/kmJIAAAAASUVORK5CYII="); background-size: 1.5rem 1.5rem; }
-        .ajax-file-upload-container { width: 1.5rem; height: 1.5rem; overflow: hidden; float: left; margin: 0.2rem 0.2rem 0 0; display: none; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANiSURBVHhe7dzRTttQEIThviCP0IfuQ0QRQgihCEWIi1Rb1dWEbowd77F9hn+kucIGxx9LThLsH4fD4UL9CqxpgTXtFSzpO2oJrFHUElijqCWwRlFLYI2ilsAaRS2BNYpaAmsUtQTWKGoJrFHUElijqCWwRlFLYI2ilsAaRS2BNYpaNod9fX29PD09XfV0Ov39KqmMWjaDPZ/Pl+PxONrYhtRFLZvATkEdCm5d1LIJbAY4VlITtSyHjefPDG+s8TxMlkcty2FjcZThjTX2IcujluWwGdyUkuVRS2CNopb8KTaKWrJ4MopalsNGMryxkpqoZRNY3qDYJmrZBDYyBRfU2qhlM9ghw4cAA+bz8zMfAjSKWjaHJetFLYE1iloCaxS1BNYoagmsUdQSWKOoJbBGUUtgjaKWwBpFLYE1iloCaxS1BNYoagmsUdQSWKOoJbAm+fj4+Of4+PgIrEve39+BdQywpgHWNMCaBljTAGsaYE0DrGmANQ2wpgF25by8vKxySQuwKyUuOIsTPLT1NcDArpCYUr2qcGhLXGAbZpjSDHVoK1xgG+XWlGaNbasDbHGmTGnWalxgCzNnSrPGReBVAbYg905p1ipchY07CAA7M0unNGsFLrB3pnJKsy7FBfaOtJjSrEvuULcZbLytFr+V8W+SvaT1lGa9F3cT2M+34evhdkBrTemtzh2A1WHf3t7SA4/pjYPZW7aY0ludg7sqbJyk7IC1e7pB5tZTmnUq7mqwU1C1sf1W2dOUZp2Cuwps/JDsAL/qFourPU5p1q+etprD3ouqXWNxtfcpzTqG2xS2AnVoHNzYA1mSXqY0661z0gy2ElVbubjqcUqzZrhNYFuhapcurnqe0qyfz0c5bCx21pqCexZXLlOaVXHLYbc4aVMXV25TmnXALYXdchLi4OPBZHGe0qzx7l4Z7F5O3OfF1XeY0qxxHhbDxo7ZN9+y8cC+05SONdYis2H3iEqvOxs2dsi+Ed1XZ8GC2k8nw4LaVyfBgtpfv4QFtc+Own7X14MOvQkbrwmzHWgfTWFB7b//wYLq0SvYbAPaZ4E1LbCmBda0wJoWWNMCa1pgTQusaYE1LbCmBda0wJoWWNMCa1pgTQusaYE1LbCm/QP789fDhfoVWNMCa1pgTQusZR8uvwEzfCb69H/M7AAAAABJRU5ErkJggg=="); background-size: 1.5rem 1.5rem;}
-        .ajax-file-upload-statusbar {}
-        /*.ajax-file-upload-progress { width: 100%; height: 120%; background: rgba(0,0,0,0.7); position: fixed; left: 0; top: 0; z-index: 8; }*/
-        .ajax-file-upload-progress { width: 1.5rem; height: 1.5rem; display: inline-block; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANrSURBVHhe7dzbiuJQFIThef/3lEZEREREvHBYzWQou1diDnvnUP4FddEQ7ZjPtY1txz+73e5J/QqsaYE17Qss2XbUElijqCWwRlFLYI2ilsAaRS2BNYpaAmsUtQTWKGoJrFHUElijqCWwRlFLYI2ilsAaRS2BNYpaAmsUtawOez6fn4fD4aWXy+X5eDz+bUFKRS2rwd5ut+fX11dnYxtSLmpZBbYPalNwy0Utq8BmgF1lWS4TtSwOG6+fGV5X43WYTI9aFoeNk6MMr6txGzI9alkcNoPrUzI9agmsUdSSpdgoasnJk1HUsjhsJMPrKm93ykQtq8DyB4plopZVYCN9cEEtG7WsBtuk+RCgwTwej3wIUClqWR2WzBe1BNYoagmsUdQSWKOoJbBGUUtgjaKWwBpFLYE1iloCaxS1BNYoagmsUdQSWKOoJbBGUUtgjaKWwJokPgZtHPf7PbAuAdY0wJoGWNMAaxpgTQOsaYA1DbCmAdY0wJoG2JlzOp2+L2mpHWBnSlxwFge4ae1rgIGdITGlelVh05q4wFZMM6UZatNArxFgK6VtSrPWwAW2cPpMadbSuMAWzJApzRoXgZcKsAUydkqzlsK93+//HeMbBIAdmKlTmrUELrAjU3JKswZuLKdjA+yI1JjSrAEyFncx2Ov1OvlZOXdqT2nWsbiLwAaq7nz8vPbMNaVtHYo7O+xP1KZrnd4lprStQ47PrLBtqNo1fUHm0lOatS/ubLDxzM92tK2x/VJZ05Rm7YM7C2z8kmwH33WJ5XmNU5r13XGpDjsWVTvHydXapzRrHNu2VIUtgdo0dq7rgUzJVqY0a9sxqQYbS0W2I1MbJ1elluctTmnWDLcKbC1U7dTlectTmvXnyWZx2ECdawrGnFy5TGlWxS0Ou8RB6/tff25TmrVZyYrCLjkJsfPZa03EeUqzBm4x2LUcuJhKXZ4/YUqzxknmZNi4YXbnSzYe2CdNaVfjXGQw7BpR6WsHw8YNsjui6+ogWFC3096woG6rvWBB3V7fwoK6zXbCfur7QYe2woK67aaw8UY/25hup79gQfXoL9hsI7q9vsBmG9BtFljTAmtaYE0LrGmBNS2wpgXWtMCaFljTAmtaYE0LrGmBNS2wpgXWtMCaFljTAmtaYE0LrGlfYKlPgTXt8Xh8/gVYD/WEvger6QAAAABJRU5ErkJggg=="); background-size: 1.5rem 1.5rem;}
-        /*.ajax-file-upload-bar { height: 0.2rem; background: #00B22D; text-indent: -100rem; overflow: hidden; -webkit-transition: all 0.3s ease-in-out 0s; -moz-transition: all 0.3s ease-in-out 0s; -o-transition: all 0.3s ease-in-out 0s; transition: all 0.3s ease-in-out 0s; position: absolute; left: 1%; top: 40%; z-index: 9;}*/
-        .ajax-file-upload-bar { height: 0.06rem; background: #5DD14D; margin: 1.44rem 0 0; text-indent: -100rem; overflow: hidden;}
-        .disease-part .img-wrapper .ajax-file-upload-error{ display: none; }
-        .ajax-file-upload-filename, .ajax-file-upload-abort, .ajax-file-upload-green, .ajax-file-upload-red { display: none;}
-        .ajax-file-upload-abort, .ajax-file-upload-cancel { display: none; }
-        #img_wrapper img { opacity: 0; -webkit-transition: all 0.3s ease-in-out 0s; transition: all 0.3s ease-in-out 0s; }
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>咨询详情</title>
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
+		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 
-        .edit {background: url(images/pencil.png); display: inline-block;height: 0.28rem;width: 0.28rem;margin-right: 0.12rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;vertical-align: middle;}
-        </style>
-
-    </head>
+		<link rel="stylesheet" href="photoswipe.css"> 
+		<link rel="stylesheet" href="default-skin.css"> 
+		<script src="photoswipe.min.js"></script> 
+		<script src="photoswipe-ui-default.min.js"></script>
+	</head>
 	<body>
-    	<div id="page" class="page">
-            <div class="topbar-wrp">
-                <div class="topbar-content">
-                    <ul class="team-clear">
-                        <li><div class="active-tragl"></div>基本信息</li>
-                        <li class="active">病情描述</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- disease describe-->
-    		<section>
-                <div class="disease-part">
-                    <a href="#" id="disease_choose" class="alink">
-                        <span>选择病种</span>
-                        <span class="angle-btm"></span>
-    					<span class="disease-slt" id="disease_record">疝气</span>
-                    </a>
-                </div>
-                <div class="disease-part disease-gap">
-                    <h3>病情描述<span style="color: #1d75f0;float:right;font-size: 0.28rem;"><i class="edit"></i>补充详情</span></h3>
-                    <textarea id="disease_desc" class="detail" name="disease-desc" placeholder="请详细描述您的症状，疾病和身体状况，便于医生能准确为您作出判断 ."></textarea>
-                    <p id="text_control" class="limit">可输入200字</p>
-                </div>
-    			<div class="disease-part disease-gap" style="padding-bottom: 2rem;">
-                    <h3>图片上传</h3>
-                    <div id="img_wrapper" class="img-wrapper">
-                        <!-- <a href=""><img src="" alt=""></a> -->
+		<div class="page" id="page">
+			<!--ask process -->
+			<section class="ask-process">
+				<span class="icon"></span>
+				<h3 id="ask_state"></h3>
+				<!-- <p class="inline">等待医生的回复</p> -->
+			</section>
+			<!--ask detail-->
+			<section class="ask-detail">
+				<form action="" accept-charset="utf-8">
+					<ul>
+						<li class="team-clear">
+							<p>患者姓名</p>
+							<p>大婴孩</p>
+						</li>
+						<li class="team-clear">
+							<p>年龄</p>
+							<p>31</p>
+						</li>
+						<li class="team-clear">
+							<p>手机号码</p>
+							<p>1356584865</p>
+						</li>
+						<li class="team-clear">
+							<p>性别</p>
+							<p>女</p>
+						</li>
+					</ul>
+					<div class="hr"></div>
+					<ul class="ill-describe">
+						<li class="team-clear">
+							<p>药物过敏</p>
+							<p>肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子
+							</p>
 
-
-                        <!--upload test start-->
-                        <!-- <a href="javascript:void(0);">
-                            <div class="delete"></div>
-                            <img id="previewImg1" alt="病情图片1" src="http://img1.gtimg.com/ninja/2/2016/07/ninja146915444384539.jpg">
-                        </a>
-                        <a href="javascript:void(0);">
-                            <div class="delete"></div>
-                            <img id="previewImg2" alt="病情图片2" src="http://img1.gtimg.com/ninja/2/2016/07/ninja146915444384539.jpg">
-                        </a> -->
-                        <!--upload test end-->
-
-
-                        <div class="uploadimg" id="fileuploader"></div>
-
-
-
-                        <!--upload test start-->
-                        <!-- <div class="ajax-file-upload-container">
-                            <div class="ajax-file-upload-statusbar" style="width: 400px;">
-                                <img class="ajax-file-upload-preview" style="width: 100%; height: auto; display: none;">
-                                <div class="ajax-file-upload-filename">1).aaaaaa.gif (9.02MB)</div>
-                                <div class="ajax-file-upload-progress">
-                                    <div class="ajax-file-upload-bar" style="width: 98%; text-align: center;">98%</div>
-                                </div>
-                                <div class="ajax-file-upload-red ajax-file-upload-1469093471762 ajax-file-upload-abort" style="display: block;">取消</div>
-                                <div class="ajax-file-upload-red ajax-file-upload-1469093471762 ajax-file-upload-cancel" style="display: none;">Cancel</div>
-                                <div class="ajax-file-upload-green" style="display: none;">Done</div>
-                                <div class="ajax-file-upload-green" style="display: none;">Download</div>
-                                <div class="ajax-file-upload-red" style="display: none;">Delete</div>
-                            </div>
-                        </div> -->
-                        <!--upload test end-->
-
-
-
-
-                        <a id="upload_img" href="#" style="display:none;">
-                            <span>+</span>
-                            <input type="file" id="btn_file" class="file">
-                        </a>
-                    </div>
-
-                </div>
-            </section>
-        </div>
-
-		<div class="patient-btn">
-		    <a id="pay_ask" href="javascript:void(0);">立即支付10元</a>
+						</li>
+						<li class="team-clear">
+							<p>病情描述</p>
+							<p>
+								肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .
+							</p>
+							<div id="disease-photo" class="my-gallery"></div>
+						</li>
+					</ul>
+				</form>
+			</section>
 		</div>
 
-        <div id="cover" class="doctor-cover disease-cover" style="display:none;"></div>
-		<div id="disease" class="disease-surface">
-			<ul id="disease_list">
-				<li class="active" value="疝气">疝气</li>
-				<li value="鞘膜积液">鞘膜积液</li>
-				<li value="新生儿消化道畸形">新生儿消化道畸形</li>
-				<li value="腹痛">腹痛</li>
-				<li value="便秘">便秘</li>
-				<li value="其他儿科常见问题">其他儿科常见问题</li>
-			</ul>
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="pswp__bg"></div>
+		    <div class="pswp__scroll-wrap">
+		        <div class="pswp__container">
+		            <div class="pswp__item"></div>
+		            <div class="pswp__item"></div>
+		            <div class="pswp__item"></div>
+		        </div>
+		        <div class="pswp__ui pswp__ui--hidden">
+		            <div class="pswp__top-bar">
+		               <div class="pswp__counter"></div>
+		                <div class="pswp__preloader__icn">
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 
-        <!-- 补充咨询的弹出层 -->
-        <div id="doctor_cover" class="doctor-cover" ></div>
-        <section id="refuse_surface" class="doctor-surface" >
-            <div class="surface">
-                <div class="surface-title">
-                    <h1>补充详情</h1>
-                    <span class="close"><a href="#" class="aclose">关闭</a></span>
-                </div>
-                <div class="surface-ctnt">
-                    <ul>
-                        <li><p id="refuse_info">请您描述清楚相关症状及曾用药</p></li>
-                    </ul>
-                </div>
-                <div class="surface-asr">
-                    <a id="refuse_asr" href="#">确定</a>
-                </div>
-            </div>
-        </section>
-
-        <script src="js/zepto.js"></script>
-         <script src="js/common.js"></script>
-        <script>
-            (function() {
-                lockScreenHgt();
-                $("#doctor_cover,.aclose,#refuse_asr").on("click",function() {
-                    $("#doctor_cover").hide();
-                    unlockScreenHgt();
-                    $("#refuse_surface").hide();
-                });
-            })();
-        </script>
-        <script type="text/javascript">
-    	//var uploadImages = [];
-    	var form = {};
-    	form.ifSubmit = false; //是否提交
-    	form.ifUploading = false; //是否正在上传图片
-        var uploadMedia = function(){
-            jQuery("#fileuploader").uploadFile({
-                url: tencareConfig.upload_media_url,
-                fileName:"upfile",
-                showProgress: true,
-                uploadStr: "",
-                abortStr: "取消",
-                dragDrop: false,
-                sequential: false,
-                sequentialCount: 1,
-                returnType: 'json',
-                allowedTypes: 'jpg,jpeg,png,gif',
-                showStatusAfterSuccess: false,
-                showQueueDiv: false,
-                onSubmit: function(){
-		        	// var scrHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		        	// console.log(scrHeight);
-		        	// $(".ajax-file-upload-progress").css("height", scrHeight + "px");
-		        	form.ifUploading = true;
-                    $(".ajax-file-upload-container").css("display", "inline-block");
-                    showTraptCover();
-                },
-                onSuccess: function(files,data,xhr,pd){
-                    hideTraptCover();
-                    if(data.code == 0){
-                        var img =new Image();
-                        img.src = data.url;
-                        img.onload =function(){  
-                            img.onload = null;
-                            $(".ajax-file-upload-container").css("display", "none");
-                            window.addImg(data.url);
-                        }
-                    }else{
-                        $(".ajax-file-upload-container").css("display", "none");
-                    	alert("上传图片出错，图片大小不能超过3MB");
-                    }
-                    form.ifUploading = false;
-                }
-            });
-        };
-        </script>
-        <script src="js/common.js?d=20160721a"></script>
-        <script src="js/fx.js"></script>
-        <script>
-            //透明蒙层
-            function showTraptCover() {
-              lockScreenHgt();
-              var cover = document.querySelector('.tranparent-cover');
-              if(cover) {
-                cover.style.display = 'block';
-              }
-              else {
-                cover = document.createElement('div');
-                cover.className = 'tranparent-cover';
-                cover.id = 'tranparent_cover';
-                document.body.appendChild(cover);
-              }
-            }
-
-            function hideTraptCover() {
-              unlockScreenHgt();
-              var cover = document.getElementById('tranparent_cover');
-              if(cover) {cover.style.display = 'none';}
-            }
-
-            (function() {
-            	var oid = tencarePayUtil.getParameterFromQueryString("oid")==null?"":tencarePayUtil.getParameterFromQueryString("oid");
-                var doctorId = tencarePayUtil.getParameterFromQueryString("doctorid")==null?"":tencarePayUtil.getParameterFromQueryString("doctorid");
-
-                //支付
-                var pay_config = pay_config || {
-                    "appId": "",
-                    "timeStamp": "",
-                    "nonceStr": "",
-                    "package": "",
-                    "signType": "",
-                    "paySign": ""
-                },
-                pay_callback = function(res){
-                    if(res.err_msg == "get_brand_wcpay_request:ok" ) {
-                        //alert("支付成功");
-                        window.location.replace("pay-succs.html?oid=" + oid + "&doctorid=" + doctorId);
-                    }  else { 
-                        //alert("支付失败");
-                        window.location.replace("pay-fail.html?oid=" + oid + "&doctorid=" + doctorId + "&pid=" + form.pid + "&did=" + form.did);
-                    }
-                },
-                onBridgeReady = function(){
-                    WeixinJSBridge.invoke('getBrandWCPayRequest', pay_config, pay_callback);
-                };
-                var doPay = function(patient_id, disease_id){
-
-                    //alert("PatientID:" + patient_id + " DiseaseID:" + disease_id);
-
-                    jQuery.ajax({
-                        url: tencareConfig.pay_config_url,
-                        type: "POST",
-                        dataType: 'json',
-                        cache: false,
-                        data: {
-                            patient_id: patient_id,
-                            disease_id: disease_id,
-                            doctor_id: doctorId
-                        },
-                        success: function(ret){
-                            if(ret.code == 0 ) {
-                                pay_config = ret.data;
-                                pay_config.timeStamp = ret.data.timeStamp.toString();
-                                onBridgeReady();
-                            } else if (ret.code == 302) {
-                                // 跳转到授权
-                                window.location.replace(ret.url);
-                            } else {
-
-                            }
-                        },
-                        error: function(){
-                            alert("Network error");
-                        }
-                    });
-                }
-
-                $("#disease_choose").one("click",function() {
-					util._diseaseRecord.css("color","#666");
-				});
-
-                var util = {
-                    _cover : $("#cover"),
-                    _disease : $("#disease"),
-                    _diseasesList : $("#disease_list li"),
-                    _diseaseRecord : $("#disease_record"),
-                    _diseaseDesc : $("#disease_desc"),
-                    diseaseKind : $("#disease_list li.active").attr("value"), //选择的是哪种疾病
-					diseaseDesc : "",//疾病的描述
-					diseaseHeight : 0,
-					isFilled : false,
-                };
-                $("#disease_choose").on("click", function() {
-                    util._cover.show();
-                    util._disease.show().addClass("ac-up").removeClass("ac-down");
-                    lockScreenHgt();
-                });
-                util._diseasesList.on("click", function() {
-                    $(this).addClass("active").siblings().removeClass("active");
-                    util._diseaseRecord.html($(this).html());
-                    util._cover.trigger("click");
-                    util.diseaseKind = $(this).attr("value");
-                });
-                util._cover.on("click",function() {
-                    util._disease.addClass("ac-down").removeClass("ac-up");
-                    unlockScreenHgt();
-                    setTimeout(function() {
-                        util._disease.hide();
-                        util._cover.hide();
-                    },400);
-                });
-				util._diseaseDesc.one("focus",function() {
-					this.value = "";
-					util.isFilled = true;
-					$("#text_control").text("还能输入200字");
-				});
-                $("#pay_ask").on("click", function() {
-                	if(!form.ifSubmit){
-                		if(!form.ifUploading){
-		                    var describe = util._diseaseDesc.val().trim();
-		                    var _checkSucs = function() {
-		                    	//alert("util.diseaseKind: " + util.diseaseKind);
-		                        util.diseaseDesc = describe;
-		                        var imgArray = document.getElementById('img_wrapper').getElementsByTagName('img');
-		                        var uploadImages = [];
-		                        for(var i=0; i<imgArray.length; i++){
-		                        	uploadImages.push(imgArray[i].src);
-		                        }
-		                        var imgObj = { "images": uploadImages };
-		                        
-		                        $.ajax({
-		                            type: "POST",
-		                            url: tencareConfig.disease_info_url,
-		                            data: {
-		                                'disease_type': util.diseaseKind,
-		                                'disease_desc': util.diseaseDesc,
-		                                'image': JSON.stringify(imgObj)
-		                            },
-		                            success: function(ret){
-		                                if(ret.code == 0 ) {
-		                                	form.pid = ret.patient_id;
-		                                	form.did = ret.disease_id;
-		                                    doPay(ret.patient_id, ret.disease_id);
-		                                } else if (ret.code == 302) {
-		                                    // 跳转到授权
-		                                    //alert(ret.url);
-		                                    window.location.replace(ret.url);
-		                                } else {
-
-		                                }
-		                                
-		                            },
-		                            dataType: "json"
-		                        });
-		                        
-
-		                        //window.location.href = "pay-succs.html";
-		                    };
-
-							if(describe) {
-								_checkSucs();
-								$("#pay_ask").html("提交中...");
-								$("#pay_ask").parent().addClass("no-handle");
-								form.ifSubmit = true;
-							}
-							else {
-								alert("请填写病情描述");
-							}
-                		}else{
-                			//alert("图片上传尚未结束，请耐心等待");
-                		}
-                	}else{
-                		alert("数据正在提交中，请勿重复点击");
-                	}
-
-                });
-
-				util._diseaseDesc.on("input",function() {
-					var value = $(this).val();
-					var textLen = value.length;
-					if(textLen >= 200) {
-						$(this).val(value.slice(0,200));
-						$("#text_control").text("还能输入0字");
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			var util = {
+				screenHgt : document.body.clientHeight,
+				screenWid : document.body.clientWidth,
+				states : ["咨询中","咨询已结束","已退款","正在退款"],
+				photoWrp : $("#disease-photo"),
+				bigImgCtnr : $("#big_img"),
+				imgCount : 2,
+				imgStore : [],
+				count : 0,
+				setState : function(state) {
+					$("#ask_state").text(state);
+				},
+				//用容器包裹照片并添加至文档流中
+				creatSlider : function(imgArray) {
+					for (var i = 0,len=imgArray.length; i < len; i++) {
+						var figure = document.createElement("figure");
+						var a = document.createElement("a");
+						a.href = imgArray[i].src;
+						$(figure).append($(a));
+						$(a).append(imgArray[i]);
+						a.setAttribute('data-size', imgArray[i].width+'x'+imgArray[i].height);
+						util.photoWrp.append($(figure));
 					}
-					else {
-						$("#text_control").text("还能输入"+(200-textLen)+"字");
-					}
-				});
-
-                //照片上传
-                var imgCount = 0;
-                // 创建图片
-                var createImgWrp = function() {
-                    var a = document.createElement("a");
-                    a.href = "javascript:void(0);";
-                    var img = document.createElement("img");
-                    img.id = "previewImg" + (imgCount++);
-                    img.alt = "病情图片" + imgCount;
-                    var div = document.createElement("div");
-                    div.className = "delete";
-                    //div.innerHTML = "-";
-                    $(div).on("click",function() {
-                    	//console.log($(this).parent());
-                        $(this).parent().remove();
-                    });
-                    a.appendChild(div);
-                    a.appendChild(img);
-                    return [a,img];
-                };
-                //添加照片预览
-                /*
-                $("#btn_file").change(function() {
-                    var $file = $(this),fileObj = $file[0],windowURL = window.URL || window.webkitURL,dataURL;
-                    if(fileObj && fileObj.files && fileObj.files[0]){
-						if(imgCount > 50) {
-							alert("上传照片不可大于50张");
+				},
+				//在病情描述中添加照片
+				creatImg : function(imgArray,num) {
+					var img = document.createElement("img");
+					img.src = imgArray[util.count];
+					img.alt = "疾病照片";
+					util.count += 1;
+					img.onerror = function () {
+						if (num >= util.imgCount) {
 							return;
 						}
-						else {
-							var temp = createImgWrp(),$img=$(temp[1]);
-							dataURL = windowURL.createObjectURL(fileObj.files[0]);
-							$img.attr('src',dataURL);
-							$("#img_wrapper").children().first().before($(temp[0]));
+						util.creatImg(imgArray, num);
+					}
+					img.onload = function () {
+						util.imgStore.push(img);
+						if (++num >= util.imgCount) {
+							util.creatSlider(util.imgStore);
+							return;
 						}
-                    }else{
-                        dataURL = $file.val();
-                        if(dataURL.toString().indexOf("blob") > -1) {
-                            var imgObj = $("#preview");
-                            imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
-                            imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
-                        }
-                    }
-                });
-                */
+						util.creatImg(imgArray, num);
+					};
+				},
+			};
+			//初始化设置
+			util.setState(util.states[1]);
+			util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"],0);
+			util.creatSlider(util.imgStore);
 
-                window.addImg = function(url){
-                	var temp = createImgWrp(),$img=$(temp[1]);
-                	$img.attr('src', url);
-                	$("#img_wrapper").children().first().before($(temp[0]));
-                    $img.css('opacity', '1');
-                }
-            })();
-        </script>
-    </body>
+			//图片查看
+			var initPhotoSwipeFromDOM = function(gallerySelector) {
+			    var parseThumbnailElements = function(el) {
+			        var thumbElements = el.childNodes,
+			            numNodes = thumbElements.length,
+			            items = [],
+			            figureEl,
+			            linkEl,
+			            size,
+			            item;
+			        for(var i = 0; i < numNodes; i++) {
+			            figureEl = thumbElements[i]; // <figure> element
+			            // include only element nodes 
+			            if(figureEl.nodeType !== 1) {
+			                continue;
+			            }
+			            linkEl = figureEl.children[0]; // <a> element
+			            size = linkEl.getAttribute('data-size').split('x');
+			            // create slide object
+			            item = {
+			                src: linkEl.getAttribute('href'),
+			                w: parseInt(size[0], 10),
+			                h: parseInt(size[1], 10)
+			            };
+			            if(figureEl.children.length > 1) {
+			                // <figcaption> content
+			                item.title = figureEl.children[1].innerHTML; 
+			            }
+
+			            if(linkEl.children.length > 0) {
+			                // <img> thumbnail element, retrieving thumbnail url
+			                item.msrc = linkEl.children[0].getAttribute('src');
+			            } 
+
+			            item.el = figureEl; // save link to element for getThumbBoundsFn
+			            items.push(item);
+			        }
+
+			        return items;
+			    };
+			    // find nearest parent element
+			    var closest = function closest(el, fn) {
+			        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+			    };
+			    // triggers when user clicks on thumbnail
+			    var onThumbnailsClick = function(e) {
+			        e = e || window.event;
+			        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+			        var eTarget = e.target || e.srcElement;
+			        // find root element of slide
+			        var clickedListItem = closest(eTarget, function(el) {
+			            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+			        });
+			        if(!clickedListItem) {
+			            return;
+			        }
+			        var clickedGallery = clickedListItem.parentNode,
+			            childNodes = clickedListItem.parentNode.childNodes,
+			            numChildNodes = childNodes.length,
+			            nodeIndex = 0,
+			            index;
+			        for (var i = 0; i < numChildNodes; i++) {
+			            if(childNodes[i].nodeType !== 1) { 
+			                continue; 
+			            }
+
+			            if(childNodes[i] === clickedListItem) {
+			                index = nodeIndex;
+			                break;
+			            }
+			            nodeIndex++;
+			        }
+			        if(index >= 0) {
+			            // open PhotoSwipe if valid index found
+			            openPhotoSwipe( index, clickedGallery );
+			        }
+			        return false;
+			    };
+			    // parse picture index and gallery index from URL (#&pid=1&gid=2)
+			    var photoswipeParseHash = function() {
+			        var hash = window.location.hash.substring(1),
+			        params = {};
+			        if(hash.length < 5) {
+			            return params;
+			        }
+			        var vars = hash.split('&');
+			        for (var i = 0; i < vars.length; i++) {
+			            if(!vars[i]) {
+			                continue;
+			            }
+			            var pair = vars[i].split('=');  
+			            if(pair.length < 2) {
+			                continue;
+			            }           
+			            params[pair[0]] = pair[1];
+			        }
+			        if(params.gid) {
+			            params.gid = parseInt(params.gid, 10);
+			        }
+			        return params;
+			    };
+
+			    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+			        var pswpElement = document.querySelectorAll('.pswp')[0],
+			            gallery,
+			            options,
+			            items;
+			        items = parseThumbnailElements(galleryElement);
+			        // define options (if needed)
+			        options = {
+			            // define gallery index (for URL)
+			            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+			            getThumbBoundsFn: function(index) {
+			                // See Options -> getThumbBoundsFn section of documentation for more info
+			                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+			                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+			                    rect = thumbnail.getBoundingClientRect(); 
+			                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+			            }
+			        };
+			        options.mainClass = 'pswp--minimal--dark';
+			        options.barsSize = {top:0,bottom:0};
+					options.captionEl = false;
+					options.fullscreenEl = false;
+					options.shareEl = false;
+					options.tapToClose = true;
+					options.tapToToggleControls = false;
+			        // PhotoSwipe opened from URL
+			        if(fromURL) {
+			            if(options.galleryPIDs) {
+			                // parse real index when custom PIDs are used 
+			                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+			                for(var j = 0; j < items.length; j++) {
+			                    if(items[j].pid == index) {
+			                        options.index = j;
+			                        break;
+			                    }
+			                }
+			            } else {
+			                // in URL indexes start from 1
+			                options.index = parseInt(index, 10) - 1;
+			            }
+			        } else {
+			            options.index = parseInt(index, 10);
+			        }
+			        // exit if index not found
+			        if( isNaN(options.index) ) {
+			            return;
+			        }
+			        if(disableAnimation) {
+			            options.showAnimationDuration = 0;
+			        }
+			        // Pass data to PhotoSwipe and initialize it
+			        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+			        gallery.init();
+			    };
+			    // loop through all gallery elements and bind events
+			    var galleryElements = document.querySelectorAll( gallerySelector );
+			    for(var i = 0, l = galleryElements.length; i < l; i++) {
+			        galleryElements[i].setAttribute('data-pswp-uid', i+1);
+			        galleryElements[i].onclick = onThumbnailsClick;
+			    }
+			    // Parse URL and open gallery if it contains #&pid=3&gid=1
+			    var hashData = photoswipeParseHash();
+			    if(hashData.pid && hashData.gid) {
+			        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+			    }
+			};
+			initPhotoSwipeFromDOM('.my-gallery');
+		</script>
+	</body>
 </html>
