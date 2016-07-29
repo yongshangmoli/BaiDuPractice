@@ -142,6 +142,17 @@
         </section>
 
         <script src="js/zepto.js"></script>
+         <script src="js/common.js"></script>
+        <script>
+            (function() {
+                lockScreenHgt();
+                $("#doctor_cover,.aclose,#refuse_asr").on("click",function() {
+                    $("#doctor_cover").hide();
+                    unlockScreenHgt();
+                    $("#refuse_surface").hide();
+                });
+            })();
+        </script>
         <script type="text/javascript">
     	//var uploadImages = [];
     	var form = {};
