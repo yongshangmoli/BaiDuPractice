@@ -4,305 +4,342 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
-		<title>咨询详情</title>
+		<title>医生列表</title>
 		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
-
-		<link rel="stylesheet" href="photoswipe.css"> 
-		<link rel="stylesheet" href="default-skin.css"> 
-		<script src="photoswipe.min.js"></script> 
-		<script src="photoswipe-ui-default.min.js"></script>
+		<script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
+		<script src="js/jquery.lazyload.min.js" type="text/javascript"></script>
+		<script>var urlId = 1;</script>
 	</head>
 	<body>
-		<div class="page" id="page">
-			<!--ask process -->
-			<section class="ask-process">
-				<span class="icon"></span>
-				<h3 id="ask_state"></h3>
-				<!-- <p class="inline">等待医生的回复</p> -->
-			</section>
-			<!--ask detail-->
-			<section class="ask-detail">
-				<form action="" accept-charset="utf-8">
-					<ul>
-						<li class="team-clear">
-							<p>患者姓名</p>
-							<p>大婴孩</p>
-						</li>
-						<li class="team-clear">
-							<p>年龄</p>
-							<p>31</p>
-						</li>
-						<li class="team-clear">
-							<p>手机号码</p>
-							<p>1356584865</p>
-						</li>
-						<li class="team-clear">
-							<p>性别</p>
-							<p>女</p>
-						</li>
-					</ul>
-					<div class="hr"></div>
-					<ul class="ill-describe">
-						<li class="team-clear">
-							<p>药物过敏</p>
-							<p>肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子
-							</p>
+		<div id="page" class="page greybg">
 
-						</li>
-						<li class="team-clear">
-							<p>病情描述</p>
-							<p>
-								肠胃这几天不舒服，前两天带孩子去吃了海鲜，吃了正露丸肠胃这几天不舒服，前两天带孩子露丸肠胃这几天不舒服，前两天带孩子 .
-							</p>
-							<div id="disease-photo" class="my-gallery"></div>
-						</li>
-					</ul>
-				</form>
+			<!-- team doctors list -->
+			<section class="team-section">
+				<ul id="dctlist" class="dctlist-whitebg">
+					<li>
+						<a id="doctor_2" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor1.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor1.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">裴洪岗<span class="dctlist-authen"></span><span id="pending_2" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">原深圳市儿童医院 副主任医师</p>
+								<p class="edu-bgd">儿科硕士</p>
+								<div class="tag">
+									<ul class="team-clear">
+										<li>儿童腹股沟疝</li>
+										<li>鞘膜积液</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_3" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor2.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor2.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">韩珊珊<span class="dctlist-authen"></span><span id="pending_3" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">澳大利亚澳洲妇女儿童医院</p>
+								<p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p>
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>备孕</li>
+										<li>孕期</li>
+										<li>婴幼儿</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_4" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor3.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor3.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">潘宏光<span class="dctlist-authen"></span><span id="pending_4" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 主任医师</p>
+								<p class="edu-bgd">医学博士</p>
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>喉软化</li>
+										<li>腺样体肥大</li>
+										<li>扁桃体炎</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_5" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor4.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor4.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">宋宁<span class="dctlist-authen"></span><span id="pending_5" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 主治医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>错合畸形</li>
+										<li>儿童舒适化治疗</li>
+										<li>牙外伤</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_6" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor5.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor5.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">李建红<span class="dctlist-authen"></span><span id="pending_6" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 副主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>湿疹</li>
+										<li>特应性皮炎</li>
+										<li>荨麻疹</li>
+										<li>各种血管性疾病</li>
+										<li>色素性疾病</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_7" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor6.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor6.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">林素芳<span class="dctlist-authen"></span><span id="pending_7" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 副主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>上呼吸道感染</li>
+										<li>支气管炎</li>
+										<li>肺炎</li>
+										<li>腹泻病</li>
+										<li>小儿惊厥</li>
+										<li>癫痫</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_8" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor7.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor7.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">毛建雄<span class="dctlist-authen"></span><span id="pending_8" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 副主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>儿童腹股沟疝</li>
+										<li>鞘膜积液</li>
+										<li>肠闭锁</li>
+										<li>肛门闭锁</li>
+										<li>肛周脓肿</li>
+										<li>肛瘘</li>
+										<li>体表包块</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_9" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor8.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor8.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">王建胜<span class="dctlist-authen"></span><span id="pending_9" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 主治医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>骨折</li>
+										<li>马蹄足</li>
+										<li>发育性髋关节脱位</li>
+										<li>多指（趾）</li>
+										<li>并指（趾）</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_10" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor9.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor9.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">余珍珠<span class="dctlist-authen"></span><span id="pending_10" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 副主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>儿童营养及生长发育</li>
+										<li>早产儿相关问题</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_11" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor10.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor10.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">张翅<span class="dctlist-authen"></span><span id="pending_11" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 主治医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>儿童腹股沟疝</li>
+										<li>鞘膜积液</li>
+										<li>肠闭锁</li>
+										<li>肛门闭锁</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_12" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor11.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor11.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">武宇辉<span class="dctlist-authen"></span><span id="pending_12" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 副主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>发热</li>
+										<li>腹泻</li>
+										<li>上呼吸道感染</li>
+										<li>肺炎</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_13" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor12.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor12.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">罗颖<span class="dctlist-authen"></span><span id="pending_13" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">深圳市儿童医院 主治医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>血尿</li>
+										<li>肾炎</li>
+										<li>肾病</li>
+										<li>川崎病</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="team-clear">
+						<a id="doctor_14" href="javascript:void(0);" class="alink-full team-clear">
+							<div class="list-icon">
+								<!-- <img src="images/doctor13.png" alt="医生头像"> -->
+								<img class="lazy" data-original="images/doctor13.png">
+							</div>
+							<div class="list-detil">
+								<h4 class="name">那唐元<span class="dctlist-authen"></span><span id="pending_13" class="dctlist-state" style="display:none;">咨询中</span></h4>
+								<p class="title">和睦家医院 主任医师</p>
+								<!-- <p class="edu-bgd">妇产科医学博士 妇幼健康博士后</p> -->
+								<div class="tag">
+									<ul class="tag team-clear">
+										<li>营养不良</li>
+										<li>支气管炎</li>
+										<li>腹泻病</li>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<script src="js/zepto.js"></script>
+				<script src="js/common.js?d=20160721a"></script>
+				<script>
+				$("img.lazy").lazyload();
+				var oid = tencarePayUtil.getParameterFromQueryString("oid")==null?"":tencarePayUtil.getParameterFromQueryString("oid");
+				//点击医生列表的处理函数
+				$("#doctor_2").on("click", function(e) {
+					window.location.href = "doctor-index.html?oid=" + oid;
+				});
+				$("#doctor_3").on("click", function(e) {
+					window.location.href = "doctor-index2.html?oid=" + oid;
+				});
+				// $("#doctor_4").on("click", function(e) {
+				// 	window.location.href = "doctor-index3.html?oid=" + oid;
+				// });
+				// $("#doctor_5").on("click", function(e) {
+				// 	window.location.href = "doctor-index4.html?oid=" + oid;
+				// });
+
+				//咨询状态
+				var configTimer = null;
+				var getConfig = function(){
+					if(tencareConfig.pay_config_url){
+					    jQuery.ajax({
+		                    url: tencareConfig.pending_info_url,
+		                    type: "POST",
+		                    dataType: 'json',
+		                    cache: false,
+		                    data: {},
+		                    success: function(ret){
+		                        if(ret.code == 0 ) {
+		                            var pendingInfo = ret.data;
+		                            var dctlist = jQuery('#dctlist>li>a');
+		                            for(var i=0; i<dctlist.length; i++){
+		                            	var aid = dctlist[i].id.split('doctor_')[1];
+		                            	if(aid == pendingInfo['dct_id']) jQuery('#pending_' + aid).css('display','');
+		                            }
+		                        }
+		                    },
+		                    error: function(){
+		                        alert("Network error");
+		                    }
+		                });
+					}else{
+						configTimer = setTimeout(getConfig, 100);
+					}
+				};
+				getConfig();
+				</script>
 			</section>
 		</div>
-
-		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-		    <div class="pswp__bg"></div>
-		    <div class="pswp__scroll-wrap">
-		        <div class="pswp__container">
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		        </div>
-		        <div class="pswp__ui pswp__ui--hidden">
-		            <div class="pswp__top-bar">
-		               <div class="pswp__counter"></div>
-		                <div class="pswp__preloader__icn">
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-
-		<script src="js/zepto.js"></script>
-		<script src="js/common.js"></script>
-		<script>
-			var util = {
-				screenHgt : document.body.clientHeight,
-				screenWid : document.body.clientWidth,
-				states : ["咨询中","咨询已结束","已退款","正在退款"],
-				photoWrp : $("#disease-photo"),
-				bigImgCtnr : $("#big_img"),
-				imgCount : 2,
-				imgStore : [],
-				count : 0,
-				setState : function(state) {
-					$("#ask_state").text(state);
-				},
-				//用容器包裹照片并添加至文档流中
-				creatSlider : function(imgArray) {
-					for (var i = 0,len=imgArray.length; i < len; i++) {
-						var figure = document.createElement("figure");
-						var a = document.createElement("a");
-						a.href = imgArray[i].src;
-						$(figure).append($(a));
-						$(a).append(imgArray[i]);
-						a.setAttribute('data-size', imgArray[i].width+'x'+imgArray[i].height);
-						util.photoWrp.append($(figure));
-					}
-				},
-				//在病情描述中添加照片
-				creatImg : function(imgArray,num) {
-					var img = document.createElement("img");
-					img.src = imgArray[util.count];
-					img.alt = "疾病照片";
-					util.count += 1;
-					img.onerror = function () {
-						if (num >= util.imgCount) {
-							return;
-						}
-						util.creatImg(imgArray, num);
-					}
-					img.onload = function () {
-						util.imgStore.push(img);
-						if (++num >= util.imgCount) {
-							util.creatSlider(util.imgStore);
-							return;
-						}
-						util.creatImg(imgArray, num);
-					};
-				},
-			};
-			//初始化设置
-			util.setState(util.states[1]);
-			util.creatImg(["images/artcl-icon.png","images/doctor-banner.jpg"],0);
-			util.creatSlider(util.imgStore);
-
-			//图片查看
-			var initPhotoSwipeFromDOM = function(gallerySelector) {
-			    var parseThumbnailElements = function(el) {
-			        var thumbElements = el.childNodes,
-			            numNodes = thumbElements.length,
-			            items = [],
-			            figureEl,
-			            linkEl,
-			            size,
-			            item;
-			        for(var i = 0; i < numNodes; i++) {
-			            figureEl = thumbElements[i]; // <figure> element
-			            // include only element nodes 
-			            if(figureEl.nodeType !== 1) {
-			                continue;
-			            }
-			            linkEl = figureEl.children[0]; // <a> element
-			            size = linkEl.getAttribute('data-size').split('x');
-			            // create slide object
-			            item = {
-			                src: linkEl.getAttribute('href'),
-			                w: parseInt(size[0], 10),
-			                h: parseInt(size[1], 10)
-			            };
-			            if(figureEl.children.length > 1) {
-			                // <figcaption> content
-			                item.title = figureEl.children[1].innerHTML; 
-			            }
-
-			            if(linkEl.children.length > 0) {
-			                // <img> thumbnail element, retrieving thumbnail url
-			                item.msrc = linkEl.children[0].getAttribute('src');
-			            } 
-
-			            item.el = figureEl; // save link to element for getThumbBoundsFn
-			            items.push(item);
-			        }
-
-			        return items;
-			    };
-			    // find nearest parent element
-			    var closest = function closest(el, fn) {
-			        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-			    };
-			    // triggers when user clicks on thumbnail
-			    var onThumbnailsClick = function(e) {
-			        e = e || window.event;
-			        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-			        var eTarget = e.target || e.srcElement;
-			        // find root element of slide
-			        var clickedListItem = closest(eTarget, function(el) {
-			            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-			        });
-			        if(!clickedListItem) {
-			            return;
-			        }
-			        var clickedGallery = clickedListItem.parentNode,
-			            childNodes = clickedListItem.parentNode.childNodes,
-			            numChildNodes = childNodes.length,
-			            nodeIndex = 0,
-			            index;
-			        for (var i = 0; i < numChildNodes; i++) {
-			            if(childNodes[i].nodeType !== 1) { 
-			                continue; 
-			            }
-
-			            if(childNodes[i] === clickedListItem) {
-			                index = nodeIndex;
-			                break;
-			            }
-			            nodeIndex++;
-			        }
-			        if(index >= 0) {
-			            // open PhotoSwipe if valid index found
-			            openPhotoSwipe( index, clickedGallery );
-			        }
-			        return false;
-			    };
-			    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-			    var photoswipeParseHash = function() {
-			        var hash = window.location.hash.substring(1),
-			        params = {};
-			        if(hash.length < 5) {
-			            return params;
-			        }
-			        var vars = hash.split('&');
-			        for (var i = 0; i < vars.length; i++) {
-			            if(!vars[i]) {
-			                continue;
-			            }
-			            var pair = vars[i].split('=');  
-			            if(pair.length < 2) {
-			                continue;
-			            }           
-			            params[pair[0]] = pair[1];
-			        }
-			        if(params.gid) {
-			            params.gid = parseInt(params.gid, 10);
-			        }
-			        return params;
-			    };
-
-			    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-			        var pswpElement = document.querySelectorAll('.pswp')[0],
-			            gallery,
-			            options,
-			            items;
-			        items = parseThumbnailElements(galleryElement);
-			        // define options (if needed)
-			        options = {
-			            // define gallery index (for URL)
-			            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-			            getThumbBoundsFn: function(index) {
-			                // See Options -> getThumbBoundsFn section of documentation for more info
-			                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-			                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-			                    rect = thumbnail.getBoundingClientRect(); 
-			                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-			            }
-			        };
-			        options.mainClass = 'pswp--minimal--dark';
-			        options.barsSize = {top:0,bottom:0};
-					options.captionEl = false;
-					options.fullscreenEl = false;
-					options.shareEl = false;
-					options.tapToClose = true;
-					options.tapToToggleControls = false;
-			        // PhotoSwipe opened from URL
-			        if(fromURL) {
-			            if(options.galleryPIDs) {
-			                // parse real index when custom PIDs are used 
-			                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-			                for(var j = 0; j < items.length; j++) {
-			                    if(items[j].pid == index) {
-			                        options.index = j;
-			                        break;
-			                    }
-			                }
-			            } else {
-			                // in URL indexes start from 1
-			                options.index = parseInt(index, 10) - 1;
-			            }
-			        } else {
-			            options.index = parseInt(index, 10);
-			        }
-			        // exit if index not found
-			        if( isNaN(options.index) ) {
-			            return;
-			        }
-			        if(disableAnimation) {
-			            options.showAnimationDuration = 0;
-			        }
-			        // Pass data to PhotoSwipe and initialize it
-			        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-			        gallery.init();
-			    };
-			    // loop through all gallery elements and bind events
-			    var galleryElements = document.querySelectorAll( gallerySelector );
-			    for(var i = 0, l = galleryElements.length; i < l; i++) {
-			        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-			        galleryElements[i].onclick = onThumbnailsClick;
-			    }
-			    // Parse URL and open gallery if it contains #&pid=3&gid=1
-			    var hashData = photoswipeParseHash();
-			    if(hashData.pid && hashData.gid) {
-			        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
-			    }
-			};
-			initPhotoSwipeFromDOM('.my-gallery');
-		</script>
 	</body>
 </html>
