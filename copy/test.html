@@ -4,40 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>ZeroClipboard复制功能简单测试</title>
     <script type="text/javascript" src="http://s.pc.qq.com/byb/jquery/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.Core.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js" ></script>
 </head>
 <body>
-    <input type="text" name="wantCopy" id="wantCopy" value="sdsadsadsadsad"/>
-    <button id="copyButton" data-clipboard-target="wantCopy" data-clipboard-text="Default clipboard text from attribute">复制当前网址</button>
-    <div id="d_debug"></div>
+   <textarea id="content" rows="10" cols="60">这里是需要复制的内容</textarea>
+    <input id="copy" type="button" data-clipboard-target="content" value="复制">
     <script type="text/javascript">
         
 $(document).ready(function(){
-  var clip = new ZeroClipboard($('#copyButton'));
-  
-  clip.on('ready', function(){
-    debugstr('Flash 已经准备完成。');
-    
-    this.on('aftercopy', function(event){
-    debugstr('已经复制剪贴板：' + event.data['text/plain']);
-    });
-  });
-  
-  clip.on('error', function(event){
-    $('.demo-area').hide();
-    debugstr('error[name="' + event.name + '"]: ' + event.message);
-    ZeroClipboard.destroy();
-  });
-
-  // jquery stuff (optional)
-  function debugstr(text){
-    $('#d_debug').append($('<p>').text(text));
-  }
-  
-  $('#clear-test').on('click', function (){
-    $('#fe_text').val('Copy me!');
-    $('#testarea').val('');
-  });
+  var clip = new ZeroClipboard( document.getElementById("copy") );
 });
     </script>
 </body>
