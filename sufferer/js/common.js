@@ -46,7 +46,7 @@ function unlockScreenHgt() {
   // lockScreen._page.style.height = "100%";
   lockScreen._page.className = "page";
 }*/
-//传入参数表示是否添加点击隐藏的事件
+//传入参数表示是否添加点击隐藏的事件，(和是否使用透明蒙层?)
 function showTraptCover(needEvt) {
   // lockScreenHgt();
   var cover = document.querySelector('.tranparent-cover');
