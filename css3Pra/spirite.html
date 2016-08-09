@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>雪碧图小例子</title>
+	<meta charset="UTF-8">
+	<style type="text/css" media="screen">
+		div {background: url(images/sprite.png);display: inline-block;vertical-align: top;}
+		.img1 { -webkit-animation: change 3s 1 forwards;-o-animation: change 3s 1 forwards;animation: change 3s linear 1 forwards; background-position: 0 0;height: 51px;width: 50px;/* transition: all 0.5s linear; */}
+		 @keyframes change {
+			0% {background-position: 0 0;}
+			50% {background-position: -50px 0;}
+			100% {background-position: -100px 0;}
+		} 
+	</style>
+</head>
+<body>
+	<div id="img" class="img1"></div>
+	<!-- <button value="2">第二个</button><button value="4">第四个</button> -->
+	<!-- <script>
+		var img = document.getElementById("img");
+		document.onclick = function(e) {
+			var value = e.target.getAttribute("value");
+			if(value == "2" || value === "4") {
+				img.style.backgroundPosition = '-'+50*(value-1) +'px 0';
+			}
+		};
+	</script>  -->
+</body>
+</html>
