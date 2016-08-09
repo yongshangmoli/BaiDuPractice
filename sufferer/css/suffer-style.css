@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 html,body {height:100%;font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";color: #333;}
-html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea,input {padding: 0;margin: 0;font-weight: normal;}
+html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea,input,figure {padding: 0;margin: 0;font-weight: normal;}
 a {text-decoration: none;}
-a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+a,button,input,textarea,label{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 ::-webkit-datetime-edit-fields-wrapper { background-color: transparent;}
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #999;}  
 .alert_tip {position: fixed;text-align: center;top: 50%;left: 50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);max-width: 75%;min-width: 50%;border-radius: 10px;font-size: 0.32rem;line-height: 0.4rem;padding:0.5rem;/* background-color: #6B6B6B; */background-color: rgba(107,107,107,0.95);color: #fff;z-index: 1001;box-shadow: 0 0 8px 3px #fff;}
@@ -235,8 +235,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .ask-detail li p {display: inline-block;vertical-align: top;}
 .ask-detail li p:first-child {width: 1.2rem;color: #999;}
 .ask-detail li p:nth-child(2) {margin-left: 0.2rem;width: 72%;font-size: 0.32rem;}
-.ask-detail li img {height: 1.16rem;width: 1.16rem;margin: 0.36rem 0.1rem 0.36rem 0;}
+.ask-detail li img {height: 1.16rem;width: 1.16rem;object-fit:cover;/*margin: 0.36rem 0.1rem 0.36rem 0;*/}
 .ask-detail .hr {border-top:0.1rem #e8e9e9 solid;height: 0;margin: 0 -0.32rem;}
+.my-gallery {float: left;margin-left: 1.4rem;padding-top: 0.2rem;}
+.my-gallery figure {display: block;float: left;margin: 0 0.1rem 0.1rem 0;}
+.my-gallery figcaption {display: none;}
 /*第二次及以上咨询时患者选择*/
 .sufferer-list ul {padding:0 0.32rem;}
 .sufferer-list li {font-size: 0.32rem;position:relative;}

@@ -1,464 +1,332 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#" debug="true">
-	<head>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-	    <meta charset="utf-8">
-
-	    <title>PhotoSwipe: Responsive JavaScript Image Gallery</title>
-		<link rel="stylesheet" href="photoswipe.css"> 
-		<link rel="stylesheet" href="default-skin.css"> 
-		<script src="photoswipe.min.js"></script> 
-		<script src="photoswipe-ui-default.min.js"></script> 
-		<style type="text/css" media="screen">
-			.my-gallery {
-  width: 100%;
-  float: left;
-}
-.my-gallery img {
-  width: 100%;
-  height: auto;
-}
-.my-gallery figure {
-  display: block;
-  float: left;
-  margin: 0 5px 5px 0;
-  width: 150px;
-}
-.my-gallery figcaption {
-  display: none;
-}
-		</style>
-	</head>
-
-	<body>
-<!-- 
-		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="pswp__bg"></div>
-			<div class="pswp__scroll-wrap">
-		        <div class="pswp__container">
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-        		</div>
-        	</div>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>请填写基本资料</title>
+        <link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
+        <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
+        <script>var urlId = 4;</script>
+    </head>
+    <body>
+	    <div id="page" class="page">
+	        <!-- patient form-->
+	        <section class="patient-body">
+	            <!-- <div class="patient-banner">
+					<div class="patient-icon"></div>
+					<h1>填写资料，获得精准回答</h1>
+	            </div> -->
+	            <div style="height:0.4rem;"></div>
+				<ul class="patient-detail">
+	                <!-- <li>
+	                    <label for="name">患者姓名</label>
+	                    <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/></p>
+	                </li>
+	                <li>
+	                    <label for="yearMth">出生年月</label>
+	                    <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+	                    <p><input id="yearMth" type="date"/></p>
+	                </li>
+	                <li>
+	                    <label for="phone">手机号码</label>
+	                    <p><input id="phone" type="tel" placeholder="请输入手机号码" /></p>
+	                </li>
+					<li class="sex">
+						<label for="sex">性别</label>
+						<p id="sexBtns">
+							<input type="radio" name="sex" value="0" id="male" checked="checked"/>
+							<label for="male" class="first">
+								 <span class="choose"></span><span class="second">男</span>
+							</label>
+							<input type="radio" name="sex" value="1" id="female" />
+							<label for="female">
+								<span class="choose"></span><span>女</span>
+							</label>
+						</p>
+					</li>
+					<li class="allergy">
+						<label for="allergy">药物过敏</label>
+						<p id="allergyBtns">
+							<input type="radio" name="allergy" value="0" id="no_allergy" checked="checked"/>
+							<label for="no_allergy" class="first">
+								<span class="choose"></span><span class="second">无</span>
+							</label>
+							<input type="radio" name="allergy" value="1" id="yes_allergy" />
+							<label for="yes_allergy">
+								<span class="choose"></span><span>有</span>
+							</label>
+						</p>
+						<p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+					</li> -->
+					<li>
+                        <label for="name"><i class="name">姓名</i></label>
+                        <p><input id="name" style="" type="text" placeholder="请填写孩子名字" maxlength="10" minlength="1"/><div class="line"></div></p>
+                    </li>
+                    <li>
+                        <label for="yearMth"><i class="date">出生年月</i></label>
+                        <div id="bd_placeholder" class="bd_placeholder">请选择出生年月</div>
+                        <p><input id="yearMth" type="date"/><div class="line"></div></p>
+                    </li>
+                    <li>
+                        <label for="phone"><i class="phone">手机号码</i></label>
+                        <p><input id="phone" type="tel" placeholder="请输入手机号码" /><div class="line"></div></p>
+                    </li>
+                    <li class="sex">
+                        <label for="sex"><i class="sexc">性别</i></label>
+                        <p id="sexBtns">
+                            <label for="male">
+                            	<input type="radio" name="sex" value="0" id="male"/>
+                                <span class="choose"></span><span class="second">男</span>
+                            </label>
+                            <label for="female">
+                            	<input type="radio" name="sex" value="1" id="female"/>
+                                <span class="choose"></span><span class="second">女</span>
+                            </label>
+                            <div class="line"></div>
+                        </p>
+                    </li>
+                    <li class="allergy">
+                        <label for="allergy"><i class="drug">药物过敏</i></label>
+                        <p id="allergyBtns" >
+                            <label for="no_allergy" class="first">
+                            	<input type="radio" name="allergy" value="0" id="no_allergy"/>
+                                <span class="choose"></span><span class="second">无药物过敏</span>
+                            </label>
+                            <label for="yes_allergy">
+                            	<input type="radio" name="allergy" value="1" id="yes_allergy" />
+                                <span class="choose"></span><span>有药物过敏</span>
+                            </label>
+                        </p>
+                        <p class="patient-algydesc" id="allergy_detail"><input type="text" placeholder="请输入过敏药物名称"></p>
+                        <div class="line"></div>
+                    </li>
+				</ul>
+				<!-- <p class="patient-tips"><span class="patient-mark">!</span><span class="info">您的个人信息为保密状态，仅医患双方可见</span></p> -->
+			</section>
 		</div>
-
-		<div id="demo-test-gallery" class="demo-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-			    <a href="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="contentUrl" data-size="600x400">
-			        <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="thumbnail" alt="Image description" />
-			    </a>
-			    <figcaption itemprop="caption description">Image caption</figcaption>
-			</figure>
-
-			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-			    <a href="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="contentUrl" data-size="600x400">
-			        <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" itemprop="thumbnail" alt="Image description" />
-			    </a>
-			    <figcaption itemprop="caption description">Image caption</figcaption>
-			</figure>
-		</div>
- -->
-		<!-- <button id="btn">Open PhotoSwipe</button>
-		
-		Root element of PhotoSwipe. Must have class pswp.
-		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-		
-		    Background of PhotoSwipe. 
-		         It's a separate element, as animating opacity is faster than rgba().
-		    <div class="pswp__bg"></div>
-		
-		    Slides wrapper with overflow:hidden.
-		    <div class="pswp__scroll-wrap">
-		
-		        Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
-		        <div class="pswp__container">
-		            don't modify these 3 pswp__item elements, data is added later on
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		        </div>
-		
-		        Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
-		        <div class="pswp__ui pswp__ui--hidden">
-		
-		            <div class="pswp__top-bar">
-		
-		                Controls are self-explanatory. Order can be changed.
-		
-		                <div class="pswp__counter"></div>
-		
-		                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-		
-		                <button class="pswp__button pswp__button--share" title="Share"></button>
-		
-		                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-		
-		                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-		
-		                Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
-		                element will get class pswp__preloader--active when preloader is running
-		                <div class="pswp__preloader">
-		                    <div class="pswp__preloader__icn">
-		                      <div class="pswp__preloader__cut">
-		                        <div class="pswp__preloader__donut"></div>
-		                      </div>
-		                    </div>
-		                </div>
-		            </div>
-		
-		            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-		                <div class="pswp__share-tooltip"></div> 
-		            </div>
-		
-		            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-		            </button>
-		
-		            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-		            </button>
-		
-		            <div class="pswp__caption">
-		                <div class="pswp__caption__center"></div>
-		            </div>
-		
-		          </div>
-		
-		        </div>
-		
-		</div> -->
-		<h2>First gallery:</h2>
-
-  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" itemprop="contentUrl" data-size="1024x768">
-          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-    </figure>
-
-
-  </div>
-
-	
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element, as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+		<div class="patient-btn">
+                <a id="sbmt_info" href="javascript:void(0);">下一步</a>
         </div>
+        <script src="js/zepto.js"></script>
+        <script src="js/common.js?d=20160721a"></script>
+        <script>
+            (function() {
+            /*	var oid = tencarePayUtil.getParameterFromQueryString("oid")==null?"":tencarePayUtil.getParameterFromQueryString("oid");
+            	var doctorId = tencarePayUtil.getParameterFromQueryString("doctorid")==null?"":tencarePayUtil.getParameterFromQueryString("doctorid");*/
+            	var form = {};
+    			form.ifSubmit = false; //是否提交
 
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
+				//出生年月是否显示placeholder文字
+				var bd_date = $('#yearMth'),bd_placeholder = $('#bd_placeholder');
+				var ck_bd_placeholder = function() {
+					bd_placeholder[0].style.display= bd_date.val() ? 'none' : 'block'; 
+				};
+				bd_placeholder.on('touchstart',function(){
+					bd_date.focus();
+				});
+				bd_date.on('focus blur change',ck_bd_placeholder);
+				// 验证相关
+				var surferer = {};
+				var checkObj={
+					name:{
+						reg:/^.{1,10}$/,
+						emptyMsg:'请输入姓名',
+						errorMsg:'姓名格式不正确'
+					},
+					yearMth:{
+						emptyMsg:'未选择出生年月日',
+						errorMsg:'请输入正确的出生年月'
+					},
+					phone:{
+						reg:/^1[0-9]{10}$/,
+						emptyMsg:'请输入接收医生的回复电话',
+						errorMsg:'请输入正确的电话号码'
+					},
+					sex:{
+						emptyMsg:'请选择性别',
+					},
+					allergy:{
+						emptyMsg:'请选择是否药物过敏',
+					},
+					allergyDetl:{
+						emptyMsg:'请输入小孩的过敏药物名称',
+					}
+				};
+                var fn = {
+					_getInfo : function(surferer,noTip) {
+						surferer.name = $("#name").val().trim();
+						surferer.yearMth = $("#yearMth").val();
+						surferer.phone = $("#phone").val().trim();
+						surferer.sex = $("#sexBtns input:checked").val();
+						surferer.allergy = $("#allergyBtns input:checked").val();
+					},
+					_checkInfo : function(surferer,noTip) {
+						for (var key in surferer) {
+							var checkInfo = checkObj[key],value = surferer[key];
+							if(key === "allergyDetl") {
+								continue;
+							}
+							if(value === "" || value === undefined){
+								if(!noTip) {
+									alert(checkInfo.emptyMsg);
 
-            <div class="pswp__top-bar">
+								}
+								return false;
+							}
+							else if(key === "yearMth") {
+								var date = new Date();
+								var year = date.getFullYear(),month = date.getMonth()+1,day = date.getDate(),isOK = true;
+								var putValue = value.split("-");
+								//console.log(value,putValue);
+								if(year < putValue[0]) {
+									isOK = false;
+								}
+								else if(year === parseInt(putValue[0],10)) {
+									if(month < putValue[1]) {
+										isOK = false;
+									}
+									else if(month === parseInt(putValue[1],10)) {
+										if(day < putValue[2]) {
+											isOK = false;
+										}
+									}
+								}
+								if(!isOK) {
+									if(!noTip) alert(checkObj["yearMth"].errorMsg);
+									return false;
+								}
+								continue;
+							}
+							else if(key === "allergy" && value === "1") {
+								 // var allergyDetail = $("#allergy_detail");
+								var allergyDetail = $("#allergy_detail").children()[0].value;
 
-                <!--  Controls are self-explanatory. Order can be changed. -->
+								//console.log(allergyDetail);
+								if(allergyDetail) {
+									allergyDetail = allergyDetail.trim();
+									if(allergyDetail === "") {
+										console.log(allergyDetail);
+										if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
+										return false;
+									}
 
-                <div class="pswp__counter"></div>
-               <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
+								//console.log(allergyDetail);
+								}
+								else {
+									if(!noTip) alert(checkObj["allergyDetl"].emptyMsg);
+									return false;
+								}
+								surferer.allergyDetl = allergyDetail;
+								continue;
+							}
+							if(!checkInfo.reg) continue;
+							if(!checkInfo.reg.test(value)){
+								if(!noTip) alert(checkInfo.errorMsg);
+								return false;
+							}
+						}
+						return true;
+					},
+                    //看之前是否有记录患者信息
+                    _cmtJudge : function(record) {
+                    	if(!form.ifSubmit){
+	                        $.ajax({
+	                            type: "POST",
+	                            url: tencareConfig.patient_info_url,
+	                            data: {
+	                                "name":         surferer.name,
+	                                "birthday":     surferer.yearMth,
+	                                "phone":        surferer.phone,
+	                                "sex":          surferer.sex,
+	                                "is_allergy":   surferer.allergy,
+	                                "medicine":     surferer.allergyDetl ? surferer.allergyDetl : ''
+	                            },
+	                            success: function(ret){
+	                            	//alert(ret.code+' | '+tencareConfig.patient_info_url);
+	                                if(ret.code == 0 ) {
+	                                    //console.log(ret);
+	                                    window.location.href = 'disease-desc.html?oid=' + oid + "&doctorid=" + doctorId;
+	                                } else if (ret.code == 302) {
+	                                    // 跳转到授权
+	                                    //alert(ret.url);
+	                                    window.location.replace(ret.url);
+	                                } else {
 
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
+	                                }
+	                            },
+	                            dataType: "json"
+	                        });
+	                        $("#sbmt_info").html("提交中...");
+							$("#sbmt_info").parent().addClass("no-handle");
+	                    }else{
+	                    	alert("数据正在提交中，请勿重复点击");
+	                    }
+                        /*
+                        if(!record) {
+                            window.location.href = "disease-desc.html";
+                        }
+                        else {
+                            window.location.href = "sufferer-choose.html";
+                        }
+                        */
+                    },
+                    //检查输入正确后进行的操作
+                    _checkSucs : function(record) {
+                        this._cmtJudge(record);
+                        form.ifSubmit = true;
+                    },
 
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-</div>
-
-		<script>
-			/*var openPhotoSwipe = function() {
-			    var pswpElement = document.querySelectorAll('.pswp')[0];
-
-			    // build items array
-			    var items = [
-			        {
-			            src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-			            w: 964,
-			            h: 1024
-			        },
-			        {
-			            src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-			            w: 1024,
-			            h: 683
-			        }
-			    ];
-			    
-			    // define options (if needed)
-			    var options = {
-			             // history & focus options are disabled on CodePen        
-			        history: false,
-			        focus: false,
-
-			        showAnimationDuration: 0,
-			        hideAnimationDuration: 0
-			        
-			    };
-			    
-			    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-			    gallery.init();
-			};
-
-			// openPhotoSwipe();
-
-			document.getElementById('btn').onclick = openPhotoSwipe;*/
-			var initPhotoSwipeFromDOM = function(gallerySelector) {
-
-    // parse slide data (url, title, size ...) from DOM elements 
-    // (children of gallerySelector)
-    var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
-            numNodes = thumbElements.length,
-            items = [],
-            figureEl,
-            linkEl,
-            size,
-            item;
-
-        for(var i = 0; i < numNodes; i++) {
-
-            figureEl = thumbElements[i]; // <figure> element
-
-            // include only element nodes 
-            if(figureEl.nodeType !== 1) {
-                continue;
-            }
-
-            linkEl = figureEl.children[0]; // <a> element
-
-            size = linkEl.getAttribute('data-size').split('x');
-
-            // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
-            };
-
-
-
-            if(figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
-            }
-
-            if(linkEl.children.length > 0) {
-                // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
-            } 
-
-            item.el = figureEl; // save link to element for getThumbBoundsFn
-            items.push(item);
-        }
-
-        return items;
-    };
-
-    // find nearest parent element
-    var closest = function closest(el, fn) {
-        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-    };
-
-    // triggers when user clicks on thumbnail
-    var onThumbnailsClick = function(e) {
-        e = e || window.event;
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-        var eTarget = e.target || e.srcElement;
-
-        // find root element of slide
-        var clickedListItem = closest(eTarget, function(el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-        });
-
-        if(!clickedListItem) {
-            return;
-        }
-
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data- attribute
-        var clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
-            numChildNodes = childNodes.length,
-            nodeIndex = 0,
-            index;
-
-        for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
-            }
-
-            if(childNodes[i] === clickedListItem) {
-                index = nodeIndex;
-                break;
-            }
-            nodeIndex++;
-        }
-
-
-
-        if(index >= 0) {
-            // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
-        }
-        return false;
-    };
-
-    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    var photoswipeParseHash = function() {
-        var hash = window.location.hash.substring(1),
-        params = {};
-
-        if(hash.length < 5) {
-            return params;
-        }
-
-        var vars = hash.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            if(!vars[i]) {
-                continue;
-            }
-            var pair = vars[i].split('=');  
-            if(pair.length < 2) {
-                continue;
-            }           
-            params[pair[0]] = pair[1];
-        }
-
-        if(params.gid) {
-            params.gid = parseInt(params.gid, 10);
-        }
-
-        return params;
-    };
-
-    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-        var pswpElement = document.querySelectorAll('.pswp')[0],
-            gallery,
-            options,
-            items;
-
-        items = parseThumbnailElements(galleryElement);
-
-        // define options (if needed)
-        options = {
-
-            // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-            getThumbBoundsFn: function(index) {
-                // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
-
-                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
-
-        };
-        options.mainClass = 'pswp--minimal--dark';
-        options.barsSize = {top:0,bottom:0};
-		options.captionEl = false;
-		options.fullscreenEl = false;
-		options.shareEl = false;
-		options.bgOpacity = 0.85;
-		options.tapToClose = true;
-		options.tapToToggleControls = false;
-
-        // PhotoSwipe opened from URL
-        if(fromURL) {
-            if(options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
-                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                for(var j = 0; j < items.length; j++) {
-                    if(items[j].pid == index) {
-                        options.index = j;
-                        break;
+                };
+                $("#sexBtns,#allergyBtns").on("change","label",function(e) {
+                	var that = $(this);
+                	var checked = that.find('input:checked'),label = that.attr("for");;
+                	checked.next()[0].className = "selected";
+                	checked.parent().siblings().find('input').next()[0].className = "choose";
+                	if(label === "yes_allergy") {
+                        $("#allergy_detail").show();
                     }
-                }
-            } else {
-                // in URL indexes start from 1
-                options.index = parseInt(index, 10) - 1;
-            }
-        } else {
-            options.index = parseInt(index, 10);
-        }
-
-        // exit if index not found
-        if( isNaN(options.index) ) {
-            return;
-        }
-
-        if(disableAnimation) {
-            options.showAnimationDuration = 0;
-        }
-
-        // Pass data to PhotoSwipe and initialize it
-        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    };
-
-    // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
-
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-        galleryElements[i].onclick = onThumbnailsClick;
-    }
-
-    // Parse URL and open gallery if it contains #&pid=3&gid=1
-    var hashData = photoswipeParseHash();
-    if(hashData.pid && hashData.gid) {
-        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
-    }
-};
-
-// execute above function
-initPhotoSwipeFromDOM('.my-gallery');
-		</script>
-	</body>
+                    else if (label === "no_allergy") {
+                        $("#allergy_detail").hide();
+                    }
+                });
+                /*$("#sexBtns,#allergyBtns").on("touchstart","label",function(e) {
+                	e.stopPropagation;
+                    var that = $(this),label = that.attr("for");
+                    styleChoose("choose","selected",that);
+                    that.children().last().addClass("active");
+                    that.siblings().children().last().removeClass("active");
+                    if(label === "yes_allergy") {
+                        $("#allergy_detail").show();
+                    }
+                    else if (label === "no_allergy") {
+                        $("#allergy_detail").hide();
+                    }
+                });*/
+				//sex和allergy样式控制
+				/*$("#sexBtns,#allergyBtns").on("click","label",function() {
+					var that = $(this);
+					that.children()[0].className = "selected";
+					var prev = that.prev();
+					prev.attr("checked");
+					that.siblings().children()[0].className = "choose";
+					surferer[that.parent().parent().attr("class")] = prev.val();
+					if(prev.attr("id") === "yes_allergy") {
+						$("#allergy_detail").show();
+					}
+					else if (prev.attr("id") === "no_allergy") {
+						$("#allergy_detail").hide();
+					}
+				});*/
+				//点击提交按键的操作
+				$("#sbmt_info").parent().on("click", function() {
+					fn._getInfo(surferer);
+					console.log(surferer);
+					if(!fn._checkInfo(surferer)) return;
+					fn._checkSucs(true);
+				});
+            })();
+        </script>
+    </body>
 </html>
