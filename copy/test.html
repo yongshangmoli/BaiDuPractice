@@ -17,7 +17,7 @@
             init();
         });
         function init() {
-            var clip = new ZeroClipboard().Client(); // 新建一个对象
+            var clip = new ZeroClipboard.Client(); // 新建一个对象
             clip.setHandCursor( true );
             clip.setText($('#wantCopy').val()); // 设置要复制的文本。
             clip.addEventListener( "mouseUp", function(client) {
