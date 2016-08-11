@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
 		<title>请填写基本资料</title>
-		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div id="page" class="page greybg">
+		<div id="page" class="page">
 			<section class="sufferer-list">
 				<ul id="sufferers" class="whitebg">
 					<li>
@@ -28,10 +28,10 @@
 				<div class="addwrapper">
 					<a id="add_sufferer" class="whitebg" href="#"><span class="add"></span>添加患者</a>
 				</div>
+				<div class="patient-btn" style="margin:0.7rem 4%;">
+					<a id="sufferer_next" href="#">下一步</a>
+				</div>
 			</section>
-		</div>
-		<div class="patient-btn">
-			<a id="sufferer_next" href="#">下一步</a>
 		</div>
 		
 		<script src="js/zepto.js"></script>
@@ -66,7 +66,7 @@
 				});
 				//添加患者
 				$("#add_sufferer").on("click",function() {
-					window.location.href = "patient-info.html";
+					window.location.href = "ill-info.html";
 				});
 				//下一步
 				$("#sufferer_next").on("click",function() {

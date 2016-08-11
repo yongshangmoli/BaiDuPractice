@@ -5,12 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
 		<title>医生主页</title>
-		<link href="css/suffer-style.css" rel="stylesheet" type="text/css" />
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
 		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
+		<script>var urlId = 3;</script>
 	</head>
 	<body>
 		<div id="page" class="page white-bg">
-			<section id="ask_surface" class="ask-surface">
+			<section id="ask_surface" class="ask-surface body-minheight">
 				<div style="padding-bottom: 2rem;">
 					<div class="surface-title">
 						<h1>咨询须知</h1>
@@ -21,26 +23,35 @@
 							<li><p>线上咨询只能提供健康相关的参考意见 不能保证您咨询疾病的好转和治愈，急症及疑难健康问题，请及时于当地医院就医。</p></li>
 						</ul>
 					</div>
+					<div class="patient-btn">
+						<a id="pay_sucs"　href="#">我同意</a>
+					</div>
 				</div>
-			</section>	
-		</div>
-		<div class="patient-btn">
-			<a id="pay_sucs"　href="#">我同意</a>
+			</section>
 		</div>
 		<script src="js/zepto.js"></script>
-		<script src="js/common.js"></script>
+		<script src="js/common.js?d=20160721a"></script>
 		<script>
+			var oid = tencarePayUtil.getParameterFromQueryString("oid")==null?"":tencarePayUtil.getParameterFromQueryString("oid");
+			var doctorId = tencarePayUtil.getParameterFromQueryString("doctorid")==null?"":tencarePayUtil.getParameterFromQueryString("doctorid");
+			//cookie
+	        var setCookie = function(c_name,value,expiredays){
+				var exdate = new Date();
+				exdate.setDate(exdate.getDate() + expiredays);
+				document.cookie = c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+	        };
 			//是不是第一次咨询
 			var assureHandler = function(first) {
 				if(first) {
-					window.location.href = "patient-info.html";
+					window.location.href = "patient-info.html?oid=" + oid + "&doctorid=" + doctorId;
 				}
 				else {
 					window.location.href = "sufferer-choose.html";
 				}
 			};
 			$("#pay_sucs").on("click",function() {
-				assureHandler(false);
+				assureHandler(true);
+				setCookie('isReadAskKnow_' + oid, '1',1);
 			});
 		</script>
 	</body>
