@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+html,body {height:100%;font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";color: #333;}
+html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea,input,figure {padding: 0;margin: 0;font-weight: normal;}
+a {text-decoration: none;}
+.greybg {background-color: #f1f1f1;}
+.team-clear:after {clear: both;content:"";display:block;height: 0;visibility: hidden;}
+.team-clear {*zoom:1;}
+.tx-footer {padding: 0.36rem 0.4rem;background: #f1f1f1;}
+.tx-logo1 {background: url(http://s.pc.qq.com/byb/VKzB21WONby8VcQll2TXCo_A0v8JTuhNlYHwNSeLI3HwV0P8UvjVMEesN-ahVBKF.png) no-repeat;width: 1.72rem;height: 0.59rem;-webkit-background-size: 100% 100%;background-size: 100% 100%;margin: 0 auto;} 
+.scan-code img, .team-banner .head-icon img {height: 100%;width: 100%;font-size: 0.24rem;-webkit-border-radius: 0.3rem;border-radius: 0.3rem;}
+.team-banner .gradual {position: absolute;left: 0;bottom: 0;height: 1rem;width: 100%;}
+.team-banner .gradual-bg {background: url(http://s.pc.qq.com/byb/8LEy92TpB9bfmhyc9Vuo2utf7K2l9xhLqDcakVncqnJz8xwEDI-1o7BynNlzvK78.png) repeat-x;}
+.team-section {background-color:#fff;}
+.team-section li {list-style: none;margin: 0 0.34rem;padding: 0.34rem 0; border-bottom: 1px #f2f2f2 solid;}
+.team-section li:last-child,.team-section .partner li {border:none;}
+.team-section .tag {height: 0.66rem;overflow: hidden;}
+.team-section .tag li {padding: 0;float: left;color: #999;padding: 2px 0.22rem;margin:0.1rem 0.14rem 0.1rem 0;border: 1px #f2f2f2 solid;font-size: 0.28rem;-webkit-border-radius: 0.4rem;-moz-border-radius: 0.4rem;-o-border-radius: 0.4rem;border-radius: 0.4rem;}
+.team-banner {position: relative;height: 4.01rem;min-height: 4.01rem;background-size: 100% auto;color: #fff;padding: 0.5rem 0.34rem 0.2rem;text-align: center;font-size: 0.24rem;}
+.team-banner .head-icon {height: 2.06rem;width: 2.06rem;margin: 0 auto;}
+.team-banner h1 {font-size: 0.36rem;margin: 0.16rem 0 0.1rem 0;text-align: center;}
+.team-banner p {font-size: 0.28rem;text-align: left;overflow: hidden;padding-bottom: 0.2rem;}
+.team-banner a {display:block;height: 100%;width: 100%;}
+.doctor-banner2 {background: #317def url(../images/banner2.jpg) no-repeat;background-size: 100% 100%;object-fit: cover;}
+.doctor-banner2 h1 {margin: 0.16rem 0;}
+.doctor-banner2 p {text-align: center;padding-bottom: 0.06rem;opacity: 0.8;}
+.doctor-banner2 .head-icon {height: 1.5rem;width: 1.5rem;margin: 0.2rem auto 0.4rem;}
+.dctlist-authen {display:inline-block;height: 0.34rem;width: 0.34rem;vertical-align: middle;margin:-0.08rem 0 0 0.1rem;background: url(http://s.pc.qq.com/byb/jLl7oK9r-jyTo7xBs80zy_QjZSlAdT3ulyeJZAusYihZENRI87gQXUyzIZx3okWs.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.doctor-banner {height: 3.64rem;position: relative;height: 4.71rem;font-size: 0.24rem;}
+.doctor-section h3{font-size: 0.28rem;}
+.doctor-banner img {height: 100%;width: 100%;object-fit: cover;}
+.doctor-banner .intro {position: absolute;bottom: 0;padding:0.58rem 0 0.12rem 0rem;font-size: 0.28rem;color: #fff;width:100%;background: linear-gradient(0,rgba(0,0,0,0.5),rgba(255,255,255,0));}
+.doctor-banner .intro h2 {color: #fff;}
+.doctor-banner .intro h2,.doctor-banner .intro p {padding-left:0.32rem;}
+.doctor-section {/*border-top: 0.1rem #f1f1f1 solid;*/border-top: 0.28rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;background-color:#fff;}
+.doctor-section p {margin-left: 0.7rem;color: #666;}
+.doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
+.doctor-section li {list-style: none;margin-bottom: 0.2rem;margin-left: 1rem;margin-top: 0.2rem;}
+.doctor-section li p {padding: 0.04rem 0;}
+.doctor-section img {height: 2.3rem;width: 2.3rem;margin: 0.3rem 0 0.1rem;}
+.doctor-section .title,.team-section .title {font-size: 0.32rem;color:#333; display: inline-block;vertical-align: middle;height: 0.42rem; line-height:0.42rem;margin: 0.2rem 0.2rem 0.2rem 0;}
+.doctor-section .t-pic {background: url(http://s.pc.qq.com/byb/UazQK_qbDrdqSB9vcNJlqVN-HQGy7FrrdKgr17i0EK-GIUetaVDDwl2HuVxgJ89-.png) no-repeat;}
+.doctor-section .t-skill {background: url(http://s.pc.qq.com/byb/lbA76vcYcorj1G6Nt0_VFrrt6pr_OF5CWDp7yYjBzzcGF-dnmY3RP-RQV1ATa3Qc.png) no-repeat;}
+.doctor-section .t-intro {background: url(http://s.pc.qq.com/byb/wqs4nh_68UWWuGLRafjEscTXtYn8PKGC1XUjSAw7f2saitHunvbe_sZECzJalE-X.png) no-repeat;}
+.doctor-section .t-career {background: url(http://s.pc.qq.com/byb/Ed1sdo8mgS23axPtVMD8QRBeWv-LFO7EssrOfmbiVx043UTKSbXN-V0lwUSmoV5M.png) no-repeat;}
+.doctor-section .t-edit,.team-section .t-edit  {float: right;}
+.team-section .t-edit {margin-top: -0.6rem;}
+.doctor-section .t-edit a {display: inline-block;height: 100%;width: 100%;}
+.doctor-section .t-edit img,.team-section .t-edit img { width: 0.3rem;height: 0.3rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
+.doctor-section .right,.team-section .right {color:#1d76f0;}
+.doctor-section ul::before {content: "";border: 1px #f1f1f1 solid;height: 100%;margin-left: 0.78rem;margin-top: 0.24rem;padding-bottom: 0.24rem;position: absolute;}
+.doctor-section .career-wrpr {position: relative;}
+.doctor-section .career {margin-top: -0.26rem;}
+.doctor-section .career p {margin-left: 0.2rem;}
+.doctor-section .career p:nth-child(odd)::before {content: "";height: 0.12rem;width: 0.12rem;-webkit-border-radius: 0.12rem;border-radius: 0.12rem;background-color: #d2d2d2;position: absolute;margin-top: 0.08rem;left: 0.74rem;color: #d2d2d2;}
+.doctor-section .t-pic,.doctor-section .t-skill,.doctor-section .t-intro,.doctor-section .t-career {display: inline-block; vertical-align: middle; width: 0.42rem;height: 0.42rem;background-size: 100% 100%;margin: 0.2rem 0.2rem 0.2rem 0;}
+.doctor-section .t-price {float:right;color:#ff9018;line-height: 0.82rem;margin-right: 0.2rem;}
+.doctor-section .t-more {float:right;margin-top: 0.1rem;background-color: #ff8518;color:#fff;width:1.2rem;line-height: 0.62rem;text-align: center;border-radius: 0.06rem;}
+.doctor-section .footer {text-align: center;margin-bottom: 0.2rem;}
+.doctor-section .footer p {margin-left: 0;}
+.doctor-tag .doctor-heightclr {height:auto;padding: 0.36rem 0.28rem;border-top:none;}
+.doctor-section .alink-full {display: block;height: 100%;width: 100%;}
+
+.switch-button {position: absolute;right:0.3rem;top: 0;padding:0.1rem 0 0.12rem 0.58rem;font-size: 0.25rem;color: #fff;text-shadow:1px 1px 3px #333}
+/*.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 0.9rem 0.26rem;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
+.icon-add {background-position: 0 0;}*/
+.icon-addwrp {text-align: right;position: absolute;margin-top: -0.2rem;right: 0.3rem;}
+/*.icon-edit {background-position: -0.3rem 0;}
+.icon-switch {background-position: -0.6rem 0;width: 0.3rem;}*/
+.edit-info {font-size:0.32rem;color:#a5a5a5;text-align:center;line-height:1rem;}
+.edit-info-text {line-height: 0.42rem;}
+[v-cloak] {display: hidden;}
+
+.icon-add {background: url(../images/icon-add.png) no-repeat;}
+.icon-edit {background: url(../images/icon-edit.png) no-repeat;}
+.icon-add,.icon-edit,.icon-switch {display: inline-block;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;background-size: 100% 100%; object-fit: cover;}
+.icon-switch {background: url(../images/icon-img.png) no-repeat;width: 0.3rem;background-size: 100% 100%;}
