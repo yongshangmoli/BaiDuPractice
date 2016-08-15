@@ -212,7 +212,7 @@ background-size: 100% 100%;margin:0 auto 0.1rem;} */
 /*.disease-part .delete {position:absolute;top:-0.14rem;right:-0.14rem;display: inline-block;height: 0.4rem;width: 0.4rem;border-radius: 0.4rem;background-color: #eb3030;color: #fff;font-size:0.8rem;line-height: 0.28rem;text-align: center;}*/
 .disease-part .delete {position: absolute;top: -0.4rem;right: -0.4rem;display: inline-block;height: 0.9rem;width: 0.9rem;background: url(http://s.pc.qq.com/byb/bkARh1RDCeH32FGdyUGb8xn7dGS75tt4UzVNcU5wdB2eOLPwBI2HJi5LeAL_1Mgw.png);-webkit-background-size: 100% 100%;background-size: 100% 100%;}
 .disease-part .alink {display: block;height: 100%;width: 100%;color: #333;}
-.disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;top: 100%;position: fixed;}
+.disease-surface {display:none;width: 100%;background-color: #fff;font-size: 0.32rem;z-index: 1050;top: 100%;position: absolute;}
 .disease-surface li {list-style: none;padding: 0.34rem 0;margin:0 0.34rem;border-bottom: 1px #f1f1f1 solid;}
 .disease-surface li:last-child {border: none;}
 .disease-surface .active {color: #307fee;background-color: #f4f4f4;margin: 0;padding-left: 0.34rem;}
