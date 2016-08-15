@@ -219,12 +219,18 @@ background-size: 100% 100%;margin:0 auto 0.1rem;} */
 .disease-surface li.active::after {display:inline-block;background: url(http://s.pc.qq.com/byb/C8E79mgD7ILhuvPSVsKPkWNuoPJGag4kDNjjgJKfYTxMZGx6TzibXuD31xr_7x9N.png) no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;content: "";width: 0.32rem;height: 0.26rem;margin-left: 0.4rem;position:absolute;right: 0.34rem;margin-top: 0.1rem;}
 .disease-part .error {color: #eb3030;}
 /*病情描述页的病种选择*/
-.ac-up { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-in 0.3s linear 0s 1 normal forwards;animation: share-in 0.3s linear 0s 1 normal forwards;}
+/* .ac-up { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-in 0.3s linear 0s 1 normal forwards;animation: share-in 0.3s linear 0s 1 normal forwards;}
 @-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);}} 
 @-keyframes share-in {0% {transform: translateY(0);} 100% {transform: translateY(-100%);}} 
 .ac-down { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-out 0.3s ease-out 0s 1 normal forwards;animation: share-out 0.3s ease-out 0s 1 normal forwards;}
 @-webkit-keyframes share-out {0% { -webkit-transform: translateY(-100%);} 100% { -webkit-transform: translateY(0);}} 
-@-keyframes share-out {0% { transform: translateY(-100%);} 100% { transform: translateY(0);}} 
+@-keyframes share-out {0% { transform: translateY(-100%);} 100% { transform: translateY(0);}}  */
+.ac-up { -webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0); -webkit-animation: share-in 0.3s linear 0s 1 normal forwards;animation: share-in 0.3s linear 0s 1 normal forwards;}
+@-webkit-keyframes share-in {0% { -webkit-transform: translateY(0);} 100% { -webkit-transform: translateY(-100%);}} 
+@-keyframes share-in {0% {transform: translate3d(0,0,0);} 100% {transform: translate3d(0,-100%,0);}} 
+.ac-down { -webkit-transform: translateY(0);transform: translateY(0); -webkit-animation: share-out 0.3s ease-out 0s 1 normal forwards;animation: share-out 0.3s ease-out 0s 1 normal forwards;}
+@-webkit-keyframes share-out {0% { -webkit-transform: translate3d(0,-100%,0);} 100% { -webkit-transform: translate3d(0,0,0);}} 
+@-keyframes share-out {0% { transform: translate3d(0,-100%,0);} 100% { transform: translate3d(0,0,0);}}
 .disease-cover {z-index: 0;}
 /*支付成功、失败、咨询过期*/
 .pay-succs,.pay-fail,.ask-expire {font-size: 0.28rem;text-align: center;}/*padding-top: 2.9rem;*/
