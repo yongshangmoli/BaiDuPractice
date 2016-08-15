@@ -61,11 +61,7 @@ a {text-decoration: none;}
 .doctor-section .alink-full {display: block;height: 100%;width: 100%;}
 
 .switch-button {position: absolute;right:0.3rem;top: 0;padding:0.1rem 0 0.12rem 0.58rem;font-size: 0.25rem;color: #fff;text-shadow:1px 1px 3px #333}
-/*.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 0.9rem 0.26rem;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
-.icon-add {background-position: 0 0;}*/
 .icon-addwrp {text-align: right;position: absolute;margin-top: -0.2rem;right: 0.3rem;}
-/*.icon-edit {background-position: -0.3rem 0;}
-.icon-switch {background-position: -0.6rem 0;width: 0.3rem;}*/
 .edit-info {font-size:0.32rem;color:#a5a5a5;text-align:center;line-height:1rem;}
 .edit-info-text {line-height: 0.42rem;}
 [v-cloak] {display: hidden;}
@@ -74,7 +70,7 @@ a {text-decoration: none;}
 .icon-edit {background: url(../images/icon-edit.png) no-repeat;}
 .icon-add,.icon-edit,.icon-switch {display: inline-block;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;background-size: 100% 100%; object-fit: cover;}
 .icon-switch {background: url(../images/icon-img.png) no-repeat;width: 0.3rem;background-size: 100% 100%;} */
-.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 1.6rem 0.4rem;width: 0.4rem;height: 0.4rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
+.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 1.3rem 0.4rem;width: 0.4rem;height: 0.4rem;vertical-align: middle;margin: 0 0.1rem 0 0;}
 .icon-add {background-position: 0rem 0rem;}
 .icon-edit {background-position: -0.4rem 0rem;}
 .icon-switch {background-position: -0.8rem 0rem;width: 0.48rem;}
