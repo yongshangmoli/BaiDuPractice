@@ -63,13 +63,14 @@ function showTraptCover(needEvt) {
           this.style.display = 'none';
           var el = document.querySelector('.alert_tip');
           if(el) {el.style.display = 'none';}
+          unlockScreenHgt();
       });
     }
   }
 }
 
 function hideTraptCover() {
-  // unlockScreenHgt();
+  
   var cover = document.getElementById('tranparent_cover');
   if(cover) {cover.style.display = 'none';}
 }
@@ -105,7 +106,7 @@ function hideLoading() {
     if(cover) {cover.style.display = 'none';}
 }
 
-function alert_msg(msg,className){
+/*function alert_msg(msg,className){
   var className = className || 'alert_tip';
   lockScreenHgt();
   showTraptCover(true);
@@ -127,4 +128,4 @@ function alert_msg(msg,className){
   el.className = className+' active';
 }
 window.Alert = alert;
-window.alert = alert_msg;
+window.alert = alert_msg;*/

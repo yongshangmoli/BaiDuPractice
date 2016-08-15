@@ -49,9 +49,38 @@
         
         <script src="js/zepto.js"></script>
         <script src="js/common.js"></script>
-        <script src="js/fx.js"></script>
         <script>
             (function() {
+
+                function alert_msg(msg,className){
+                  var className = className || 'alert_tip';
+                  lockScreenHgt();
+                  showTraptCover(true);
+                  // function lock(e){e.preventDefault();}
+                  var el = document.querySelector('.'+className);
+                  if(!el) {
+                    el = document.createElement('div');
+                    document.body.appendChild(el);
+                  }
+                  else {
+                    el.style.display = "block";
+                  }
+                  /*el.addEventListener('touchend',function(e){
+                    var target = e.target;
+                    if(target.tagName.toLowerCase() !== 'span') return;
+                    el.style.display = "none";
+                  });*/
+                  el.innerHTML = '<span></span>'+msg || '';
+                  el.className = className+' active';
+                 /* setTimeout(function() {
+                    el.style.display = "none";
+                    unlockScreenHgt();
+                    hideTraptCover();
+                  },2000);*/
+                }
+                window.Alert = alert;
+                window.alert = alert_msg;
+
                 var util = {
                     _cover : $("#cover"),
                     _disease : $("#disease"),
