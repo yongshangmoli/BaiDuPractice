@@ -79,12 +79,11 @@
                 util._cover.on("click",function() {
                     util._disease.addClass("ac-down").removeClass("ac-up");
                     unlockScreenHgt();
-                    util._disease.hide();
-                    util._cover.hide();
-                  /*  setTimeout(function() {
+                    
+                    setTimeout(function() {
                         util._disease.hide();
                         util._cover.hide();
-                    },400);*/
+                    },200);
                 });
                 
                 $("#pay_ask").on("click", function() {
