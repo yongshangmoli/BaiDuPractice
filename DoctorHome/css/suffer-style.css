@@ -70,7 +70,11 @@ a {text-decoration: none;}
 .edit-info-text {line-height: 0.42rem;}
 [v-cloak] {display: hidden;}
 
-.icon-add {background: url(../images/icon-add.png) no-repeat;}
+/* .icon-add {background: url(../images/icon-add.png) no-repeat;}
 .icon-edit {background: url(../images/icon-edit.png) no-repeat;}
 .icon-add,.icon-edit,.icon-switch {display: inline-block;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;background-size: 100% 100%; object-fit: cover;}
-.icon-switch {background: url(../images/icon-img.png) no-repeat;width: 0.3rem;background-size: 100% 100%;}
+.icon-switch {background: url(../images/icon-img.png) no-repeat;width: 0.3rem;background-size: 100% 100%;} */
+.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 1.6rem 0.4rem;width: 0.4rem;height: 0.4rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
+.icon-add {background-position: 0rem 0rem;}
+.icon-edit {background-position: -0.4rem 0rem;}
+.icon-switch {background-position: -0.8rem 0rem;width: 0.48rem;}
