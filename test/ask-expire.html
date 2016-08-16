@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>咨询过期</title>
+<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css"/>
+<script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
+<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+<script>var urlId = 19;</script>
+</head>
+<body>
+<section class="ask-expire" style="height:100%;">
+	<div class="pay-content">
+		<div class="icon"></div>
+		<h1>咨询已过期了</h1>
+		<p>12小时内未追问将失效，可以重新购买服务</p>
+	</div>
+</section>
+<section>
+	<div class="patient-btn">
+		<a id="ask_expire"　href="javascript:void(0);">好的</a>
+	</div>
+</section>
+<script src="js/zepto.js"></script>
+<script src="js/common.js?d=20160721a"></script>
+<script>
+$("#ask_expire").on("click",function() {
+	WeixinJSBridge.call('closeWindow');
+});
+
+(function(){
+	if(window.doctor){
+		return;
+	};
+
+	var doctor={};
+	doctor.count=function(){if (typeof(pgvMain) == 'function') pgvMain()};
+	doctor.loadScript=function(url,callback){
+		var script = document.createElement('script');
+		script.type = "text/javascript";
+		if (script.readyState) {
+			script.onreadystatechange = function() {
+				if (script.readyState == "loaded" || script.readyState == "complete") {
+					script.onreadystatechange = null;
+					if (callback) {
+						callback()
+					}
+				}
+			}
+		} else {
+			script.onload = function() {
+				if (callback) {
+					callback()
+				}
+			}
+		}
+		script.src = url;
+		document.body.appendChild(script)
+	};
+
+	doctor.init=function(){
+		doctor.loadScript('http://pingjs.qq.com/tcss.ping.js',function(){doctor.count()})
+	};
+	window.doctor=doctor;
+	doctor.init();
+})();
+
+</script>
+</body>
+</html>

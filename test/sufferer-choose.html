@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>请填写基本资料</title>
+		<link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
+		<script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="page" class="page greybg">
+			<section class="sufferer-list">
+				<ul id="sufferers" class="whitebg">
+					<li>
+						<div>黄佳佳</div>
+						<div class="boy"></div>
+						<div>31岁</div>
+						<span class="choose"></span>
+					</li>
+					<li>
+						<div>拉德科</div>
+						<div class="girl"></div>
+						<div>31岁</div>
+						<span class="choose"></span>
+					</li>
+				</ul>
+				<div class="addwrapper">
+					<a id="add_sufferer" class="whitebg" href="#"><span class="add"></span>添加患者</a>
+				</div>
+			</section>
+		</div>
+		<div class="patient-btn">
+			<a id="sufferer_next" href="#">下一步</a>
+		</div>
+		
+		<script src="js/zepto.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			(function() {
+				var choices = $("#sufferers li span");
+				var preHlt = "";
+				//设置选中的患者(参数为患者列表的index)
+				var setSufferer = function(index) {
+					preHlt = ($("#sufferers li").eq(index).children().last())[0];
+					preHlt.className = "selected";
+				};
+
+				var choice = 1;
+				setSufferer(choice);
+
+				//患者选择的切换效果
+				choices.on("click",function() {
+					if(this.className === "selected") {
+						if(this === preHlt) {
+							$("#sufferer_next").parent().addClass("no-handle");
+						}
+						this.className = "choose";
+					}
+					else {
+						preHlt.className = "choose";
+						this.className = "selected";
+						preHlt = this;
+						$("#sufferer_next").parent().removeClass("no-handle");
+					}
+				});
+				//添加患者
+				$("#add_sufferer").on("click",function() {
+					window.location.href = "ill-info.html";
+				});
+				//下一步
+				$("#sufferer_next").on("click",function() {
+					if(this.parentNode.className === "patient-btn") {
+						window.location.href = "disease-desc.html";
+					}
+					else {
+						alert("请选择患者");
+					}
+				});
+			})();
+		</script>
+	</body>
+</html>

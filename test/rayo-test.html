@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>向医生提问</title>
+        <link href="css/suffer-style.css?d=20160721" rel="stylesheet" type="text/css" />
+        <script src="js/font-adjust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://s.pc.qq.com/byb/jquery/jquery.min.js"></script>
+        <script src="http://doctor.qq.com/mp/public/admin/scripts/jquery.uploadfile/js/jquery.uploadfile.min.js"></script>
+        <script>var urlId = 5;</script>
+        <style type="text/css">
+        .disease-gap { position: static; }
+        .uploadimg { width: 1.5rem; height: 1.5rem; display: inline-block;  margin-top: 0.21rem;  overflow: hidden;}
+        .ajax-file-upload, .ajax-file-upload:hover { cursor: pointer; text-decoration: none; vertical-align: middle; width: 1.5rem; height: 1.5rem; display: inline-block; font-size: 14px; text-align: center; background-color: #FFF; cursor: pointer;
+            overflow: hidden; position: relative; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANCSURBVHhe7Z3hbtpAEAb9/u8ZRVFkoQghFOUH7bp3dA3EARqV7HhG+tREJReuA+ezd2uGp6enw7V5fX09ZPb7/eH5+fniY5fiOMv5jnFuEht5f39vv+4wPYFLj7kmjrOcfx3Hd+zvEMcZ2s8KDMVCmcTm9VzqEkv2OI7Tn0Os57Emn67rUo/ZMTZ/I7XJLhULIrtULIjsUrEgskvFgsguFQsiu1QsiOxSsSCyS8WCyC4VCyK7VCyI7FKxILJLxYLoBZ2o8AxRsuulHqlPL8FaaIeiWCh2UIDY7XbTYTV8DvFFHHDtoKhP3gi7KwaRXSoWRHapWBDZpWJBZJczsR8fH+0hUpHsUrEgskvFgsguFQsiu1QsiOxSsSCyS8WCyC4VCyK7HF5eXo7fSG26y81m87eDIko+Uh87KOAoFsoqOije3t6m2+lE4msqsw6KmGgccOPAS6TPL2e73ba/ZdHnF90wx5uLRIinO5/d+IpInh/+PDbPL4dInp9iQeT5zS5QKLYu4a7PLZzOxBJ3x31up6ER7vrczjZPiq2LYltoKLaFhmJbaCi2hYZiW2gotoXGolgvUNQmV7DKdFBEReazC/r/KxWqQn3VLVFov1R6e1Sq1HNLiH30O/U0FSjRQaHY64hDxVkHxU9+wi7F19GfY6nTnfgHffQ79ydLDXf9eZYSey99bqehodgWGoptoaHYFhqKbaGh2BYaim2hodgWGoptoaHYFhqKbaGh2BYicS09Ete0h2iHiVIP9f+MflY4oNLbm/C3KrhU8qO+iDN4sUEv+fVlag2U6KCQ64gXbRxWYzku0UEhX5N3xSH3+PEsEd+5dVnd6c5aUCwUxUJRLJRFsX6GbF3CXfd4titWbF0UC0WxUBQLRbFQFAtlUaznsbXppcm47cSxg2ItdUo6q+mgWCuKhWIHBYhZB0UcaPvmqa/PUo9cBDjbFXu6UxfPY6EoFopioSgWimKhKBaKYqEoFopioSgWimKhKBaMHRRg7KCAo1gok1gL7AzicBqxgwJE3hWH3NnNRZYSG6xMfkHcEsdZzneME2PMTne+SiZ/aP+tyTjOeTL3jHOT2M1m037VH+59RTrOcr5jnHEcD78AUY0BRq/kmJIAAAAASUVORK5CYII="); background-size: 1.5rem 1.5rem; }
+        .ajax-file-upload-container { overflow: hidden; float: left;}
+        .ajax-file-upload-statusbar { position: relative; width: 1.5rem; height: 1.5rem; margin: 0.2rem 0.2rem 0 0; float: left;}
+        .ajax-file-upload-statusbar img { display: block; position: absolute; left: 0; top: 0; z-index: 1;}
+        .ajax-file-upload-progress { width: 1.5rem; height: 1.5rem; position: absolute; left: 0; top: 0; z-index: 2;}
+        .ajax-file-upload-bar { height: 0.15rem; margin-top: 1.35rem; background: #9EEA6A; text-indent: -100rem; overflow: hidden; -webkit-transition: all 0.3s ease-in-out 0s; transition: all 0.3s ease-in-out 0s;}
+
+        .disease-part .img-wrapper .ajax-file-upload-error{ display: none; }
+        .ajax-file-upload-filename, .ajax-file-upload-abort, .ajax-file-upload-green, .ajax-file-upload-red { display: none;}
+        .ajax-file-upload-abort, .ajax-file-upload-cancel { display: none; }
+        #img_wrapper img { opacity: 1; -webkit-transition: all 0.3s ease-in-out 0s; transition: all 0.3s ease-in-out 0s; }
+        .delete-btn {position: absolute;top: -0.4rem;right: -0.4rem;display: inline-block;height: 0.9rem;width: 0.9rem;background: url(http://s.pc.qq.com/byb/bkARh1RDCeH32FGdyUGb8xn7dGS75tt4UzVNcU5wdB2eOLPwBI2HJi5LeAL_1Mgw.png);-webkit-background-size: 100% 100%;background-size: 100% 100%; z-index: 2; overflow: hidden; text-indent: -100rem;}
+        .disease-part .img-wrapper img { border: none;}
+        </style>
+
+    </head>
+	<body>
+    	<div id="page" class="page">
+            <!-- disease describe-->
+    		<section>
+                <div class="disease-part">
+                    <a href="#" id="disease_choose" class="alink">
+                        <span>选择病种</span>
+                        <span class="angle-btm"></span>
+    					<span class="disease-slt" id="disease_record">加载中...</span>
+                    </a>
+                </div>
+                <div class="disease-part disease-gap">
+                    <h3>病情描述</h3>
+                    <textarea id="disease_desc" class="detail" name="disease-desc" placeholder="请详细描述您的症状，疾病和身体状况，便于医生能准确为您作出判断."></textarea>
+                    <p id="text_control" class="limit">可输入200字</p>
+                </div>
+    			<div class="disease-part disease-gap" style="padding-bottom: 2rem;">
+                    <h3>图片上传</h3>
+                    <div id="img_wrapper" class="img-wrapper">
+                        <!-- <a href=""><img src="" alt=""></a> -->
+
+
+                        <!--upload test start-->
+                        <!-- <a href="javascript:void(0);">
+                            <div class="delete"></div>
+                            <img id="previewImg1" alt="病情图片1" src="http://img1.gtimg.com/ninja/2/2016/07/ninja146915444384539.jpg">
+                        </a>
+                        <a href="javascript:void(0);">
+                            <div class="delete"></div>
+                            <img id="previewImg2" alt="病情图片2" src="http://img1.gtimg.com/ninja/2/2016/07/ninja146915444384539.jpg">
+                        </a> -->
+                        <!--upload test end-->
+
+
+                        <div class="uploadimg" id="fileuploader"></div>
+
+
+
+                        <!--upload test start-->
+                        <!-- <div class="ajax-file-upload-container">
+                            <div class="ajax-file-upload-statusbar" style="width: 400px;">
+                                <img class="ajax-file-upload-preview" style="width: 100%; height: auto; display: none;">
+                                <div class="ajax-file-upload-filename">1).aaaaaa.gif (9.02MB)</div>
+                                <div class="ajax-file-upload-progress">
+                                    <div class="ajax-file-upload-bar" style="width: 98%; text-align: center;">98%</div>
+                                </div>
+                                <div class="ajax-file-upload-red ajax-file-upload-1469093471762 ajax-file-upload-abort" style="display: block;">取消</div>
+                                <div class="ajax-file-upload-red ajax-file-upload-1469093471762 ajax-file-upload-cancel" style="display: none;">Cancel</div>
+                                <div class="ajax-file-upload-green" style="display: none;">Done</div>
+                                <div class="ajax-file-upload-green" style="display: none;">Download</div>
+                                <div class="ajax-file-upload-red" style="display: none;">Delete</div>
+                            </div>
+                        </div> -->
+                        <!--upload test end-->
+
+
+
+
+                        <a id="upload_img" href="#" style="display:none;">
+                            <span>+</span>
+                            <input type="file" id="btn_file" class="file">
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+		<div class="patient-btn">
+		    <a id="pay_ask" href="javascript:void(0);">立即支付</a>
+		</div>
+
+        <div id="cover" class="doctor-cover disease-cover" style="display:none;"></div>
+		<div id="disease" class="disease-surface">
+			<ul id="disease_list">
+				<li class="active">加载中...</li>
+			</ul>
+		</div>
+
+        <script src="js/zepto.js"></script>
+        <script type="text/javascript">
+        Array.prototype.indexOf = function(val) { for (var i = 0; i < this.length; i++) { if (this[i] == val) return i; } return -1; };
+        Array.prototype.remove = function(val) { var index = this.indexOf(val); if (index > -1) { this.splice(index, 1); } };
+    	var form = {};
+    	form.ifSubmit = true; //是否提交
+    	form.ifUploading = false; //是否正在上传图片
+        form.images = new Array();
+        var clickPayBtn = function() {
+            if(!form.ifSubmit){
+                if(!form.ifUploading){
+                    var describe = util._diseaseDesc.val().trim();
+                    var _checkSucs = function() {
+                        //alert("util.diseaseKind: " + util.diseaseKind);
+                        util.diseaseDesc = describe;
+
+                        var imgObj = { "images": form.images };
+                        
+                        $.ajax({
+                            type: "POST",
+                            url: tencareConfig.disease_info_url,
+                            data: {
+                                'disease_type': util.diseaseKind,
+                                'disease_desc': util.diseaseDesc,
+                                'image': JSON.stringify(imgObj)
+                            },
+                            success: function(ret){
+                                if(ret.code == 0 ) {
+                                    form.pid = ret.patient_id;
+                                    form.did = ret.disease_id;
+                                    doPay(ret.patient_id, ret.disease_id);
+                                } else if (ret.code == 302) {
+                                    // 跳转到授权
+                                    //alert(ret.url);
+                                    window.location.replace(ret.url);
+                                } else {
+
+                                }
+                                
+                            },
+                            dataType: "json"
+                        });
+                        
+
+                        //window.location.href = "pay-succs.html";
+                    };
+
+                    if(describe) {
+                        _checkSucs();
+                        $("#pay_ask").html("提交中...");
+                        $("#pay_ask").parent().addClass("no-handle");
+                        form.ifSubmit = true;
+                    }
+                    else {
+                        alert("请填写病情描述");
+                    }
+                }else{
+                    //alert("图片上传尚未结束，请耐心等待");
+                }
+            }else{
+                alert("数据更新中，请稍后再操作");
+            }
+/*var imgObj = { "images": form.images };
+console.log(imgObj);*/
+        };
+        var uploadMedia = function(){
+            jQuery("#fileuploader").uploadFile({
+                url: tencareConfig.upload_media_url,
+                //url: "http://doctor.qq.com/asapi/app/TencarePay3/uploadMedia",
+                fileName:"upfile",
+                showProgress: true,
+                uploadStr: "",
+                dragDrop: false,
+                showCancel: 0,
+                showAbort: 0,
+                sequential: true,
+                sequentialCount: 8,
+                maxFileSize: 5242880,
+                maxFileCount: 50,
+                returnType: 'json',
+                allowedTypes: 'jpg,jpeg,png,gif',
+                showStatusAfterSuccess: true,
+                showDelete: true,
+                statusBarWidth: '1.5rem',
+                showPreview: true,
+                previewHeight: "100%",
+                previewWidth: "100%",
+                showQueueDiv: "img_wrapper",
+                customProgressBar: function(obj,s){
+                    this.statusbar = $("<div class='ajax-file-upload-statusbar'></div>");
+                    this.preview = $("<img class='ajax-file-upload-preview' />").width(s.previewWidth).height(s.previewHeight).appendTo(this.statusbar).hide();
+                    this.filename = $("<div class='ajax-file-upload-filename'></div>").appendTo(this.statusbar);
+                    this.progressDiv = $("<div class='ajax-file-upload-progress'>").appendTo(this.statusbar).hide();
+                    this.progressbar = $("<div class='ajax-file-upload-bar'></div>").appendTo(this.progressDiv);
+                    this.abort = $("<div>" + s.abortStr + "</div>").appendTo(this.statusbar).hide();
+                    this.cancel = $("<div>" + s.cancelStr + "</div>").appendTo(this.statusbar).hide();
+                    this.done = $("<div>" + s.doneStr + "</div>").appendTo(this.statusbar).hide();
+                    this.download = $("<div>" + s.downloadStr + "</div>").appendTo(this.statusbar).hide();
+                    this.del = $("<div class=\"delete-btn\">" + s.deletelStr + "</div>").appendTo(this.statusbar).hide();
+                },
+                onSubmit: function(){
+		        	// var scrHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		        	// console.log(scrHeight);
+		        	// $(".ajax-file-upload-progress").css("height", scrHeight + "px");
+		        	form.ifUploading = true;
+                    $("#pay_ask").unbind("click", clickPayBtn);
+                    //$(".ajax-file-upload-container").css("display", "inline-block");
+                    // showTraptCover();//临时测试
+                    $("#pay_ask").html("图片上传中...");
+                    $("#pay_ask").parent().addClass("no-handle");
+                },
+                onSuccess: function(files,data,xhr,pd){
+                    //hideTraptCover();//临时测试
+                    if(data.code == 0){
+                        form.images.push(data.url);
+                        
+                    }else{
+                        // $(".ajax-file-upload-container").css("display", "none");
+                    	alert("上传图片出错，图片大小不能超过5MB");
+                    }
+                },
+                afterUploadAll: function(){
+                    $("#pay_ask").bind("click", clickPayBtn);
+                    $("#pay_ask").html("立即支付" + window.payPrice + "元");
+                    $("#pay_ask").parent().removeClass("no-handle");
+                    form.ifUploading = false;
+                    $(".ajax-file-upload-bar").css("display", "none");
+                },
+                deleteCallback: function(e){
+                    if(e.url){
+                        form.images.remove(e.url);
+                        console.log(form.images);
+                    }
+                }
+            });
+        };
+        </script>
+        <script src="js/common.js?d=20160727a"></script>
+        <script src="js/fx.js"></script>
+        <script>
+            //透明蒙层
+            function showTraptCover() {
+              lockScreenHgt();
+              var cover = document.querySelector('.tranparent-cover');
+              if(cover) {
+                cover.style.display = 'block';
+              }
+              else {
+                cover = document.createElement('div');
+                cover.className = 'tranparent-cover';
+                cover.id = 'tranparent_cover';
+                document.body.appendChild(cover);
+              }
+            }
+
+            function hideTraptCover() {
+              unlockScreenHgt();
+              var cover = document.getElementById('tranparent_cover');
+              if(cover) {cover.style.display = 'none';}
+            }
+
+        	var oid = tencarePayUtil.getParameterFromQueryString("oid")==null?"":tencarePayUtil.getParameterFromQueryString("oid");
+            var doctorId = tencarePayUtil.getParameterFromQueryString("doctorid")==null?"":tencarePayUtil.getParameterFromQueryString("doctorid");
+
+            //支付
+            var pay_config = pay_config || {
+                "appId": "",
+                "timeStamp": "",
+                "nonceStr": "",
+                "package": "",
+                "signType": "",
+                "paySign": ""
+            },
+            pay_callback = function(res){
+                if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+                    //alert("支付成功");
+                    window.location.replace("pay-succs.html?oid=" + oid + "&doctorid=" + doctorId);
+                }  else { 
+                    //alert("支付失败");
+                    window.location.replace("pay-fail.html?oid=" + oid + "&doctorid=" + doctorId + "&pid=" + form.pid + "&did=" + form.did);
+                }
+            },
+            onBridgeReady = function(){
+                WeixinJSBridge.invoke('getBrandWCPayRequest', pay_config, pay_callback);
+            };
+            var doPay = function(patient_id, disease_id){
+
+                //alert("PatientID:" + patient_id + " DiseaseID:" + disease_id);
+
+                jQuery.ajax({
+                    url: tencareConfig.pay_config_url,
+                    type: "POST",
+                    dataType: 'json',
+                    cache: false,
+                    data: {
+                        patient_id: patient_id,
+                        disease_id: disease_id,
+                        doctor_id: doctorId
+                    },
+                    success: function(ret){
+                        if(ret.code == 0 ) {
+                            pay_config = ret.data;
+                            pay_config.timeStamp = ret.data.timeStamp.toString();
+                            onBridgeReady();
+                        } else if (ret.code == 302) {
+                            // 跳转到授权
+                            window.location.replace(ret.url);
+                        } else {
+
+                        }
+                    },
+                    error: function(){
+                        alert("Network error");
+                    }
+                });
+            }
+
+            $("#disease_choose").one("click",function() {
+				util._diseaseRecord.css("color","#666");
+			});
+
+            var util = {
+                _cover : $("#cover"),
+                _disease : $("#disease"),
+                _diseasesList : $("#disease_list li"),
+                _diseaseRecord : $("#disease_record"),
+                _diseaseDesc : $("#disease_desc"),
+                diseaseKind : $("#disease_list li.active").attr("value"), //选择的是哪种疾病
+				diseaseDesc : "",//疾病的描述
+				diseaseHeight : 0,
+				isFilled : false,
+            };
+            $("#disease_choose").on("click", function() {
+                util._cover.show();
+                util._disease.show().addClass("ac-up").removeClass("ac-down");
+                lockScreenHgt();
+            });
+            util._diseasesList.on("click", function() {
+                $(this).addClass("active").siblings().removeClass("active");
+                util._diseaseRecord.html($(this).html());
+                util._cover.trigger("click");
+                util.diseaseKind = $(this).attr("value");
+            });
+            util._cover.on("click",function() {
+                util._disease.addClass("ac-down").removeClass("ac-up");
+                unlockScreenHgt();
+                setTimeout(function() {
+                    util._disease.hide();
+                    util._cover.hide();
+                },400);
+            });
+			util._diseaseDesc.one("focus",function() {
+				this.value = "";
+				util.isFilled = true;
+				$("#text_control").text("还能输入200字");
+			});
+
+            $("#pay_ask").bind("click", clickPayBtn);
+
+			util._diseaseDesc.on("input",function() {
+				var value = $(this).val();
+				var textLen = value.length;
+				if(textLen >= 200) {
+					$(this).val(value.slice(0,200));
+					$("#text_control").text("还能输入0字");
+				}
+				else {
+					$("#text_control").text("还能输入"+(200-textLen)+"字");
+				}
+			});
+
+            //拉取医生相关信息
+            var configTimer = null;
+            var getConfig = function(){
+                if(tencareConfig.pay_config_url){
+                    clearTimeout(configTimer);
+                    configTimer = null;
+                    jQuery.ajax({
+                        url: tencareConfig.disease_kind_url,
+                        type: "POST",
+                        dataType: 'json',
+                        cache: false,
+                        data: {
+                            doctor_id : doctorId
+                        },
+                        success: function(ret){
+                            if(ret.code == 0 ) {
+                                var disHtml = '';
+                                var disArr = ret.body;
+                                //alert(disArr.length);
+                                if(disArr.length > 0){
+                                    for(var i=0; i<disArr.length; i++){
+                                        if(i==0){
+                                            disHtml += '<li class="active" value="' + disArr[i] + '">' + disArr[i] + '</li>';
+                                            $('#disease_record').html(disArr[i]);
+                                            util.diseaseKind = disArr[i];
+                                        }else{
+                                            disHtml += '<li value="' + disArr[i] + '">' + disArr[i] + '</li>';
+                                        }
+                                    }
+                                    $('#disease_list').html(disHtml);
+                                    util._diseasesList = $("#disease_list li");
+                                    //alert(util._diseasesList.length);
+                                    util._diseasesList.on("click", function() {
+                                        $(this).addClass("active").siblings().removeClass("active");
+                                        util._diseaseRecord.html($(this).html());
+                                        util._cover.trigger("click");
+                                        util.diseaseKind = $(this).attr("value");
+                                    });
+                                    form.ifSubmit = false;
+                                }
+                            }else{
+                                //alert("病情种类获取失败");
+                            }
+                        },
+                        error: function(){
+                            alert("Network error");
+                        }
+                    });
+                    jQuery.ajax({
+                        url: tencareConfig.doctor_price_url,
+                        type: "POST",
+                        dataType: 'json',
+                        cache: false,
+                        data: {
+                            doctor_id : doctorId
+                        },
+                        success: function(ret){
+                            window.payPrice = ret.body/100;
+                            if(ret.code == 0 ) {
+                                $('#pay_ask').html('立即支付' + ret.body/100 + '元');
+                            }else{
+                                //alert("咨询价格获取失败");
+                            }
+                        },
+                        error: function(){
+                            alert("Network error");
+                        }
+                    });
+                }else{
+                    configTimer = setTimeout(getConfig, 200);
+                }
+            };
+            getConfig();
+
+            //照片上传
+            var imgCount = 0;
+            // 创建图片
+            var createImgWrp = function() {
+                var a = document.createElement("a");
+                a.href = "javascript:void(0);";
+                var img = document.createElement("img");
+                img.id = "previewImg" + (imgCount++);
+                img.alt = "病情图片" + imgCount;
+                var div = document.createElement("div");
+                div.className = "delete";
+                //div.innerHTML = "-";
+                $(div).on("click",function() {
+                	//console.log($(this).parent());
+                    $(this).parent().remove();
+                });
+                a.appendChild(div);
+                a.appendChild(img);
+                return [a,img];
+            };
+            //添加照片预览
+            /*
+            $("#btn_file").change(function() {
+                var $file = $(this),fileObj = $file[0],windowURL = window.URL || window.webkitURL,dataURL;
+                if(fileObj && fileObj.files && fileObj.files[0]){
+					if(imgCount > 50) {
+						alert("上传照片不可大于50张");
+						return;
+					}
+					else {
+						var temp = createImgWrp(),$img=$(temp[1]);
+						dataURL = windowURL.createObjectURL(fileObj.files[0]);
+						$img.attr('src',dataURL);
+						$("#img_wrapper").children().first().before($(temp[0]));
+					}
+                }else{
+                    dataURL = $file.val();
+                    if(dataURL.toString().indexOf("blob") > -1) {
+                        var imgObj = $("#preview");
+                        imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                        imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+                    }
+                }
+            });
+            */
+
+            window.addImg = function(url){
+            	var temp = createImgWrp(),$img=$(temp[1]);
+            	$img.attr('src', url);
+            	$("#img_wrapper").children().first().before($(temp[0]));
+                $img.css('opacity', '1');
+            }
+        </script>
+    </body>
+</html>
