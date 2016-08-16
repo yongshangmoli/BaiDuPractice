@@ -42,7 +42,7 @@ a {text-decoration: none;}
 .doctor-section .t-skill {background: url(http://s.pc.qq.com/byb/lbA76vcYcorj1G6Nt0_VFrrt6pr_OF5CWDp7yYjBzzcGF-dnmY3RP-RQV1ATa3Qc.png) no-repeat;}
 .doctor-section .t-intro {background: url(http://s.pc.qq.com/byb/wqs4nh_68UWWuGLRafjEscTXtYn8PKGC1XUjSAw7f2saitHunvbe_sZECzJalE-X.png) no-repeat;}
 .doctor-section .t-career {background: url(http://s.pc.qq.com/byb/Ed1sdo8mgS23axPtVMD8QRBeWv-LFO7EssrOfmbiVx043UTKSbXN-V0lwUSmoV5M.png) no-repeat;}
-.doctor-section .t-edit,.team-section .t-edit  {float: right;}
+.doctor-section .t-edit,.team-section .t-edit  {float: right;margin-top:0.2rem;}
 .team-section .t-edit {margin-top: -0.6rem;}
 .doctor-section .t-edit a {display: inline-block;height: 100%;width: 100%;}
 .doctor-section .t-edit img,.team-section .t-edit img { width: 0.3rem;height: 0.3rem;vertical-align: middle;margin: 0 0.2rem 0 0;}
