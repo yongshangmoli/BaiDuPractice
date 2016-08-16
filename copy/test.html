@@ -4,20 +4,41 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>ZeroClipboard复制功能简单测试</title>
     <script type="text/javascript" src="http://s.pc.qq.com/byb/jquery/jquery-1.11.3.min.js"></script>
-<<<<<<< HEAD
-    <script type="text/javascript" src="ZeroClipboard.min.js"></script>
-=======
-    <script type="text/javascript" src="https://cdn.bootcss.com/zeroclipboard/2.1.6/ZeroClipboard.min.js" ></script>
->>>>>>> 4dc0009d0a57d257b9e9a107d15178b763605552
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.Core.min.js" ></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js" ></script>
 </head>
 <body>
-   <textarea id="content" rows="10" cols="60">这里是需要复制的内容</textarea>
-    <input id="copy" type="button" data-clipboard-target="content" value="复制">
+   <!-- <textarea id="content" rows="10" cols="60">这里是需要复制的内容</textarea>
+    <input id="copy" type="button" data-clipboard-target="content" value="复制"> -->
+    <button id="text-to-copy" data-clipboard-text="Click To Copy!">Click To Copy</button>
     <script type="text/javascript">
-        
-$(document).ready(function(){
-  var clip = new ZeroClipboard( document.getElementById("copy") );
-});
+        /*$(document).ready(function(){
+            // 全局设置
+            ZeroClipboard.setDefaults({
+              moviePath: 'ZeroClipboard.swf'
+            });
+
+            // 参数中设置
+            var clip=new ZeroClipboard(document.getElementById("copy"), {
+              moviePath: 'ZeroClipboard.swf'
+            });
+          var clip = new ZeroClipboard( document.getElementById("copy") );
+          console.log(1);
+        });*/
+        var clientText = new ZeroClipboard( $("#text-to-copy"), {
+            moviePath: "http://www.paulund.co.uk/playground/demo/zeroclipboard-demo/zeroclipboard/ZeroClipboard.swf",
+            debug: false
+        } );
+
+        clientText.on( "load", function(clientText)
+        {
+            $('#flash-loaded').fadeIn();
+
+            clientText.on( "complete", function(clientText, args) {
+                clientText.setText( args.text );
+                $('#text-to-copy-text').fadeIn();
+            } );
+        } );
     </script>
 </body>
 </html>
