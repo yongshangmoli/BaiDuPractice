@@ -18,7 +18,7 @@
 	            <div class="head-icon">
 	                <img src="http://s.pc.qq.com/byb/gBe0AVKTV27NV6dTPHs-vBHAHfSkWvlg5rS82VeMYXZZMDwCw7ea2C3I_ztQvNd8.png" v-touch:tap="edit" alt="医生个人的照片">
 	            </div>
-	            <h1 id="name" v-touch:tap="edit">{{ name }}<span class="icon-edit-o"></span></h1>
+	            <h1 id="name" v-touch:tap="edit">{{ name }}<span class="dctlist-authen"></span></h1>
 	            <p id="hospital" v-touch:tap="edit">{{ hospital }} {{title}}</p>
 	            <p id="working_age" v-touch:tap="edit">从医{{ working_age }}年</p>
 	            <div id="switch" v-touch:tap="switch" class="switch-button"><span class="icon-switch"></span>切换大图模式</div>
@@ -27,7 +27,7 @@
 	        <section v-else class="doctor-banner">
 				<img src="http://s.pc.qq.com/byb/A4URuAevRmbn-DOBLJ3YIxcROl-RxrcbG_GYw8Zr61T3zooy7ox4oVrakiF6c7kX.jpg?d=20160715" v-touch:tap="edit" alt="医生个人的照片">
 				<div class="intro">
-					<h2 id="name" v-touch:tap="edit">{{ name }}<span class="icon-edit-o"></span></h2>
+					<h2 id="name" v-touch:tap="edit">{{ name }}<span class="dctlist-authen"></span></h2>
 					<p id="hospital" v-touch:tap="edit">{{ hospital }}&nbsp;&nbsp;{{title}}</p>
 					<p id="working_age" v-touch:tap="edit">从医{{ working_age }}年</p>
 				</div>
@@ -54,7 +54,7 @@
 					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span>
 				</h3>
 				<p>{{ expert_at }}</p>
-				<h3 class="edit-info edit-info-text" >包含擅长的疾病及治疗方法等</h3>
+				<h3 class="edit-info edit-info-text" style="display:none;">包含擅长的疾病及治疗方法等</h3>
 			</section>
 			<!-- doctor detail-->
 			<section id="introduction" v-touch:tap="edit" class="doctor-section doctor-detail">
@@ -64,7 +64,7 @@
 					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span>
 				</h3>
 				<p>{{ introduction }}</p>
-				<h3 class="edit-info edit-info-text" >包含学历信息，学术信息、获奖荣誉信息等</h3>
+				<h3 class="edit-info edit-info-text" style="display:none;">包含学历信息，学术信息、获奖荣誉信息等</h3>
 			</section>
 			<!--  doctor experience-->
 			<section id="history" v-touch:tap="edit" class="doctor-section">
@@ -80,7 +80,7 @@
 						</li>
 					</ul>
 				</div>
-				<h3 class="edit-info edit-info-text" >请填写现任职及历史任职信息</h3>
+				<h3 class="edit-info edit-info-text" style="display:none;">请填写现任职及历史任职信息</h3>
 			</section>
 			<!-- doctor code to scan -->
 			<section class="doctor-section">
