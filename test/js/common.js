@@ -77,8 +77,7 @@ function alert_msg(msg,className){
     document.body.appendChild(el);
   }
   else {
-    // el.style.display = "block";
-    $(el).fadeIn('slow');
+    el.style.display = "block";
   }
   document.addEventListener('touchstart',lock);
   el.addEventListener('touchend',function(e){
