@@ -65,18 +65,18 @@
                   else {
                     el.style.display = "block";
                   }
-                  /*el.addEventListener('touchend',function(e){
+                  el.addEventListener('touchend',function(e){
                     var target = e.target;
                     if(target.tagName.toLowerCase() !== 'span') return;
                     el.style.display = "none";
-                  });*/
+                  });
                   el.innerHTML = '<span></span>'+msg || '';
                   el.className = className+' active';
-                 /* setTimeout(function() {
+                  setTimeout(function() {
                     el.style.display = "none";
                     unlockScreenHgt();
                     hideTraptCover();
-                  },2000);*/
+                  },2000);
                 }
                 window.Alert = alert;
                 window.alert = alert_msg;
@@ -95,8 +95,10 @@
         			util._diseaseRecord.css("color","#666");
         		});
                 $("#disease_choose").on("click", function() {
-        	        lockScreenHgt();
-                    util._cover.show();
+        	   /*     lockScreenHgt();
+                    util._cover.show();*/
+                    lockScreenHgt();
+                    showTraptCover(true);
                     util._disease.show().addClass("ac-up").removeClass("ac-down");
                 });
                 util._diseasesList.on("click", function() {
@@ -107,11 +109,12 @@
                 });
                 util._cover.on("click",function() {
                     util._disease.addClass("ac-down").removeClass("ac-up");
-                    unlockScreenHgt();
-                    
+                    //unlockScreenHgt();
                     setTimeout(function() {
                         util._disease.hide();
-                        util._cover.hide();
+                        // util._cover.hide();
+                        unlockScreenHgt();
+                         hideTraptCover();
                     },300);
                 });
                 

@@ -5,7 +5,7 @@ a {text-decoration: none;}
 a,button,input,textarea,div,p {-webkit-tap-highlight-color: rgba(0,0,0,0);}
 ::-webkit-datetime-edit-fields-wrapper { background-color: transparent;}
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #999;}  
-.alert_tip {position: fixed;text-align: center;top: 50%;left: 50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);max-width: 75%;min-width: 50%;border-radius: 10px;font-size: 0.32rem;line-height: 0.4rem;padding:0.5rem;/* background-color: #6B6B6B; */background-color: rgba(107,107,107,0.95);color: #fff;z-index: 99;box-shadow: 0 0 8px 3px #fff;}
+.alert_tip {position: absolute;text-align: center;top: 50%;left: 50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);max-width: 75%;min-width: 50%;border-radius: 10px;font-size: 0.32rem;line-height: 0.4rem;padding:0.5rem;/* background-color: #6B6B6B; */background-color: rgba(107,107,107,0.95);color: #fff;z-index: 99;box-shadow: 0 0 8px 3px #fff;}
 .alert_tip.alert_tip_qrcode {position: absolute;padding: 0;max-width: none;max-height: none;}
 .alert_tip.active {display: block;}
 .alert_tip span{position: absolute;width: 30px;height: 30px;top: 0px;right: 0;border-radius: 5px;opascity: 0.9;}
@@ -18,8 +18,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #9
 .loading:after{content: '';position: absolute;top:0;left: 0;right: 0;bottom: 0;margin: auto;width: 50%;height: 50%;border-radius: 50%;-webkit-box-sizing: border-box;box-sizing: border-box;border: solid 0.1rem #b1b1b2;border-top-color: #eaeaec;-webkit-animation: spin 1s infinite linear;animation: spin 1s infinite linear;}
 @-webkit-keyframes spin{100% {-webkit-transform: rotate(360deg);}}
 @-keyframes spin{100% {transform: rotate(360deg);}}
+<<<<<<< HEAD
 .hide-height {position: relative;}
 .hide-height, .hide-height body {height:100%;overflow:hidden;}
+=======
+.hide-height {position:relative;}
+.hide-height,.hide-height body {height:100%;overflow:hidden;}
+>>>>>>> 79469bb6349e6a166f06250a0b8b325ac72f3715
 .more-margin {margin-bottom: 0.5rem;}
 
 .whitebg {background-color: #fff;}
