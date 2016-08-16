@@ -77,7 +77,8 @@ function alert_msg(msg,className){
     document.body.appendChild(el);
   }
   else {
-    el.style.display = "block";
+    // el.style.display = "block";
+    $(el).fadeIn('slow');
   }
   document.addEventListener('touchstart',lock);
   el.addEventListener('touchend',function(e){
@@ -90,7 +91,8 @@ function alert_msg(msg,className){
   el.innerHTML = '<span></span>'+msg || '';
   el.className = className+' active';
   var timer = setTimeout(function() {
-    el.style.display = "none";
+    // el.style.display = "none";
+    $(el).fadeOut('slow');
     document.removeEventListener('touchstart',lock);
     clearTimeout(timer);
   },2000);
