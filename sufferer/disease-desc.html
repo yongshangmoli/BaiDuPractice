@@ -109,10 +109,11 @@
                 });
                 util._cover.on("click",function() {
                     util._disease.addClass("ac-down").removeClass("ac-up");
-                    unlockScreenHgt();
+                    //unlockScreenHgt();
                     setTimeout(function() {
                         util._disease.hide();
                         // util._cover.hide();
+                        unlockScreenHgt();
                          hideTraptCover();
                     },300);
                 });
