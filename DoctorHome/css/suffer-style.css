@@ -32,7 +32,7 @@ a {text-decoration: none;}
 .doctor-banner .intro h2 {color: #fff;}
 .doctor-banner .intro h2,.doctor-banner .intro p {padding-left:0.32rem;}
 .doctor-section {/*border-top: 0.1rem #f1f1f1 solid;*/border-top: 0.28rem #f1f1f1 solid;padding: 0.28rem;font-size: 0.28rem;background-color:#fff;}
-.doctor-section p {margin-left: 0.7rem;color: #666;}
+.doctor-section p {margin-left: 0.7rem;color: #666;word-wrap:break-word;word-break:break-all;}
 .doctor-section h4 {margin: 0.1rem 0 0.1rem 0.7rem;}
 .doctor-section li {list-style: none;margin-bottom: 0.2rem;margin-left: 1rem;margin-top: 0.2rem;}
 .doctor-section li p {padding: 0.04rem 0;}
@@ -62,15 +62,16 @@ a {text-decoration: none;}
 
 .switch-button {position: absolute;right:0.3rem;top: 0;padding:0.1rem 0 0.12rem 0.58rem;font-size: 0.25rem;color: #fff;text-shadow:1px 1px 3px #333}
 .icon-addwrp {text-align: right;position: absolute;margin-top: -0.2rem;right: 0.3rem;}
-.edit-info {font-size:0.32rem;color:#a5a5a5;text-align:center;line-height:1rem;}
-.edit-info-text {line-height: 0.42rem;}
+.edit-info {font-size:0.32rem;color:#a5a5a5;line-height:1rem;}
+.edit-info-text {line-height: 0.42rem;margin-left: 0.7rem;}
 [v-cloak] {display: hidden;}
 
 /* .icon-add {background: url(../images/icon-add.png) no-repeat;}
 .icon-edit {background: url(../images/icon-edit.png) no-repeat;}
 .icon-add,.icon-edit,.icon-switch {display: inline-block;width: 0.26rem;height: 0.26rem;vertical-align: middle;margin: 0 0.2rem 0 0;background-size: 100% 100%; object-fit: cover;}
 .icon-switch {background: url(../images/icon-img.png) no-repeat;width: 0.3rem;background-size: 100% 100%;} */
-.icon-add,.icon-edit,.icon-switch {background: url(../images/icon-set.png);display: inline-block;background-size: 1.3rem 0.4rem;width: 0.4rem;height: 0.4rem;vertical-align: middle;margin: 0 0.1rem 0 0;}
+.icon-add,.icon-edit,.icon-switch,.icon-edit-o {background: url(../images/icon-set.png);display: inline-block;background-size: 1.7rem 0.4rem;width: 0.4rem;height: 0.4rem;vertical-align: middle;margin: 0 0.1rem 0 0;}
 .icon-add {background-position: 0rem 0rem;}
 .icon-edit {background-position: -0.4rem 0rem;}
-.icon-switch {background-position: -0.8rem 0rem;width: 0.48rem;}
+.icon-switch {background-position: -0.8rem 0rem;width: 0.384rem;}
+.icon-edit-o {background-position: -1.2rem 0rem;margin-left: 2px;}

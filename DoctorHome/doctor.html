@@ -18,7 +18,7 @@
 	            <div class="head-icon">
 	                <img src="http://s.pc.qq.com/byb/gBe0AVKTV27NV6dTPHs-vBHAHfSkWvlg5rS82VeMYXZZMDwCw7ea2C3I_ztQvNd8.png" v-touch:tap="edit" alt="医生个人的照片">
 	            </div>
-	            <h1 id="name" v-touch:tap="edit">{{ name }}<span class="dctlist-authen"></span></h1>
+	            <h1 id="name" v-touch:tap="edit">{{ name }}<span class="icon-edit-o"></span></h1>
 	            <p id="hospital" v-touch:tap="edit">{{ hospital }} {{title}}</p>
 	            <p id="working_age" v-touch:tap="edit">从医{{ working_age }}年</p>
 	            <div id="switch" v-touch:tap="switch" class="switch-button"><span class="icon-switch"></span>切换大图模式</div>
@@ -27,7 +27,7 @@
 	        <section v-else class="doctor-banner">
 				<img src="http://s.pc.qq.com/byb/A4URuAevRmbn-DOBLJ3YIxcROl-RxrcbG_GYw8Zr61T3zooy7ox4oVrakiF6c7kX.jpg?d=20160715" v-touch:tap="edit" alt="医生个人的照片">
 				<div class="intro">
-					<h2 id="name" v-touch:tap="edit">{{ name }}<span class="dctlist-authen"></span></h2>
+					<h2 id="name" v-touch:tap="edit">{{ name }}<span class="icon-edit-o"></span></h2>
 					<p id="hospital" v-touch:tap="edit">{{ hospital }}&nbsp;&nbsp;{{title}}</p>
 					<p id="working_age" v-touch:tap="edit">从医{{ working_age }}年</p>
 				</div>
@@ -37,11 +37,13 @@
 			<!-- doctor tag introduce -->
 			<section id="tags" v-touch:tap="edit" class="team-section doctor-tag">
 				<div class="tag doctor-heightclr">
-					<div class="icon-addwrp"><span class="t-edit"><a href="javascript:void(0);"><span class="icon-add"></span><span class="title right">添加</span></a></span></div>
+					<div class="icon-addwrp"><span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span></div>
 					<ul class="team-clear">
 						<li v-for="tag in tags">{{ tag }}</li>
 					</ul>
-					<h3 class="edit-info" style="display:none;">暂未添加擅长病种</h3>
+					<ul style="display:none;">
+						<li>请设置病种</li>
+					</ul>
 				</div>
 			</section>
 			<!-- doctor skill -->
@@ -49,36 +51,36 @@
 				<h3>
 					<span class="t-skill"></span>
 					<span class="title">擅长</span>
-					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span><span class="title right">填写</span></a></span>
+					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span>
 				</h3>
 				<p>{{ expert_at }}</p>
-				<h3 class="edit-info edit-info-text" style="display:none;">暂未填写擅长描述</h3>
+				<h3 class="edit-info edit-info-text" >包含擅长的疾病及治疗方法等</h3>
 			</section>
 			<!-- doctor detail-->
 			<section id="introduction" v-touch:tap="edit" class="doctor-section doctor-detail">
 				<h3>
 					<span class="t-intro"></span>
 					<span class="title">简介</span>
-					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span><span class="title right">填写</span></a></span>
+					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span>
 				</h3>
 				<p>{{ introduction }}</p>
-				<h3 class="edit-info edit-info-text" style="display:none;">暂未填写简介</h3>
+				<h3 class="edit-info edit-info-text" >包含学历信息，学术信息、获奖荣誉信息等</h3>
 			</section>
 			<!--  doctor experience-->
 			<section id="history" v-touch:tap="edit" class="doctor-section">
 				<h3>
 					<span class="t-career"></span>
 					<span class="title">执业机构</span>
-					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span><span class="title right">填写</span></a></span>
+					<span class="t-edit"><a href="javascript:void(0);"><span class="icon-edit"></span></a></span>
 				</h3>
-			<!-- 	<div class="career-wrpr">
-				<ul class="career">
-					<li v-for="item in history">
-						<p>{{item.hospital}} / {{item.title}}</p>
-					</li>
-				</ul>style="display:none;"
-			</div> -->
-				<h3 class="edit-info edit-info-text" >暂未填写执业经历</h3>
+				<div class="career-wrpr">
+					<ul class="career" >
+						<li v-for="item in history">
+							<p>{{item.hospital}} / {{item.title}}</p>
+						</li>
+					</ul>
+				</div>
+				<h3 class="edit-info edit-info-text" >请填写现任职及历史任职信息</h3>
 			</section>
 			<!-- doctor code to scan -->
 			<section class="doctor-section">
