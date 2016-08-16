@@ -281,6 +281,6 @@ background-size: 100% 100%;margin:0 auto 0.1rem;} */
 .sufferer-list .addwrapper a {color: #307fee;}
 .sufferer-list a {border-bottom: 1px #e8e9e9 solid;display:inline-block;width: 100%;height: 100%;font-size: 0.32rem;}
 
-.tranparent-cover {/*background:rgba(255,255,255,0);*/background:black;height: 100%;width: 100%;position: fixed;top: 0;top: 0;bottom:0;left:0;right:0;z-index: 1000;}
+.tranparent-cover {background:rgba(255,255,255,0);height: 100%;width: 100%;position: fixed;top: 0;top: 0;bottom:0;left:0;right:0;z-index: 1000;}
 .no-handle {background-color: #999;}
 .check-error {color: red;}
