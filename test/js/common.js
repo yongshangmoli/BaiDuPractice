@@ -77,7 +77,8 @@ function alert_msg(msg,className){
     document.body.appendChild(el);
   }
   else {
-    el.style.display = "block";
+    // el.style.display = "block";
+    $(el).fadeIn('slow');
   }
   document.addEventListener('touchstart',lock);
   el.addEventListener('touchend',function(e){
@@ -99,7 +100,7 @@ function alert_msg(msg,className){
 
 window.Alert = alert;
 window.alert = alert_msg;
-/*//lockScreen
+//lockScreen
 var lockScreen = {
   _windowH : window.innerHeight,
   _page : document.getElementById("page"),
@@ -113,18 +114,7 @@ function unlockScreenHgt() {
   // lockScreen._page.style.height = "100%";
   lockScreen._page.className = "page";
 }
-*/
-var lockScreen = {
-  _page : document.getElementsByTagName("html")[0]
-};
-function lockScreenHgt() {
-  // lockScreen._page.style.height = lockScreen._windowH + "px";
-  lockScreen._page.className = "hide-height";
-}
-function unlockScreenHgt() {
-  // lockScreen._page.style.height = "100%";
-  lockScreen._page.className = "";
-}
+
 //loading
 function showLoading(){
   lockScreenHgt();
