@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI组件之浮出层</title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 3000px;
+        }
+    </style>
+    <link rel="stylesheet" href="xmask/xmask.css">
+</head>
+<body>
+    <button type="button" id="testbtn">创建浮出层</button>
+    <button type="button" id="testbtn2">创建浮出层</button>
+</body>
+    <script src="xmask/xmask.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        /*两种调用方式*/
+        document.querySelector('#testbtn').addEventListener('click', function () {
+            xmask({
+                width: 400,
+                title: '相关信息',
+                message: '你好，我是一个浮出层',
+                btntext: '确定'
+            });
+        });
+        document.querySelector('#testbtn2').addEventListener('click', function () {
+            xmask();
+        });
+    </script>
+</html>

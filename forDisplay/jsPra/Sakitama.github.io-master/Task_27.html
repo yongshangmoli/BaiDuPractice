@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 27</title>
+	<link href="css/Task_27.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 地球与轨道 -->
+<div id="contain">
+	<!-- 地球 -->
+	<img src="image/24.png" id="earth" alt="earth">
+	<!-- 四条轨道 -->
+	<div id="orbit0" class="orbit"></div>
+	<div id="orbit1" class="orbit"></div>
+	<div id="orbit2" class="orbit"></div>
+	<div id="orbit3" class="orbit"></div>
+</div>
+
+<!-- 控制台 -->
+<div id="console">
+	<div id="console-title">Console 消息窗体</div>
+	<div id="console-text"></div>
+</div>
+
+<!-- 操作面板 -->
+<div id="control">
+	<div id="control-title">Control 操作面板</div>
+	<div id="control-main">
+		<div data-id="0">
+			<span>第一轨道</span>
+			<select title="动力系统" data-type="powerSystem"></select>
+			<select title="能源系统" data-type="energySystem"></select>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="1">
+			<span>第二轨道</span>
+			<select title="动力系统" data-type="powerSystem"></select>
+			<select title="能源系统" data-type="energySystem"></select>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="2">
+			<span>第三轨道</span>
+			<select title="动力系统" data-type="powerSystem"></select>
+			<select title="能源系统" data-type="energySystem"></select>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="3">
+			<span>第四轨道</span>
+			<select title="动力系统" data-type="powerSystem"></select>
+			<select title="能源系统" data-type="energySystem"></select>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/27/main.js"></script>
+<script type="text/javascript" src="js/27/commander.js"></script>
+<script type="text/javascript" src="js/27/spaceship.js"></script>
+<script type="text/javascript" src="js/27/god.js"></script>
+</body>
+</html>

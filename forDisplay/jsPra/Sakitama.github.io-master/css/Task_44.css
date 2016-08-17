@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+body {
+    margin: 8px;
+    background: #f0f0f0;
+}
+.gallery {
+    width: 1500px;
+    margin: 16px auto 0;
+}
+.gallery-column {
+    padding: 0 8px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.gallery-column-item {
+    margin-bottom: 16px;
+    background: #fff;
+    -webkit-box-shadow: 4px 4px 4px 0 #d4d4d5;
+    -moz-box-shadow: 4px 4px 4px 0 #d4d4d5;
+    -o-box-shadow: 4px 4px 4px 0 #d4d4d5;
+    box-shadow: 4px 4px 4px 0 #d4d4d5;
+}
+.gallery-column-item img {
+    display: block;
+}
+.gallery-column-item img:hover {
+    cursor: zoom-in;
+}
+.gallery-column-item p {
+    padding: 16px;
+    word-break: break-all;
+}
+
+#gallery-pop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(0);
+    z-index: 999;
+    -webkit-transition: transform .5s ease-in-out;
+    -moz-transition: transform .5s ease-in-out;
+    -o-transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    overflow: auto;
+}
+#gallery-pop.show {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+#gallery-pop img {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

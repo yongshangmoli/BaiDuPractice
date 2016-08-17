@@ -1,0 +1,59 @@
+* {
+  margin:0;
+  padding: 0;
+}
+
+input,
+button {
+  margin:10px;
+}
+input {
+  border: 1px solid CornflowerBlue;
+  color: CornflowerBlue;
+  background-color: white;
+  width: 250px;
+  height: 25px;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+button {
+  border: 1px solid CornflowerBlue;
+  color: CornflowerBlue;
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+button:hover {
+  background-color: CornflowerBlue;
+  color: white;
+}
+input:focus,
+button:focus {
+  outline-width: 0px;
+}
+#output {
+  width: 600px;
+  display: flex;
+  align-items: flex-end;
+}
+#output>div {
+  animation: fadein 1s;
+  float: left;
+  flex: 1;
+  max-width: 20px;
+  border-radius: 5px 5px 0 0;
+  margin: 1px;
+  color: LemonChiffon ;
+  background-color: CornflowerBlue;
+  text-align: center;
+}
+
+@-webkit-keyframes fadein {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 100%;
+  }
+}

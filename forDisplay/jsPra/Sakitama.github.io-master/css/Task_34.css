@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+#container {
+    border: 2px solid #000;
+    position: relative;
+    margin: 0 auto;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.maze-block {
+    width: 42px;
+    height: 42px;
+    border-bottom: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    float: left;
+}
+.bottom-maze-block {
+    border-bottom: none;
+}
+.right-maze-block {
+    border-right: none;
+}
+
+.Action {
+    width: 42px;
+    height: 34px;
+    background: red;
+    border-top: 8px solid blue;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.inputArea {
+    text-align: center;
+}

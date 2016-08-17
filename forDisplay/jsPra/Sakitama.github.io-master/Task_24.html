@@ -1,0 +1,159 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 24</title>
+	<script src="js/task-24.js"></script>
+	<style>
+		* {
+			font-family: "Microsoft YaHei UI", sans-serif;
+		}
+		.list {
+			width: 400px;
+			margin: 0 auto;
+		}
+		li {
+			list-style: none;
+		}
+		li p {
+			position: relative;
+			margin: 0;
+			padding: 16px 40px;
+			background: url("./image/f2.png") no-repeat 15px center;
+			-webkit-transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-o-border-radius: 10px;
+			border-radius: 10px;
+		}
+		li p.clicked {
+			background: url("./image/f2.png") no-repeat 5px center #e2e2e2;
+		}
+		li p span {
+			position: absolute;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			margin-top: -10px;
+			display: none;
+		}
+		li p span:hover {
+			cursor: pointer;
+		}
+		li p span.add {
+			right: 40px;
+		}
+		li p span.delete {
+			right: 20px;
+		}
+		li p span.unfold {
+			right: 0;
+		}
+		#search {
+			display: block;
+			width: 400px;
+			height: 30px;
+			padding: 20px;
+			margin: 20px auto;
+			color: gray;
+		}
+		#search:focus {
+			color: black;
+		}
+	</style>
+</head>
+<body>
+<input type="text" id="search" value="采用广度优先搜索，按回车确认">
+<ul class="list">
+	<li>
+		<p>Love<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+		<ul>
+			<li>
+				<p>Friendship<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>border-box<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>CSS<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>apply<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+			<li>
+				<p>padding<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>Personally<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>page<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+			<li>
+				<p>Grid<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>class<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>needed<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+			<li><p>behave<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+		</ul>
+	</li>
+	<li>
+		<p>handle<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+		<ul>
+			<li>
+				<p>which<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>alignment<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>unlike<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>normally<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>pretty<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+		<ul>
+			<li>
+				<p>something<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>Remember<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>inline-block<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>middle<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>Horizontally<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+		<ul>
+			<li>
+				<p>element<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>decision<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li>
+						<p>different<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+						<ul>
+							<li><p>facebook<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+							<li><p>youtube<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+						</ul>
+					</li>
+					<li><p>stacked<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<p>common<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+		<ul>
+			<li>
+				<p>height<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p>
+				<ul>
+					<li><p>center<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>vertically<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+					<li><p>nudging<span class="add">+</span><span class="delete">x</span><span class="unfold">v</span></p></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

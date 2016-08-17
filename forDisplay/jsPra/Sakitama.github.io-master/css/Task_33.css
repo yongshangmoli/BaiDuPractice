@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+h1 {
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+section.inputArea {
+    text-align: center;
+}
+input {
+    width: 218px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.background td{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+/*从第二行开始，每列第二格右边框和下边框*/
+.background tr:nth-child(n + 2) td:nth-child(n + 2) {
+    border: 1px solid #aaa;
+}
+.background tr:first-child td:nth-child(n + 2), .background tr:last-child td:nth-child(n + 2) {
+    border-bottom: 2px solid black;
+}
+.background tr:nth-child(n + 2) td:first-child, .background tr:nth-child(n + 2) td:last-child {
+    border-right: 2px solid black;
+}
+/*第二种方法
+.background td{
+    width:50px;
+    height:50px;
+    border-right:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+.background tr td:first-child {
+    border-right:2px solid #333;
+    border-bottom:0;
+}
+.background tr td:last-child {
+    border-right:2px solid #333;
+}
+.background tr:first-child td {
+    border-right:0;
+    border-bottom:2px solid #333;
+}
+.background tr:last-child td {
+    border-bottom:2px solid #333;
+}
+.background tr:first-child td:first-child {
+    border-bottom:0;
+}
+.background tr:last-child td:first-child {
+    border-bottom:0;
+}*/
+
+.Left, .Top, .Bottom, .Right {
+    position: relative;
+    background-color: red;
+}
+.Left div, .Right div, .Top div, .Bottom div {
+    background-color: blue;
+    position: absolute;
+}
+.Left div, .Right div{
+    width: 10px;
+    height: 100%;
+    top: 0;
+}
+.Top div, .Bottom div {
+    width: 100%;
+    height: 10px;
+}
+.Top div {
+    top: 0;
+}
+.Right div {
+    right: 0;
+}
+.Bottom div {
+    bottom: 0;
+}
+.Left div {
+    left: 0;
+}

@@ -1,0 +1,97 @@
+table#css3-table {
+    margin-bottom: 100px;
+}
+table#css3-table tr:nth-child(1) {
+    background: black;
+    color: white;
+    text-align: left;
+}
+table#css3-table tr:nth-child(2), table#css3-table tr:nth-child(3), table#css3-table tr:nth-child(4) {
+    color: red;
+}
+table#css3-table tr:nth-child(2n + 3) {
+    background: #ccc;
+}
+
+input {
+    width: 150px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    margin-bottom: 100px;
+}
+input:focus {
+    width: 500px;
+}
+
+nav {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+nav ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+nav ul {
+    width: 1500px;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    list-style: none;
+    width: 500px;
+    height: 300px;
+    float: left;
+}
+nav ul li#one {
+    background: purple;
+}
+nav ul li#two {
+    background: blue;
+}
+nav ul li#three {
+    background: orangered;
+}
+#slide1:target ~ .slide-wrap {
+    left: 0;
+}
+
+#slide2:target ~ .slide-wrap {
+    left: -500px;
+}
+
+#slide3:target ~ .slide-wrap {
+    left: -1000px;
+}
+nav aside {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+nav aside a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 30px;
+    font-weight: bold;
+    color: #ccc;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+}
+nav aside a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

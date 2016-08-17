@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI",sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    background: url("../image/night.jpg") no-repeat;
+    background-size: cover;
+}
+
+#contain {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    margin: -400px 0 0 -400px;
+}
+#earth {
+    display: block;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -75px 0 0 -100px;
+}
+.orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px dashed white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+#orbit0 {
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+}
+#orbit1 {
+    width: 450px;
+    height: 450px;
+    margin: -225px 0 0 -225px;
+}
+#orbit2 {
+    width: 600px;
+    height: 600px;
+    margin: -300px 0 0 -300px;
+}
+#orbit3 {
+    width: 800px;
+    height: 800px;
+    margin: -400px 0 0 -400px;
+}
+
+#console {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 680px;
+    height: 350px;
+    border: 10px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+#console-title {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+#console-text {
+    background-color: rgba(150, 150, 150, 0.3);
+    height: 260px;
+    overflow: auto;
+    color: white;
+    padding: 20px;
+}
+
+#control {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 680px;
+    height: 250px;
+    border: 10px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+#control-title {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+#control-main {
+    height: 200px;
+    background-color: rgba(150, 150, 150, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* 监测面板*/
+#supervise {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 680px;
+    border: 10px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+#supervise p {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+#supervise table#superviseList {
+    width: 100%;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(150, 150, 150, 0.3);
+}
+
+/** 第一轨道的飞船 */
+.orbit-ship0 {
+    margin: -160px 0 0 -50px;
+    /** 旋转中心 */
+    -webkit-transform-origin: center 160px;
+    -moz-transform-origin: center 160px;
+    -ms-transform-origin: center 160px;
+    -o-transform-origin: center 160px;
+    transform-origin: center 160px;
+}
+
+/** 第二轨道的飞船 */
+.orbit-ship1 {
+    margin: -235px 0 0 -50px;
+    /** 旋转中心 */
+    -webkit-transform-origin: center 235px;
+    -moz-transform-origin: center 235px;
+    -ms-transform-origin: center 235px;
+    -o-transform-origin: center 235px;
+    transform-origin: center 235px;
+}
+
+/** 第三轨道的飞船 */
+.orbit-ship2 {
+    margin: -310px 0 0 -50px;
+    /** 旋转中心 */
+    -webkit-transform-origin: center 310px;
+    -moz-transform-origin: center 310px;
+    -ms-transform-origin: center 310px;
+    -o-transform-origin: center 310px;
+    transform-origin: center 310px;
+}
+
+/** 第四轨道的飞船 */
+.orbit-ship3 {
+    margin: -410px 0 0 -50px;
+    /** 旋转中心 */
+    -webkit-transform-origin: center 410px;
+    -moz-transform-origin: center 410px;
+    -ms-transform-origin: center 410px;
+    -o-transform-origin: center 410px;
+    transform-origin: center 410px;
+}
+
+/** 飞船整体 */
+.space-ship {
+    background-color: red;
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /** 旋转角度 */
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.space-ship div {
+    background-color: greenyellow;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 25px;
+}
+.space-ship p {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}

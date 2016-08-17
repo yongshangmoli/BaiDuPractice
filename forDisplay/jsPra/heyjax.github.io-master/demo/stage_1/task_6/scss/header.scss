@@ -1,0 +1,28 @@
+header{
+  margin-left:43px;
+  font-size: 12px;
+  font-family: $HeiTi;
+  div.head{
+    float: left;
+    width: 110px;
+    height:61px;
+    background-color: $light_pink;
+    color: $white;
+    line-height: 106px;
+    span{
+      margin-left: 7px;
+    }
+  }
+  div.time{
+    color: $light_pink;
+    float: right;
+    margin: 46px 48px 0 0;
+  }
+  hr{
+    width: 892px;
+    size: 2px;
+    margin:0;
+    overflow: hidden;
+    color: $verticalline_gray;
+  }
+}

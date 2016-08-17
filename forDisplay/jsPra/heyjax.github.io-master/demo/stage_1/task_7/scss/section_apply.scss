@@ -1,0 +1,98 @@
+main{
+  section.apply{
+    clear:both;
+    overflow: hidden;
+    padding-bottom: 160px;
+    div.title{
+      text-align: center;
+      padding-top: 120px;
+      h2{
+        font-size: 20px;
+        font-weight: lighter;
+      }
+      div.horizonal_line{
+        height: 5px;
+        width: 30px;
+        margin: 0 auto;
+        border-bottom: 2px solid $pink;
+        @include horizonal_transition;
+      }
+      p{
+        margin: 0 auto;
+        padding: 5px 0 100px;
+        width: 420px;
+        font-size: 10px;
+        color: $gray;
+      }
+    }
+    div.title:hover{
+      div.horizonal_line{
+        width: 150px;
+      }
+    }
+    div.rule,
+    div.form{
+      overflow: hidden;
+      float: left;
+    }
+    div.rule{
+      padding-left: 10%;
+      width: 25%;
+      margin-right: 70px;
+      div{
+        padding-bottom: 60px;
+        h4{
+          font-size: 15px;
+          font-weight: lighter;
+          padding: 5px 0;
+        }
+        p{
+          padding-top: 10px;
+          font-size: 10px;
+          letter-spacing: 2px;
+          color: $gray;
+        }
+        span{
+          font-size: 10px;
+          float: right;
+          margin-top: 5px;
+        }
+      }
+    }
+    div.form{
+      width: 50%;
+      form{
+        input{
+          margin: 5px;
+          border: 3px solid $form_gray;
+          background-color: $form_gray;
+          padding-left: 10px;
+        }
+        input[type="text"]{
+          width: 300px;
+          height: 40px;
+        }
+        textarea{
+          @extend input;
+          width: 630px;
+          height: 120px;
+          vertical-align: super;
+        }
+        input[type="submit"]{
+          box-sizing: content-box;
+          width: 630px;
+          height: 40px;
+        }
+        input:focus{
+          outline-width: 0;
+        }
+        @include responsive(wide-screens) {
+          textarea,
+          input[type="submit"]{
+            width: 300px;
+          }
+        };
+      }
+    }
+  }
+}

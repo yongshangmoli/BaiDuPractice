@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历组件1</title>
+	<link rel="stylesheet" type="text/css" href="css/calendar1.css">
+	<style type="text/css" media="screen">
+		.dspCtrl {
+			position: relative;
+			border: 2px #ccc solid;
+			display: inline-block;
+			height: 40px;
+			width: 210px;
+			margin: 200px 0 0 200px;
+			z-index: 10;
+		}
+		.dspCtrl input {
+			border: none;
+			border-left: 2px #ccc solid;
+			height: 95%;
+			width: 175px;
+		}
+		.clndrPos {
+			margin-left:200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="dspCtrl" class="dspCtrl">
+		<label for="dspPnel">日历</label>
+		<input id="dspPnel"></input>
+	</div>
+	<div id="wrapper" class="clndrPos"></div>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+	<script src="js/calendar2.js"></script>
+	<script>
+		var calendar = new myCalendar(1970,2070);
+		calendar.init();
+		var dateFormat = function(date) {
+			return [date.getFullYear(),date.getMonth()+1,date.getDate()].join("-");
+		};
+		$("#wrapper").hide();
+		$(document).on("click",function(e) {
+			if($("#dspPnel").is(":focus")) {
+				$("#wrapper").show();
+			}
+			else {
+				$("#wrapper").hide();
+				function _suchandler() {
+					var date = calendar.getCurDate();
+					$("#dspPnel").val(dateFormat(date));
+					alert("设置成功");
+				}
+				function _failhandler() {
+					alert("设置失败");
+				}
+				if(e.target.nodeName === "TD") {
+					calendar.cldrCallback(_suchandler,_failhandler);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

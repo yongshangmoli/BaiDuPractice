@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  font-size: 14px;
+}
+.github {
+  position: fixed;
+}
+
+
+/* custom styles */
+.mixphotoContainer-1,
+.mixphotoContainer-2,
+.mixphotoContainer-3,
+.mixphotoContainer-4,
+.mixphotoContainer-5,
+.mixphotoContainer-6 {
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.mixphotoBox {
+  position: relative;
+}
+.mixphotoBox .content{
+  position: absolute;
+  bottom: 0px;
+  color: white;
+}
+/* use with mixphoto.js*/
+.mixphotoBox img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* for one image box selected */
+.mixphoto-1 .mixphotoBox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* for two image boxes selected */
+.mixphoto-2 .mixphotoBox:nth-child(1) {
+  position: absolute;
+  left: 0;
+  width: 66.6%;
+  height: 100%;
+  clip-path: url('clipPath.svg#clip1');
+  -webkit-clip-path: polygon(0% 0%,100% 0%,50% 100%,0% 100%);
+
+}
+.mixphoto-2 .mixphotoBox:nth-child(2) {
+  position: absolute;
+  right: 0;
+  width: 66.6%;
+  height: 100%;
+  left: 33.333%;
+  clip-path: url('clipPath.svg#clip2');
+  -webkit-clip-path: polygon(50% 0%,100% 0%,100% 100%,0% 100%);
+}
+.mixphoto-2 .mixphotoBox:nth-child(2) .content{
+  right: 0;
+}
+/* for three image boxes selected */
+.mixphoto-3 .mixphotoBox:nth-child(1) {
+  float: left;
+  width: 66.6%;
+  height: 100%;
+}
+.mixphoto-3 .mixphotoBox:nth-child(2) {
+  float: left;
+  width: 33.4%;
+  height: 50%;
+}
+.mixphoto-3 .mixphotoBox:nth-child(3) {
+  float: left;
+  width: 33.4%;
+  height: 50%;
+}
+/* for four image boxes selected */
+.mixphoto-4 .mixphotoBox {
+  float: left;
+  width: 50%;
+  height: 50%;
+}
+/* for five image boxes selected */
+.mixphoto-5 .mixphotoBox {
+  position: absolute;
+}
+.mixphoto-5 .mixphotoBox:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 66.6%;
+  height: 66.6%;
+}
+.mixphoto-5 .mixphotoBox:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 33.4%;
+}
+.mixphoto-5 .mixphotoBox:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 33.3%;
+  height: 33.4%;
+}
+.mixphoto-5 .mixphotoBox:nth-child(4) {
+  bottom: 0;
+  left: 33.333%;
+  width: 33.333%;
+  height: 33.4%;
+}
+.mixphoto-5 .mixphotoBox:nth-child(5) {
+  bottom: 0;
+  left: 0;
+  width: 33.333%;
+  height: 33.4%;
+}
+/* for six image boxex selected */
+.mixphoto-6 .mixphotoBox {
+  float: left;
+  width: 33.3%;
+  height: 33.3%;
+}
+.mixphoto-6 .mixphotoBox:nth-child(1) {
+  width: 66.6%;
+  height: 66.6%;
+}
+.mixphoto-6 .mixphotoBox:nth-child(2),
+.mixphoto-6 .mixphotoBox:nth-child(3),
+.mixphoto-6 .mixphotoBox:nth-child(4) {
+  float: right;
+  width: 33.4%;
+}

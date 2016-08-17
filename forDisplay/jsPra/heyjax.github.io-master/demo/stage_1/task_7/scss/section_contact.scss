@@ -1,0 +1,43 @@
+main{
+  section.contact{
+    clear: both;
+    height: 360px;
+    background-color: $dark_gray;
+    text-align: center;
+    color: $white;
+    div{
+      padding-top: 90px;
+      h2{
+        font-size: 20px;
+        font-weight: normal;;
+        padding-bottom: 5px;
+      }
+      p{
+        width:467px;
+        margin: 0 auto 30px;
+        font-size: 13px;
+      }
+      input{
+        width: 420px;
+        height: 40px;
+        border: none;
+        padding-left: 10px;
+      }
+      button{
+        width: 77px;
+        height: 40px;
+        border: none;
+        border-bottom: 3px solid $gray;
+        color: $white;
+        background-color: $gray;
+        font-size: 15px;
+      }
+    }
+    div.icon{
+      padding-top: 35px;
+      img{
+        margin: 0 12px;
+      }
+    }
+  }
+}

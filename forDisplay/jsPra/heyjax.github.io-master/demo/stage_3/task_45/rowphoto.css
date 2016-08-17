@@ -1,0 +1,33 @@
+body {
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+  font-size: 14px;
+}
+.github {
+  position: fixed;
+}
+
+
+/* custom style */
+.rowphotoContainer {
+  margin: 0 auto;
+  width: 1000px;
+}
+.rowphotoBox .content {
+  position: absolute;
+  bottom: 0;
+  color: white
+}
+
+/* use with rowphotojs*/
+.rowphotoRow {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.rowphotoBox {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+}
+.rowphotoBox img {
+  height: 100%;
+}

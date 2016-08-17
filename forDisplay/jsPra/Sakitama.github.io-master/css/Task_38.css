@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI", sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+header h1 {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+.sort-table {
+    width: 1024px;
+    text-align: center;
+    font-size: 18px;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+.sort-table tr {
+    line-height: 34px;
+}
+.sort-table tr:first-child {
+    color: #FFFFFF;
+    background: #aaa;
+    line-height: 44px;
+}
+.sort-table th {
+    width: 230px;
+    position: relative;
+}
+.sort-table th:hover {
+    background: #000;
+    cursor: pointer;
+}
+.sort-table td, .sort-table th {
+    border: 1px solid black;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.sort-table td:hover {
+    background: #20c5ff;
+    color: white;
+    cursor: pointer;
+}
+.sort-table .icon {
+    position: absolute;
+    top: 10px;
+    width: 24px;
+    height:24px;
+    line-height: 24px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.icon:hover {
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.icon.icon-asc {
+    right: 30px;
+}
+.icon.icon-desc {
+    right: 10px;
+}

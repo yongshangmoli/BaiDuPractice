@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 35</title>
+	<link href="css/Task_35.css" rel="stylesheet">
+</head>
+<body>
+<header>
+	<h1>
+		任务三十五：听指令的小方块（三）
+	</h1>
+</header>
+<div class="clearfix">
+	<ol id="list_top" class="list_top clearfix"></ol>
+	<ol id="list_left" class="list_left"></ol>
+	<section id="container" class="clearfix"></section>
+	<section class="inputArea">
+		<div class="clearfix">
+			<ol id="index">
+				<li>1</li>
+			</ol>
+			<label for="command"><textarea spellcheck="false" id="command" name="command"></textarea></label>
+		</div>
+		<button type="button" id="sure">执行</button>
+		<button type="button" id="refresh">清空</button>
+	</section>
+	<p id="tips">
+		可输入指令序列，n代表数字，如果是0表示当前指令不会执行<br>
+		* GO<br>
+		* GO n<br>
+		* TUN LEF，TUN RIG，TUN BAC<br>
+		* TRA LEF n，TRA RIG n，TRA TOP n，TRA BOT n<br>
+		* TRA LEF，TRA RIG，TRA TOP，TRA BOT<br>
+		* MOV LEF n，MOV RIG n，MOV TOP n，MOV BOT n<br>
+		* MOV LEF，MOV RIG，MOV TOP，MOV BOT
+	</p>
+</div>
+<script type="text/javascript" src="js/task-35.js"></script>
+</body>
+</html>

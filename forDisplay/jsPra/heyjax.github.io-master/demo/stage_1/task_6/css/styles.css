@@ -1,0 +1,361 @@
+/*此样式表与sass无关，为第一次实现的无sass编译的css版本，仅供参考*/
+body{
+  width: 980px;
+  height: 1386px;
+  margin: 0 auto;
+}
+header, main, footer{
+  margin-left:43px;
+}
+header{
+  font-size: 12px;
+  font-family: "SimHei";
+}
+header div.head{
+  float: left;
+  width:110px;
+  height:61px;
+  background-color: #d45d5c;
+  color:#fff;
+  line-height: 106px;
+}
+header div.head span{
+  margin-left: 7px;
+}
+header div.time{
+  color:#d45d5c;
+  float: right;
+  margin:46px 48px 0 0;
+}
+header hr{
+  width: 892px;
+  size:2px;
+  margin:0;
+  overflow: hidden;
+  color:#938e8c;
+}
+main{
+  margin-top:34px;
+}
+main section{
+  overflow: auto;
+}
+main section.first div.img{
+  position: relative;
+  float: left;
+}
+main section.first img{
+  width:641px;
+  height:301px;
+}
+main section.first div.cover_green, main section.first div.cover_pink{
+  width: 191px;
+  height: 301px;
+}
+main section.first div.cover_green{
+  background-color: #418c59;
+  opacity: 0.5;
+  position: absolute;
+}
+main section.first div.cover_pink{
+  background-color: #cc8091;
+  opacity: 0.5;
+  position: absolute;
+  bottom:0px;
+  left:450px;
+}
+main section.first article.about{
+  float: left;
+  width: 203px;
+  margin:3px 0 0 50px;
+  border-top: solid 2px #cc8091;
+  position:relative;
+}
+main section.first article.about h1,
+main section.first article.about h2,
+main section.first article.about h3,
+main section.first article.about h4,
+main section.first article.about span
+{
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+main section.first article.about h3{
+  font-size: 24px;
+  color: #000;
+  text-decoration: underline;
+  font-variant: small-caps;
+}
+main section.first article.about p{
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 12px;
+  color:#676767;
+  font-family: "KaiTi";
+}
+main section.first article.about h1{
+  margin-left: -15px;
+  font-size:116px;
+  color:#75b86b;
+  font-style: italic;
+}
+main section.first article.about h2{
+  font-size: 55px;
+  color:#cc8091;
+  font-weight: normal;
+}
+main section.first article.about h4{
+  font-size: 21px;
+  color:#cc8091;
+  font-weight: normal;
+  position: absolute;
+  bottom:17px;
+  left:85px;
+}
+main section.first article.about span{
+  font-size: 12px;
+  color:#cc8091;
+  position: absolute;
+  left:85px;
+  bottom:9px;
+}
+main section.second{
+  margin-top: 20px;
+}
+main section.second article{
+  float: left;
+  margin-right: 30px;
+  position: relative;
+}
+main section.second article>h2{
+  margin:0;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+main section.second article>p{
+  font-size:12px;
+  font-family: "SimSun";
+}
+main section.second article.what{
+  width:235px;
+}
+main section.second article.what h2{
+  color: #418c59;
+}
+main section.second article.when{
+  width: 205px;
+}
+main section.second article.when h2{
+  color:#d2994f;
+}
+main section.second article.how h2{
+  color:#cc7680;
+}
+main section.second article.how ul{
+  margin-top: 30px;
+  padding: 0;
+  font-size: 12px;
+  list-style: none;
+  opacity: 0.7;
+}
+main section.second article.how ul li{
+  margin:0 0 5px 5px;
+}
+main section.second article.how ul li span{
+  color:#cd4a48;
+  font-style: italic;
+}
+main section.third{
+  width:435px;
+  float: left;
+}
+main section.third h1,
+main section.third h2{
+  margin: 0;
+  color:#11456b;
+  font-weight: bolder;
+  font-family: "SimHei";
+}
+main section.third h1{
+  font-size: 42px;
+}
+main section.third h1 b{
+  color:#f5e327;
+  font-size: 72px;
+  font-style: italic;
+}
+main section.third h2{
+  font-size: 33px;
+}
+main section.third article{
+  width:415px;
+  border-top: 2px #11456b solid;
+  margin-top:10px;
+}
+main section.third article img{
+  float: right;
+  margin:25px 0 25px 25px;
+}
+main section.third article p{
+  color:#767777;
+  font-size:12px;
+  font-family: "SimHei";
+  margin:16px 0 0 0;
+}
+main section.third article p+p{
+  margin-top: 0px;
+  text-indent: 2em;
+}
+main section.third article p b{
+  float: left;
+  margin-left:-3px;
+  margin-right: 10px;
+  font-size: 70px;
+  color:#f5e327;
+  font-family: "Microsoft YaHei"
+}
+main section.fourth img{
+  width:458px;
+  height: 275px;
+}
+main section.fourth div.img{
+  position: relative;
+}
+main section.fourth div.img div.cover_gray{
+  width:458px;
+  height: 61px;
+  /*设置opacity子元素会继承只能使用rgba*/
+  background-color:rgba(0,0,0,.5);
+  position: absolute;
+  bottom: 0px;
+  font-family: "Microsoft YaHei"
+}
+main section.fourth div.img div.cover_gray div{
+  border-left: 3px #72b16a solid;
+  height: 44px;
+  color:#fff;
+  font-size: 26px;
+  padding-left: 10px;
+  line-height: 44px;
+  position: absolute;
+  bottom: 7px;
+  left:35px;
+}
+main section.fourth div.img div.cover_gray div span{
+  font-size: 12px;
+  color:#72b16a;
+  font-style: italic;
+  word-spacing: 140%;
+}
+main section.fourth div.corner_gray{
+  margin-top: 25px;
+  padding-top: 25px;
+  width: 458px;
+  background-color: #eeedd7;
+  position: relative;
+  overflow: auto;
+}
+main section.fourth div.corner_gray ul{
+  margin: 0;
+}
+main section.fourth div.corner_gray ul li{
+  list-style: none;
+  color: #5a5b5b;
+  font-family: "Microsoft YaHei"
+}
+main section.fourth div.corner_gray ul li:before {
+  content: "";
+  border-color: transparent transparent #11456b transparent ;
+  border-style: solid;
+  border-width: 0em 0.25em 0.5em 0.25em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 1.1em;
+  position: relative;
+}
+main section.fourth div.corner_gray ul li span{
+  font-size: 16px;
+  margin-bottom: 24px;
+  font-family: "SimSun";
+}
+main section.fourth div.corner_gray ul li span+span{
+  position: absolute;
+  right: 22px;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 5px;
+}
+main section.fourth div.corner_gray div.corner_pink{
+  float: left;
+  bottom: 0;
+  left: 0;
+  margin-top: 50px;
+  background-color: #d45d5c;
+  width: 260px;
+  height: 195px;
+}
+main section.fourth div.corner_gray div.corner_pink p{
+  margin: 0;
+  padding: 17px 10px;
+  float: left;
+  font-size: 110px;
+  color:#fff;
+  font-family: "Microsoft YaHei";
+}
+main section.fourth div.corner_gray div.corner_pink div.verticalline{
+  float: left;
+  width: 145px;
+  border-left: 2px #fff solid;
+  margin-top: 40px;
+  padding: 5px 0 0 10px;
+  color: #fff;
+  font-family: "SimHei";
+}
+main section.fourth div.corner_gray div.corner_pink div.verticalline h3{
+  margin:0;
+  font-size: 21px;
+  font-style: italic;
+}
+main section.fourth div.corner_gray div.corner_pink div.verticalline p{
+  float: none;
+  padding: 0;
+  font-size: 12px;
+}
+main section.fourth div.corner_black{
+  float: left;
+  width: 130px;
+  margin:40px 0 0 15px;
+  position: relative;
+}
+main section.fourth div.corner_black span{
+  font-size: 72px;
+  color:#d45d5c;
+  position: absolute;
+  left:-100px;
+  }
+main section.fourth div.corner_black p{
+  text-indent: 2em;
+}
+main section.fourth div.corner_black p+span{
+  left:100px;
+  top:100px;
+}
+footer{
+  clear: both;
+}
+footer hr{
+  width: 892px;
+  size:1px;
+  margin:40px 0 0 0;
+  overflow: hidden;
+  color:#938e8c;
+}
+footer span{
+  color:#d45d5c;
+  float: right;
+  margin:0 48px 0 0;
+}

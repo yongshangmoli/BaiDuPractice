@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="Description" content="注册腾爱医生公众号" />
+        <meta name="Keywords" content="腾爱医生公众号注册,腾爱医生注册,腾爱医生注册官网" />
+        <title>腾爱医生公众号注册_腾爱医生注册-腾爱医生</title>
+        
+        <link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" rel="bookmark"  type="image/x-icon"  />
+        <link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- layout header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="logo" ></div>
+                </div>
+            </div>
+            
+            <div class="my-pwd">
+                <div class="title">
+                    <h4>忘记密码</h4>
+                </div>
+                <hr/>
+                <div id="phone_check">
+                    <div class="phone">
+                        <div class="describle">
+                            <label for="phonenum"><span>*</span>手机号码</label>
+                        </div>
+                        <input type="text" id="phonenum" placeholder="输入手机号码" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="msgnum">
+                        <div class="describle">
+                            <label for="msgnum"><span>*</span>短信校验码</label>
+                        </div>
+                        <div class="getnum"><a id="get_msgnum" href="#">获取</a></div>
+                        <input type="text" id="msgnum" placeholder="填写信息校验码"/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="checknum" id="pic_num" style="display:none;">
+                        <div class="describle">
+                            <label for="checknum"><span>*</span>图片校验码</label>
+                        </div>
+                        <div class="picnum"><a id="pic_numimg" href="#">图片验证码</a></div>
+                        <input type="text" id="checknum" placeholder="填写图片校验码"/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="assurebtn" id="asr_phone">
+                        <a href="#">确定</a>
+                    </div>
+                </div>
+                <div id="newpwd_set" style="display:none;">
+                    <div class="newpwd">
+                        <div class="describle">
+                            <label for="newpwd"><span>*</span>设置新密码</label>
+                        </div>
+                        <input type="password" id="newpwd" placeholder="输入新的密码" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="againpwd">
+                        <input type="password" id="againpwd" placeholder="再次输入密码"/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="assurebtn" id="asr_newpwd">
+                        <a href="#">确定</a>
+                    </div>
+                </div>
+                <div id="set_sucs" class="suc-wrp clr-float" style="display:none;">
+                    <div>
+                        <span class="sucset"></span><p id="suc_info">密码修改成功，3 秒后自动登录！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- layout footer -->
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="copyright">
+                        <p>© 1998 - 2016 Tencent All Right Reserved.</p>
+                    </div>
+
+                    <div class="links">
+                        <ul>
+                            <li><a href="javascript:void(0)" onclick="pgvSendClick({hottag:'index.link.gywm'});">关于我们</a></li>
+                            <li><a href="javascript:void(0)" onclick="pgvSendClick({hottag:'index.link.ysbh'});">隐私保护</a></li>
+                            <li><a href="javascript:void(0)" onclick="pgvSendClick({hottag:'index.link.fwtk'});">服务条款</a></li>
+                            <li class="last"><a href="javascript:void(0)" onclick="pgvSendClick({hottag:'index.link.kfzx'});">客服中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <script type="text/javascript" src="http://s.pc.qq.com/byb/jquery/jquery-1.11.3.min.js"></script>
+        <script>
+            var util = {
+                needPicNum : false,
+                timeCount : -1,
+                //电话号码的匹配，包括虚拟运营号码比如170等
+                phoneCheck : function(chkWrp) {
+                    var reg = /(^(13\d|15[^4,\D]|17[13678]|18\d)\d{8}|170[^346,\D]\d{7})$/;
+                    return util._displayInfo(reg,chkWrp,"手机号码错误");
+                },
+                //短信验证码的验证，暂时只要是六位数字就可验证成功
+                msgNumCheck : function(chkWrp) {
+                    var reg = /^\d{6}$/;
+                    return util._displayInfo(reg,chkWrp,"信息校验码错误");
+                },
+                //图片验证码的验证，输入123才能匹配成功
+                picNumCheck : function(chkWrp) {
+                    var reg = /123/;
+                    return util._displayInfo(reg,chkWrp,"图片校验码错误");
+                },
+                //密码验证，8-16位的英文或数字组成
+                pwdCheck : function(chkWrp) {
+                    var reg = /^([A-Za-z0-9]){8,16}$/;;
+                    return util._displayInfo(reg,chkWrp,"密码必须由8-16的英文或数字组成");
+                },
+                //再次输入密码的验证。需要与之前输入的一毛一样
+                agnpwdCheck : function(preChkWrp,chkWrp) {
+                    var reg = new RegExp("^"+preChkWrp.val()+"$");
+                    return util._displayInfo(reg,chkWrp,"两次输入的密码不一整");
+                },
+                //60s倒计时可重新获取验证码
+                msgCount : function (infoWrp,time) {
+                    var info = setInterval(function () {
+                        if(time >= 0) {
+                            infoWrp.html(time--);
+                            util.timeCount --;
+                        }
+                        else {
+                            clearInterval(info);
+                            infoWrp.css("background","#999999").html("获取");
+                        }
+                    }, 1000);
+                },
+                //倒计时三秒然后跳转到自动登陆页面
+                infoCount : function(infoWrp,time,infoStr) {
+                    var info = setInterval(function () {
+                        if(time >= 0) {
+                            infoWrp.html([infoStr[0],time--,infoStr[1]].join(""));
+                        }
+                        else {
+                            clearInterval(info);
+                            //自动登录的页面跳转语句
+                        }
+                    }, 1000);
+                },
+                _displayInfo : function(reg,chkWrp,errStr) {
+                    if(reg.test(chkWrp.val().trim())) {
+                        chkWrp.next().html("");
+                        return true;
+                    }
+                    else {
+                        chkWrp.next().html(errStr);
+                        return false;
+                    }
+                },
+                _hideOrShow : function(hideEles,showEles) {
+                  for (var i = 0; i < hideEles.length; i++) {
+                    hideEles[i].hide();
+                  }
+                  for (var i = 0; i < showEles.length; i++) {
+                    showEles[i].show();
+                  }
+                }
+            };
+            //获取手机验证码
+            $("#get_msgnum").click(function(e) {
+                if(util.timeCount < 0) {
+                    util.timeCount = 59;
+                    $(this).css("background","#428bef").html(60);
+                    util.msgCount($(this),59);
+                }
+            });
+            //图片验证码点击
+            $("#pic_numimg").click(function() {
+                // 点击图片验证码的处理逻辑放这里
+            });
+            //输入手机号及验证码后进行验证
+            $("#asr_phone").click(function() {
+                if(util.needPicNum) {
+                    if(util.phoneCheck($("#phonenum")) && util.msgNumCheck($("#msgnum")) && util.picNumCheck($("#checknum"))) {
+                        util._hideOrShow([$("#phone_check")],[$("#newpwd_set")]);
+                        return;
+                    }
+                }
+                else {
+                    if(util.phoneCheck($("#phonenum")) && util.msgNumCheck($("#msgnum"))) {
+                        util._hideOrShow([$("#phone_check")],[$("#newpwd_set")]);
+                        return;
+                    }else {
+                        util.needPicNum = true;
+                    }
+                }
+                util._hideOrShow([],[$("#pic_num")]);
+            });
+            //修改新密码后的处理
+            $("#asr_newpwd").click(function() {
+                if(util.pwdCheck($("#newpwd")) && util.agnpwdCheck($("#newpwd"),$("#againpwd"))) {
+                    util._hideOrShow([$("#newpwd_set")],[$("#set_sucs")]);
+                    util.infoCount($("#suc_info"),2,["密码修改成功，"," 秒后自动登录！"]);
+                    return;
+                }
+            });
+        </script>
+        <script type="text/javascript">
+        var NP = "doctor_signup";
+        var signupURL = "/mp/admin/Doctor/signup";
+        </script>
+        <script type="text/javascript" src="http://doctor.qq.com/mp/public/admin/scripts/admin.js?t=1"></script>
+<script>
+(function(){
+    if(window.doctor){
+        return;
+    };
+
+    var doctor={};
+    doctor.count=function(){if (typeof(pgvMain) == 'function') pgvMain()};
+    doctor.loadScript=function(url,callback){
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+        if (script.readyState) {
+            script.onreadystatechange = function() {
+                if (script.readyState == "loaded" || script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    if (callback) {
+                        callback()
+                    }
+                }
+            }
+        } else {
+            script.onload = function() {
+                if (callback) {
+                    callback()
+                }
+            }
+        }
+        script.src = url;
+        document.body.appendChild(script)
+    };
+
+    doctor.init=function(){
+        doctor.loadScript('http://tajs.qq.com/stats?sId=55876264',function() {
+            doctor.loadScript('http://pingjs.qq.com/tcss.ping.js',function(){doctor.count()});
+        });
+    };
+
+    window.doctor=doctor;
+    doctor.init();
+})();
+</script>
+    </body>
+</html>

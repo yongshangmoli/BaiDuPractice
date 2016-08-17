@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>腾爱医生微信网站，与患者沟通自如，强大插件自由定义，数据分析简单明了。</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        
+        <link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" rel="bookmark"  type="image/x-icon"  />
+		<link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+        
+        <link rel="stylesheet" href="http://s.pc.qq.com/byb/admin/animate/animate.min.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <script type="text/javascript" src="http://s.pc.qq.com/byb/jquery/jquery-1.11.3.min.js"></script>
+        <script src="jquery.zclip.min.js"></script>
+        <meta name="Description" content="腾爱医生为医生群体打造属于自己的公众号品牌，一分钟搞定微信网站，用自己的公众号与患者沟通，强大的插件自由定义，数据想看就看" />
+		<meta name="Keywords" content="腾爱医生,腾爱医生公众号管理,腾爱医生微信网站，腾讯医生插件，腾讯医生数据" />
+    </head>
+    <body>    
+        
+        <div class="download-layer">
+            <div class="fline">
+                <p>使用微信扫码，手机直接下载安装</p>
+            </div>
+            <div class="qrcode">
+                <img alt="" src="http://s.pc.qq.com/byb/WUfb6bCSvllXjeEiDOUOCTC7qMZ8ZH1Dwg1N6VIUh2i2Ja0-1Cpkt81PVmf4nHHQ.png">
+            </div>
+        </div>        
+        <div class="container-fluid">
+            <!-- layout header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="logo" ><a hidefocus="true" href="/mp/admin/Dashboard"></a></div>
+                    <div class="mp-info">
+                        <div class="mp" id="mpName">
+                            <div class="scan-download animated fadeIn">
+                                <span class="icon"></span>
+                                <p class="">手机端</p>
+                            </div>
+                            <div id="loginHeadImg" class="mp-logo" style=""></div>
+                            <div id="loginNickname" class="mp-name" style=""></div>
+                            <div class="logout">
+                                <a onclick="return window.confirm('确定退出？');" href="/mp/admin/Login/out" style="color: #FF0000">退出</a>
+                            </div>
+                    </div>
+                    </div>
+                </div>            
+            </div>
+            
+            <div class="main animated fadeIn">
+                <div class="main-content">
+                     
+                    <!-- layout menu -->
+                    <div class="menu" style="min-height: 854px;">
+                    
+                        <div class="menu-item">
+                            <div class="menu-options menu-part menu-index">
+                            <span class="icon home-lib"></span>
+                                <ul>
+                                    <li><a href="/mp/admin/Dashboard/index" class="active">首页</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                    
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon base-lib"></span>基础功能</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="/mp/admin/MyPage" class="">我的主页</a></li>
+                                    <li><a href="/mp/admin/Dashboard/authenticate" class="">公众号授权</a></li>
+                                    <li><a href="/mp/admin/WxMenu/index" class="">自定义菜单</a></li>
+                                    <li><a href="/mp/admin/AutoReply" class="">自动回复</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon knowledge"></span>文章管理</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="/mp/admin/Knowledge/list?type=1" class="" >科普文章</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=2" class="" >媒体报道</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=3" class="" >患者故事</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=4" class="" >学术活动</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon team"></span>团队管理</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="#" class="" >管理团队</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+            
+                    <!-- layout content -->
+                    <div class="content">
+                        <div class="dashboard-index">
+                            <div class="edit-scan-wrp">
+                                <p id="prew_phone" class="link"><a href="javascript:void(0);">预览团队主页</a></p>
+                                <div id="prew_phone_href" class="edit-scan-link">
+                                    <img src="images/for-scan.png" alt="预览主页二维码">
+                                    <div class="copy-link">
+                                        <input id="index_href" type="text" value="http://www.qq.com"><span ><a id="copy_index_href"
+                                        href="javascript:void(0);">复制连接</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="model-title">
+                                <p>公众号主页</p>
+                            </div>
+                            <div class="model-show" style="padding-top: 20px;">
+                                <div id="prev_phone" class="abs-center-bg" style="position: relative;margin-bottom: 24px;">
+                                    <img class="state" src="images/defbd-top.jpg" alt="手机信号栏">
+                                    <div id="phone_show" class="defbd-left phone-show edit-bg">
+                                         <ul id="preview_team"></ul>
+                                    </div> 
+                                </div>
+                                <p>模块自定义，让主页更有特色</p>
+                                <div class="model-create"><a id="go_create" href="javascript:void(0);">编辑主页</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var prewPhone = $("#prew_phone_href");
+
+                        $("#go_create").on("click",function() {
+                            window.location.href = "def-body.html";
+                        });
+                        $("#prew_phone").add(prewPhone).on({
+                            mouseover : function() {
+                                prewPhone.show();
+                            },
+                            mouseout : function() {
+                                prewPhone.hide();
+                            }
+                        });
+                        $(document).ready(function(){
+                            $("#copy_index_href").zclip({
+                                path:'js/ZeroClipboard.swf',
+                                copy:function(){
+                                    return $("#index_href").val()
+                                },
+                                afterCopy:function(){alert('复制成功');}
+                            });
+                        })
+
+                        var initInfo = {
+                            banner : {
+                                bannerBg : "images/def-bg2.jpg",
+                                teamLogo :"images/team-icon.png",
+                                teamName :"宜和",
+                                teamIntro : "儿科",
+                            },
+                            doctor : [0,1],
+                            essay : [1],
+                            contact : {
+                                code : "images/for-scan.png",
+                                addr : "mm",
+                                phone : "13455667788",
+                            }
+                        };
+
+                        var doctors = [{
+                                img : "images/article-img.jpg",
+                                name : "裴医生",
+                                career : "原深圳市儿童医院副主任",
+                                study : "儿科硕士",
+                                tag : ["喉软化","喉软化","扁桃体炎"],
+                            },{
+                                img : "images/article-img.jpg",
+                                name : "生",
+                                career : "医院副主任",
+                                study : "儿科硕士",
+                                tag : ["喉软化","喉软化","扁桃体炎"],
+                            },{
+                                img : "images/article-img.jpg",
+                                name : "生医院",
+                                career : "医院副主任",
+                                study : "儿科硕士",
+                                tag : ["喉软化","喉软化","扁桃体炎"],
+                            }
+                        ];
+                        var essays = [{
+                            img : "images/article-img.jpg",
+                            title : "裴医生",
+                            content : "原深圳市儿童医院副主任原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院",
+                        },{
+                            img : "images/article-img.jpg",
+                            title : "原深圳市儿童医院",
+                            content : "原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院",
+                        },{
+                            img : "images/article-img.jpg",
+                            title : "儿童医院",
+                            content : "原深圳市儿童医院原深圳市儿童医院原深圳市儿童医院",
+                        }];
+
+                        var util = {
+                            prewTeam : $("#preview_team"),
+                            rightSeg : [$("#team_edit"),$("#doctor_edit"),$("#essay_edit"),$("#contact_edit")],
+                            idName : ["#teamInfo_prvw","#teamDct_prvw","#teamEsy_prvw","#teamCtat_prvw"],
+                            leftSeg : ["teamInfo_prvw","teamDct_prvw","teamEsy_prvw","teamCtat_prvw"],
+                            segTitle : ["","医生","文章","联系方式"],
+                            setLeft : ["选择医生","选择文章","选择联系方式"],
+                            ulId : ["team_prvw","doctor_prev","essay_prev","contact_prev"],
+                            dctAndEsy : [{all:$("#all_doctors"),slctd:$("#sltd_doctors"),scount:$("#sltd_doctors_count"),acount:$("#all_doctors_count")},{all:$("#all_essay"),slctd:$("#sltd_essay"),scount:$("#sltd_essay_count"),acount:$("#all_essay_count")}],
+                            codeRecord : $("#code_record"),
+                            isEdit : [true,true,true,true],//表示对应的四部分是否编辑过，确定预览时是否需要显示出来
+                        };
+                        //各操作函数
+                        var fn = {
+                            init : function(info) {
+                                this.addLis();
+                                if (util.isEdit[0]) {
+                                    hdlr.tbDisplay(info.banner);
+                                }
+                                if(util.isEdit[1]) {
+                                    hdlr.tdDisplay(info.doctor);
+                                }
+                                if(util.isEdit[2]) {
+                                    hdlr.teDisplay(info.essay);
+                                }
+                                if(util.isEdit[3]) {
+                                    hdlr.tcDisplay(info.contact);
+                                }
+                            },
+                            //添加哪些部分
+                            addLis : function() {
+                                var html = '';
+                                for (var i = 0; i < 4; i++) {
+                                    if(util.isEdit[i]) {
+                                        html += '<li id="'+util.leftSeg[i]+'" style="border:none;"></li>';
+                                    }
+                                }
+                                util.prewTeam.html(html);
+                            },
+                            //添加包裹自定义信息的容器
+                            addWrp :function(index,count) {
+                                var inner = '<div class="prew-title"><h4><span class="left"></span>'+util.segTitle[index];
+                                if(count) {
+                                    inner += '<span class="defbd-aglr">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span id="'+util.ulId[index]+'_count" class="count">'+count+'</span></h4></div><div class="prew-ul"><ul id='+util.ulId[index]+'></ul></div>';
+                                }
+                                else {
+                                    inner += '</div><div id="contact_prev" class="prew-pd"></div>';
+                                }
+                                return inner;
+                                // util.leftSeg[index].html(inner);
+                            },
+                            addDoctor : function(dctrIdArr) {
+                                var tgt = $("#"+util.ulId[1]),dctCount = dctrIdArr.length;
+                                // console.log(tgt,util.ulId[1]);
+                                $("#"+util.ulId[1]+"_count").html(dctCount);
+                                for (var i = 0,len = dctCount; i < len; i++) {
+                                    var doctor = doctors[dctrIdArr[i]];
+                                    var info = ['<li><img class="left" alt="医生头像" src="',doctor.img,'"><div class="detail"><h3>',doctor.name,'</h3><h4>',doctor.career,'</h4><p>',doctor.study,'</p><dl class="tag">'];
+                                    for (var j = 0,len1 = doctor.tag.length>3?3:doctor.tag.length; j < len1; j++) {
+                                        info.push("<dt>"+doctor.tag[j]+"</dt>");
+                                    }
+                                    info.push('</dl></div></li>');
+                                    tgt.append($(info.join('')));
+                                }
+                            },
+                            //添加文章列表
+                            addEssay : function(esyIdArr) {
+                                var tgt = $("#"+util.ulId[2]),esyCount = esyIdArr.length;
+                                $("#"+util.ulId[2]+"_count").html(esyCount);
+                                for (var i = 0,len = esyCount; i < len; i++) {
+                                    var essay = essays[esyIdArr[i]];
+                                    var info = ['<li><img class="left" alt="文章缩略图" src="',essay.img,'"><div class="detail"><h4 class="trunc-text">',essay.title,'</h4><p  class="artcl">'];
+                                    if(essay.content.length > 24) {
+                                        info.push(essay.content.substr(0,22)+"...");
+                                    }
+                                    else {
+                                        info.push(essay.content);
+                                    }
+                                    info.push('</p>','</dl></div></li>');
+                                    tgt.append($(info.join('')));
+                                }
+                            },
+                            //添加联系方式
+                            addCtat :function(ctctObj) {
+                                var info = [],tgt = $("#"+util.ulId[3]);
+                                tgt.html("");
+                                if(ctctObj.code) {
+                                    info.push('<div class="prew-code"><img alt="医疗团队二维码" src='+ctctObj.code+'></div><p class="prew-toscan">长按识别关注我们</p>');
+                                }
+                                if(ctctObj.addr) {
+                                   info.push('<p class="prew-addr">地址:'+ctctObj.addr+"</p>"); 
+                                }
+                                if(ctctObj.phone) {
+                                    info.push('<p class="prew-phone">电话:'+ctctObj.phone+'</p>');
+                                }
+                                tgt.append($(info.join('')));
+                            },
+                            //添加 +选择文章、医生等的视图
+                            addEdit : function(index) {
+                                var html = '<a class="add" href="javascript:void(0);"><div class="addwrp"><h3><span class="add-icon">+</span>'+util.setLeft[index]+'</h3></div></a>';
+                                util.leftSeg[index].html(html);
+                                // ele.show().next().hide();
+                            },
+                            //创建医生列表
+                            createDoctor : function(doctor) {
+                                var html = ['<li value="',doctor.id,'"><img class="left" src="',doctor.img,'" alt="医生头像"><div class="detail"><h3>',doctor.name,'</h3><h4 class="trunc-text">',doctor.career,'</h4><p class="trunc-text">',doctor.study,'</p></div><div class="hdl-btn-wrp"><i class="delete"><a href="javascript:void(0);">删除</a></i><i class="one-up"><a href="javascript:void(0);">上移</a></i><i class="one-down"><a href="javascript:void(0);">下移</a></i></div><div class="hdl-btn-addw"><i class="tomain"><a href="javascript:void(0);">主页</a></i><i class="add"><a href="javascript:void(0);">添加</a></i></div></li>'];
+                                return html.join("");
+                            },
+                            //创建医生列表
+                            createEssay : function(essay) {
+                                var html = ['<li value="',essay.id,'"><img class="left" src="',essay.img,'" alt="文章头像"><div class="detail"><h4 class="trunc-text">',essay.title,'</h4><p class="trunc-text">',essay.content,'</p></div><div class="hdl-btn-wrp"><i class="delete"><a href="javascript:void(0);">删除</a></i><i class="one-up"><a href="javascript:void(0);">上移</a></i><i class="one-down"><a href="javascript:void(0);">下移</a></i></div><div class="hdl-btn-addw"><i class="tomain"><a href="javascript:void(0);">主页</a></i><i class="add"><a href="javascript:void(0);">添加</a></i></div></li>'];
+                                return html.join("");
+                            }
+                        };
+                        //事件处理函数
+                        var hdlr = {
+                            //teamBanner的展示
+                            tbDisplay : function(banner) {
+                                var wrp = $("#teamInfo_prvw"),bgWrp = "",hasBg = false;
+                                if(banner.bannerBg) {
+                                    bgWrp += '<img id="teambg_prvw" style="display: block;" class="banner-img" src="'+banner.bannerBg+'" alt="团队主页背景">';
+                                    hasBg = true;
+                                }
+                                bgWrp += ' <div id="teamcnt_prvw" class="banner float-clear"></div>';
+                                wrp.html(bgWrp).css({"position":"relative"});
+                                var infoWrp = $("#teamcnt_prvw");
+                                if(hasBg) {
+                                    infoWrp.css({"color":"#fff"});
+                                }
+                                if(banner.teamLogo) {
+                                    infoWrp.append('<div class="team-icon"><img src="'+banner.teamLogo+'" alt="团队图标"></div>');
+                                }
+                                else {
+                                    infoWrp.append('<div class="team-icon"><img src="images/team-icon.png" alt="团队图标"></div>');
+                                }
+                                if(banner.teamName) {
+                                    infoWrp.append('<h3 id="team_name" class="trunc-text">'+banner.teamName+'</h3>');
+                                }
+                                if(banner.teamIntro) {
+                                    var words = banner.teamIntro;
+                                    infoWrp.append(' <div class="intro-wrp-fix"><p id="team_intro"></p></div>');
+                                    if(words.length > 44) {
+                                        $("#team_intro").html(words.substr(0,42)+"...").css("text-align","left").parent().next().show();
+                                    }
+                                    else {
+                                        var setwords = $("#team_intro").html(words);
+                                        if(words.length > 26) {
+                                            setwords.css("text-align","left");
+                                        }
+                                        else {
+                                            setwords.css("text-align","center");
+                                        }
+                                        setwords.parent().next().hide();
+                                    }
+                                }
+                                else {
+                                    $("#team_intro").html("团队介绍");
+                                }
+                            },
+                            //teamDoctor的显示
+                            tdDisplay : function(dctrIdArr) {
+                                var title = fn.addWrp(1,dctrIdArr.length);
+                                $("#teamDct_prvw").append($(title));
+                                fn.addDoctor(dctrIdArr);
+                            },
+                            //teamEssay的显示
+                            teDisplay : function(esyIdArr) {
+                                var title = fn.addWrp(2,esyIdArr.length);
+                                $("#teamEsy_prvw").append($(title));
+                                fn.addEssay(esyIdArr);
+                            },
+                            //teamContact的显示
+                            tcDisplay : function(ctctObj) {
+                                var title = fn.addWrp(3);
+                                $("#teamCtat_prvw").append($(title));
+                                fn.addCtat(ctctObj);
+                            },
+                            dplDctr : function(dctrIdArr,htmlWrp,countWrp) {
+                                var doctor = "",html = "";
+                                for (var i = 0,len=dctrIdArr.length; i < len; i++) {
+                                    doctor = doctors[dctrIdArr[i]];
+                                    html += fn.createDoctor(doctor);
+                                }
+                                htmlWrp.html(html);
+                                countWrp.html(dctrIdArr.length);
+                            },
+                            //在首次进入时，选中的医生显示
+                            dplEsy : function(esyIdArr,htmlWrp,countWrp) {
+                                var essay = "",html = "";
+                                for (var i = 0,len=esyIdArr.length; i < len; i++) {
+                                    essay = essays[esyIdArr[i]];
+                                    html += fn.createEssay(essay);
+                                }
+                                htmlWrp.html(html);
+                                countWrp.html(esyIdArr.length);
+                            },
+                        };
+                        fn.init(initInfo);
+                    </script>
+            
+            <!-- layout footer -->
+            <div class="footer">
+    <div class="footer-content">
+        <div class="copyright">
+            <p>© 1998 - 2016 Tencent All Right Reserved.</p>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li><a href="javascript:void(0)">关于我们</a></li>
+                <li><a href="javascript:void(0)">隐私保护</a></li>
+                <li><a href="javascript:void(0)">服务条款</a></li>
+                <li class="last"><a href="javascript:void(0)">客服中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div>            
+        </div>
+        
+        <script type="text/javascript">
+        	var _layout_user_info = "http://doctor.qq.com/mp/admin/Dashboard/getUser";
+        	var _heartbeat = "http://doctor.qq.com/mp/admin/Heartbeat/one?ajax=1";;
+        	var NP = NP || "default_layout_np";
+        </script>
+        <script type="text/javascript" src="http://doctor.qq.com/mp/public/admin/scripts/admin.js?t=1"></script>
+<script>
+(function(){
+    if(window.doctor){
+        return;
+    };
+
+    var doctor={};
+    doctor.count=function(){if (typeof(pgvMain) == 'function') pgvMain()};
+    doctor.loadScript=function(url,callback){
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+        if (script.readyState) {
+            script.onreadystatechange = function() {
+                if (script.readyState == "loaded" || script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    if (callback) {
+                        callback()
+                    }
+                }
+            }
+        } else {
+            script.onload = function() {
+                if (callback) {
+                    callback()
+                }
+            }
+        }
+        script.src = url;
+        document.body.appendChild(script)
+    };
+
+    doctor.init=function(){
+        doctor.loadScript('http://tajs.qq.com/stats?sId=55876264',function() {
+            doctor.loadScript('http://pingjs.qq.com/tcss.ping.js',function(){doctor.count()});
+        });
+    };
+
+    window.doctor=doctor;
+    doctor.init();
+})();
+</script>

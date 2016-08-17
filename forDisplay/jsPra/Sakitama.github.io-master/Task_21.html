@@ -1,0 +1,89 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 21</title>
+	<script src="js/task-21.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "Microsoft YaHei UI", sans-serif;
+		}
+		body {
+			background-color: #e2e2e2;
+		}
+		fieldset {
+			border: none;
+			background: white;
+			-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+			-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+			-webkit-border-radius: 23px;
+			-moz-border-radius: 23px;
+			-o-border-radius: 23px;
+			border-radius: 23px;
+		}
+		fieldset#left {
+			width: 50%;
+			float: left;
+			height: 80%;
+			text-align: center;
+			padding-top: 100px;
+			margin: 0 10px;
+		}
+		fieldset#right {
+			height: 80%;
+			text-align: center;
+			padding-top: 100px;
+			margin: 0 10px;
+		}
+		#display, #hobby-display {
+			width: 90%;
+			margin: 0 auto;
+		}
+		#display li, #hobby-display li {
+			width: 100px;
+			list-style: none;
+			background-color: aqua;
+			float: left;
+			margin: 10px;
+			height: 50px;
+			padding: 10px;
+			line-height: 50px;
+			text-align: center;
+			color: white;
+			-webkit-transition: all 1s ease-in-out;
+			-moz-transition: all 1s ease-in-out;
+			-o-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+		}
+		#display li.mouseover {
+			width: 200px;
+			background-color: red;
+			cursor: pointer;
+		}
+		@media screen and (max-width: 800px) {
+			fieldset#left, fieldset#right {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+<fieldset id="left">
+	<legend>标签</legend>
+	<label form="tagInput">Tag：<input id="tagInput" type="text"></label>
+	<input id="reset-left" type="button" value="重置">
+	<ul id="display"></ul>
+</fieldset>
+<fieldset id="right">
+	<legend>爱好</legend>
+	<textarea cols="50" rows="10" id="text"></textarea><br>
+	<input id="hobby" type="button" value="确认爱好">
+	<input id="reset-right" type="button" value="重置">
+	<ul id="hobby-display"></ul>
+</fieldset>
+</body>
+</html>

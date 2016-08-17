@@ -1,0 +1,155 @@
+main{
+  section.more{
+    div.world{
+      background-image: url(../img/section_activity.png);
+      background-size: cover;
+      height: 565px;
+      float: left;
+      width: 66.6%;
+      color: $white;
+      h2{
+        padding-top: 130px;
+        text-align: center;
+        font-size: 48px;
+      }
+      h1{
+        text-align: center;
+        font-size: 128px;
+      }
+      h3{
+        text-align: center;
+        font-size: 29px;
+        font-weight: lighter;
+      }
+    }
+    div.more{
+      height: 565px;
+      float: left;
+      width: 33.3%;
+    }
+    div.info{
+      h3{
+        padding-top:130px;
+        text-align: center;
+        font-size: 23px;
+        span{
+          color: $pink;
+        }
+      }
+      p{
+        width: 288px;
+        color: $gray;
+        padding: 30px 17%;
+      }
+      div.button{
+        text-align: center;
+        margin: 0 auto;
+        width: 105px;
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid $pink;
+        color: $pink;
+        background-color: $white;
+      }
+      div.button:hover{
+        color: $white;
+        background-color: $pink;
+      }
+      div.span{
+        text-align: center;
+        margin: 25px auto;
+        height: 20px;
+        span{
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          margin: 3px;
+          border: 1px solid $gray;
+          border-radius: 5px;
+        }
+        span.active{
+          background-color: $gray;
+        }
+      }
+    }
+    div.info::before{
+      content: "";
+      border-color: transparent $white transparent transparent ;
+      border-style: solid;
+      border-width: 20px 30px 20px 0;
+      display: block;
+      height: 0;
+      width: 0;
+      left: -30px;
+      top: 268px;
+      position: relative;
+    }
+    div.pink{
+      text-align: center;
+      color: $white;
+      background-color: $pink;
+      h3{
+        padding-top: 177px;
+        font-size: 20px;
+        font-weight: lighter;
+      }
+      h3+h3{
+        padding-top: 5px;
+      }
+      div.horizonal_line{
+        width: 31px;
+        height: 10px;
+        border-bottom: 2px solid $white;
+        margin: 0 auto;
+        @include horizonal_transition;
+      }
+      div.button{
+        width: 165px;
+        height: 44px;
+        background-color: $pink;
+        border: 1px solid $white;
+        margin: 10px auto;
+        font-size: 20px;
+        line-height: 44px;
+      }
+      div.button:hover{
+        background-color: $white;
+        color: $pink;
+      }
+    }
+    div.pink:hover{
+      div.horizonal_line{
+        width: 165px;
+      }
+    }
+    div.gray{
+      @extend div.pink;
+      background-color: $white;
+      color: $pink;
+      div.horizonal_line{
+        border-color: $pink;
+      }
+      div.button{
+        background-color: $white;
+        border-color: $pink;
+      }
+      div.button:hover{
+        background-color: $pink;
+        color: $white;
+      }
+    }
+    div.img{
+      float: left;
+      width: 33.4%;
+      height: 565px;
+      background-image: url(../img/love_life_img.png);
+      background-size: cover;
+    }
+    div.img::before{
+      @extend div.info::before;
+      left: 0px;
+      border-color: transparent transparent transparent $white;
+      border-width: 20px 0 20px 30px;
+    }
+  }
+}

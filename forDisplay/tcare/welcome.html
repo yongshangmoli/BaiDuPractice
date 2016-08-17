@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>腾爱医生微信网站，与患者沟通自如，强大插件自由定义，数据分析简单明了。</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" rel="bookmark"  type="image/x-icon"  />
+		<link href="http://doctor.qq.com/mp/public/admin/images/favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+        
+        <link rel="stylesheet" href="http://s.pc.qq.com/byb/admin/animate/animate.min.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <script type="text/javascript" src="http://s.pc.qq.com/byb/jquery/jquery-1.11.3.min.js"></script>
+        <meta name="Description" content="腾爱医生为医生群体打造属于自己的公众号品牌，一分钟搞定微信网站，用自己的公众号与患者沟通，强大的插件自由定义，数据想看就看" />
+		<meta name="Keywords" content="腾爱医生,腾爱医生公众号管理,腾爱医生微信网站，腾讯医生插件，腾讯医生数据" />
+    </head>
+    <body>    
+        <div id="suc_pub_info" class="my-pub-wrapper" style="display:none;">
+          <div class="my-sucs-pub-info my-text-center my-boder-radius">
+            <img src="images/publish-ok.png" alt="正确图标" />&nbsp;&nbsp;发布成功
+          </div>
+        </div>
+        <div id="pub_cover" class="my-cover-bg" style="display:none;">
+          <div class="my-cover-content">
+            <div class="my-cover-contentt my-border-box my-relative">
+              <span class="my-larger-fontsize">温馨提示</span>
+              <span id="cover_close" class="my-cover-contenttr my-inline my-absolute">
+                <img src="images/close.png" alt="关闭图标" />
+              </span>
+            </div>
+            <div class="my-cover-contentc">
+              <div class="my-warning"><img src="images/red-warning.png" alt="警告图标" /></div>
+              <span>发布欢迎语后，将24小时内对该公众号所有患者生效，确定要发布？</span>
+            </div>
+            <div class="my-cover-contentb">
+                <div id="assure_pub" class="my-cover-btn-assure my-text-center my-boder-radius">确认</div>
+                <div id="cancel_pub" class="my-cover-btn-cancel my-text-center my-boder-radius">取消</div>
+            </div>
+          </div>
+        </div>
+        <div class="download-layer">
+            <div class="fline">
+                <p>使用微信扫码，手机直接下载安装</p>
+            </div>
+            <div class="qrcode">
+                <img alt="" src="http://s.pc.qq.com/byb/WUfb6bCSvllXjeEiDOUOCTC7qMZ8ZH1Dwg1N6VIUh2i2Ja0-1Cpkt81PVmf4nHHQ.png">
+            </div>
+        </div>        
+        <div class="container-fluid">
+            <!-- layout header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="logo" ><a hidefocus="true" href="/mp/admin/Dashboard"></a></div>
+                    <div class="mp-info">
+                        <div class="mp" id="mpName">
+                            <div class="scan-download animated fadeIn">
+                                <span class="icon"></span>
+                                <p class="">手机端</p>
+                            </div>
+                        
+                            <div id="loginHeadImg" class="mp-logo" style=""></div>
+                            <div id="loginNickname" class="mp-name" style=""></div>
+                            <div class="logout">
+                                <a onclick="return window.confirm('确定退出？');" href="/mp/admin/Login/out" style="color: #FF0000">退出</a>
+                            </div>
+                    </div>
+                    </div>
+                </div>            
+            </div>
+            
+            <div class="main animated fadeIn">
+                <div class="main-content">
+                     
+                    <!-- layout menu -->
+                    <div class="menu" >
+                    
+                        <div class="menu-item">
+                            <div class="menu-options menu-part menu-index">
+                            <span class="icon home-lib"></span>
+                                <ul>
+                                    <li><a href="/mp/admin/Dashboard/index" class="active">首页</a></li>
+                                       </ul>
+                                                            
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                    
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon base-lib"></span>基础功能</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="/mp/admin/MyPage" class="">我的主页</a></li>
+                                    <li><a href="/mp/admin/Dashboard/authenticate" class="">公众号授权</a></li>
+                                    <li><a href="/mp/admin/WxMenu/index" class="">自定义菜单</a></li>
+                                    <li><a href="/mp/admin/AutoReply" class="">自动回复</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon knowledge"></span>文章管理</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="/mp/admin/Knowledge/list?type=1" class="" >科普文章</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=2" class="" >媒体报道</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=3" class="" >患者故事</a></li>
+                                    <li><a href="/mp/admin/Knowledge/list?type=4" class="" >学术活动</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-sep">
+                            <div class="sep"></div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-part"><span class="icon team"></span>团队管理</div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a href="#" class="" >管理团队</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- layout content -->
+                    <div class="content">
+                        <div class="dashboard-index">
+                            <div id="tab-two" class="my-tab">
+                                <div class="my-tab-item my-inline my-tab-active"><p>欢迎语</p></div>
+                                <div class="my-inline my-gap">|</div>
+                                <div class="my-tab-item my-inline"><p>智能应答</p></div>
+                            </div>
+                            <div id="welcome" style="display:none;">
+                                <div id="choose_start" class="my-info-bg my-relative">
+                                    <p id="welcome_slogan" class="my-inline">未开启欢迎语，开启后，系统将自动对新关注粉丝发送欢迎语</p>
+                                    <div id="welcome_ask" class="my-start-btn my-boder-radius">开&nbsp;&nbsp;启</div>
+                                </div> 
+                                <div id="start_ask" class="my-absolute my-remain-start my-boder-radius" style="display:none;">
+                                    <p>开启欢迎语后，24小时内将对该公众号所有患者生效。确定开启?</p>
+                                    <div id="assure_start" class="my-remain-start-btn my-remain-start-assure my-boder-radius">确定</div>
+                                    <div id="cancel_ask" class="my-remain-start-btn my-remain-start-cancel my-boder-radius">取消</div>
+                                </div>
+                                <div id="default_display" class="my-imgwrap my-text-center">
+                                    <img src="images/welcom1.png" alt="微信界面的示意图" />
+                                    <div class="my-preview">
+                                        <p>效果预览</p>
+                                    </div>
+                                </div>
+                                <div id="assure_display" style="display:none;">
+                                    <div class="my-assure-top">
+                                      <div class="my-assure-tleft my-relative">
+                                        <div class="my-assure-tleft-headicon my-grey-border my-relative">
+                                          <img src="images/dashboard_2.png" alt="医疗机构头像" class="my-full-wh"/>
+                                        </div>
+                                        <div class="my-assure-tleft-welcome my-relative">
+                                          <p id="welcome_sync">您好，欢迎来到张强医疗集团</p>
+                                        </div>
+                                      </div>
+                                      <div class="my-assure-tright my-inline">
+                                        <div class="my-assure-trightt">
+                                          <textarea id="welcome_words" class="my-full-wh my-default-fontsize  my-border-box">您好，欢迎来到张强医疗集团</textarea>
+                                          <p id="clear_welcome">清空内容</p>
+                                        </div>
+                                        <div class="my-assure-trightb" style="position:relative;">
+                                          <span><img src="images/smile.png" alt="笑脸图标" class="my-hand-cursor"/></span>
+                                          <span style="margin-left:32px;">
+                                            <a id="join_link" class="my-hand-cursor">
+                                              <img src="images/notselect.png" alt="选中/未选中图标" />&nbsp;&nbsp;添加团队主页链接
+                                            </a>
+                                          </span>
+                                          <span id="text_control" class="my-assure-trightb-des">还能输入200字</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="my-assure-bottom">
+                                      <div id="welcome_pub" class="my-publish-btn my-inline my-boder-radius">发布</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="smart_answer" style="display:none;">
+                               <div id="choose_start_sa" class="my-info-bg my-relative">
+                                    <p id="welcome_slogan_sa" class="my-inline">开启智能应答后，患者咨询时，系统将根据患者咨询内容自动推送您的相关文章</p>
+                                    <div id="welcome_ask_sa" class="my-start-btn my-boder-radius">开&nbsp;&nbsp;启</div>
+                                </div> 
+                                <div id="start_ask_sa" class="my-absolute my-remain-start my-boder-radius" style="display:none;">
+                                    <p>开启智能应答后，24小时内将对该公众号所有患者生效。确定开启？</p>
+                                    <div id="assure_start_sa" class="my-remain-start-btn my-remain-start-assure my-boder-radius">确定</div>
+                                    <div id="cancel_ask_sa" class="my-remain-start-btn my-remain-start-cancel my-boder-radius">取消</div>
+                                </div>
+                                <div id="default_display_sa" class="my-imgwrap my-text-center">
+                                    <img src="images/smart-answer.png" alt="微信界面的示意图" />
+                                    <div class="my-preview">
+                                        <p>效果预览</p>
+                                    </div>
+                                </div>
+                                <div id="assure_display_sa" style="display:none;">
+                                    <div id="no_aricle" class="my-noessay-wapper" style="display:none;">
+                                      <div class="my-text-center my-noessay-inner">
+                                        <div></div>
+                                        <p>您当前还没有文章可设置智能应答</p>
+                                        <a href="#">
+                                          <div class="my-publish-btn my-boder-radius my-middle-fontsize">写文章</div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div id="with_articles">
+                                      <div class="my-assure-top">
+                                        <div class="my-border-box my-article-wrapper">
+                                          <div class="my-config-all">
+                                            <a id="cfg_all_essay" href="#">
+                                              <img src="images/round-choose.png" alt="未选中/选中的图标"/>
+                                              <span class="my-inline">全部设置</span>
+                                            </a>
+                                            <span class="my-inline">(共xx篇)</span>
+                                          </div>
+                                          <ul id="essay_list">
+                                            <li class="my-article-list">
+                                              <img style="display:none;" class="my-hand-cursor" src="images/round-choose.png" alt="未选中/选中的图标"/>
+                                              <span>
+                                                <img src="images/article-img.jpg" alt="文章列表的图标"/>
+                                              </span>
+                                              <span class="my-list-desc">
+                                                  <p><a href="#">你不知道的那些事</a></p>
+                                                  <p class="my-date">5月25日</p>
+                                              </span>
+                                              <span class="my-list-config">
+                                                设置应答文章
+                                              </span>
+                                            </li>
+                                            <li class="my-article-list">
+                                              <img style="display:none;" class="my-hand-cursor" src="images/round-choose.png" alt="未选中/选中的图标"/>
+                                              <span>
+                                                <img src="images/article-img.jpg" alt="文章列表的图标"/>
+                                              </span>
+                                              <span class="my-list-desc">
+                                                  <p><a href="#">你不知道的那些事</a></p>
+                                                  <p class="my-date">5月25日</p>
+                                              </span>
+                                              <span class="my-list-config">
+                                                设置应答文章
+                                              </span>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="my-assure-bottom">
+                                        <div id="sa_config" style="display:none;">
+                                            <div id="sa_config_assure" class="my-publish-btn my-inline my-boder-radius">确认</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <div id="sa_config_cancel" class="my-publish-btn my-inline my-boder-radius">取消</div>
+                                        </div>
+                                        <div id="article_pagination">
+                                          1-2页
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                    
+                    
+            <!-- layout footer -->
+                    <div class="footer">
+                    <div class="footer-content">
+                        <div class="copyright">
+                            <p>© 1998 - 2016 Tencent All Right Reserved.</p>
+                        </div>
+
+                        <div class="links">
+                            <ul>
+                                <li><a href="javascript:void(0)">关于我们</a></li>
+                                <li><a href="javascript:void(0)">隐私保护</a></li>
+                                <li><a href="javascript:void(0)">服务条款</a></li>
+                                <li class="last"><a href="javascript:void(0)">客服中心</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+            <div>
+        </body>
+        <script type="text/javascript">
+            (function() {
+                var util = util || {};
+                util.textFull = false;
+                util.preDisplayIndex = 0;
+                util.choices = [$("#welcome"),$("#smart_answer")];
+                util.assureView = $("#assure_display");
+                util.welcomeWords = $("#welcome_words");
+                util.welcomeWordsSync = $("#welcome_sync");
+                util.joinLink = $("#join_link :first-child");
+                util.essayList = $("#essay_list li");
+                util.essaySum = util.essayList.length;
+                util.eaasySumCount = 0;
+                util.essayListChoose = $("#essay_list li img:even");
+                util.essayListConfig = $("#essay_list li span:last-child");
+                util.slctedEssay = [];//用于存储要被设置为智能应答的文章的id编号
+                util.singleSlct = -1;//当前设置哪篇文章
+                util.bfSlogan = ["未开启欢迎语，开启后，系统将自动对新关注粉丝发送欢迎语","开启智能应答后，患者咨询时，系统将根据患者咨询内容自动推送您的相关文章"];
+                util.afSlogan = ["已开启欢迎语，系统将自动对新关注粉丝发送欢迎语","已开启智能应答，系统将针对患者咨询搜索您的文章，并将相关文章自动回复给患者"];
+                util.startInfo = ["开启欢迎语后，24小时内将对该公众号所有患者生效。确定开启?","开启智能应答后，24小时内将对该公众号所有患者生效。确定开启？"];
+                util.stopInfo = ["停用后，新加入患者无法收到欢迎内容。确定停用?","停用后，患者咨询时将无法收到 智能应答。确定停用？"];
+                util.setSmartAnswer = ["设置应答文章","取消设置"];
+                //设置某个容器的显示内容
+                util._textConfig = function(container,text) {
+                  return container.html(text);
+                };
+                //显示或隐藏元素，hideEles,showEles为数组
+                util._hideOrShow = function(hideEles,showEles) {
+                  for (var i = 0; i < hideEles.length; i++) {
+                    hideEles[i].hide();
+                  }
+                  for (var i = 0; i < showEles.length; i++) {
+                    showEles[i].show();
+                  }
+                };
+                //设置图片的src，或者点击在两张图片之间切换
+                util._setOrToggleImg = function(ele,imgs,key) {
+                  if(Object.prototype.toString.call(imgs) === "[object String]") {
+                    ele.attr("src",imgs);
+                  }
+                  else if(Object.prototype.toString.call(imgs) === "[object Array]") {
+                    if(ele.attr("src").indexOf(key) > 0) {
+                      ele.attr("src",imgs[0]);
+                      return false;//表示当前选项未选中
+                    }
+                    else {
+                      ele.attr("src",imgs[1]);
+                      return true;
+                    }
+                  }
+                };
+
+                //判断是否已经开启过欢迎语、智能应答;0未开，1开启
+                util.choices[0].show();
+                util._isOpened = function(welcome,smartQA) {
+                  if(!(welcome === 0 || welcome === 1) || !(smartQA === 0 || smartQA === 1)) {
+                    return ;
+                  }
+                  var that = $("#start_ask");
+                  if(welcome === 1) {
+                    util._textConfig(that.prev().children().first(),util.afSlogan[0]).end().last().html("停&nbsp;&nbsp;用").addClass("my-stop-btn");
+                    util._textConfig(that.children().first(),util.stopInfo[0]).next().attr("id","assure_stop");
+                    util._hideOrShow([that,$("#default_display")],[$("#assure_display")]);
+                  }
+                  else {
+                    util._textConfig(that.prev().children().first(),util.afSlogan[0]).end().last().html("开&nbsp;&nbsp;启").removeClass("my-stop-btn");
+                    util._textConfig(that.children().first(),util.startInfo[0]).next().attr("id","assure_start");
+                    util._hideOrShow([that,$("#assure_display")],[$("#default_display")]);
+                  }
+                  that = $("#start_ask_sa");
+                  if(smartQA === 1) {
+                    util._textConfig(that.prev().children().first(),util.afSlogan[1]).end().last().html("停&nbsp;&nbsp;用").addClass("my-stop-btn");
+                    util._textConfig(that.children().first(),util.stopInfo[1]).next().attr("id","assure_stop_sa");
+                    util._hideOrShow([that,$("#default_display_sa")],[$("#assure_display_sa")]);
+                  }
+                  else {
+                     util._textConfig(that.prev().children().first(),util.afSlogan[1]).end().last().html("开&nbsp;&nbsp;启").removeClass("my-stop-btn");
+                    util._textConfig(that.children().first(),util.startInfo[1]).next().attr("id","assure_start_sa");
+                    util._hideOrShow([that,$("#assure_display_sa")],[$("#default_display_sa")]);
+                  }
+                };
+                 util._isOpened(0,1);
+                
+                //切换欢迎语和智能应答
+                $(".my-tab-item").click(function() {
+                  $(this).addClass("my-tab-active").siblings().removeClass("my-tab-active");
+                  var curSelected = $(this).index();
+                  curSelected = curSelected>0?curSelected/2:0;
+                  if(util.choices[curSelected].is(":hidden")) {
+                    util.choices[curSelected].show();
+                    util.choices[util.preDisplayIndex].hide();
+                    util.preDisplayIndex = curSelected;
+                  }
+                });
+                $("#welcome_ask,#welcome_ask_sa").click(function() {
+                  $(this).parent().next().show();
+                });
+                //点击启用或者取消欢迎语/智能应答
+                $("#start_ask,#start_ask_sa").on("click",function(e) {
+                  var wordContainer = $(this).prev().children().first();
+                  var assureContainer = $(this).children().first();
+                  switch(e.target.id) {
+                    case "assure_start":
+                      util._textConfig(wordContainer,util.afSlogan[0]).end().last().html("停&nbsp;&nbsp;用").addClass("my-stop-btn");
+                      util._textConfig(assureContainer,util.stopInfo[0]).next().attr("id","assure_stop");
+                      util._hideOrShow([$(this),$("#default_display")],[$("#assure_display")]);
+                      break;
+                    case "assure_start_sa":
+                      util._textConfig(wordContainer,util.afSlogan[1]).end().last().html("停&nbsp;&nbsp;用").addClass("my-stop-btn");
+                      util._textConfig(assureContainer,util.stopInfo[1]).next().attr("id","assure_stop_sa");
+                      util._hideOrShow([$(this),$("#default_display_sa")],[$("#assure_display_sa")]);
+                      break;
+                    case "assure_stop":
+                      util._textConfig(wordContainer,util.bfSlogan[0]).end().last().html("开&nbsp;&nbsp;启").removeClass("my-stop-btn");
+                      util._textConfig(assureContainer,util.startInfo[0]).next().attr("id","assure_start");
+                      util._hideOrShow([$(this),$("#assure_display")],[$("#default_display")]);
+                      break;
+                    case "assure_stop_sa":
+                      util._textConfig(wordContainer,util.bfSlogan[1]).end().last().html("开&nbsp;&nbsp;启").removeClass("my-stop-btn");
+                      util._textConfig(assureContainer,util.startInfo[1]).next().attr("id","assure_start_sa");
+                      util._hideOrShow([$(this),$("#assure_display_sa")],[$("#default_display_sa")]);
+                      break;
+                    case "cancel_ask":
+                      $(this).hide();
+                      break;
+                    case "cancel_ask_sa":
+                      $(this).hide();
+                      break;
+                    default:
+                      break;
+                  }
+                });
+                $("#clear_welcome").click(function() {
+                  util.welcomeWords.val("").focus();
+                  util.welcomeWordsSync.html("");
+                  util._setOrToggleImg(util.joinLink,"images/notselect.png");
+                  util.welcomeWords.trigger("keyup"); 
+                });
+                
+                util.welcomeWords.keyup(function() {
+                  var value = $(this).val();
+                  var textLen = value.length;
+                  if(textLen >= 200) {
+                    $(this).val(value.slice(0,200));
+                    $("#text_control").text("还能输入0字");
+                  }
+                  else {
+                    $("#text_control").text("还能输入"+(200-textLen)+"字");
+                  }
+                  var beginIndex = $(this).val().indexOf("<团队主页>");
+                  var stopIndex = beginIndex + 6;
+                  var words = util.welcomeWords.val().toString();
+                  if(beginIndex > 0) {
+                    util.welcomeWordsSync.html(words.slice(0,beginIndex)+"<a href='#'><团队主页></a>"+words.slice(stopIndex));
+                    util._setOrToggleImg(util.joinLink,"images/selected.png");
+                  }
+                  else {
+                    util.welcomeWordsSync.html($(this).val());
+                    util._setOrToggleImg(util.joinLink,"images/notselect.png");
+                  }
+                });
+                util.welcomeWords.trigger("keyup");
+                $("#welcome_pub").click(function() {
+                  $("#pub_cover").show();
+                });
+                $("#cover_close").add($("#cancel_pub")).click(function() {
+                  $("#pub_cover").hide();
+                });
+                $("#assure_pub").click(function() {
+                  util._hideOrShow([$("#pub_cover")],[$("#suc_pub_info")]);
+                  $("#suc_pub_info").delay(2000).fadeOut('slow');
+                });
+                $("#join_link").click(function() {
+                  var img = $(this).children().first();
+                  if(this.firstElementChild.src.indexOf("notselect") > 0) {
+                      util._setOrToggleImg(img,"images/selected.png");
+                      util.welcomeWordsSync.html(util.welcomeWords.val()+" \r\n点击<a href='#'><团队主页></a>了解我们");
+                      util.welcomeWords.val(util.welcomeWords.val()+"\r\n点击<团队主页>了解我们");
+                      util.welcomeWords.trigger("keyup");
+                  }
+                  else {
+                    util._setOrToggleImg(img,"images/notselect.png");
+                    var defaultIndex = util.welcomeWords.val().indexOf("<团队主页>");
+                    var beginIndex = defaultIndex - 3;
+                    var stopIndex = defaultIndex + 10;
+                    util.welcomeWords.val(util.welcomeWords.val().toString().slice(0,beginIndex)+util.welcomeWords.val().toString().slice(stopIndex));
+                    util.welcomeWordsSync.html(util.welcomeWords.val());
+                  }
+                  util.welcomeWords.trigger("keyup"); 
+                });
+                //选中 全部设置的处理函数
+                $("#cfg_all_essay").click(function() {
+                  //如果是确定之后再点设置的
+                  if($("#sa_config").is(":hidden")) {
+                    util._hideOrShow([util.essayListConfig,$("#article_pagination")],[util.essayListChoose,$("#sa_config")]);
+                    util.essayList.each(function() {
+                      util._setOrToggleImg($(this).children().first(),"images/round-choose.png");
+                    });
+                    //util._setOrToggleImg($("#cfg_all_essay img"),"images/round-selected.png");
+                  }
+                  var res = util._setOrToggleImg($(this).children().first(),["images/round-choose.png","images/round-selected.png"],"round-selected");
+                  if(res) {
+                    util.essayList.each(function() {
+                      util._setOrToggleImg($(this).children().first(),"images/round-selected.png");
+                    });
+                    util.eaasySumCount = 8;
+                  }
+                  else {
+                    util.essayList.each(function() {
+                      util._setOrToggleImg($(this).children().first(),"images/round-choose.png");
+                    });
+                    util.eaasySumCount = 0;
+                  }
+                });
+                //某个文章列表的点击处理
+                util.essayListChoose.click(function() {
+                  var res = util._setOrToggleImg($(this),["images/round-choose.png","images/round-selected.png"],"round-selected");
+                  util.eaasySumCount = res ? (util.eaasySumCount+1) : (util.eaasySumCount-1);
+                  if(util.eaasySumCount === util.essaySum ) {
+                    util._setOrToggleImg($("#cfg_all_essay :first-child"),"images/round-selected.png");
+                  }
+                  else {
+                    util._setOrToggleImg($("#cfg_all_essay :first-child"),"images/round-choose.png");
+                  }
+                });
+                /*此处新增函数表示文章状态应该被设置为什么,1设置，0取消*/
+                /*var essayState = function(wrp,option) {
+                  util._textConfig(wrp,util.setSmartAnswer[option]);
+                }*/
+
+                //全部设置后的确定或取消
+                $("#sa_config").on("click",function(e) {
+                  var id = e.target.id;
+                  util._setOrToggleImg($("#cfg_all_essay img"),"images/round-choose.png");
+                  if(id === "sa_config_assure" || id === "sa_config_cancel") {
+                    if(id === "sa_config_assure") {
+                      util.essayList.each(function() {
+                        var chooseImg = $(this).children().first();
+                        var config = chooseImg.end().last();
+                        if(chooseImg.attr("src").indexOf("round-selected") > 0) {
+                          //此处表示哪些文章是被选中的
+                          console.log($(this).index()+1);
+                          util.slctedEssay.push($(this).index()+1);
+                          util._textConfig(config,util.setSmartAnswer[1]);
+                        }
+                        else{
+                          util._textConfig(config,util.setSmartAnswer[0]);
+                        }
+                      });
+                    }
+                    util._hideOrShow([util.essayListChoose,$("#sa_config")],[util.essayListConfig,$("#article_pagination")]);
+                  }
+                });
+                //每篇文章的单独点击设置文字
+                util.essayListConfig.click(function() {
+                   //util.singleSlct = $(this).parent().attr("id");
+                  if($(this).html() === util.setSmartAnswer[1]) {
+                    util._textConfig($(this),util.setSmartAnswer[0]);
+                  }
+                  else {
+                    util._textConfig($(this),util.setSmartAnswer[1]);
+                  }
+                });
+                //0设置为智能应答文章，1取消设置；返回1表示成功，0表示失败
+               
+               /* function essaySet = function(isSet,handler) {
+                  if(isSet) {
+                    //向后台
+                  }
+                };*/
+            })();
+        </script>
+       <script type="text/javascript">
+           var _layout_user_info = "http://doctor.qq.com/mp/admin/Dashboard/getUser";
+           var _heartbeat = "http://doctor.qq.com/mp/admin/Heartbeat/one?ajax=1";
+           var NP = NP || "default_layout_np";
+       </script>
+       <script type="text/javascript" src="http://doctor.qq.com/mp/public/admin/scripts/admin.js?t=1"></script>
+       <script>
+           (function(){
+                if(window.doctor){
+                   return;
+                };
+           
+               var doctor={};
+               doctor.count=function(){if (typeof(pgvMain) == 'function') pgvMain()};
+               doctor.loadScript=function(url,callback){
+               var script = document.createElement('script');
+               script.type = "text/javascript";
+               if (script.readyState) {
+                   script.onreadystatechange = function() {
+                       if (script.readyState == "loaded" || script.readyState == "complete") {
+                           script.onreadystatechange = null;
+                           if (callback) {
+                               callback()
+                           }
+                       }
+                   }
+               } else {
+                   script.onload = function() {
+                       if (callback) {
+                           callback()
+                       }
+                   }
+               }
+               script.src = url;
+               document.body.appendChild(script)
+                   };
+               
+               doctor.init=function(){
+                  doctor.loadScript('http://tajs.qq.com/stats?sId=55876264',function() {
+                   doctor.loadScript('http://pingjs.qq.com/tcss.ping.js',function(){doctor.count()});
+               });
+                   };
+               
+               window.doctor=doctor;
+               doctor.init();
+           })();
+       </script>

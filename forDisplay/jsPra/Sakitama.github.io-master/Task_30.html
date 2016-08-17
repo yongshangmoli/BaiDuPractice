@@ -1,0 +1,140 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 30</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-size: 30px;
+			font-family: "Microsoft YaHei UI", sans-serif;
+		}
+		td.text {
+			width: 150px;
+		}
+		td.text p {
+			text-align: right;
+		}
+		table {
+			margin: 0 auto;
+		}
+		table tr td {
+			height: 80px;
+		}
+		input.user_message {
+			width: 500px;
+			height: 50px;
+			padding: 10px;
+			border: 2px solid gray;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			-o-border-radius: 10px;
+			border-radius: 10px;
+		}
+		p.message {
+			width: 500px;
+			color: lightgray;
+		}
+		button#submit {
+			width: 500px;
+			height: 50px;
+			color: white;
+			background-color: #41beff;
+			border: none;
+			border-radius: 10px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+<form method="post" action="javascript:;" name="get_user_message" id="get_user_message">
+	<table>
+
+		<tr>
+			<td class="text">
+				<p>名称：</p>
+			</td>
+			<td>
+				<label for="validate_username"><input data-help="username" required class="user_message" id="validate_username" type="text" name="validate_username"></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="text"></td>
+			<td>
+				<p class="message" id="username"></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text">
+				<p>密码：</p>
+			</td>
+			<td>
+				<label for="validate_password"><input data-help="password" required class="user_message" id="validate_password" type="password" name="validate_password"></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="text"></td>
+			<td>
+				<p class="message" id="password"></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text">
+				<p>确认密码：</p>
+			</td>
+			<td>
+				<label for="validate_repeat_password"><input data-help="repeat_password" required class="user_message" id="validate_repeat_password" type="password" name="validate_repeat_password"></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="text"></td>
+			<td>
+				<p class="message" id="repeat_password"></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text">
+				<p>邮箱：</p>
+			</td>
+			<td>
+				<label for="validate_email"><input data-help="userEmail" required class="user_message" id="validate_email" type="email" name="validate_email"></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="text"></td>
+			<td>
+				<p class="message" id="userEmail"></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text">
+				<p>手机：</p>
+			</td>
+			<td>
+				<label for="validate_phone"><input data-help="userPhone" required class="user_message" id="validate_phone" type="text" name="validate_phone"></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="text"></td>
+			<td>
+				<p class="message" id="userPhone"></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text"></td>
+			<td>
+				<button id="submit">提交</button>
+			</td>
+		</tr>
+
+	</table>
+</form>
+<script type="text/javascript" src="js/task-30.js"></script>
+</body>
+</html>

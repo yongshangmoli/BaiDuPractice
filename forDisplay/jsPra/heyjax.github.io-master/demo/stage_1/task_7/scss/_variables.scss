@@ -1,0 +1,49 @@
+// define color
+$pink:              #e74f4d;
+$search_pink:       #bf4f49;
+$gray:              #929292;
+$dark_gray:         #3a3a3a;
+$form_gray:         #edecee;
+$main_bottom_gray:  #32353e;
+$footer_gray:       #2f2f38;
+$bg_gray:           #f8f8f8;
+$white:             #fff;
+
+//search border
+$search_border:     1px solid $search_pink;
+
+//transition
+@mixin horizonal_transition{
+  -webkit-transition: width 1s; /* Safari */
+  -webkit-transition-timing-function: linear; /* Safari */
+  transition: width 1s;
+  transition-timing-function: linear;
+}
+@mixin zoom_in{
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+@mixin blur{
+  -webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+//responsive design
+$width-small:       400px;
+$width-medium:      760px;
+$width-large:       1000px;
+@mixin responsive($width) {
+    @if $width == wide-screens {
+        @media only screen and (max-width: $width-large) { @content; }
+    }
+    @else if $width == medium-screens {
+        @media only screen and (max-width: $width-medium) { @content; }
+    }
+    @else if $width == small-screens {
+        @media only screen and (max-width: $width-small) { @content; }
+    }
+}

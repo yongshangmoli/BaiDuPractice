@@ -1,0 +1,90 @@
+main{
+  section.welcome{
+    div.welcome_bg{
+      background-image: url(../img/welcome_bg.png);
+      background-size: cover;
+      height: 690px;
+      position: relative;
+      color: $white;
+    }
+    h1{
+      position: absolute;
+      left: 110px;
+      top: 225px;
+      font-size: 48px;
+    }
+    p{
+      position: absolute;
+      left:110px;
+      top:295px;
+      font-size: 20px;
+    }
+    button{
+      width: 330px;
+      height: 62px;
+      background-color: $pink;
+      color: $white;
+      font-size: 30px;
+      border-width: 0px;
+      position: absolute;
+      top:430px;
+      left:120px;
+      @include blur;
+    }
+    button:hover{
+      -webkit-filter: blur(0);
+    	filter: blur(0);
+      cursor: pointer;
+    }
+    button:focus{
+    outline-width: 0;
+    }
+    div.welcome_info{
+      overflow:hidden;
+      div{
+        float: left;
+        width: 25%;
+        div.img{
+          width: 156px;
+          margin: 0 25%;
+          position: relative;
+          img{
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -21px;
+          }
+        }
+        div.text{
+          text-align: center;
+          margin: 126px 0 65px 0;
+          padding: 0 25%;
+          width: 156px;
+          font-size: 14px;
+          color: $gray;
+          border-left: 2px solid $gray;
+        }
+      }
+      div:first-child{
+        div.text{
+          border-left: none;
+        }
+      }
+    }
+    @include responsive(medium-screens) {
+      div.welcome_info{
+        div{
+          width: 156px;
+          div.text{
+            padding: 0px;
+            margin: 126px 25% 65px 25%;
+            border: none;
+          }
+        }
+        div:hover{
+          background-color: transparent;
+        }
+      }
+    };
+  }
+}

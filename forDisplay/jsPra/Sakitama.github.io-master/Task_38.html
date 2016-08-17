@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html lang="zh_CN">
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 38</title>
+	<link href="css/Task_38.css" rel="stylesheet">
+</head>
+<body>
+<header>
+	<h1>
+		任务三十八：UI组件之排序表格
+	</h1>
+</header>
+<section class="tableBox" id="tableBox"></section>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/task-38.js"></script>
+<script type="text/javascript">
+	var table = SortTable({
+		title: ["Name", "Chinese", "Math", "Italian", "Total"],//标题
+		isSortable: [false, true, true, true, true],//是否可以排序
+		//单元格内容
+		message: [
+			["Jack", "80", "90", "78", "248"],
+			["Tom", "89", "67", "100", "256"],
+			["Rowling", "100", "88", "77", "265"],
+			["Lucy", "57", "84", "63", "204"],
+			["Jenny", "48", "94", "75", "217"]
+		]
+	});
+</script>
+</body>
+</html>

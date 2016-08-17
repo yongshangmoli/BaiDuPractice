@@ -1,0 +1,238 @@
+/* 先基本布局 再着手细节 */
+*{
+  margin:0;
+  padding: 0;
+}
+body{
+	background: #DEDEDE;
+	font-family: "Microsoft Yahei";
+  width: 100%;
+}
+header,footer{
+	background-color: #333333;
+  width: 100%;
+	height:60px;
+  line-height: 60px;
+	text-align: center;  
+}
+.logo{
+  width: 120px;
+  height: 40px;
+	float: left;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+nav{
+  height: 60px;
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+nav ul{
+	/*float:right;*/
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li{
+	float:left;
+	font-size: 12px;
+	margin-left: 30px;
+  white-space: nowrap; /* 文本不会换行 */
+}
+nav a{
+	color:#fff; 
+	text-decoration: none;
+}
+.a-last{
+	color: #929091;
+}
+
+article,aside{
+	border:1px solid #DEDEDE;
+	margin: 20px;
+	box-shadow: 5px 5px 20px #A1A1A1; /*盒阴影*/
+	background-color: #fff;
+	padding: 30px 20px;
+}
+h2{
+  font-size: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+span{
+  font-size: 0.5em;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+article h2,.author,.time{
+	color: gray;	
+}
+
+article p{
+  margin-top: 20px;
+	text-indent: 30px;
+	line-height: 150%;
+}
+p+img{
+  height: 240px;
+  width: 300px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+article ul{
+	list-style: none;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+figure{  
+  display: inline-block;
+	border:1px solid gray;
+	height: 120px;
+	width: 120px;
+	text-align: center;
+	margin-left: 50px;
+	margin-top: 20px;
+  padding: 10px;
+}
+
+figure>img{
+  margin-top: 10px;
+	height:80%;
+	width: 100%;
+}
+
+ol{
+  margin:20px 50px;
+}
+.table-caption{
+  font-size: 1em;
+}
+table{
+	width:100%;
+	border: 1px;
+	border-collapse: collapse; /*用来消除单元格之间的间距*/
+  font-size: 0.8em;
+}
+th{
+  text-align: left;
+}
+th,td{
+  padding: 5px;
+}
+thead{
+	background-color: #343434;
+	color: #fff;
+}
+tfoot{
+	background-color: #ccc;
+}
+
+aside{
+	margin: 50px 50px 30px 30px;
+  font-size: 0.8em;
+}
+aside h1{
+  border-left: 2px solid #DEDEDE;
+  padding-left: 10px;
+}
+.formgroup{
+	margin:10px;
+}
+.left-label{
+	display:inline-block;
+	text-align: right;
+	width: 30%;
+  margin-right: 10px;
+}
+.right-textinput{
+  display:inline-block;
+  vertical-align: text-top;
+}
+.tip{
+	color: gray;
+	display: block;
+}
+textarea{
+  height: 100px;
+  width: 60%;
+  box-sizing: border-box;
+  vertical-align: text-top;
+}
+.submitbtn{
+	width:100%;
+	background-color: #3355D0;
+	color: #fff;
+	height: 40px;
+  border:1px solid #3355D0;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+footer{
+	font-size: 10px;
+	text-align:center;
+  background-color: #000;
+	color: #fff;
+  height: 70px;
+}
+
+
+input[type="radio"]{
+  display: none;
+
+}
+
+
+.radio-label:before{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    border:1px solid #DEDEDE;
+    vertical-align: text-top;
+}
+
+input[type='radio']:checked + .radio-label:before {
+    content: "\2022";
+    color: #fff;
+    text-align: center;
+    line-height: 10px;
+    background-color: #369DF9;
+    vertical-align: text-top;
+}
+ input[type="checkbox"]{
+      display: none;
+    }
+.checkbox-label:before{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border:1px solid #DEDEDE;
+  vertical-align: text-top;
+  background-color: #fff;
+}
+input[type='checkbox']:checked + .checkbox-label:before {
+  content: "\221a";   
+  color:#fff;
+  line-height: 10px;      
+  vertical-align: text-top;
+  background-color: #369DF9;
+}
+
+main{
+  float: left;
+  width: calc(100% - 340px - 70px); /*+ — 号两边要有空格！*/
+}
+aside
+{
+  float: right;
+  width: 340px;
+  margin-left: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+footer{
+  clear: both;
+}

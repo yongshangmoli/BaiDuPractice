@@ -1,0 +1,59 @@
+header{
+  margin-top: 10px;
+  margin-bottom: -1px;
+  overflow: auto;
+  div.logo{
+    margin-left: 55px;
+    float: left;
+    span{
+      font-size: 20px;
+      vertical-align: super;
+    }
+  }
+  nav{
+    float: right;
+    margin-right: 60px;
+    ul{
+      li{
+        display: inline-block;
+        list-style: none;
+        height: 40px;
+        width: 65px;
+        text-align: center;
+        margin: 0 18px;
+        @include horizonal_transition;
+        a{
+          text-decoration: none;
+          color: $gray;
+          font-size: 15px;
+        }
+      }
+      li.active{
+        border-bottom: 3px solid $pink;
+        a{
+          color: $pink;
+        }
+      }
+      li:last-child{
+        a{
+          color: $pink;
+        }
+      }
+      li:hover{
+        width: 90px;
+        border-bottom: 3px solid $pink;
+        a{
+          color: $pink;
+        }
+      }
+    }
+  }
+  @include responsive(medium-screens) {
+    div.logo,
+    nav{
+      float: none;
+      clear: both;
+      margin: 0 auto;
+    }
+  }
+}

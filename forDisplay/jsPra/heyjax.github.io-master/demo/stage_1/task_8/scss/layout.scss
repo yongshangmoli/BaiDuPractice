@@ -1,0 +1,14 @@
+*{
+  margin: 0 auto;
+}
+.row {
+  @include make-row();
+}
+.box{
+  @include box;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-md-#{$i} { @media only screen and (min-width: 769px) { @include make-col-span($i);@include make-col;} }
+  .col-sm-#{$i} { @media only screen and (max-width: 768px) { @include make-col-span($i);@include make-col;} }
+}

@@ -1,0 +1,26 @@
+footer{
+  overflow: auto;
+  height: 30px;
+  padding-top: 30px;
+  background-color: $footer_gray;
+  color: $white;
+  font-size: 10px;
+  span.copy_right{
+    float: left;
+    margin-left: 100px;
+  }
+  span+span{
+    float: right;
+    margin-right: 40px;
+    a{
+      color: $white;
+      text-decoration: none;
+    }
+    a:link,
+    a:hover,
+    a:focus,
+    a:visited{
+      @extend a;
+    }
+  }
+}

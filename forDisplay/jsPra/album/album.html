@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>相册</title>
+	<link rel="stylesheet" type="text/css" href="css/album.css">
+</head>
+<body>
+	<div id="wrapper1"></div><br>
+	<div id="wrapper2"></div><br>
+	<div id="wrapper3"></div><br>
+	<div id="wrapper4"></div><br>
+	<div id="wrapper5"></div><br>
+	<div id="wrapper6"></div>
+	<script src="js/album.js"></script>
+	<script>
+		var gp1 = new GalryPrdcr("wrapper1",["images/1.jpg"]);
+		gp1.init();
+		var gp2 = new GalryPrdcr("wrapper2",["images/1.jpg","images/2.jpg"]);
+		gp2.init();
+		var gp3 = new GalryPrdcr("wrapper3",["images/1.jpg","images/2.jpg","images/3.jpg"]);
+		gp3.init();
+		var gp4 = new GalryPrdcr("wrapper4",["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"]);
+		gp4.init();
+		var gp5 = new GalryPrdcr("wrapper5",["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"]);
+		gp5.init();
+		var gp6 = new GalryPrdcr("wrapper6",["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg"]);
+		gp6.init();
+	</script>
+</body>
+</html>

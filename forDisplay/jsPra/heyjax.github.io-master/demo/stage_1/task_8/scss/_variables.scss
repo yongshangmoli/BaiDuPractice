@@ -1,0 +1,27 @@
+@mixin box {
+  border: #999 1px solid;
+  background-color: #eee;
+  height: 50px;
+}
+$grid-columns:      12;
+
+// Creates a wrapper for a series of columns
+@mixin make-row {
+  margin-left:  10px;
+  margin-right: 10px;
+  // @include clearfix()
+}
+
+// Make the element grid-ready (applying everything but the width)
+@mixin make-col {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+// Set a width (to be used in or out of media queries)
+@mixin make-col-span($columns) {
+  width: percentage(($columns / $grid-columns));
+}

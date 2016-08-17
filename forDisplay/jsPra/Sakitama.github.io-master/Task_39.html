@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html lang="zh_CN">
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 39</title>
+	<link href="css/Task_39.css" rel="stylesheet">
+</head>
+<body>
+<header>
+	<h1>
+		任务三十九：UI组件之冻结行列表格
+	</h1>
+</header>
+<section class="tableBox" id="tableBox"></section>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/task-39.js"></script>
+<script type="text/javascript">
+	var table = SortTable({
+		title: ["Name", "Chinese", "Math", "Italian", "Total"],//标题
+		isSortable: [false, true, true, true, true],//是否可以排序
+		//单元格内容
+		message: [
+			["Jack", "80", "90", "78", "248"],
+			["Tom", "89", "67", "100", "256"],
+			["Rowling", "100", "88", "77", "265"],
+			["Lucy", "57", "84", "63", "204"],
+			["Jenny", "48", "94", "75", "217"],
+			["Amy", "45", "35", "17", "97"],
+			["Aaron", "25", "86", "48", "159"],
+			["Abbott", "26", "86", "37", "149"],
+			["Blake", "64", "94", "27", "185"],
+			["Bowen", "36", "84", "45", "165"],
+			["Bruno", "47", "98", "47", "192"],
+			["Kerr", "42", "64", "75", "181"],
+			["John", "85", "54", "35", "174"],
+			["Hogan", "48", "34", "95", "177"],
+			["Hale", "88", "84", "45", "217"],
+			["Gavin", "68", "44", "65", "177"],
+			["Hayden", "78", "24", "75", "177"],
+			["Colbert", "98", "24", "15", "137"]
+		],
+		freeze: true
+	});
+</script>
+</body>
+</html>

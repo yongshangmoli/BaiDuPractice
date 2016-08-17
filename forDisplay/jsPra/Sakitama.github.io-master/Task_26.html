@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 26</title>
+	<link href="css/Task_26.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 地球与轨道 -->
+<div id="contain">
+	<!-- 地球 -->
+	<img src="image/24.png" id="earth" alt="earth">
+	<!-- 四条轨道 -->
+	<div id="orbit0" class="orbit"></div>
+	<div id="orbit1" class="orbit"></div>
+	<div id="orbit2" class="orbit"></div>
+	<div id="orbit3" class="orbit"></div>
+</div>
+
+<!-- 控制台 -->
+<div id="console">
+	<div id="console-title">Console 消息窗体</div>
+	<div id="console-text"></div>
+</div>
+
+<!-- 操作面板 -->
+<div id="control">
+	<div id="control-title">Control 操作面板</div>
+	<div id="control-main">
+		<div data-id="0">
+			<p>第一轨道</p>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="1">
+			<p>第二轨道</p>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="2">
+			<p>第三轨道</p>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+		<div data-id="3">
+			<p>第四轨道</p>
+			<button type="button" data-type="create" data-status="create">创建飞船</button>
+			<button type="button" disabled="disabled" data-type="drive" data-status="start">飞行</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/26/main.js"></script>
+<script type="text/javascript" src="js/26/spaceship.js"></script>
+<script type="text/javascript" src="js/26/god.js"></script>
+<script type="text/javascript" src="js/26/commander.js"></script>
+</body>
+</html>

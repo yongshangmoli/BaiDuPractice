@@ -1,0 +1,26 @@
+.container{
+  width: 400px;
+  height: 200px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  /*利用transform达到水平垂直居中效果*/
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.circle1, .circle2{
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: #fc0;
+  position: relative;
+}
+.circle1{
+  left:-50px;
+  top: -50px;
+}
+.circle2{
+  left:350px;
+  bottom: -50px;
+}

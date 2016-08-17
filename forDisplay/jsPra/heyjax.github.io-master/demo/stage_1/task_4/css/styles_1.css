@@ -1,0 +1,27 @@
+.container{
+  width: 400px;
+  height: 200px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  /*在已知宽度的情况下，利用外边距达到水平垂直居中效果*/
+  margin-top: -100px;
+  margin-left: -200px;
+  overflow: hidden;
+}
+.circle1, .circle2{
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: #fc0;
+  position: relative;
+}
+.circle1{
+  left:-50px;
+  top: -50px;
+}
+.circle2{
+  left:350px;
+  bottom: -50px;
+}

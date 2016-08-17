@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI", sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+header h1 {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+section {
+    text-align: center;
+}
+section input {
+    margin: 200px;
+}
+
+#j_Date1-date, #j_Date2-date {
+    border: 1px solid #ff6fc1;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.calendar {
+    background: #fff;
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #85BEE5 #3485C0 #3485C0 #85BEE5;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+}
+.calendar dl, .calendar dd {
+    width: 183px;
+    font-size: 12px;
+    line-height: 22px;
+}
+.calendar dt.title-date {
+    display: block;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+}
+.calendar dt {
+    float: left;
+    width: 25px;
+    margin-left: 1px;
+    text-align: center;
+}
+.calendar dt.title-date {
+    width: 100%;
+}
+.calendar dd {
+    clear: both;
+    width: 183px;
+    height: 139px;
+    font-weight: 700;
+    background: url(../image/o_bg.png) no-repeat;
+    margin: 0;
+}
+.btnWarp {
+    clear: both;
+}
+.prevyear, .nextyear, .prevmonth, .nextmonth {
+    cursor: pointer;
+    height: 9px;
+    background: url(../image/o_nextprv.png) no-repeat;
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    text-indent: -999px;
+}
+.prevyear {
+    left: 4px;
+    width: 9px;
+}
+.prevmonth {
+    width: 5px;
+    background-position: -9px 0;
+    left: 20px;
+}
+.nextyear {
+    width: 9px;
+    background-position: -19px 0;
+    right: 5px;
+}
+.nextmonth {
+    width: 5px;
+    background-position: -14px 0;
+    right: 20px;
+}
+.calendar dd a {
+    float: left;
+    width: 25px;
+    height: 22px;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 1px 0 0 1px;
+    text-align: center;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.calendar dd a.live {
+    color: black;
+    cursor: pointer;
+}
+.calendar dd a.disabled {
+    color: rgb(186, 201, 207);
+}
+.calendar dd a.tody {
+    color: #ff7221;
+}
+.calendar dd a.clicked {
+    color: white;
+    background: #62ff87;
+}
+.input {
+    width: 218px;
+    border: 1px solid #ccc;
+    padding: 4px;
+    background: url(../image/o_nextprv.png) no-repeat right -18px;
+}
+
+button {
+    width: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    height: 30px;
+    background: white;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+button:hover {
+    background: #41beff;
+    color: white;
+}
+
+
+
+
+

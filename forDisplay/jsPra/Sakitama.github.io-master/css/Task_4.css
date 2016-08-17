@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.center {
+    width: 400px;
+    height: 200px;
+    margin: -100px 0 0 -200px;
+    background-color: #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+}
+
+.yellow {
+    width: 100px;
+    height: 100px;
+    background-color: #fc0;
+    position: absolute;
+    border-radius: 50%;
+}
+.a {
+    left: -50px;
+    top: -50px;
+}
+.b {
+    right: -50px;
+    bottom: -50px;
+}

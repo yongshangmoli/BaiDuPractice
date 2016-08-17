@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 22</title>
+	<script src="js/task-22.js"></script>
+	<style>
+		* {
+			font-family: "Microsoft YaHei UI", sans-serif;
+		}
+		div {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			border: 2px solid;
+			border-radius: 50%;
+			background-color: #fff;
+			-webkit-transition: all .5s ease-in-out;
+			-moz-transition: all .5s ease-in-out;
+			-o-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+		}
+		.one {
+			width: 800px;
+			height: 800px;
+			border-color: aqua;
+			float: left;
+		}
+		.two {
+			width: 350px;
+			height: 350px;
+			border-color: gold;
+		}
+		.three {
+			width: 150px;
+			height: 150px;
+			border-color: blueviolet;
+		}
+		.four {
+			width: 60px;
+			height: 60px;
+			border-color: brown;
+		}
+		#choose {
+			text-align: center;
+			border-radius: 20px;
+		}
+		button {
+			outline: none;/*Chrome下讨厌的东西*/
+			border: none;
+			width: 120px;
+			height: 50px;
+			border-radius: 20px;
+			background: black;
+			color: white;
+			-webkit-transition: all .5s ease-in-out;
+			-moz-transition: all .5s ease-in-out;
+			-o-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+		}
+		button:hover {
+			cursor: pointer;
+			background: gray;
+			color: orangered;
+		}
+	</style>
+</head>
+<body>
+<div class="one">
+	<div class="two">
+		<div class="three">
+			<div class="four"></div>
+			<div class="four"></div>
+		</div>
+		<div class="three">
+			<div class="four"></div>
+			<div class="four"></div>
+		</div>
+	</div>
+	<div class="two">
+		<div class="three">
+			<div class="four"></div>
+			<div class="four"></div>
+		</div>
+		<div class="three">
+			<div class="four"></div>
+			<div class="four"></div>
+		</div>
+	</div>
+</div>
+<fieldset id="choose">
+	<legend>选项卡</legend>
+	<p>Tips：有些骚年写了二叉树的深度优先遍历，科普下二叉树的先序、中序和后序遍历其实都是二叉树的深度优先遍历的特例，访问节点的顺序一样，只不过进栈顺序不同</p>
+	<button id="preOrder">先序遍历</button>
+	<button id="inOrder">中序遍历</button>
+	<button id="postOrder">后序遍历</button>
+	<button id="BFS">层次遍历</button>
+</fieldset>
+</body>
+</html>

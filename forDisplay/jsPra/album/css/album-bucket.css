@@ -1,0 +1,39 @@
+ @charset "UTF-8";
+ html,body {
+ 	height: 100%;
+ 	width: 100%;
+ 	padding: 0;
+ 	margin: 0;
+ 	font-family: "微软雅黑";
+ 	font-size: 14px;
+}
+.img-wrp {
+	margin:0 auto;
+}
+.img-wrp .row-wrp{
+	white-space: nowrap;
+	margin-bottom: 8px;
+}
+.img-wrp div.row-imgwrp:first-child {
+    padding-left: 0;
+}
+.img-wrp .row-imgwrp {
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 8px;
+}
+.img-wrp .row-imgwrp img{
+	height: 100%;
+	object-fit: cover;
+}
+/* .img-wrp .clear-fix:after {
+	content:"";
+	display: block;
+	height: 0;
+	visibility:hidden;
+	clear:both;
+}
+.img-wrp .clear-fix {
+	*zoom:1;
+} */

@@ -1,0 +1,53 @@
+body{
+  main{
+    section.third{
+      width: 435px;
+      float: left;
+      h1,
+      h2{
+        margin: 0;
+        color: $blue;
+        font-weight: bolder;
+        font-family: $HeiTi;
+      }
+      h1{
+        font-size: 42px;
+        b{
+          color: $yellow;
+          font-size: 72px;
+          font-style: italic;
+        }
+      }
+      h2{
+        font-size: 33px;
+      }
+      article{
+        width: 415px;
+        border-top: 2px $blue solid;
+        margin-top: 10px;
+        img{
+          float: right;
+          margin: 25px 0 25px 25px;
+        }
+        p{
+          color: $gray;
+          font-size: 12px;
+          font-family: $HeiTi;
+          margin: 16px 0 0 0;
+          b{
+            float: left;
+            margin-left:-3px;
+            margin-right: 10px;
+            font-size: 70px;
+            color: $yellow;
+            font-family: $YaHei;
+          }
+        }
+        p+p{
+          margin-top: 0px;
+          text-indent: 2em;
+        }
+      }
+    }
+  }
+}

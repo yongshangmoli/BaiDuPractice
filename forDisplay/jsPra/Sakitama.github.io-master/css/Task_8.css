@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.grid-container{
+    width: 100%;
+    padding: 10px;
+}
+/*清浮动*/
+.row:before,
+.row:after {
+    content:"";
+    display: block;
+    clear:both;
+}
+/*因为设定了内边距，所以不能直接在该列设置background-color,用伪类撑开高度，使用outline模拟边框*/
+[class*='col-']:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    outline: 1px solid #999;
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: 33.33%;
+    padding: 10px;
+}
+
+@media screen and (min-width: 769px) {
+    .col-sm-1 {
+        width: 8.33333333%;
+    }
+    .col-sm-2 {
+        width: 16.66666667%;
+    }
+    .col-sm-3 {
+        width: 25.00000000%;
+    }
+    .col-sm-4 {
+        width: 33.33333333%;
+    }
+    .col-sm-6 {
+        width: 50.00000000%;
+    }
+    .col-sm-12 {
+        width: 100.00000000%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-xs-2 {
+        width: 16.66666667%;
+    }
+    .col-xs-3 {
+        width: 25.00000000%;
+    }
+    .col-xs-6 {
+        width: 50.00000000%;
+    }
+    .col-xs-8 {
+        width: 66.66666667%;
+    }
+    .col-xs-12 {
+        width: 100.00000000%;
+    }
+}

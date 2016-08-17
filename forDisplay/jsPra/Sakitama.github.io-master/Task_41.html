@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html lang="zh_CN">
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 41</title>
+	<link href="css/Task_41.css" rel="stylesheet">
+</head>
+<body>
+<header>
+	<h1>
+		任务四十一：UI组件之日历组件（二）
+	</h1>
+</header>
+<section>
+	<label for="j_Date1"></label><input type="text" id="j_Date1" class="input">
+	<label for="j_Date2"></label><input type="text" id="j_Date2" class="input">
+</section>
+<script type="text/javascript" src="js/task-41.js"></script>
+<script type="text/javascript">
+	var myDate1 = new Calender({
+		id: 'j_Date1',
+		isSelect: false,
+		callBack: function () {
+			alert("选择日期成功！这是回调");
+		}
+	});
+	var myDate2 = new Calender({
+		id: 'j_Date2',
+		isSelect: true,
+		callBack: function () {
+			alert("选择日期成功！这是回调");
+		}
+	});
+</script>
+</body>
+</html>
