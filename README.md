@@ -1,2 +1,2 @@
-# BaiDuPractice
-百度前端技术学院的练习题目
+# myPractice
+前端练习
