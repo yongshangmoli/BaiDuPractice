@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>spy1</title>
+	<style>
+		html,body {height:100%;font-family: "Helvetica Neue","Hiragino Sans GB W3","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";color: #333;background-color: #000;}
+		html,body,span,div,h1,h2,h3,h4,p,ul,li,a,textarea,input,figure {padding: 0;margin: 0;font-weight: normal;}
+		a {text-decoration: none;}
+		a,button,input,textarea,div,p {-webkit-tap-highlight-color: rgba(0,0,0,0);}
+		.spy-wrapper {width: 6rem; margin:0 0.75rem; background-color: #333; }
+		.spy-box {display: inline-block; width: 9%; border: ;margin: 1%; background-color: #fff;}
+		.spy-wall{}
+	</style>
+	<script>
+		(function(){
+			if(!window.addEventListener) return;
+			var html = document.documentElement;
+			function setFont() {
+				var cliWidth = html.clientWidth;
+				html.style.fontSize = 100*(cliWidth/750)+'px';
+			}
+			window.addEventListener('resize', setFont, false);
+			setFont();
+		})();
+	</script>
+	<script src="js/game.js"></script>
+	<script src="js/game.util.js"></script>
+	<script src="js/game.move.js"></script>
+</head>
+<body>
+<!-- 	<div class="spy-wrapper">
+	<div class="spy-box">a</div>
+	<div class="spy-box">v</div>
+</div> -->
+	<canvas class="spy-wrapper" id="canvas"></canvas>
+	<script>
+		game.initModule();
+	</script>
+	<!-- <script src="js/game.js"></script> -->
+</body>
+</html>
