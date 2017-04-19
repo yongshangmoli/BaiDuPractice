@@ -91,6 +91,9 @@ var game = (function() {
 						startGame();
 						ensurePath();
 					}
+					else {
+						utilObj.usedPos[0] = {x : boxes[i-1].x, y : boxes[i-1].y};
+					}
 				}
 				else {
 					nodeStore.ctx.clearRect(utilObj.hero.x*configMap.blockSideLen, utilObj.hero.y*configMap.blockSideLen, configMap.blockSideLen, configMap.blockSideLen);
